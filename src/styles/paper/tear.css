@@ -10,6 +10,15 @@
    Note: one torn edge per element (stack wrappers for more).
    ========================================================================== */
 
+/* Default pattern. Paths are relative to this file so the site works under
+   any base path (e.g. a GitHub Pages project site at /<repo>/). */
+:root {
+  --tear-top: url("../../../public/svg/tear-top-1.svg");
+  --tear-right: url("../../../public/svg/tear-right-1.svg");
+  --tear-bottom: url("../../../public/svg/tear-bottom-1.svg");
+  --tear-left: url("../../../public/svg/tear-left-1.svg");
+}
+
 .tear-edge--bottom {
   --_tear: var(--tear-bottom) bottom left / var(--tear-period) var(--tear-depth) repeat-x;
   --_fill: linear-gradient(#000 0 0) top / 100% calc(100% - var(--tear-depth) + 1px) no-repeat;
@@ -37,22 +46,22 @@
 
 /* Variants swap the jagged pattern so repeated edges never look identical. */
 .tear-v1 {
-  --tear-top: url("/public/svg/tear-top-1.svg");
-  --tear-right: url("/public/svg/tear-right-1.svg");
-  --tear-bottom: url("/public/svg/tear-bottom-1.svg");
-  --tear-left: url("/public/svg/tear-left-1.svg");
+  --tear-top: url("../../../public/svg/tear-top-1.svg");
+  --tear-right: url("../../../public/svg/tear-right-1.svg");
+  --tear-bottom: url("../../../public/svg/tear-bottom-1.svg");
+  --tear-left: url("../../../public/svg/tear-left-1.svg");
 }
 .tear-v2 {
-  --tear-top: url("/public/svg/tear-top-2.svg");
-  --tear-right: url("/public/svg/tear-right-2.svg");
-  --tear-bottom: url("/public/svg/tear-bottom-2.svg");
-  --tear-left: url("/public/svg/tear-left-2.svg");
+  --tear-top: url("../../../public/svg/tear-top-2.svg");
+  --tear-right: url("../../../public/svg/tear-right-2.svg");
+  --tear-bottom: url("../../../public/svg/tear-bottom-2.svg");
+  --tear-left: url("../../../public/svg/tear-left-2.svg");
 }
 .tear-v3 {
-  --tear-top: url("/public/svg/tear-top-3.svg");
-  --tear-right: url("/public/svg/tear-right-3.svg");
-  --tear-bottom: url("/public/svg/tear-bottom-3.svg");
-  --tear-left: url("/public/svg/tear-left-3.svg");
+  --tear-top: url("../../../public/svg/tear-top-3.svg");
+  --tear-right: url("../../../public/svg/tear-right-3.svg");
+  --tear-bottom: url("../../../public/svg/tear-bottom-3.svg");
+  --tear-left: url("../../../public/svg/tear-left-3.svg");
 }
 
 /* Paper thickness: put on a WRAPPER of the torn element so the shadow

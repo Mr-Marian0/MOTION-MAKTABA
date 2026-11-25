@@ -6,7 +6,8 @@ The full creative brief is in [PROMPT.md](PROMPT.md).
 ## Run it
 
 No install, no build. Open the **project folder** in VS Code and start **Live Server** on `index.html`.
-Any static server works, as long as the project folder is the site root (the tear masks load from `/public/svg/`).
+Any static server works, at any base path (all asset paths are relative, so it also runs as a GitHub Pages project site).
+The empty `.nojekyll` file stops GitHub Pages from running Jekyll, which would otherwise drop every `_`-prefixed file (`_params.js`, `_kit.js`, `_shared.css`).
 A file opened by double-click (`file://`) won't work, because ES modules need a server.
 
 Stack: HTML · Tailwind CSS v4 (browser build) · custom CSS · GSAP + ScrollTrigger · Lenis, all from the jsDelivr CDN through the import map in `index.html`.
