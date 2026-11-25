@@ -1,0 +1,31 @@
+/* Ink Field: the label floats via :focus / :not(:placeholder-shown), no JS needed for that part. */
+.sp-field { display: grid; place-content: center; }
+.sp-field__box { position: relative; width: 24em; padding-top: 1.2em; }
+.sp-field__input {
+  width: 100%;
+  padding: 0.5em 2em 0.5em 0;
+  font: 400 1.5em/1.2 var(--font-display);
+  color: var(--color-ink);
+  background: none;
+  border: 0;
+  border-bottom: 1.5px solid rgb(17 17 17 / 0.3);
+  outline: none;
+}
+.sp-field__label {
+  position: absolute;
+  top: 1.9em;
+  left: 0;
+  font-size: 1.1em;
+  opacity: 0.6;
+  pointer-events: none;
+  transform-origin: left top;
+  transition: transform 0.35s var(--ease-settle), opacity 0.35s, color 0.35s;
+}
+.sp-field__input:focus + .sp-field__label,
+.sp-field__input:not(:placeholder-shown) + .sp-field__label { opacity: 1; color: var(--sp-accent); transform: translateY(-1.7em) scale(0.75); }
+.sp-field__line { position: absolute; right: 0; bottom: 0; left: 0; height: 2px; background: var(--sp-accent); }
+.sp-field__tick { position: absolute; right: 0.2em; top: 1.6em; display: grid; place-items: center; width: 1.6em; height: 1.6em; color: var(--color-bone); background: #4f6b4a; border-radius: 50%; }
+.sp-field__msg { display: block; min-height: 1.4em; margin-top: 0.5em; color: #b3412e; }
+.sp-field__box.is-bad .sp-field__line { background: #b3412e; }
+.sp-field__box.is-bad .sp-field__input { border-bottom-color: #b3412e; }
+.sp-field__box.is-bad .sp-field__label { color: #b3412e; }

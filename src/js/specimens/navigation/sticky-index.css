@@ -1,0 +1,32 @@
+/*Sticky Index (deliberately no transitions) */
+.sp-index__view {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 9em 1fr;
+  gap: 1.4em;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0 1.4em;
+  scrollbar-width: thin;
+}
+.sp-index__aside { position: sticky; top: 0; align-self: start; padding: 1.4em 0; }
+.sp-index__aside b { letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.55; }
+.sp-index__aside ol { display: grid; gap: 0.45em; margin-top: 0.9em; }
+.sp-index__aside a { display: block; padding: 0.2em 0.6em; border-left: 2px solid transparent; }
+.sp-index--bar .is-on { color: var(--sp-accent); border-left-color: var(--sp-accent); }
+.sp-index--dot a::before {
+  content: "";
+  display: inline-block;
+  width: 0.45em;
+  height: 0.45em;
+  margin-right: 0.5em;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+.sp-index--dot .is-on { color: var(--sp-accent); }
+.sp-index--dot .is-on::before { background: var(--sp-accent); border-color: var(--sp-accent); }
+.sp-index--bold .is-on { font: italic 400 1.25em/1.1 var(--font-display); color: var(--sp-accent); }
+.sp-index__body { padding: 1.4em 0 70%; }
+.sp-index__body section { margin-bottom: 1.8em; }
+.sp-index__body h4 { margin-bottom: 0.7em; font: 400 1.4em/1 var(--font-display); }

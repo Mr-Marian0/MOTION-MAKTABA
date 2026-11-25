@@ -1,0 +1,21 @@
+/* Three-stop Bottom Sheet: a phone frame; the panel is translated down by y. */
+.sp-sheet { display: grid; place-items: center; }
+.sp-sheet__phone { position: relative; width: 14em; height: 92%; overflow: hidden; background: var(--color-ink); border: 0.4em solid var(--color-ink); border-radius: 1.6em; }
+.sp-sheet__page { position: absolute; inset: 0; display: grid; align-content: start; gap: 0.6em; padding: 1.4em 1.1em; background: var(--color-paper-core); }
+.sp-sheet__page b { font: 400 1.4em/1.1 var(--font-display); }
+.sp-sheet__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  padding: 0 1.1em;
+  background: var(--color-bone);
+  border-top: 1.5px solid var(--color-ink);
+  border-radius: 1.2em 1.2em 0 0;
+  box-shadow: 0 -0.4em 1em rgb(17 17 17 / 0.25);
+}
+.sp-sheet__panel h4 { margin: 0.2em 0 0.8em; font: 400 1.3em/1 var(--font-display); }
+.sp-sheet__handle { display: grid; place-items: center; width: 100%; height: 2em; padding: 0; background: none; border: 0; cursor: grab; touch-action: none; }
+.sp-sheet__handle:active { cursor: grabbing; }
+.sp-sheet__handle i { width: 3em; height: 0.35em; background: var(--sp-accent); border-radius: 1em; }

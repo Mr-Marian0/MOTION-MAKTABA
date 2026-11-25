@@ -1,0 +1,313 @@
+/* ==========================================================================
+   SECTION 1 — PORTAL HERO
+   A 250vh scroll runway holding a sticky full-height stage.
+   Layer order (back → front) is set by the z-index tokens:
+   media → duotone wash → veil → kraft panels → tape → wordmark → corner meta
+   Motion lives in src/js/sections/portal-hero.js.
+   ========================================================================== */
+
+.portal-hero {
+  --panel-w: 54%;           /* each panel: a little over half the width */
+  --meta-inset: clamp(1rem, 2.4vw, 2rem);
+  position: relative;
+  height: 250vh;
+}
+
+.hero-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-umber);
+}
+
+/* ---- 1. Full-bleed image (starts overscaled) ---- */
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-media);
+}
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.25);
+  will-change: transform;
+}
+
+/* ---- 2. Duotone wash (kraft → umber, overlay, invisible at start) ---- */
+.hero-duotone {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-wash);
+  background: linear-gradient(135deg, var(--color-kraft) 0%, var(--color-umber) 100%);
+  mix-blend-mode: overlay;
+  opacity: 0;
+}
+
+/* ---- 3. Radial veil (darkens the edges) ---- */
+.hero-veil {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-veil);
+  background: radial-gradient(ellipse 75% 70% at 50% 50%, transparent 30%, rgb(17 17 17 / 0.8) 100%);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* ---- 3b. Centered quote + Explore (hidden until the cover tears; JS reveals it) ---- */
+.hero-quote {
+  position: absolute;
+  inset: 0;
+  z-index: calc(var(--z-veil) + 1);
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: clamp(1.6rem, 3.5vw, 2.6rem);
+  padding: 0 var(--meta-inset);
+  color: var(--color-bone);
+  text-align: center;
+  text-shadow: 0 2px 18px rgb(17 17 17 / 0.55);
+  background: radial-gradient(ellipse 45% 40% at 50% 50%, rgb(17 17 17 / 0.5), transparent);
+  visibility: hidden;
+  opacity: 0;
+}
+.hero-quote figure { display: grid; gap: 1.2rem; max-width: min(48rem, 100%); margin: 0; }
+.hero-quote blockquote {
+  margin: 0;
+  font: italic 400 clamp(1.4rem, 2.8vw, 2.6rem)/1.2 var(--font-display);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.hero-quote figcaption {
+  font: 500 clamp(0.62rem, 0.85vw, 0.75rem)/1 var(--font-mono);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-bone);
+  opacity: 0.85;
+}
+.hero-quote figcaption::before { content: "— "; }
+.hero-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9em;
+  padding: 1.1em 2em;
+  font: 500 0.75rem/1 var(--font-mono);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-ink);
+  background: var(--color-bone);
+  border-radius: 2rem;
+  box-shadow: 4px 4px 0 var(--color-kraft);
+  transition: background-color var(--dur-fast), box-shadow var(--dur-fast), transform var(--dur-base) var(--ease-settle);
+}
+.hero-explore i { font-style: normal; transition: transform var(--dur-base) var(--ease-settle); }
+.hero-explore:hover,
+.hero-explore:focus-visible { background: var(--color-kraft-core); box-shadow: 6px 6px 0 var(--color-ink); transform: translate(-2px, -2px); }
+.hero-explore:hover i { transform: translateY(4px); }
+.hero-explore:focus-visible { outline: 2px solid var(--color-bone); outline-offset: 4px; }
+
+/* ---- 4. Kraft panels (meet in the middle → hero starts CLOSED) ----
+   Panels are taller than the stage so their slight rotation while tearing
+   never exposes a corner. The interlocking tear is a clip-path polygon
+   written by JS (tear-edge.js); without JS the panels simply overlap. */
+.hero-panel {
+  position: absolute;
+  top: -6%;
+  height: 112%;
+  width: var(--panel-w);
+  z-index: var(--z-panels);
+  will-change: transform;
+  filter: drop-shadow(0 0 1px rgb(62 44 31 / 0.5)) drop-shadow(0 10px 24px rgb(17 17 17 / 0.35));
+}
+.hero-panel--left {
+  left: 0;
+  transform-origin: 100% 50%;
+}
+.hero-panel--right {
+  right: 0;
+  transform-origin: 0% 50%;
+}
+
+.hero-panel__core,
+.hero-panel__face {
+  position: absolute;
+  inset: 0;
+}
+
+/* Whiter fiber layer that peeks out past the torn face. */
+.hero-panel__core {
+  background-color: var(--color-paper-core);
+  background-image: var(--tex-noise);
+  background-blend-mode: soft-light;
+  opacity: 0;
+}
+
+/* ---- Panel ornaments ---- */
+.hero-folio {
+  position: absolute;
+  left: clamp(1rem, 3vw, 2.5rem);
+  top: 50%;
+  color: rgb(17 17 17 / 0.6);
+  writing-mode: vertical-rl;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* ---- Masking tape across the seam ---- */
+.hero-tape {
+  position: absolute;
+  top: 24%;
+  left: 50%;
+  z-index: var(--z-ornaments);
+  width: clamp(8rem, 15vw, 14rem);
+  transform: translateX(-50%) rotate(-7deg);
+  pointer-events: none;
+}
+.hero-tape__whole {
+  transform-origin: 50% 50%;
+}
+.hero-tape__half {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  opacity: 0;
+}
+.hero-tape__half--l {
+  left: 0;
+  transform-origin: 0% 50%;
+}
+.hero-tape__half--r {
+  right: 0;
+  transform-origin: 100% 50%;
+}
+
+/* ---- 5. Wordmark ---- */
+.hero-wordmark {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-wordmark);
+  display: grid;
+  place-content: center;
+  pointer-events: none;
+  color: var(--color-ink);
+}
+
+.hero-wordmark__top {
+  display: block;
+  margin-bottom: clamp(0.5rem, 1.6vw, 1.25rem);
+  font-family: var(--font-mono);
+  font-size: clamp(0.75rem, 1.1vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.5em;
+  text-align: center;
+  text-indent: 0.5em; /* balance trailing letter-spacing */
+}
+
+.hero-wordmark__main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  column-gap: clamp(0.75rem, 2.2vw, 2.25rem);
+  width: 100vw;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 9.5vw, 12rem);
+  font-weight: 400;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+}
+
+.hero-wordmark__half {
+  display: block;
+  will-change: transform;
+}
+.hero-wordmark__half--left {
+  justify-self: end;
+  text-align: right;
+}
+.hero-wordmark__half--right {
+  justify-self: start;
+  font-style: italic;
+}
+
+/* ---- 6. Corner metadata ---- */
+.hero-meta {
+  position: absolute;
+  z-index: var(--z-meta);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: clamp(0.6rem, 0.8vw, 0.72rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.hero-meta--tl { top: var(--meta-inset); left: var(--meta-inset); }
+.hero-meta--tr { top: var(--meta-inset); right: var(--meta-inset); text-align: right; }
+.hero-meta--bl { bottom: var(--meta-inset); left: var(--meta-inset); }
+.hero-meta--br { bottom: var(--meta-inset); right: var(--meta-inset); text-align: right; }
+
+/* Two labels stacked in the same spot; JS crossfades between them. */
+.hero-meta__swap {
+  display: grid;
+  justify-items: end;
+}
+.hero-meta__swap > * {
+  grid-area: 1 / 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75em;
+}
+.hero-meta__swap > :last-child {
+  opacity: 0;
+}
+
+/* Animated scroll cue: a short ink line with a travelling tick. */
+.hero-cue {
+  position: relative;
+  width: 1px;
+  height: 1.6rem;
+  overflow: hidden;
+  background: currentColor;
+  opacity: 0.35;
+}
+.hero-cue::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -40%;
+  width: 1px;
+  height: 40%;
+  background: currentColor;
+  opacity: 1;
+  animation: hero-cue 1.6s var(--ease-tear) infinite;
+}
+@keyframes hero-cue {
+  to { top: 100%; }
+}
+
+/* Small screens: tighter type so "Motion" | "Maktaba" fit either side of the seam. */
+@media (max-width: 640px) {
+  .hero-wordmark__main {
+    font-size: clamp(2.2rem, 11vw, 4rem);
+  }
+  .hero-meta--tr { display: none; }
+}
+
+/* ---- Reduced motion: the hero renders already open, with a soft fade ---- */
+@media (prefers-reduced-motion: reduce) {
+  .portal-hero { height: 100svh; }
+  .hero-panel,
+  .hero-tape { display: none; }
+  .hero-media img { transform: none; }
+  .hero-duotone { opacity: 0.65; }
+  .hero-veil { opacity: 1; }
+  .hero-wordmark,
+  .hero-meta { color: var(--color-bone); }
+  .hero-quote { visibility: visible; opacity: 1; }
+  .hero-wordmark { opacity: 0; } /* the quote takes the center; the h1 stays for screen readers */
+  .hero-cue::after { animation: none; }
+  .hero-stage { animation: hero-fade var(--dur-slow) ease-out both; }
+  @keyframes hero-fade { from { opacity: 0; } }
+}

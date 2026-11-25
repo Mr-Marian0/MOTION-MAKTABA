@@ -1,0 +1,55 @@
+/* EFFECT DEMO — magnetic-hover: ink button, pull radius, registration crosshair */
+
+.fx-magnet {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.fx-magnet__ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9.5rem;
+  aspect-ratio: 1;
+  border: 1px dashed rgb(17 17 17 / 0.35);
+  border-radius: 50%;
+  translate: -50% -50%;
+}
+
+.fx-magnet__btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-ink);
+  color: var(--color-bone);
+  font: 500 0.62rem/1 var(--font-mono);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 22px rgb(17 17 17 / 0.3);
+  will-change: transform;
+}
+.fx-magnet__btn > span {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Crosshair lines (hidden until the cursor is inside). */
+.fx-magnet__x,
+.fx-magnet__y {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(17 17 17 / 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-fast);
+}
+.fx-magnet__x { right: 0; height: 1px; }
+.fx-magnet__y { bottom: 0; width: 1px; }
+.is-tracking .fx-magnet__x,
+.is-tracking .fx-magnet__y { opacity: 1; }

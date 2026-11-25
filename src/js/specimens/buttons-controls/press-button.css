@@ -1,0 +1,18 @@
+/* Press & Send */
+.sp-press { display: grid; place-items: center; }
+.sp-press__btn {
+  display: grid;
+  overflow: hidden;
+  padding: 1.1em 2.2em;
+  font: 500 1.1em/1 var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-bone);
+  background: var(--sp-accent, var(--color-ink));
+  border: 0;
+  border-radius: 0.4em;
+  box-shadow: 0.3em 0.3em 0 var(--color-kraft);
+  transform-origin: bottom center;
+  cursor: pointer;
+}
+.sp-press__btn span { grid-area: 1 / 1; } /* both labels share one cell; JS moves the idle one 250% away */

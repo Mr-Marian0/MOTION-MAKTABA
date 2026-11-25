@@ -1,0 +1,62 @@
+/* ==========================================================================
+   TEAR SYSTEM — torn edges with classes alone.
+
+   Usage:  <div class="paper-kraft tear-edge--bottom tear-v2">…</div>
+
+   Each edge class combines two mask layers:
+     1. a repeating jagged SVG strip along the torn side
+     2. a solid fill covering the rest of the element
+   Tune per element with --tear-depth and --tear-period.
+   Note: one torn edge per element (stack wrappers for more).
+   ========================================================================== */
+
+.tear-edge--bottom {
+  --_tear: var(--tear-bottom) bottom left / var(--tear-period) var(--tear-depth) repeat-x;
+  --_fill: linear-gradient(#000 0 0) top / 100% calc(100% - var(--tear-depth) + 1px) no-repeat;
+}
+.tear-edge--top {
+  --_tear: var(--tear-top) top left / var(--tear-period) var(--tear-depth) repeat-x;
+  --_fill: linear-gradient(#000 0 0) bottom / 100% calc(100% - var(--tear-depth) + 1px) no-repeat;
+}
+.tear-edge--right {
+  --_tear: var(--tear-right) top right / var(--tear-depth) var(--tear-period) repeat-y;
+  --_fill: linear-gradient(#000 0 0) left / calc(100% - var(--tear-depth) + 1px) 100% no-repeat;
+}
+.tear-edge--left {
+  --_tear: var(--tear-left) top left / var(--tear-depth) var(--tear-period) repeat-y;
+  --_fill: linear-gradient(#000 0 0) right / calc(100% - var(--tear-depth) + 1px) 100% no-repeat;
+}
+
+.tear-edge--top,
+.tear-edge--right,
+.tear-edge--bottom,
+.tear-edge--left {
+  -webkit-mask: var(--_tear), var(--_fill);
+  mask: var(--_tear), var(--_fill);
+}
+
+/* Variants swap the jagged pattern so repeated edges never look identical. */
+.tear-v1 {
+  --tear-top: url("/public/svg/tear-top-1.svg");
+  --tear-right: url("/public/svg/tear-right-1.svg");
+  --tear-bottom: url("/public/svg/tear-bottom-1.svg");
+  --tear-left: url("/public/svg/tear-left-1.svg");
+}
+.tear-v2 {
+  --tear-top: url("/public/svg/tear-top-2.svg");
+  --tear-right: url("/public/svg/tear-right-2.svg");
+  --tear-bottom: url("/public/svg/tear-bottom-2.svg");
+  --tear-left: url("/public/svg/tear-left-2.svg");
+}
+.tear-v3 {
+  --tear-top: url("/public/svg/tear-top-3.svg");
+  --tear-right: url("/public/svg/tear-right-3.svg");
+  --tear-bottom: url("/public/svg/tear-bottom-3.svg");
+  --tear-left: url("/public/svg/tear-left-3.svg");
+}
+
+/* Paper thickness: put on a WRAPPER of the torn element so the shadow
+   follows the masked shape. */
+.tear-shadow {
+  filter: drop-shadow(0 1px 0 rgb(62 44 31 / 0.25)) drop-shadow(0 6px 10px rgb(17 17 17 / 0.18));
+}

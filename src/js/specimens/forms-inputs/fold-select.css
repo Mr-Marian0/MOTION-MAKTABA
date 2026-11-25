@@ -1,0 +1,32 @@
+/* Fold Select */
+.sp-sel { display: grid; align-content: start; justify-content: center; gap: 0.4em; padding-top: 3em; }
+.sp-sel__label { letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6; }
+.sp-sel__field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 18em;
+  padding: 0.8em 1em;
+  overflow: hidden;
+  font: 400 1.25em/1 var(--font-display);
+  color: var(--color-ink);
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.4em;
+  box-shadow: 0.2em 0.2em 0 var(--color-ink);
+  cursor: pointer;
+}
+.sp-sel__field i { font-style: normal; color: var(--sp-accent); }
+.sp-sel__value { display: inline-block; }
+.sp-sel__list { display: grid; gap: 0.2em; margin-top: 0.3em; perspective: 30em; outline: none; }
+.sp-sel__opt {
+  padding: 0.6em 1em;
+  background: var(--color-bone);
+  border: 1px solid rgb(17 17 17 / 0.25);
+  border-radius: 0.3em;
+  transform-origin: top center;
+  cursor: pointer;
+}
+.sp-sel__opt.is-active { color: var(--color-bone); background: var(--sp-accent); }
+.sp-sel__opt[aria-selected="true"]::after { content: " ✓"; }
+.sp-sel__list:focus-visible .sp-sel__opt.is-active { outline: 2px solid var(--color-ink); outline-offset: 1px; }

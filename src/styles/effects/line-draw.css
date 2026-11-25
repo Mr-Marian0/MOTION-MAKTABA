@@ -1,0 +1,20 @@
+/* EFFECT DEMO — line-draw: a signature, an underline and an arrow in ink */
+
+.fx-line {
+  position: absolute;
+  inset: 14% 8% 10%;
+  width: 84%;
+  height: 76%;
+  overflow: visible;
+  color: var(--color-ink);
+}
+.fx-line path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.fx-line .fx-line__accent {
+  stroke: var(--color-kraft);
+}

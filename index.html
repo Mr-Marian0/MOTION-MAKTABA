@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MY Motion Maktaba: Creative Developer Portfolio &amp; Motion Library</title>
+    <meta name="description" content="A creative developer portfolio and library of interactive motion: scroll, typography, hover and transitions." />
+    <meta name="theme-color" content="#f3ebdd" />
+
+    <!-- Arriving via a page transition? Cover the page until the curtain is built. -->
+    <script>
+      try { if (sessionStorage.getItem('mm:transition') !== null) document.documentElement.classList.add('is-arriving'); } catch (e) {}
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+
+    <!-- Our styles (plain CSS, loaded first so layer order is set) -->
+    <link rel="stylesheet" href="src/styles/main.css" />
+
+    <!-- Tailwind v4 utilities, generated in the browser (no build step) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Libraries, mapped so modules can `import gsap from 'gsap'` -->
+    <script type="importmap">
+      {
+        "imports": {
+          "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.15.1/index.js",
+          "gsap/ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.15.1/ScrollTrigger.js",
+          "lenis": "https://cdn.jsdelivr.net/npm/lenis@1.3.28/dist/lenis.mjs"
+        }
+      }
+    </script>
+    <script type="module" src="src/js/main.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <!-- ================================================================
+           SECTION 1 — PORTAL HERO
+           Scroll runway (250vh) → sticky stage. Scrolling tears the cream
+           paper cover open to reveal the layered kraft sheets behind it.
+           ================================================================ -->
+      <section data-section="portal-hero" class="portal-hero" aria-label="Introduction">
+        <div class="hero-stage">
+          <!-- 1. Image behind the cover (swap for your own anytime) -->
+          <div class="hero-media" aria-hidden="true">
+            <img
+              data-hero="media"
+              src="src/assets/images/hero.svg"
+              alt=""
+              width="1920"
+              height="1080"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+
+          <!-- 2. Duotone wash -->
+          <div class="hero-duotone" data-hero="duotone" aria-hidden="true"></div>
+
+          <!-- 3. Radial veil -->
+          <div class="hero-veil" data-hero="veil" aria-hidden="true"></div>
+
+          <!-- 3b. Centered quote (random per visit, list in portal-hero.js), revealed as the cover tears -->
+          <div class="hero-quote" data-hero="quote">
+            <figure>
+              <blockquote data-hero="quote-text">“AI is about amplifying human potential, not replacing it.”</blockquote>
+              <figcaption data-hero="quote-by">Fei-Fei Li</figcaption>
+            </figure>
+            <a class="hero-explore" href="#catalog" data-hero="explore">Explore <i aria-hidden="true">↓</i></a>
+          </div>
+
+          <!-- 4. Cream paper panels: the torn cover -->
+          <div class="hero-panel hero-panel--left" data-hero-panel="left" aria-hidden="true">
+            <div class="hero-panel__core" data-hero="core"></div>
+            <div class="hero-panel__face paper-cream" data-hero="face">
+              <span class="hero-folio folio">No. 001 — The Cover</span>
+            </div>
+          </div>
+
+          <div class="hero-panel hero-panel--right" data-hero-panel="right" aria-hidden="true">
+            <div class="hero-panel__core" data-hero="core"></div>
+            <div class="hero-panel__face paper-cream" data-hero="face"></div>
+          </div>
+
+          <!-- Tape across the seam: whole at first, snaps into two halves -->
+          <div class="hero-tape" aria-hidden="true">
+            <span class="hero-tape__whole tape" data-hero="tape"></span>
+            <span class="hero-tape__half hero-tape__half--l tape tear-edge--right tear-v2" data-hero="tape-l"></span>
+            <span class="hero-tape__half hero-tape__half--r tape tear-edge--left tear-v3" data-hero="tape-r"></span>
+          </div>
+
+          <!-- 5. Wordmark: one real h1, visually split at the seam -->
+          <h1 class="hero-wordmark" aria-label="My Motion Maktaba">
+            <span class="hero-wordmark__top" data-hero="kicker" aria-hidden="true">MY</span>
+            <span class="hero-wordmark__main" aria-hidden="true">
+              <span class="hero-wordmark__half hero-wordmark__half--left" data-hero-half="left">Motion</span>
+              <span class="hero-wordmark__half hero-wordmark__half--right" data-hero-half="right">Maktaba</span>
+            </span>
+          </h1>
+
+          <!-- 6. Corner metadata -->
+          <p class="hero-meta hero-meta--tl" data-hero="meta">MY — Motion Maktaba</p>
+          <p class="hero-meta hero-meta--tr" data-hero="meta">Portfolio / Library / Lab</p>
+          <p class="hero-meta hero-meta--bl" data-hero="meta">Est. 2026 — Vol. 01</p>
+          <div class="hero-meta hero-meta--br" data-hero="meta">
+            <span class="hero-meta__swap">
+              <span data-hero="cue-a">Scroll to tear <span class="hero-cue" aria-hidden="true"></span></span>
+              <span data-hero="cue-b" aria-hidden="true">Enter the library ↓</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           SECTION 2 — CARD CATALOG
+           A cream sheet torn along its top, laid over the end of the hero.
+           Rows (alternating left / right) are rendered from
+           src/data/cards.js into [data-catalog-grid].
+           ================================================================ -->
+      <section
+        id="catalog"
+        data-section="card-catalog"
+        class="catalog paper-cream tear-edge--top tear-v2"
+        aria-labelledby="catalog-title"
+      >
+        <header class="catalog__head">
+          <div>
+            <p class="catalog__folio folio">Vol. 01 — Index of motion</p>
+            <h2 class="catalog__title" id="catalog-title">
+              The
+              <span class="catalog__mark">
+                Collections
+                <svg
+                  class="catalog__scribble"
+                  viewBox="0 0 360 120"
+                  aria-hidden="true"
+                  data-effect="line-draw"
+                  data-effect-options='{"mode":"view","duration":1.6}'
+                >
+                  <path d="M40 78 C 22 40, 120 14, 220 16 C 312 18, 352 44, 338 72 C 322 104, 210 112, 130 106 C 60 100, 18 88, 30 62 C 40 42, 92 30, 150 28" />
+                </svg>
+              </span>
+            </h2>
+          </div>
+
+          <div class="catalog__aside">
+            <p class="catalog__lede">
+              An index of interface parts, filed like an old archive. Each drawer holds one family of components,
+              each pinned with a small working specimen. Open a drawer to see what's inside.
+            </p>
+            <p class="catalog__meta folio">
+              <span data-catalog-count>— drawers</span>
+              <span>Filed 2026</span>
+            </p>
+          </div>
+        </header>
+
+        <ul class="catalog__list" data-catalog-grid aria-label="Component categories"></ul>
+      </section>
+    </main>
+  </body>
+</html>

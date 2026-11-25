@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typography &amp; Media · MY Motion Maktaba</title>
+    <meta name="theme-color" content="#a07a52" />
+
+    <script>
+      try { if (sessionStorage.getItem('mm:transition') !== null) document.documentElement.classList.add('is-arriving'); } catch (e) {}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <link rel="stylesheet" href="../src/styles/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.15.1/index.js",
+          "gsap/ScrollTrigger": "https://cdn.jsdelivr.net/npm/gsap@3.15.1/ScrollTrigger.js",
+          "gsap/Flip": "https://cdn.jsdelivr.net/npm/gsap@3.15.1/Flip.js",
+          "lenis": "https://cdn.jsdelivr.net/npm/lenis@1.3.28/dist/lenis.mjs"
+        }
+      }
+    </script>
+    <script type="module" src="../src/js/main.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <header
+        data-section="library-header"
+        data-category="typography-media"
+        class="library-header paper-kraft tear-edge--bottom tear-v1"
+      ></header>
+
+      <!-- CONTENT — the design lab. Designs: src/js/specimens/typography-media/ (listed in index.js) -->
+      <section class="library-content lab-wrap" data-section="specimen-lab" data-category="typography-media" aria-label="Typography & Media designs"></section>
+    </main>
+  </body>
+</html>

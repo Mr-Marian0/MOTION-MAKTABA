@@ -1,0 +1,41 @@
+/* Read More */
+.sp-more { display: grid; place-items: center; }
+.sp-more__card {
+  width: 26em;
+  padding: 1.3em 1.5em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.5em;
+  box-shadow: 0.3em 0.3em 0 var(--color-ink);
+}
+.sp-more__card h4 { margin: 0 0 0.5em; font: 400 1.9em/1 var(--font-display); }
+.sp-more__clip {
+  position: relative;
+  overflow: hidden;
+  font: 1.1em/1.5 var(--font-display);
+}
+.sp-more__clip p { margin: 0; }
+/* The fade: a paper-colored veil over the last line, lifted when open. */
+.sp-more__clip::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1.5em;
+  background: linear-gradient(transparent, var(--color-bone));
+  transition: opacity 0.4s;
+}
+.sp-more__clip.is-open::after { opacity: 0; }
+.sp-more__btn {
+  margin-top: 0.8em;
+  padding: 0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sp-accent);
+  background: none;
+  border: 0;
+  border-bottom: 1.5px solid currentColor;
+  cursor: pointer;
+}
+.sp-more__btn i { display: inline-block; font-style: normal; }

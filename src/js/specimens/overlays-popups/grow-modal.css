@@ -1,0 +1,24 @@
+/* Grow-from-Button Modal */
+.sp-modal { overflow: hidden; }
+.sp-modal__page { display: grid; align-content: center; justify-items: start; gap: 0.6em; height: 100%; padding: 0 12%; }
+.sp-modal__page .sp-line { margin: 0; }
+.sp-modal__open,
+.sp-modal__btn { padding: 0.75em 1.4em; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2em; cursor: pointer; }
+.sp-modal__open { margin: 0.6em 0; color: var(--color-bone); background: var(--sp-accent); border: 0; }
+.sp-modal__backdrop { position: absolute; inset: 0; background: rgb(17 17 17 / 0.35); opacity: 0; }
+.sp-modal__box {
+  position: absolute;
+  display: grid;
+  align-content: center;
+  gap: 0.6em;
+  overflow: hidden;
+  padding: 1.4em 1.8em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  box-shadow: 0.35em 0.35em 0 var(--color-ink);
+}
+.sp-modal__box h4 { margin: 0; font: 400 2em/1 var(--font-display); }
+.sp-modal__box p { margin: 0 0 0.6em; line-height: 1.5; }
+.sp-modal__row { display: flex; gap: 0.6em; }
+.sp-modal__btn { color: var(--color-ink); background: none; border: 1.5px solid var(--color-ink); }
+.sp-modal__btn--go { color: var(--color-bone); background: var(--sp-accent); border-color: var(--sp-accent); }

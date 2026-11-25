@@ -1,0 +1,89 @@
+/* ==========================================================================
+   LIBRARY PAGES — category page shell (library/*.html)
+   Header is rendered by src/js/sections/library-header.js.
+   ========================================================================== */
+
+.library-header {
+  --tear-depth: 22px;
+  --tear-period: 320px;
+  position: relative;
+  z-index: 2; /* stays above lab cards while they animate */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 2rem;
+  min-height: 78svh;
+  padding:
+    clamp(1.25rem, 3vw, 2.5rem)
+    clamp(1rem, 4vw, 4rem)
+    calc(clamp(2rem, 5vw, 4rem) + var(--tear-depth));
+  color: var(--color-ink);
+}
+
+.library-header__nav,
+.library-header__foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.library-header__body {
+  align-self: end;
+  max-width: 72rem;
+}
+.library-header__code {
+  margin-bottom: 1.25rem;
+  opacity: 0.75;
+}
+.library-header__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 12vw, 12rem);
+  font-weight: 400;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  line-height: 0.88;
+  letter-spacing: -0.045em;
+}
+.library-header__desc {
+  max-width: 46ch;
+  margin-top: 1.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  line-height: 1.45;
+}
+
+/* Text link with an ink underline that draws in on hover. */
+/* Header links (back to catalog, previous / next drawer): a tag-like label
+   that stays readable on kraft and fills with ink on hover. */
+.mm-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.65em 1em;
+  font-weight: 600;
+  color: var(--color-ink);
+  text-decoration: none;
+  background: rgb(244 236 222 / 0.55);
+  border: 1px solid rgb(17 17 17 / 0.6);
+  border-radius: 2px;
+  box-shadow: 2px 2px 0 rgb(17 17 17 / 0.85);
+  opacity: 1;
+  transition:
+    color var(--dur-fast),
+    background-color var(--dur-fast),
+    transform var(--dur-base) var(--ease-settle),
+    box-shadow var(--dur-base) var(--ease-settle);
+}
+.mm-link:hover,
+.mm-link:focus-visible {
+  color: var(--color-bone);
+  background: var(--color-ink);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 rgb(17 17 17 / 0.45);
+  outline: none;
+}
+
+/* Left empty on purpose: this drawer's content goes here later. */
+.library-content {
+  min-height: 60vh;
+  padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 4vw, 4rem);
+}

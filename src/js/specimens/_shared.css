@@ -1,0 +1,61 @@
+/* ==========================================================================
+   SHARED DESIGN STYLES: loaded by the lab once, before every design's own CSS.
+   Every design fills its .lab-stage and sizes itself in em from the stage
+   width (cqi), so the same code works in a card and on the workbench.
+   Tweakable values arrive as custom properties on the stage, e.g.
+   --sp-accent, --sp-fill, --sp-thick, --sp-persp (see `css:` in meta.params).
+   ========================================================================== */
+
+.sp {
+  position: absolute;
+  inset: 0;
+  font: 500 clamp(0.62rem, 2.25cqi, 1rem) / 1.3 var(--font-mono);
+  color: var(--color-ink);
+}
+.sp a { color: inherit; text-decoration: none; }
+.sp ul, .sp ol { margin: 0; padding: 0; list-style: none; }
+
+/* A paper nav bar most navigation designs start from. */
+.sp-bar {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 1.6em;
+  margin: 1.4em 1.4em 0;
+  padding: 0.9em 1.2em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.4em;
+  box-shadow: 0.25em 0.25em 0 var(--color-ink);
+}
+.sp-bar > ul { display: flex; gap: 1.3em; }
+.sp-bar a, .sp-bar button { letter-spacing: 0.1em; text-transform: uppercase; }
+.sp-logo { font: italic 400 1.6em/1 var(--font-display); letter-spacing: -0.04em; }
+
+/* "Hover the links…" hint at the bottom of the stage. */
+.sp-note {
+  position: absolute;
+  right: 0;
+  bottom: 1em;
+  left: 0;
+  font-size: 0.78em;
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.sp-note--inline { position: static; margin: 0 0 1.2em; text-align: left; }
+
+/* Placeholder text lines (bars() in _kit.js). */
+.sp-line {
+  display: block;
+  width: var(--w, 80%);
+  height: 0.5em;
+  margin-bottom: 0.75em;
+  background: rgb(17 17 17 / 0.12);
+  border-radius: 1em;
+}
+.sp button { font-family: inherit; }
+.sp :focus-visible { outline: 2px solid var(--sp-accent, var(--color-ink)); outline-offset: 3px; }

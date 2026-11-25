@@ -1,0 +1,60 @@
+/* ==========================================================================
+   ORNAMENTS — tape, staples, stamps, folio marks.
+   ========================================================================== */
+
+/* Masking tape: translucent, slightly crinkled. Combine with .tear-edge--*
+   for ripped ends. */
+.tape {
+  --tear-depth: 7px;
+  --tear-period: 34px;
+  display: block;
+  height: 2.4rem;
+  background-color: rgb(232 220 192 / 0.88);
+  background-image:
+    var(--tex-noise),
+    linear-gradient(180deg, rgb(255 255 255 / 0.25), transparent 40%, rgb(62 44 31 / 0.08));
+  background-blend-mode: soft-light, normal;
+  box-shadow: 0 1px 2px rgb(17 17 17 / 0.15);
+}
+
+/* Staple: two tiny legs and a bridge. */
+.staple {
+  display: block;
+  width: 2.2rem;
+  height: 0.35rem;
+  border: 2px solid #8d8d8d;
+  border-bottom: 0;
+  border-radius: 2px 2px 0 0;
+  box-shadow: 0 1px 0 rgb(255 255 255 / 0.6), 0 2px 3px rgb(17 17 17 / 0.3);
+}
+
+/* Rubber stamp: double ring, uneven ink. */
+.stamp {
+  display: grid;
+  place-items: center;
+  width: 7.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  outline: 1px solid currentColor;
+  outline-offset: -8px;
+  color: rgb(17 17 17 / 0.72);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  line-height: 1.5;
+  letter-spacing: 0.18em;
+  text-align: center;
+  text-transform: uppercase;
+  mix-blend-mode: multiply;
+  /* Uneven ink: a soft blotch fades one side, like a stamp pressed unevenly. */
+  -webkit-mask: radial-gradient(circle at 35% 30%, #000 45%, rgb(0 0 0 / 0.55) 75%);
+  mask: radial-gradient(circle at 35% 30%, #000 45%, rgb(0 0 0 / 0.55) 75%);
+}
+
+/* Folio: printed-journal page marks. */
+.folio {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}

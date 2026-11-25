@@ -1,0 +1,55 @@
+/* EFFECT DEMO — tear-wipe: a torn kraft sheet sweeps across, swapping pages */
+
+.fx-wipe {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.fx-wipe__page {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.4rem;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+.fx-wipe__page--alt {
+  background: var(--color-ink);
+  color: var(--color-bone);
+}
+.fx-wipe__page span {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.fx-wipe__page small {
+  font: 500 0.58rem/1 var(--font-mono);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* The sheet is wider than the stage so its torn edges start off-screen. */
+.fx-wipe__sheet {
+  position: absolute;
+  top: -6%;
+  bottom: -6%;
+  left: -15%;
+  z-index: 2;
+  width: 130%;
+  filter: drop-shadow(0 6px 12px rgb(17 17 17 / 0.35));
+  will-change: transform;
+}
+.fx-wipe__edge,
+.fx-wipe__paper {
+  position: absolute;
+  inset: 0;
+}
+.fx-wipe__edge {
+  --tear-depth: 16px;
+  --tear-period: 90px;
+}

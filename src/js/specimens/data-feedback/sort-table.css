@@ -1,0 +1,9 @@
+/* Gliding Sort Table: rows are relative so the y offset (FLIP) moves them visually. */
+.sp-table { display: grid; place-items: center; }
+.sp-table__t { width: 26em; border-collapse: collapse; background: var(--color-bone); border: 1.5px solid var(--color-ink); box-shadow: 0.25em 0.25em 0 var(--color-ink); }
+.sp-table__t th { padding: 0; text-align: left; background: var(--color-ink); }
+.sp-table__sort { width: 100%; padding: 0.7em 0.9em; font: inherit; letter-spacing: 0.1em; text-align: left; text-transform: uppercase; color: var(--color-bone); background: none; border: 0; cursor: pointer; }
+.sp-table__sort i { font-style: normal; opacity: 0.7; }
+.sp-table__row { position: relative; }
+.sp-table__row td { padding: 0.6em 0.9em; border-top: 1px solid rgb(17 17 17 / 0.12); }
+.sp-table__row td:first-child { font: 400 1.15em/1 var(--font-display); }

@@ -1,0 +1,9 @@
+/* Living Icons: stroke width comes from the --sp-stroke control. */
+.sp-icons { display: grid; place-items: center; }
+.sp-icons__row { display: flex; gap: 1.6em; }
+.sp-icons__cell { display: grid; justify-items: center; gap: 0.5em; }
+.sp-icons__cell small { font-size: 0.75em; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55; }
+.sp-icons__btn { display: grid; place-items: center; width: 4.6em; height: 4.6em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 1em; box-shadow: 0.2em 0.2em 0 var(--color-ink); cursor: pointer; }
+.sp-icons__btn svg { width: 2.6em; overflow: visible; }
+.sp-icons__btn path { fill: none; stroke: var(--sp-accent); stroke-width: var(--sp-stroke, 1.75); stroke-linecap: round; stroke-linejoin: round; }
+.sp-icons__btn g { transform-box: fill-box; }

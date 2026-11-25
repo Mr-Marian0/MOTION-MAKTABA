@@ -1,0 +1,29 @@
+/* Curtain Footer: the footer is fixed at the bottom of the stage, behind a scrolling page.
+   An empty gap at the end of the scroller (same height as the footer) lets it show through. */
+.sp-foot { overflow: hidden; }
+.sp-foot__footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  align-content: end;
+  height: 55%;
+  padding: 1.2em 1.6em;
+  color: var(--color-bone);
+  background: var(--sp-accent);
+}
+.sp-foot__links { display: flex; gap: 1.6em; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.7; }
+.sp-foot__word { display: flex; overflow: hidden; font: italic 400 6em/1 var(--font-display); letter-spacing: -0.04em; }
+.sp-foot__ch { display: inline-block; }
+.sp-foot__scroller { position: absolute; inset: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+.sp-foot__page {
+  min-height: 100%;
+  padding: 1.6em 2em 2em;
+  background: var(--color-paper-core);
+  border-bottom: 1.5px solid var(--color-ink);
+  box-shadow: 0 0.6em 1.2em rgb(17 17 17 / 0.3);
+}
+.sp-foot__page small { letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55; }
+.sp-foot__page h4 { margin: 0.4em 0 0.8em; font: 400 2.4em/1 var(--font-display); }
+.sp-foot__gap { height: 55%; }

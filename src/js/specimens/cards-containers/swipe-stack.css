@@ -1,0 +1,33 @@
+/* Swipe Stack */
+.sp-stack { display: grid; place-content: center; justify-items: center; gap: 1.8em; }
+.sp-stack__deck { position: relative; width: 13em; height: 15em; touch-action: pan-y; }
+.sp-stack__card {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: start;
+  gap: 0.3em;
+  padding: 1.1em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-top: 0.5em solid var(--sp-accent);
+  border-radius: 0.5em;
+  box-shadow: 0.2em 0.2em 0 rgb(17 17 17 / 0.25);
+  cursor: grab;
+  user-select: none;
+}
+.sp-stack__card:active { cursor: grabbing; }
+.sp-stack__card b { font: 400 1.8em/1 var(--font-display); }
+.sp-stack__card small { margin-bottom: 0.8em; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55; }
+.sp-stack__btns { display: flex; gap: 0.8em; }
+.sp-stack__btn {
+  width: 2.6em;
+  height: 2.6em;
+  font-size: 1.1em;
+  color: var(--color-ink);
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 50%;
+  box-shadow: 0.12em 0.12em 0 var(--color-ink);
+  cursor: pointer;
+}

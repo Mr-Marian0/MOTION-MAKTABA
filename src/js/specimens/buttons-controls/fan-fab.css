@@ -1,0 +1,33 @@
+/* Fan FAB: actions sit centered under the main button until they fan out. */
+.sp-fab__main,
+.sp-fab__act {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.sp-fab__main {
+  z-index: 2;
+  right: 2.4em;
+  bottom: 2.4em;
+  width: 4em;
+  height: 4em;
+  color: var(--color-bone);
+  background: var(--sp-accent);
+  border: 0;
+  box-shadow: 0.25em 0.25em 0 var(--color-kraft);
+}
+.sp-fab__main i { font: 300 2.4em/1 var(--font-display); font-style: normal; }
+.sp-fab__act {
+  right: 2.6em;
+  bottom: 2.6em;
+  width: 3.6em;
+  height: 3.6em;
+  letter-spacing: 0;
+  color: var(--color-ink);
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  box-shadow: 0.15em 0.15em 0 var(--color-ink);
+}
+.sp-fab .sp-note { right: auto; left: 1.6em; text-align: left; }

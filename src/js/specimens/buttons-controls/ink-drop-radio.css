@@ -1,0 +1,25 @@
+/* Ink Drop Radio: rows are a fixed 2.2em tall so the drop moves in em, no measuring. */
+.sp-radio { display: grid; place-items: center; }
+.sp-radio fieldset { margin: 0; padding: 0; border: 0; }
+.sp-radio legend { padding: 0; }
+.sp-radio__list { position: relative; font-size: 1.1em; }
+.sp-radio label { display: flex; align-items: center; gap: 0.8em; height: 2.2em; cursor: pointer; }
+.sp-radio input { position: absolute; opacity: 0; pointer-events: none; }
+.sp-radio__ring {
+  width: 1.4em;
+  height: 1.4em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 50%;
+}
+.sp-radio input:focus-visible + .sp-radio__ring { outline: 2px solid var(--sp-accent); outline-offset: 3px; }
+.sp-radio__drop {
+  position: absolute;
+  top: 0.75em;
+  left: 0.35em;
+  width: 0.7em;
+  height: 0.7em;
+  background: var(--sp-accent);
+  border-radius: 50%;
+  pointer-events: none;
+}

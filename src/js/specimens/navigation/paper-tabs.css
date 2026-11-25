@@ -1,0 +1,36 @@
+/*Folder Tabs */
+.sp-tabs {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 1.4em 1.6em 1.6em;
+}
+.sp-tabs__list { position: relative; z-index: 20; display: flex; gap: 0.3em; padding-left: 0.8em; }
+.sp-tabs__list button {
+  margin-bottom: -1.5px;
+  padding: 0.65em 1.05em 0.55em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: var(--color-kraft-core);
+  border: 1.5px solid var(--color-ink);
+  border-bottom: 0;
+  border-radius: 0.5em 0.5em 0 0;
+  cursor: pointer;
+}
+.sp-tabs__list button[aria-selected="true"] { padding-top: 0.85em; color: var(--color-bone); background: var(--sp-accent, var(--color-kraft)); }
+.sp-tabs__deck { position: relative; }
+.sp-tabs__sheet {
+  position: absolute;
+  inset: 0;
+  padding: 1.3em 1.4em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-top: 5px solid var(--sp-accent, var(--color-kraft));
+  box-shadow: 0.2em 0.2em 0 rgb(17 17 17 / 0.18);
+}
+.sp-tabs__sheet b { display: block; font: 400 1.9em/1 var(--font-display); }
+/* Portrait layout (also used by Book Tabs): a tall, narrow deck. */
+.sp-tabs[data-layout="Portrait"] { left: 50%; width: min(100%, 19em); translate: -50%; padding-inline: 0.6em; }
+.sp-tabs[data-layout="Portrait"] .sp-tabs__list { gap: 0.15em; padding-left: 0.4em; }
+.sp-tabs[data-layout="Portrait"] .sp-tabs__list button { padding-inline: 0.55em; font-size: 0.78em; letter-spacing: 0.04em; }
+.sp-tabs__sheet small { display: block; margin: 0.4em 0 1em; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.5; }

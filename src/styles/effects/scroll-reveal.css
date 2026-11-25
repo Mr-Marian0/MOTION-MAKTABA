@@ -1,0 +1,54 @@
+/* EFFECT DEMO — scroll-reveal: torn paper strips + progress readout */
+
+.fx-strips {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 2.4rem 1.25rem 1.5rem;
+}
+
+.fx-strips__bar {
+  --tear-depth: 9px;
+  --tear-period: 44px;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  width: 64%;
+  height: clamp(2rem, 3.4vw, 2.8rem);
+  padding: 0 1.4rem 0 0.9rem;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font: 500 0.7rem/1 var(--font-mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  will-change: transform;
+}
+.fx-strips__bar:nth-child(2) { width: 52%; }
+.fx-strips__bar:nth-child(3) { width: 72%; }
+.fx-strips__bar:nth-child(4) { width: 46%; }
+.fx-strips__bar:nth-child(5) { width: 58%; }
+.fx-strips__bar i {
+  font-style: normal;
+  color: var(--color-kraft);
+}
+
+.fx-strips__readout {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 0.4rem;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--color-bone);
+}
+.fx-strips__readout::after {
+  content: "%";
+  font-size: 0.35em;
+  margin-left: 0.1em;
+  color: var(--color-kraft);
+}

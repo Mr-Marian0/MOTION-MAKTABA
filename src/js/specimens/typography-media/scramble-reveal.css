@@ -1,0 +1,4 @@
+/* Decoder Reveal: monospace so the noise doesn't make the line jump. */
+.sp-dec { display: grid; place-items: center; }
+.sp-dec__line { max-width: 90%; padding: 0.4em; font: 500 2.3em/1.2 var(--font-mono); text-align: center; color: var(--color-ink); background: none; border: 0; cursor: pointer; }
+.sp-dec__line i { font-style: normal; color: var(--sp-accent); }

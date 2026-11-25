@@ -1,0 +1,29 @@
+/* Push Panel */
+.sp-push { overflow: hidden; }
+.sp-push__panel {
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 2;
+  display: grid;
+  align-content: start;
+  gap: 0.8em;
+  width: 42%;
+  padding: 1.4em 1.2em;
+  background: var(--sp-accent);
+  border-right: 1.5px solid var(--color-ink);
+}
+.sp-push__sec { padding: 0.8em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.3em; }
+.sp-push__sec b { display: block; margin-bottom: 0.6em; letter-spacing: 0.12em; text-transform: uppercase; }
+.sp-push__page { position: absolute; inset: 0; padding: 1.4em 2em; }
+.sp-push__page h4 { margin: 1em 0 0.6em; font: 400 2.4em/1 var(--font-display); }
+.sp-push__btn {
+  padding: 0.6em 1em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-bone);
+  background: var(--color-ink);
+  border: 0;
+  border-radius: 2em;
+  cursor: pointer;
+}
+.sp-push__close { justify-self: start; }

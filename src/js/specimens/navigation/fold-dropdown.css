@@ -1,0 +1,27 @@
+/*Paper Fold Dropdown */
+.sp-fold__nav { align-items: center; }
+.sp-fold__has { position: relative; }
+.sp-fold__trigger { padding: 0; font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+.sp-fold__trigger em { display: inline-block; margin-left: 0.3em; font-style: normal; }
+.sp-fold__menu {
+  position: absolute;
+  top: calc(100% + 1.25em);
+  left: -1em;
+  z-index: 5;
+  width: 11.5em;
+  perspective: var(--sp-persp, 500px);
+  visibility: hidden;
+}
+.sp-fold__menu li { transform-origin: top center; }
+.sp-fold__menu a {
+  display: block;
+  padding: 0.75em 1em;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-top-width: 0;
+}
+.sp-fold__menu li:first-child a { border-top-width: 1.5px; }
+.sp-fold__menu li:nth-child(even) a { background: var(--color-kraft-core); }
+.sp-fold__menu a:hover { color: var(--color-bone); background: var(--color-ink); }

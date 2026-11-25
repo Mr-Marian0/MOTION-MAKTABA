@@ -1,0 +1,38 @@
+/* Paper Tray Upload */
+.sp-up { display: grid; grid-template-columns: 14em 14em; align-content: center; justify-content: center; gap: 0.8em 1.4em; }
+.sp-up__zone {
+  display: grid;
+  place-content: center;
+  gap: 0.3em;
+  height: 9em;
+  text-align: center;
+  background: var(--color-bone);
+  border: 2px dashed var(--color-ink);
+  border-radius: 0.6em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.sp-up__zone.is-over { background: var(--color-kraft-core); border-style: solid; }
+.sp-up__zone:focus-within { outline: 2px solid var(--sp-accent); outline-offset: 3px; }
+.sp-up__zone b { font: 400 1.4em/1 var(--font-display); }
+.sp-up__zone small { opacity: 0.6; }
+.sp-up__input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.sp-up__sample { grid-column: 1; justify-self: center; padding: 0.5em 1em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink); background: none; border: 1.5px solid var(--color-ink); border-radius: 2em; cursor: pointer; }
+.sp-up__list { grid-column: 2; grid-row: 1 / span 2; display: grid; align-content: start; gap: 0.5em; }
+.sp-up__file {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.5em 0.6em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.3em;
+  box-shadow: 0.15em 0.15em 0 rgb(17 17 17 / 0.25);
+}
+.sp-up__file span { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sp-up__ring { flex: none; width: 1.6em; rotate: -90deg; }
+.sp-up__ring circle, .sp-up__ring path { fill: none; stroke: var(--sp-accent); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.sp-up__ring path { rotate: 90deg; transform-origin: center; }
+.sp-up__file.is-done .sp-up__ring circle { fill: var(--sp-accent); }
+.sp-up__file.is-done .sp-up__ring path { stroke: var(--color-bone); }
+.sp-up__x { color: var(--color-ink); background: none; border: 0; cursor: pointer; opacity: 0.6; }

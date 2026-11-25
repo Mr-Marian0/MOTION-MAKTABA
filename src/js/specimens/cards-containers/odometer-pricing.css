@@ -1,0 +1,24 @@
+/* Odometer Pricing */
+.sp-odo { display: grid; place-content: center; justify-items: center; gap: 1.6em; }
+.sp-odo__switch { position: relative; display: grid; grid-template-columns: 1fr 1fr; padding: 0.25em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 2em; }
+.sp-odo__switch button { position: relative; z-index: 1; padding: 0.5em 1.1em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink); background: none; border: 0; cursor: pointer; transition: color 0.3s; }
+.sp-odo__switch [aria-checked="true"] { color: var(--color-bone); }
+.sp-odo__pill { position: absolute; top: 0.25em; bottom: 0.25em; left: 0.25em; width: calc(50% - 0.25em); background: var(--color-ink); border-radius: 2em; }
+.sp-odo__cards { display: flex; gap: 1.2em; }
+.sp-odo__card {
+  width: 11em;
+  padding: 1em 1.1em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.5em;
+  box-shadow: 0.25em 0.25em 0 var(--color-ink);
+}
+.sp-odo__card.is-featured { color: var(--color-bone); background: var(--sp-accent); }
+.sp-odo__card.is-featured .sp-line { background: rgb(250 250 247 / 0.35); }
+.sp-odo__plan { margin: 0; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.7; }
+.sp-odo__price { display: flex; align-items: baseline; margin: 0.3em 0 0.8em; font: 400 2.8em/1 var(--font-display); }
+.sp-odo__price > span[aria-hidden] { display: inline-flex; align-items: flex-start; height: 1em; overflow: hidden; }
+.sp-odo__price small { margin-left: 0.2em; font: 0.3em var(--font-mono); opacity: 0.7; }
+.sp-odo__col { display: flex; flex-direction: column; flex-shrink: 0; width: 0.62em; height: 10em; } /* 10 rows: yPercent -10 = one digit */
+.sp-odo__col span { height: 1em; line-height: 1; text-align: center; font-variant-numeric: lining-nums tabular-nums; }
+.sp-odo__sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }

@@ -1,0 +1,42 @@
+/* ==========================================================================
+   MAIN STYLESHEET — plain CSS, no build step.
+   Tailwind utilities come from the Tailwind browser script in the HTML.
+
+   Layer order is declared up front, so Tailwind utilities always win over
+   our component styles, and component styles win over base.
+
+   Adding a section: create sections/<name>.css and import it below.
+   Adding an effect: create effects/<name>.css and import it below.
+   ========================================================================== */
+
+@layer theme, base, components, utilities;
+
+@import url("./tokens.css");
+
+@import url("./base.css") layer(base);
+
+/* Paper system (reusable anywhere) */
+@import url("./paper/textures.css") layer(components);
+@import url("./paper/tear.css") layer(components);
+@import url("./paper/ornaments.css") layer(components);
+
+/* Shared components */
+@import url("./components/page-transition.css") layer(components);
+
+/* Sections */
+@import url("./sections/portal-hero.css") layer(components);
+@import url("./sections/card-catalog.css") layer(components);
+
+/* Pages */
+@import url("./pages/library.css") layer(components);
+@import url("./pages/lab.css") layer(components);
+
+/* Design styles (src/js/specimens/**.css) are loaded by the lab itself. */
+
+/* Effects */
+@import url("./effects/scroll-reveal.css") layer(components);
+@import url("./effects/letter-scatter.css") layer(components);
+@import url("./effects/magnetic-hover.css") layer(components);
+@import url("./effects/tear-wipe.css") layer(components);
+@import url("./effects/line-draw.css") layer(components);
+@import url("./effects/ui-specimen.css") layer(components);

@@ -1,0 +1,36 @@
+/* Ink Toggle */
+.sp-toggle { display: grid; place-items: center; }
+.sp-toggle__btn {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-size: 1.05em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.sp-toggle__track {
+  position: relative;
+  width: 4.4em;
+  height: 2.2em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 2em;
+  box-shadow: 0.15em 0.15em 0 var(--color-ink);
+  transition: background-color 0.3s;
+}
+.sp-toggle__knob {
+  position: absolute;
+  top: 0.25em;
+  left: 0.25em;
+  width: 1.45em;
+  height: 1.45em;
+  background: var(--sp-accent);
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+.sp-toggle__btn[aria-checked="true"] .sp-toggle__track { background: var(--sp-accent); }
+.sp-toggle__btn[aria-checked="true"] .sp-toggle__knob { background: var(--color-bone); }

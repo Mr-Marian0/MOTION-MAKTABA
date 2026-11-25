@@ -1,0 +1,28 @@
+/* Scribble Check */
+.sp-check { display: grid; place-items: center; }
+.sp-check ul { display: grid; gap: 0.9em; }
+.sp-check label { display: flex; align-items: center; gap: 0.9em; font-size: 1.1em; cursor: pointer; }
+.sp-check input { position: absolute; opacity: 0; pointer-events: none; }
+.sp-check__box {
+  display: grid;
+  width: 1.6em;
+  height: 1.6em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.25em;
+  box-shadow: 0.12em 0.12em 0 var(--color-ink);
+}
+.sp-check svg { width: 100%; overflow: visible; }
+.sp-check path { fill: none; stroke: var(--sp-accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.sp-check input:focus-visible + .sp-check__box { outline: 2px solid var(--sp-accent); outline-offset: 3px; }
+.sp-check__text { position: relative; }
+.sp-check__text i {
+  position: absolute;
+  top: 52%;
+  left: -0.2em;
+  right: -0.2em;
+  height: 0.14em;
+  background: var(--sp-accent);
+  border-radius: 1em;
+  transform-origin: left center;
+}

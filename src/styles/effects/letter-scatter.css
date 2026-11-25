@@ -1,0 +1,23 @@
+/* EFFECT DEMO — letter-scatter: one big italic word made of loose type */
+
+/* Flex (not grid) so the letters stay on one line instead of each
+   becoming its own grid row. */
+.fx-scatter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.fx-scatter__char {
+  display: inline-block;
+  will-change: transform;
+}

@@ -1,0 +1,5 @@
+/* Ink Blob Loader */
+.sp-goo { display: grid; place-content: center; justify-items: center; gap: 1em; }
+.sp-goo__svg { width: 12em; overflow: visible; }
+.sp-goo__ink circle { fill: var(--sp-accent); }
+.sp-goo__label { margin: 0; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6; }

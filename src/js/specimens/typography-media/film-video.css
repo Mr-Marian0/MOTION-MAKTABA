@@ -1,0 +1,10 @@
+/* Paper Film Player */
+.sp-film { display: grid; place-items: center; }
+.sp-film__player { width: 26em; margin: 0; overflow: hidden; background: var(--color-ink); border: 1.5px solid var(--color-ink); border-radius: 0.5em; box-shadow: 0.3em 0.3em 0 var(--color-kraft); }
+.sp-film__screen { display: block; width: 100%; }
+.sp-film__bar { display: flex; align-items: center; gap: 0.8em; padding: 0.6em 0.8em; color: var(--color-bone); }
+.sp-film__play { flex: none; display: grid; place-items: center; width: 2.4em; height: 2.4em; padding: 0; background: var(--color-bone); border: 0; border-radius: 50%; cursor: pointer; }
+.sp-film__play svg { width: 1.4em; }
+.sp-film__play path { fill: var(--color-ink); }
+.sp-film__seek { flex: 1; accent-color: var(--sp-accent); cursor: pointer; }
+.sp-film__time { width: 3em; font-variant-numeric: tabular-nums; text-align: right; opacity: 0.8; }

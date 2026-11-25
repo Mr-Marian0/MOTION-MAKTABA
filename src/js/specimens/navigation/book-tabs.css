@@ -1,0 +1,13 @@
+/* Book Tabs: builds on Folder Tabs (tabs, sheets, portrait layout); adds the page turn. */
+@import url('paper-tabs.css');
+
+.sp-book { padding-bottom: 2.6em; }
+.sp-book .sp-tabs__deck { perspective: 55em; touch-action: pan-y; cursor: grab; }
+.sp-book .sp-tabs__deck:active { cursor: grabbing; }
+.sp-book .sp-tabs__sheet {
+  transform-origin: left center;
+  backface-visibility: hidden;
+  user-select: none;
+  background-image: linear-gradient(90deg, rgb(17 17 17 / 0.14), transparent 1.4em);
+}
+.sp-book .sp-note { position: absolute; bottom: 0.8em; left: 0; right: 0; text-align: center; }

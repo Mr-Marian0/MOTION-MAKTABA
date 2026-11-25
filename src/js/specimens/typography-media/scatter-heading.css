@@ -1,0 +1,4 @@
+/* Loose Type */
+.sp-loose { display: grid; place-items: center; }
+.sp-loose__h { display: flex; margin: 0; padding: 0.3em 0.5em; font: 400 5em/1 var(--font-display); letter-spacing: -0.03em; color: var(--sp-accent); cursor: default; }
+.sp-loose__ch { display: inline-block; }

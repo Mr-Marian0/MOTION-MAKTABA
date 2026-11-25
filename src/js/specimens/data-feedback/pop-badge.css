@@ -1,0 +1,39 @@
+/* Counting Badge */
+.sp-badge { display: grid; place-content: center; justify-items: center; gap: 1.4em; }
+.sp-badge__inbox { position: relative; display: grid; place-items: center; width: 5em; height: 5em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 1em; box-shadow: 0.2em 0.2em 0 var(--color-ink); }
+.sp-badge__icon { font-size: 2.4em; line-height: 1; }
+.sp-badge__count {
+  position: absolute;
+  top: -0.7em;
+  right: -0.7em;
+  display: grid;
+  place-items: center;
+  min-width: 1.8em;
+  height: 1.8em;
+  padding: 0 0.4em;
+  overflow: hidden;
+  font-weight: 500;
+  color: var(--color-bone);
+  background: var(--sp-accent);
+  border: 0.15em solid var(--color-paper);
+  border-radius: 2em;
+}
+.sp-badge__num { display: block; }
+.sp-badge__btns { display: flex; gap: 0.6em; }
+.sp-badge__btn { padding: 0.55em 1em; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink); background: none; border: 1.5px solid var(--color-ink); border-radius: 2em; cursor: pointer; }
+.sp-badge__btn[data-add] { color: var(--color-bone); background: var(--color-ink); }
+.sp-badge__new {
+  position: absolute;
+  top: 1.4em;
+  left: 1.6em;
+  padding: 0.3em 0.7em;
+  font-size: 0.8em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-bone);
+  background: linear-gradient(110deg, transparent 40%, rgb(255 255 255 / 0.7) 50%, transparent 60%) -100% 0 / 250% 100% no-repeat, #4f6b4a;
+  border-radius: 0.3em;
+}
+.sp-badge__new.is-shine { animation: sp-badge-shine 1.2s ease 0.4s 2; }
+@keyframes sp-badge-shine { to { background-position: 200% 0; } }
+@media (prefers-reduced-motion: reduce) { .sp-badge__new.is-shine { animation: none; } }

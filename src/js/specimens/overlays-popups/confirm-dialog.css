@@ -1,0 +1,23 @@
+/* Shake-to-Decide Dialog */
+.sp-dlg { display: grid; place-content: center; justify-items: center; gap: 1em; }
+.sp-dlg__trigger,
+.sp-dlg__btn { padding: 0.7em 1.3em; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink); background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 2em; cursor: pointer; }
+.sp-dlg__backdrop { position: absolute; inset: 0; background: rgb(17 17 17 / 0.4); }
+.sp-dlg__box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22em;
+  margin: -6em 0 0 -11em;
+  padding: 1.4em 1.6em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-top: 0.4em solid var(--sp-accent);
+  border-radius: 0.5em;
+  box-shadow: 0.35em 0.35em 0 var(--color-ink);
+}
+.sp-dlg__box h4 { margin: 0 0 0.4em; font: 400 1.7em/1.1 var(--font-display); }
+.sp-dlg__box p { margin: 0 0 1.2em; line-height: 1.5; opacity: 0.75; }
+.sp-dlg__row { display: flex; justify-content: flex-end; gap: 0.6em; }
+.sp-dlg__btn--danger { color: var(--color-bone); background: var(--sp-accent); border-color: var(--sp-accent); }
+.sp-dlg__status { min-height: 1.3em; margin: 0; font-size: 0.9em; opacity: 0.7; }

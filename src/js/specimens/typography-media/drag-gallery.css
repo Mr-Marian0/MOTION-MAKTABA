@@ -1,0 +1,15 @@
+/* Contact Strip: each print gets its own little scene from --i. */
+.sp-strip { display: grid; align-content: center; }
+.sp-strip__view { overflow: hidden; padding: 1.2em 0; background: var(--color-ink); cursor: grab; touch-action: pan-y; user-select: none; }
+.sp-strip__view:active { cursor: grabbing; }
+.sp-strip__track { display: flex; gap: 1em; width: max-content; padding: 0 2em; }
+.sp-strip__frame { display: grid; gap: 0.3em; margin: 0; color: var(--color-bone); }
+.sp-strip__frame span {
+  width: 9em;
+  height: 6.5em;
+  background:
+    radial-gradient(circle at calc(20% + var(--i) * 9%) 35%, #f3c86b 0 0.9em, transparent 1em),
+    linear-gradient(calc(var(--i) * 25deg + 160deg), var(--sp-accent) 45%, var(--color-umber) 46%);
+  border: 0.2em solid var(--color-bone);
+}
+.sp-strip__frame figcaption { font-size: 0.8em; letter-spacing: 0.14em; opacity: 0.7; }

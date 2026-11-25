@@ -1,0 +1,43 @@
+/*Magnifying Dock */
+.sp-dock .sp-note { top: 1.4em; bottom: auto; }
+.sp-dock__bar {
+  position: absolute;
+  bottom: 1.8em;
+  left: 50%;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.55em;
+  padding: 0.6em 0.7em;
+  background: rgb(250 250 247 / 0.8);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 1em;
+  box-shadow: 0.25em 0.25em 0 var(--color-ink);
+  transform: translateX(-50%);
+}
+.sp-dock__tile {
+  --s: 1;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: calc(3.2em * var(--s));
+  height: calc(3.2em * var(--s));
+  padding: 0;
+  color: var(--color-bone);
+  background: var(--sp-accent, var(--color-umber));
+  border: 0;
+  border-radius: 0.7em;
+  cursor: pointer;
+}
+.sp-dock__tile span { font-size: calc(1.35em * var(--s)); line-height: 1; }
+.sp-dock__dot {
+  position: absolute;
+  bottom: -0.6em;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: var(--color-ink);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateX(-50%);
+}
+.sp-dock__tile.is-on .sp-dock__dot { opacity: 1; }

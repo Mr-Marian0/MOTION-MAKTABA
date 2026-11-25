@@ -1,0 +1,44 @@
+/* Open the Article */
+.sp-read { display: grid; place-items: center; }
+.sp-read__grid { display: grid; grid-template-columns: repeat(3, 10.5em); gap: 1em; }
+.sp-read__card,
+.sp-read__sheet {
+  overflow: hidden;
+  text-align: left;
+  color: var(--color-ink);
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.5em;
+  box-shadow: 0.25em 0.25em 0 var(--color-ink);
+}
+.sp-read__card { display: grid; gap: 0.3em; padding: 0 0 0.9em; cursor: pointer; }
+.sp-read__card small,
+.sp-read__card b { padding: 0 0.8em; }
+.sp-read small { font-size: 0.75em; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6; }
+.sp-read b { font: 400 1.35em/1.1 var(--font-display); }
+.sp-read__pic {
+  display: block;
+  height: 7em;
+  margin-bottom: 0.4em;
+  background:
+    radial-gradient(circle at calc(30% + var(--i, 0) * 20%) 60%, var(--color-bone) 0 1.4em, transparent 1.5em),
+    var(--sp-accent);
+  transition: transform 0.5s var(--ease-settle);
+}
+.sp-read__card:hover .sp-read__pic { transform: scale(1.08); }
+.sp-read__sheet { position: absolute; z-index: 2; display: grid; grid-template-rows: 40% 1fr; }
+.sp-read__sheet .sp-read__pic { height: auto; margin: 0; }
+.sp-read__body { display: grid; align-content: start; gap: 0.4em; padding: 1em 1.4em; }
+.sp-read__body b { margin-bottom: 0.5em; font-size: 2em; }
+.sp-read__close {
+  position: absolute;
+  top: 0.7em;
+  right: 0.7em;
+  width: 2.2em;
+  height: 2.2em;
+  color: var(--color-ink);
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 50%;
+  cursor: pointer;
+}

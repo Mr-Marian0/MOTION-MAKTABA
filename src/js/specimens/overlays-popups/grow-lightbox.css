@@ -1,0 +1,23 @@
+/* Pull-to-close Lightbox: each "photo" is a little painted scene picked by --i. */
+.sp-lb { display: grid; place-items: center; overflow: hidden; }
+.sp-lb__grid { display: grid; grid-template-columns: repeat(2, 9em); gap: 0.8em; }
+.sp-lb__thumb { padding: 0; aspect-ratio: 4 / 3; background: none; border: 1.5px solid var(--color-ink); box-shadow: 0.2em 0.2em 0 var(--color-ink); cursor: zoom-in; }
+.sp-lb__pic {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at calc(25% + var(--i) * 15%) calc(30% + var(--i) * 6%), #f3c86b 0 8%, transparent 8.5%),
+    linear-gradient(calc(170deg - var(--i) * 12deg), var(--sp-accent) 55%, var(--color-kraft) 55.5% 72%, var(--color-umber) 72.5%);
+}
+.sp-lb__view { position: absolute; inset: 0; }
+.sp-lb__dark { position: absolute; inset: 0; background: rgb(17 17 17 / 0.88); }
+.sp-lb__big { position: absolute; border: 0.3em solid var(--color-bone); cursor: grab; touch-action: none; }
+.sp-lb__big:active { cursor: grabbing; }
+.sp-lb__nav,
+.sp-lb__close { position: absolute; width: 2.2em; height: 2.2em; color: var(--color-ink); background: var(--color-bone); border: 0; border-radius: 50%; cursor: pointer; }
+.sp-lb__nav { top: 50%; margin-top: -1.1em; }
+.sp-lb__nav[data-step="-1"] { left: 2%; }
+.sp-lb__nav[data-step="1"] { right: 2%; }
+.sp-lb__close { top: 0.8em; right: 0.8em; }
+.sp-lb__hint { position: absolute; bottom: 0.3em; left: 0; right: 0; font-size: 0.75em; letter-spacing: 0.12em; text-align: center; text-transform: uppercase; color: var(--color-bone); opacity: 0.6; }

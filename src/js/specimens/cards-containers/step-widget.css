@@ -1,0 +1,24 @@
+/* Step Counter */
+.sp-steps { display: grid; place-items: center; }
+.sp-steps__card {
+  display: grid;
+  grid-template-columns: 8em 1fr;
+  align-items: center;
+  gap: 0.4em 1.2em;
+  width: 22em;
+  padding: 1.2em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 1em;
+  box-shadow: 0.3em 0.3em 0 var(--color-ink);
+}
+.sp-steps__ring { grid-row: span 2; width: 8em; rotate: -90deg; }
+.sp-steps__ring circle { fill: none; stroke-width: 9; }
+.sp-steps__ring circle:first-child { stroke: rgb(17 17 17 / 0.1); }
+.sp-steps__ring circle:last-child { stroke: var(--sp-accent); stroke-linecap: round; }
+.sp-steps__num { display: grid; margin: 0; }
+.sp-steps__num b { font: 400 2.6em/1 var(--font-display); }
+.sp-steps__num small { letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; }
+.sp-steps__week { display: flex; align-items: flex-end; gap: 0.35em; height: 3em; }
+.sp-steps__week i { flex: 1; background: rgb(17 17 17 / 0.15); border-radius: 0.2em 0.2em 0 0; }
+.sp-steps__week i:last-child { background: var(--sp-accent); }

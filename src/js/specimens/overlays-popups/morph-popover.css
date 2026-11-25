@@ -1,0 +1,11 @@
+/* Shape-shifting Popover: the box is positioned with x; width/height are tweened to the inner content's size. */
+.sp-pop { display: grid; justify-content: center; align-content: start; padding-top: 3em; }
+.sp-pop__bar { position: relative; display: flex; gap: 0.4em; padding: 0.4em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 2em; box-shadow: 0.2em 0.2em 0 var(--color-ink); }
+.sp-pop__trigger { padding: 0.6em 1.1em; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink); background: none; border: 0; border-radius: 2em; cursor: pointer; }
+.sp-pop__trigger[aria-expanded="true"] { color: var(--color-bone); background: var(--color-ink); }
+.sp-pop__box { position: absolute; top: calc(100% + 0.9em); left: 0; color: var(--color-bone); background: var(--sp-accent); border-radius: 0.6em; }
+.sp-pop__box::before { content: ""; position: absolute; top: -1em; right: 0; left: 0; height: 1em; } /* hover bridge over the gap */
+.sp-pop__inner { position: absolute; top: 0; left: 0; width: max-content; padding: 0.9em 1.2em; }
+.sp-pop__inner b { display: block; margin-bottom: 0.4em; font: italic 400 1.4em/1 var(--font-display); }
+.sp-pop__inner li { padding: 0.25em 0; opacity: 0.85; }
+.sp-pop__arrow { position: absolute; top: -0.4em; left: 0; width: 0.8em; height: 0.8em; margin-left: -0.4em; background: var(--sp-accent); rotate: 45deg; }

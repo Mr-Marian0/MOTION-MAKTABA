@@ -1,0 +1,24 @@
+/*Ink Underline */
+.sp-ink__list a { position: relative; z-index: 1; display: inline-block; padding: 0.3em 0; }
+.sp-ink__list a[aria-current] { font-weight: 700; }
+.sp-ink__mark {
+  position: absolute;
+  bottom: 0.55em;
+  left: 0;
+  width: 0;
+  height: var(--sp-thick, 3px);
+  background: var(--sp-accent, var(--color-kraft));
+  border-radius: 1em;
+  pointer-events: none;
+}
+.sp-ink--overline .sp-ink__mark { top: 0.55em; bottom: auto; }
+.sp-ink--pill .sp-ink__mark {
+  top: 50%;
+  bottom: auto;
+  height: 2.2em;
+  margin-top: -1.1em;
+  opacity: 0.22;
+  border-radius: 2em;
+  outline: var(--sp-thick, 3px) solid var(--sp-accent, var(--color-kraft));
+  outline-offset: -1px;
+}

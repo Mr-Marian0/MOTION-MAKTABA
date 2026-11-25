@@ -1,0 +1,4 @@
+/* Inking Paragraph: padding top/bottom gives the text room to scroll through the window. */
+.sp-inkp__scroller { position: absolute; inset: 0; overflow-y: auto; padding: 35% 12% 45%; overscroll-behavior: contain; scrollbar-width: thin; }
+.sp-inkp__hint { display: block; margin-bottom: 1em; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.5; }
+.sp-inkp__text { margin: 0; font: 400 1.9em/1.35 var(--font-display); color: var(--sp-accent); }

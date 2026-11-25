@@ -1,0 +1,39 @@
+/*Falling Breadcrumbs */
+.sp-crumbs {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 1.6em;
+  padding: 1.5em 1.5em 3em;
+}
+.sp-crumbs__nav ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 100%;
+  padding: 0.9em 1.2em;
+  font-size: 1.05em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.3em;
+  box-shadow: 0.25em 0.25em 0 var(--color-ink);
+}
+.sp-crumbs__nav li { display: inline-flex; align-items: center; }
+.sp-crumbs__nav a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-kraft);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+}
+.sp-crumbs__nav [aria-current] { font: italic 400 1.25em/1 var(--font-display); }
+.sp-crumbs__sep { margin: 0 0.55em; font-style: normal; opacity: 0.45; }
+.sp-crumbs__nav li:last-child .sp-crumbs__sep { display: none; }
+.sp-crumbs__more button {
+  padding: 0.1em 0.65em;
+  font: inherit;
+  background: var(--color-kraft-core);
+  border: 1px solid var(--color-ink);
+  border-radius: 1em;
+  cursor: pointer;
+}
+.sp-crumbs__actions { display: flex; gap: 0.6em; }

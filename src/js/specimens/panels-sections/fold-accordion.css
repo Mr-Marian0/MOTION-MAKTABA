@@ -1,0 +1,26 @@
+/* Folded Accordion */
+.sp-acc { display: grid; place-items: center; }
+.sp-acc__list { width: 26em; border-top: 1.5px solid var(--color-ink); }
+.sp-acc__item { border-bottom: 1.5px solid var(--color-ink); }
+.sp-acc h5 { margin: 0; font: inherit; }
+.sp-acc__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.9em 0.2em;
+  font: 400 1.35em/1.1 var(--font-display);
+  text-align: left;
+  color: var(--color-ink);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+/* Plus → minus: the vertical bar (::after) flattens as the icon rotates. */
+.sp-acc__head i { position: relative; flex: none; width: 0.8em; height: 0.8em; }
+.sp-acc__head i::before,
+.sp-acc__head i::after { content: ""; position: absolute; top: 50%; left: 0; width: 100%; height: 0.1em; margin-top: -0.05em; background: var(--sp-accent); transition: transform 0.3s; }
+.sp-acc__head i::after { transform: rotate(90deg); }
+.sp-acc__head[aria-expanded="true"] i::after { transform: rotate(0deg); }
+.sp-acc__panel { overflow: hidden; perspective: 30em; }
+.sp-acc__fold { padding: 0.2em 0.2em 1em; transform-origin: top center; }

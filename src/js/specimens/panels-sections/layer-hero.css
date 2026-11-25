@@ -1,0 +1,11 @@
+/* Paper Diorama Hero: layers are oversized so drifting never shows an edge. */
+.sp-dio { overflow: hidden; background: var(--color-paper-core); }
+.sp-dio__layer { position: absolute; }
+.sp-dio__sun { top: 14%; right: 18%; width: 6em; height: 6em; background: var(--sp-accent); border-radius: 50%; }
+.sp-dio__hill { left: -10%; right: -10%; border-radius: 50% 50% 0 0; box-shadow: 0 -0.25em 0 rgb(17 17 17 / 0.15); }
+.sp-dio__hill--back { bottom: -25%; height: 70%; background: var(--color-kraft-core); border-radius: 60% 40% 0 0; }
+.sp-dio__hill--front { bottom: -40%; left: -30%; height: 75%; background: var(--color-kraft); }
+.sp-dio__copy { position: absolute; top: 16%; left: 8%; }
+.sp-dio__copy small { letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.6; }
+.sp-dio__copy h4 { display: flex; margin: 0.15em 0 0; overflow: hidden; font: italic 400 3.6em/1.05 var(--font-display); letter-spacing: -0.03em; }
+.sp-dio__ch { display: inline-block; }

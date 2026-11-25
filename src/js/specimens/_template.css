@@ -1,0 +1,21 @@
+/* Press Button (template): rename the .sp-tpl prefix to something unique, e.g. .sp-press.
+   Size everything in em: the stage scales the font with its width, so the
+   design fits both the small card and the big workbench.
+   Shared helpers (.sp, .sp-bar, .sp-note, .sp-line) live in _shared.css.
+   Palette tokens: --color-ink, --color-bone, --color-kraft, --color-kraft-core,
+   --color-umber, --color-paper-core · fonts: --font-display, --font-mono. */
+
+.sp-tpl { display: grid; place-items: center; }
+.sp-tpl__btn {
+  padding: 1.1em 2.2em;
+  font: 500 1.1em/1 var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-bone);
+  background: var(--sp-accent, var(--color-ink));
+  border: 0;
+  border-radius: 0.4em;
+  box-shadow: 0.3em 0.3em 0 var(--color-kraft);
+  transform-origin: bottom center;
+  cursor: pointer;
+}

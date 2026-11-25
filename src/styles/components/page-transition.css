@@ -1,0 +1,58 @@
+/* ==========================================================================
+   PAGE TRANSITION — the tear curtain (built by src/js/core/page-transition.js)
+   ========================================================================== */
+
+.tear-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.tear-curtain__panel {
+  position: absolute;
+  top: -6%;
+  width: 54%;
+  height: 112%;
+  will-change: transform;
+  filter: drop-shadow(0 0 1px rgb(62 44 31 / 0.5)) drop-shadow(0 10px 24px rgb(17 17 17 / 0.35));
+}
+.tear-curtain__panel--left { left: 0; transform-origin: 100% 50%; }
+.tear-curtain__panel--right { right: 0; transform-origin: 0% 50%; }
+
+.tear-curtain__core,
+.tear-curtain__face {
+  position: absolute;
+  inset: 0;
+}
+.tear-curtain__core {
+  background-color: var(--color-paper-core);
+  opacity: 0;
+}
+
+.tear-curtain__label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  margin: 0;
+  color: var(--color-ink);
+  white-space: nowrap;
+  translate: -50% -50%;
+}
+
+/* Before the curtain is built on an arriving page, cover the page in paper
+   so nothing flashes. Falls away by itself if JavaScript fails. */
+html.is-arriving::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9001;
+  background: var(--color-paper);
+  animation: mm-arrive-fallback 0s 2.5s forwards;
+}
+@keyframes mm-arrive-fallback {
+  to { visibility: hidden; }
+}

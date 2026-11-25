@@ -1,0 +1,24 @@
+/* Timed Toast Stack: toasts share one spot in the bottom-right corner; JS lifts and shrinks older ones. */
+.sp-toast { display: grid; place-items: start; padding: 2em; }
+.sp-toast__make { padding: 0.7em 1.3em; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-bone); background: var(--color-ink); border: 0; border-radius: 2em; cursor: pointer; }
+.sp-toast__stack { position: absolute; right: 1.6em; bottom: 1.6em; width: 17em; height: 3.2em; }
+.sp-toast__item {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  overflow: hidden;
+  padding: 0.85em 0.9em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.5em;
+  box-shadow: 0.2em 0.2em 0 var(--color-ink);
+  transform-origin: bottom center;
+  touch-action: pan-y;
+}
+.sp-toast__item span { flex: 1; }
+.sp-toast__x { color: var(--color-ink); background: none; border: 0; cursor: pointer; opacity: 0.6; }
+.sp-toast__timer { position: absolute; right: 0; bottom: 0; left: 0; height: 0.2em; background: var(--sp-accent); transform-origin: left center; }

@@ -1,0 +1,25 @@
+/* Heart Burst */
+.sp-heart { display: grid; place-items: center; }
+.sp-heart__btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 4.6em;
+  height: 4.6em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 50%;
+  box-shadow: 0.2em 0.2em 0 var(--color-ink);
+  cursor: pointer;
+}
+.sp-heart__btn svg { width: 2.4em; overflow: visible; }
+.sp-heart__btn path { fill: transparent; stroke: var(--color-ink); stroke-width: 1.6; transition: fill 0.2s, stroke 0.2s; }
+.sp-heart__btn[aria-pressed="true"] path { fill: var(--sp-accent); stroke: var(--sp-accent); }
+.sp-heart__bit {
+  position: absolute;
+  width: 0.45em;
+  height: 0.7em;
+  background: var(--sp-accent);
+  pointer-events: none;
+}
+.sp-heart__bit:nth-child(even) { background: var(--color-kraft); border-radius: 50%; width: 0.5em; height: 0.5em; }

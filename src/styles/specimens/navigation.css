@@ -1,0 +1,4 @@
+/* MOVED: every design now has its own CSS next to its JS
+   (src/js/specimens/navigation/<id>.css), plus src/js/specimens/_shared.css.
+   The lab loads them itself. Nothing imports this file any more. Safe to delete
+   (with the empty src/styles/specimens/ folder). */

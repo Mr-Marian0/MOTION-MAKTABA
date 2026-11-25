@@ -1,0 +1,15 @@
+/*Magnetic Links */
+.sp-mag__list { gap: 0.3em !important; }
+.sp-mag__link { position: relative; display: inline-block; padding: 0.75em 1.1em; border-radius: 2em; }
+.sp-mag__link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--sp-accent, var(--color-ink));
+  border-radius: inherit;
+  transform: scale(0);
+  transition: transform 0.4s var(--ease-settle);
+}
+.sp-mag__link span { position: relative; display: inline-block; transition: color 0.25s; }
+.sp-mag__link.is-near::before { transform: scale(1); }
+.sp-mag__link.is-near span { color: var(--color-bone); }

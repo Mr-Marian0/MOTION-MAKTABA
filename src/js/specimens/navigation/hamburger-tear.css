@@ -1,0 +1,33 @@
+/*Torn Sheet Menu */
+.sp-ham .sp-bar { justify-content: space-between; }
+.sp-ham__btn {
+  display: grid;
+  place-content: center;
+  gap: 5px;
+  width: 2.8em;
+  height: 2.8em;
+  background: none;
+  border: 1.5px solid var(--color-ink);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.sp-ham__btn i { display: block; width: 1.3em; height: 2px; background: var(--color-ink); }
+.sp-ham__menu {
+  --tear-depth: 12px;
+  --tear-period: 120px;
+  position: absolute;
+  z-index: 2;
+  visibility: hidden;
+  padding: 1.6em 1.8em calc(1.8em + var(--tear-depth));
+}
+.sp-ham--top .sp-ham__menu { top: 4.6em; right: 1.4em; left: 1.4em; padding-top: 2.4em; }
+.sp-ham--right .sp-ham__menu {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 58%;
+  padding: 5.6em 1.6em 1.6em calc(1.6em + var(--tear-depth));
+}
+.sp-ham__menu ul { display: grid; gap: 0.35em; }
+.sp-ham__menu a { display: inline-block; font: 400 1.9em/1.1 var(--font-display); letter-spacing: -0.02em; }
+.sp-ham__menu a:hover { font-style: italic; }

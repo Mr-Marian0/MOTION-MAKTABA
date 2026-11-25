@@ -1,0 +1,39 @@
+/*Ink Spill Menu */
+.sp-circ__page { padding: 1.6em 1.6em; }
+.sp-circ__btn {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  place-content: center;
+  gap: 5px;
+  width: 3.4em;
+  height: 3.4em;
+  background: var(--sp-fill, var(--color-ink));
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 0.3em 0.8em rgb(17 17 17 / 0.3);
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+.sp-circ__btn i { display: block; width: 1.3em; height: 2px; background: var(--color-bone); transition: transform 0.45s var(--ease-settle); }
+.sp-circ__btn.is-open { box-shadow: 0 0 0 2px var(--color-bone); }
+.sp-circ__btn.is-open i:first-child { transform: translateY(3.5px) rotate(45deg); }
+.sp-circ__btn.is-open i:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+.sp-circ--tr .sp-circ__btn { top: 1.2em; right: 1.2em; }
+.sp-circ--br .sp-circ__btn { right: 1.2em; bottom: 1.2em; }
+.sp-circ--bl .sp-circ__btn { bottom: 1.2em; left: 1.2em; }
+.sp-circ--tl .sp-circ__btn { top: 1.2em; left: 1.2em; }
+.sp-circ__menu {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  color: var(--color-bone);
+  background: var(--sp-fill, var(--color-ink));
+}
+.sp-circ__menu ul { text-align: center; }
+.sp-circ__menu li { overflow: hidden; }
+.sp-circ__menu a { display: inline-block; font: italic 400 2.5em/1.15 var(--font-display); }
+.sp-circ__menu span { display: inline-block; }

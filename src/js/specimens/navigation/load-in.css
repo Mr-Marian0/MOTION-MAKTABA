@@ -1,0 +1,35 @@
+/*Assembling Masthead */
+.sp-load { display: grid; place-items: center; }
+.sp-load__bar {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  width: min(88%, 46em);
+  padding: 1.4em 1.8em 2em;
+  color: var(--color-ink);
+}
+.sp-load__paper {
+  --tear-depth: 10px;
+  --tear-period: 110px;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  box-shadow: 0 0.4em 0.8em rgb(17 17 17 / 0.15);
+}
+.sp-load__logo { font: italic 400 2.4em/1 var(--font-display); letter-spacing: -0.03em; }
+.sp-load__logo b { display: inline-block; font-weight: 400; }
+.sp-load__nav a { display: inline-block; overflow: hidden; margin-left: 1.1em; letter-spacing: 0.12em; text-transform: uppercase; }
+.sp-load__nav span { display: inline-block; }
+.sp-load__stamp {
+  position: absolute;
+  top: -2.8em;
+  right: -0.8em;
+  width: 8em;
+  font-size: 0.55em;
+  color: #b3412e;
+  opacity: 0;
+}
+.sp-load__replay { position: absolute; right: 1em; bottom: 1em; }

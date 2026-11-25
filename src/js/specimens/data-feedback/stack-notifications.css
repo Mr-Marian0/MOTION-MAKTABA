@@ -1,0 +1,23 @@
+/* Notification Stack: every note sits at the top of the stack; JS offsets them with y. */
+.sp-notes { display: grid; grid-template-columns: auto 18em; align-items: start; justify-content: center; gap: 1.4em; padding-top: 2.4em; }
+.sp-notes__bell { display: grid; place-items: center; width: 3.4em; height: 3.4em; font-size: 1.1em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 50%; box-shadow: 0.15em 0.15em 0 var(--color-ink); cursor: pointer; }
+.sp-notes__bell span { display: inline-block; font-size: 1.5em; }
+.sp-notes__stack { position: relative; min-height: 8em; }
+.sp-notes__item {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.75em 0.8em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-left: 0.35em solid var(--sp-accent);
+  border-radius: 0.4em;
+  box-shadow: 0.15em 0.15em 0 rgb(17 17 17 / 0.25);
+  transform-origin: top center;
+}
+.sp-notes__item span { flex: 1; }
+.sp-notes__x { color: var(--color-ink); background: none; border: 0; cursor: pointer; opacity: 0.6; }

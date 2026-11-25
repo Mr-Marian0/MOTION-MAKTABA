@@ -1,0 +1,47 @@
+/* Flip Profile */
+.sp-prof { display: grid; place-items: center; perspective: 60em; }
+.sp-prof__card { position: relative; width: 15em; height: 18em; transform-style: preserve-3d; }
+.sp-prof__face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.4em;
+  padding: 1em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.6em;
+  box-shadow: 0.3em 0.3em 0 var(--color-ink);
+  backface-visibility: hidden;
+}
+.sp-prof__face--back { gap: 0.2em; justify-items: stretch; transform: rotateY(180deg); background: var(--color-kraft-core); }
+.sp-prof__avatar {
+  display: grid;
+  place-items: center;
+  width: 4.2em;
+  height: 4.2em;
+  font: italic 400 1.6em/1 var(--font-display);
+  color: var(--color-bone);
+  background: var(--sp-accent);
+  border-radius: 50%;
+}
+.sp-prof__name { margin: 0.4em 0 0; font: 400 1.6em/1 var(--font-display); }
+.sp-prof__role { margin: 0 0 0.6em; font-size: 0.85em; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; }
+.sp-prof__row { display: flex; gap: 0.5em; }
+.sp-prof__follow,
+.sp-prof__flip {
+  padding: 0.6em 0.9em;
+  font-size: 0.85em;
+  white-space: nowrap;
+  letter-spacing: 0.06em;
+  border: 1.5px solid var(--color-ink);
+  border-radius: 2em;
+  cursor: pointer;
+}
+.sp-prof__follow { overflow: hidden; color: var(--color-bone); background: var(--color-ink); }
+.sp-prof__follow[aria-pressed="true"] { color: var(--color-ink); background: var(--color-bone); }
+.sp-prof__flip { color: var(--color-ink); background: none; }
+.sp-prof__face--back .sp-prof__flip { justify-self: center; margin-top: 0.6em; }
+.sp-prof__stat { display: flex; align-items: baseline; justify-content: space-between; margin: 0; padding: 0.4em 0; border-bottom: 1px solid rgb(17 17 17 / 0.2); letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.85em; }
+.sp-prof__stat b { order: 2; margin-left: 0.6em; font: 400 1.6em/1 var(--font-display); text-transform: none; }

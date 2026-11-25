@@ -1,0 +1,21 @@
+/* Hanging Tag Tooltip: the tip pivots at the top of its string (JS sets x/y to the word's bottom centre). */
+.sp-tag { display: grid; align-content: start; padding: 4em 10% 0; }
+.sp-tag__text { margin: 0; font: 400 1.9em/1.5 var(--font-display); }
+.sp-tag__term { padding: 0; font: inherit; color: var(--color-ink); background: none; border: 0; border-bottom: 2px dotted var(--sp-accent); cursor: help; }
+/* width 0 + flex centering: the card hangs centred on the x point (a grid would push it right when it overflows). */
+.sp-tag__tip { position: absolute; top: 0; left: 0; display: flex; flex-direction: column; align-items: center; width: 0; transform-origin: top center; pointer-events: none; }
+.sp-tag__string { width: 1px; height: 1.6em; background: var(--color-ink); }
+.sp-tag__card {
+  flex: none;
+  width: 13em;
+  padding: 0.7em 0.9em;
+  font-size: 0.95em;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--color-bone);
+  background: var(--sp-accent);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.3em;
+  box-shadow: 0.2em 0.2em 0 var(--color-ink);
+}
+.sp-tag__card::before { content: ""; display: block; width: 0.5em; height: 0.5em; margin: -0.35em auto 0.4em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 50%; }

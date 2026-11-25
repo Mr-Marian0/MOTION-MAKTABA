@@ -1,0 +1,21 @@
+/* Growing Note: the ruled lines are a background that scrolls with the text (local attachment). */
+.sp-note-pad { display: grid; align-content: center; justify-content: center; gap: 0.4em; }
+.sp-note-pad__label { letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6; }
+.sp-note-pad__area {
+  width: 22em;
+  padding: 0 0.8em;
+  font: 400 1.2em/1.7 var(--font-display);
+  color: var(--sp-accent);
+  background:
+    linear-gradient(transparent calc(1.7em - 1px), rgb(17 17 17 / 0.2) 0) 0 0 / 100% 1.7em local,
+    var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-left: 3px double #b3412e;
+  border-radius: 0.3em;
+  box-shadow: 0.25em 0.25em 0 var(--color-ink);
+  resize: none;
+  outline: none;
+}
+.sp-note-pad__area:focus-visible { box-shadow: 0.25em 0.25em 0 var(--sp-accent); }
+.sp-note-pad__count { justify-self: end; font-variant-numeric: tabular-nums; opacity: 0.7; transition: color 0.3s; }
+.sp-note-pad__count.is-near { color: #b3412e; opacity: 1; }

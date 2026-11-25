@@ -1,0 +1,44 @@
+/*Elastic Sidebar */
+.sp-elastic { touch-action: pan-y; user-select: none; }
+.sp-elastic__page { padding: 1.6em 1.6em 1.6em 3.6em; }
+.sp-elastic__shape {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.sp-elastic__shape path { fill: var(--sp-fill, var(--color-kraft)); }
+.sp-elastic__panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  display: grid;
+  align-content: start;
+  gap: 0.9em;
+  padding: 1.6em;
+  color: var(--color-bone);
+  opacity: 0;
+}
+.sp-elastic__panel b { letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; }
+.sp-elastic__panel ul { display: grid; gap: 0.3em; }
+.sp-elastic__panel a { font: 400 1.7em/1.1 var(--font-display); }
+.sp-elastic__tab {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 4;
+  width: 2.3em;
+  height: 3.4em;
+  margin-top: -1.7em;
+  font-size: 1.1em;
+  color: var(--color-bone);
+  background: var(--sp-fill, var(--color-kraft));
+  border: 0;
+  border-radius: 0 0.6em 0.6em 0;
+  cursor: grab;
+}

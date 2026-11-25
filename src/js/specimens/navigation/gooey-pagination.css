@@ -1,0 +1,45 @@
+/*Gooey Pagination */
+.sp-pages { display: grid; place-items: center; }
+.sp-pages__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.6em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 3em;
+  box-shadow: 0.25em 0.25em 0 var(--color-ink);
+}
+.sp-pages__step {
+  width: 2.2em;
+  height: 2.6em;
+  font-size: 1.3em;
+  color: var(--color-ink);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.sp-pages__rail { position: relative; }
+.sp-pages__goo { position: absolute; inset: -0.6em; padding: 0.6em; pointer-events: none; }
+.sp-pages__goo .sp-pages__drop { top: 0.6em; left: 0.6em; }
+.sp-pages__drop {
+  position: absolute;
+  width: 2.6em;
+  height: 2.6em;
+  background: var(--sp-accent, var(--color-ink));
+  border-radius: 50%;
+}
+.sp-pages__drop--trail { scale: 0.72; }
+.sp-pages__list { position: relative; display: flex; gap: 0.45em; }
+.sp-pages__list button {
+  width: 2.6em;
+  height: 2.6em;
+  font: inherit;
+  color: var(--color-ink);
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.sp-pages__list button[aria-current] { color: var(--color-bone); }

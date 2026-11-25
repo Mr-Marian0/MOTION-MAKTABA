@@ -1,0 +1,19 @@
+/* Shimmer to Content: background-attachment: fixed makes every bone share ONE shimmer, so they sweep in sync. */
+.sp-skel { display: grid; place-content: center; justify-items: center; gap: 1em; }
+.sp-skel__card { display: grid; gap: 0.7em; width: 17em; padding: 1em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.5em; box-shadow: 0.25em 0.25em 0 var(--color-ink); }
+.sp-skel__slot { position: relative; display: grid; min-height: 1.3em; }
+.sp-skel__slot--img { height: 7em; }
+.sp-skel__slot--short { width: 40%; }
+.sp-skel__bone,
+.sp-skel__real { grid-area: 1 / 1; }
+.sp-skel__bone {
+  border-radius: 0.3em;
+  background: linear-gradient(100deg, rgb(17 17 17 / 0.08) 40%, rgb(17 17 17 / 0.02) 50%, rgb(17 17 17 / 0.08) 60%) 0 0 / 300% 100% fixed;
+  animation: sp-skel-shine 1.4s linear infinite;
+}
+@keyframes sp-skel-shine { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+.sp-skel__photo { border-radius: 0.3em; background: radial-gradient(circle at 70% 35%, #f3c86b 0 1.1em, transparent 1.2em), linear-gradient(160deg, var(--sp-accent) 55%, var(--color-umber) 56%); }
+.sp-skel__real:is(b) { font: 400 1.4em/1 var(--font-display); }
+.sp-skel__real:is(small) { letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; }
+.sp-skel__reload { padding: 0.5em 1em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink); background: none; border: 1.5px solid var(--color-ink); border-radius: 2em; cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { .sp-skel__bone { animation: none; } }
