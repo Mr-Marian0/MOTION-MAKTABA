@@ -31,7 +31,7 @@ function settingsBlock(spec, v) {
 }
 
 function prompt(spec, v, src) {
-  const terms = [['Element', [spec.element]], ['Trigger', spec.trigger], ['Behavior', spec.behavior], ['Effect', spec.effect], ['Purpose', spec.purpose]]
+  const terms = [['Element', spec.elements], ['Trigger', spec.trigger], ['Behavior', spec.behavior], ['Effect', spec.effect], ['Purpose', spec.purpose]]
     .map(([k, l]) => `${k}: ${l?.length ? l.join(', ') : 'none'}`)
     .join(' · ');
   return `# Build "${spec.title}" (${spec.element}) in plain JavaScript + GSAP 3

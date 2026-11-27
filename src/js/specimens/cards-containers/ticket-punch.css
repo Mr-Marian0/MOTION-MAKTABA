@@ -1,0 +1,63 @@
+/* Ticket Punch */
+.sp-tkt { display: grid; place-content: center; justify-items: center; gap: 1.4em; }
+.sp-tkt__wrap { position: relative; }
+/* The shadow is a drop-shadow on the whole ticket, so it follows the hole and the torn stub. */
+.sp-tkt__ticket { position: relative; display: flex; filter: drop-shadow(0.25em 0.25em 0 var(--color-ink)); }
+.sp-tkt__main, .sp-tkt__stub { height: 8.5em; background: var(--color-bone); border: 1.5px solid var(--color-ink); }
+.sp-tkt__main {
+  position: relative;
+  display: grid;
+  align-content: center;
+  gap: 0.25em;
+  width: 15.5em;
+  padding: 0 1.3em;
+  border-right: 0;
+  border-radius: 0.6em 0 0 0.6em;
+}
+.sp-tkt__main small { font-size: 0.8em; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55; }
+.sp-tkt__main b { font: 400 1.8em/1.05 var(--font-display); }
+.sp-tkt__main span { font-size: 0.75em; opacity: 0.7; }
+.sp-tkt__stamp {
+  position: absolute;
+  top: 0.7em;
+  right: 0.7em;
+  font-size: 0.85em;
+  padding: 0.2em 0.5em;
+  font-style: normal;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sp-accent);
+  border: 2px solid currentColor;
+  border-radius: 0.3em;
+}
+/* The stub: a hole is cut with a mask whose radius is --r. */
+.sp-tkt__stub {
+  display: grid;
+  place-content: end center;
+  justify-items: center;
+  width: 5.5em;
+  padding-bottom: 0.8em;
+  color: var(--color-bone);
+  background: var(--sp-accent);
+  border-left: 2px dashed var(--color-ink);
+  border-radius: 0 0.6em 0.6em 0;
+  -webkit-mask: radial-gradient(circle at 50% 2.6em, transparent var(--r), #000 calc(var(--r) + 0.5px));
+  mask: radial-gradient(circle at 50% 2.6em, transparent var(--r), #000 calc(var(--r) + 0.5px));
+}
+.sp-tkt__stub span { font-size: 0.85em; letter-spacing: 0.08em; line-height: 1.2; text-align: center; text-transform: uppercase; }
+.sp-tkt__stub small { font-size: 0.75em; opacity: 0.8; }
+/* The hole's edge and the punched-out disc, both centred on the hole. */
+.sp-tkt__ring, .sp-tkt__chad { position: absolute; top: 2.6em; right: 2.75em; width: 2.2em; height: 2.2em; translate: 50% -50%; border-radius: 50%; pointer-events: none; }
+.sp-tkt__ring { border: 1.5px solid var(--color-ink); }
+.sp-tkt__chad { background: var(--sp-accent); border: 1.5px solid var(--color-ink); }
+.sp-tkt__btn {
+  min-width: 7em;
+  padding: 0.55em 1.2em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-bone);
+  background: var(--color-ink);
+  border: 0;
+  border-radius: 2em;
+  cursor: pointer;
+}

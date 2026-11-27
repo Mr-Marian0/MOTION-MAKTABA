@@ -1,0 +1,5 @@
+/* Shape-shifting card base (see _shape.js): clip-path can't have a border or box-shadow,
+   so the ink edge is a clipped layer behind the face and the shadow is a drop-shadow on the wrapper. */
+.sp-shape { position: relative; filter: drop-shadow(0.25em 0.25em 0 var(--color-ink)); }
+.sp-shape__edge { position: absolute; inset: 0; background: var(--color-ink); }
+.sp-shape__face { position: absolute; inset: 0.14em; overflow: hidden; background: var(--color-bone); }

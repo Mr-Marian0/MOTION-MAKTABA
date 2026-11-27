@@ -1,0 +1,46 @@
+/* Glass Mesh (drawing units: 1 = 0.1em, so the 200 × 130 mesh is 20 × 13em) */
+.sp-glass { display: grid; place-content: center; overflow: hidden; }
+.sp-glass__bg { position: absolute; inset: 0; display: grid; place-items: center; }
+.sp-glass__bg i { position: absolute; width: 8em; height: 8em; border-radius: 50%; }
+.sp-glass__bg i:nth-child(1) { translate: -6em -1em; background: var(--sp-accent); }
+.sp-glass__bg i:nth-child(2) { translate: 5em 2em; width: 7em; height: 7em; background: #b3412e; }
+.sp-glass__bg i:nth-child(3) { translate: 1em -3.5em; width: 5.5em; height: 5.5em; background: #c9a227; }
+.sp-glass__wrap { position: relative; display: grid; justify-items: center; gap: 1em; }
+.sp-glass__seg { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); padding: 0.25em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 2em; }
+.sp-glass__seg button { position: relative; z-index: 1; padding: 0.45em 0.8em; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-ink); background: none; border: 0; cursor: pointer; transition: color 0.3s; }
+.sp-glass__seg [aria-checked="true"] { color: var(--color-bone); }
+.sp-glass__pill { position: absolute; top: 0.25em; bottom: 0.25em; left: 0.25em; width: calc((100% - 0.5em) / 3); background: var(--color-ink); border-radius: 2em; }
+.sp-glass__card {
+  position: relative;
+  width: 20em;
+  height: 13em;
+  overflow: hidden;
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.8em;
+  box-shadow: 0.25em 0.25em 0 var(--color-ink);
+}
+/* Frosted glass: blur what's behind, a milky tint and a sheen across the top. */
+.sp-glass__frost {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(150deg, rgb(255 255 255 / 0.55), rgb(255 255 255 / 0.15) 45%, rgb(255 255 255 / 0.3));
+  -webkit-backdrop-filter: blur(0.9em) saturate(1.4);
+  backdrop-filter: blur(0.9em) saturate(1.4);
+}
+.sp-glass__mesh { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sp-glass__edges, .sp-glass__diag { fill: none; stroke: var(--color-ink); stroke-width: 1px; vector-effect: non-scaling-stroke; stroke-dasharray: 1 1; }
+.sp-glass__diag { stroke-opacity: 0.55; }
+.sp-glass__dots circle { fill: var(--color-ink); }
+.sp-glass__label {
+  position: absolute;
+  bottom: 0.7em;
+  left: 0.7em;
+  display: grid;
+  margin: 0;
+  padding: 0.35em 0.6em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.4em;
+}
+.sp-glass__label b { font: 400 1.1em/1.1 var(--font-display); }
+.sp-glass__label span { font-size: 0.68em; opacity: 0.65; }

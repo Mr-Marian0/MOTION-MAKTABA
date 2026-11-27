@@ -1,0 +1,11 @@
+/* Poly Float */
+@import url('_shape.css');
+
+.sp-poly { display: grid; place-content: center; }
+.sp-poly__wrap { display: grid; justify-items: center; gap: 1.6em; padding-top: 1.4em; }
+.sp-poly__card { width: 11em; height: 11em; cursor: pointer; }
+.sp-poly__card:focus-visible { outline: 2px dashed var(--color-ink); outline-offset: 0.5em; }
+.sp-poly__body { display: grid; place-content: center; justify-items: center; height: 100%; padding-top: 0.6em; }
+.sp-poly__n { font: 400 3.4em/1 var(--font-display); }
+.sp-poly__name { font-size: 0.8em; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.75; }
+.sp-poly__shadow { width: 10em; height: 1.4em; background: radial-gradient(closest-side, rgb(17 17 17 / 0.5), transparent); border-radius: 50%; opacity: 0.5; }

@@ -1,0 +1,28 @@
+/* Goo Merge: solid blobs under a blur + contrast filter melt together; the readable cards sit on top. */
+.sp-goo { display: grid; place-content: center; justify-items: center; gap: 1.4em; }
+.sp-goo__defs { position: absolute; width: 0; height: 0; }
+.sp-goo__wrap { position: relative; width: 22em; height: 11em; }
+/* Taller than the wrap so the falling drip stays inside the filter's area. */
+.sp-goo__blobs { position: absolute; inset: 0 0 -7em; pointer-events: none; }
+.sp-goo__blob, .sp-goo__card { position: absolute; top: 1.5em; left: 50%; width: 8.5em; height: 8em; margin-left: -4.25em; border-radius: 0.9em; }
+.sp-goo__blob { background: var(--sp-accent); }
+.sp-goo__drip { position: absolute; top: 4.5em; left: 50%; width: 2em; height: 2em; margin-left: -1em; background: var(--sp-accent); border-radius: 50%; }
+.sp-goo__card { display: grid; align-content: start; gap: 0.2em; padding: 1em 1.1em; color: var(--color-bone); user-select: none; }
+.sp-goo__card small { letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.8; }
+.sp-goo__card b { margin-bottom: 0.3em; font: 400 2.2em/1 var(--font-display); }
+.sp-goo__card .sp-line { background: rgb(250 250 247 / 0.3); }
+.sp-goo__card--b { cursor: grab; touch-action: pan-y; }
+.sp-goo__card--b:active { cursor: grabbing; }
+.sp-goo__card--b:focus-visible { outline: 2px dashed var(--color-ink); outline-offset: 0.3em; }
+.sp-goo__card--m { width: 10.5em; margin-left: -5.25em; pointer-events: none; }
+.sp-goo__card--m span { font-size: 0.85em; opacity: 0.85; }
+.sp-goo__btn {
+  padding: 0.55em 1.2em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-bone);
+  background: var(--color-ink);
+  border: 0;
+  border-radius: 2em;
+  cursor: pointer;
+}

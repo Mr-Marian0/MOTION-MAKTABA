@@ -1,0 +1,22 @@
+# Keep every text file stored with LF endings, so Windows/Mac edits
+# don't rewrite whole files (and bloat history) just by changing line endings.
+* text=auto eol=lf
+
+# Binary files: never diff or convert them.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.avif binary
+*.ico  binary
+*.woff  binary
+*.woff2 binary
+*.mp4  binary
+*.webm binary
+
+# If the library ever needs large media in the repo, install Git LFS
+# (https://git-lfs.com) and uncomment these, so they don't live in history:
+# *.mp4  filter=lfs diff=lfs merge=lfs -text
+# *.webm filter=lfs diff=lfs merge=lfs -text
+# *.gif  filter=lfs diff=lfs merge=lfs -text

@@ -19,7 +19,7 @@ import { tone, EASE_CHOICES } from '../_params.js';
 
 export const meta = {
   title: 'Press Button', // card title
-  element: 'Primary button', // ONE UI element (taxonomy ELEMENTS for this drawer)
+  element: 'Primary button', // UI element(s) this motion suits (taxonomy ELEMENTS for this drawer); a list is fine: ['Primary button', 'Icon button']
   trigger: ['Hover', 'Click'], // what sets it off (TRIGGERS)
   behavior: ['Reactive'], // how it is placed / reacts (BEHAVIORS); may be []
   effect: ['Squashing', 'Bouncing'], // what the movement looks like (EFFECTS); may be []

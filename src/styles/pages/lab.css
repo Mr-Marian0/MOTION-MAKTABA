@@ -184,6 +184,30 @@
   text-underline-offset: 3px;
   cursor: pointer;
 }
+.lab-index__term[hidden] { display: none; }
+
+/* Motion Effect index: terms grouped under their family */
+.lab-index__list--grouped {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0.7rem;
+  max-height: 18rem;
+}
+.lab-index__group[hidden] { display: none; }
+.lab-index__group-name {
+  margin: 0 0 0.2rem;
+  padding-bottom: 0.15rem;
+  font: 500 0.56rem/1 var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ax);
+  border-bottom: 1px dashed rgb(17 17 17 / 0.2);
+}
+.lab-index__group-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.6rem;
+}
 
 /* The house rule, as a taped note */
 .lab-rule {
@@ -236,6 +260,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
   gap: 2.4rem 2rem;
+  /* The grid's height is held during a filter shuffle; without this the
+     spare height is shared out to the rows and every card stretches tall. */
+  align-content: start;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -243,7 +270,10 @@
 .spec { min-width: 0; }
 .spec__card {
   display: grid;
-  height: 100%;
+  /* min-height, not height: while Flip tweens the <li>'s size during a
+     filter shuffle, the card must still wrap its body instead of letting
+     .spec__body spill past the bottom edge. */
+  min-height: 100%;
   grid-template-rows: auto auto 1fr;
   color: var(--color-ink);
   background: var(--color-bone);
@@ -268,6 +298,7 @@
   border-bottom: 1px solid currentColor;
   cursor: pointer;
 }
+.spec__el--effect { font-weight: 700; color: var(--ax-effect); }
 .spec__stage { height: 17.5rem; border-bottom: 1px solid rgb(17 17 17 / 0.15); }
 .spec__body { display: grid; align-content: start; gap: 0.75rem; padding: 1.1rem 1.1rem 1.3rem; }
 .spec__title {

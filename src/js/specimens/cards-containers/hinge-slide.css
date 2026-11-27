@@ -1,0 +1,38 @@
+/* Hinge Slide */
+@import url('tilt-product.css');
+@import url('swipe-stack.css');
+
+.sp-hinge { display: grid; place-content: center; }
+.sp-hinge__wrap { display: grid; justify-items: center; gap: 1.4em; }
+.sp-hinge__deck {
+  position: relative;
+  z-index: 0;
+  width: 12em;
+  height: 15.6em;
+  perspective: 40em;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  touch-action: pan-x;
+  user-select: none;
+}
+.sp-hinge__deck:focus-visible { outline: 2px dashed var(--color-ink); outline-offset: 0.4em; }
+.sp-hinge__card {
+  position: absolute;
+  inset: 0;
+  padding: 0.8em;
+  overflow: hidden;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-left: 0.5em solid var(--sp-accent);
+  border-radius: 0.6em;
+  box-shadow: 0.25em 0.25em 0 rgb(17 17 17 / 0.25);
+  backface-visibility: hidden;
+}
+.sp-hinge__card .sp-prod__img { height: 6em; }
+.sp-hinge__card .sp-prod__book { width: 3.6em; height: 4.6em; }
+.sp-hinge__shade { position: absolute; inset: 0; background: var(--color-ink); opacity: 0; pointer-events: none; }
+/* Above the deck, so a card tipping away passes behind the controls. */
+.sp-hinge__ctrl { position: relative; z-index: 1; display: flex; align-items: center; gap: 1em; }
+.sp-hinge__dots { display: flex; gap: 0.45em; }
+.sp-hinge__dot { width: 0.5em; height: 0.5em; border: 1.5px solid var(--color-ink); border-radius: 50%; transition: background 0.3s, transform 0.3s; }
+.sp-hinge__dot.is-on { background: var(--sp-accent); transform: scale(1.3); }

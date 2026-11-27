@@ -127,6 +127,17 @@ export function kit(stage, gsap) {
       ro.observe(el);
       offs.push(() => ro.disconnect());
     },
+    /** Shrink el (CSS `scale`) so it fits inside the stage with some room; never grows it. */
+    fit(el, room = 0.92) {
+      const run = () => {
+        if (!stage.clientHeight || !el.offsetHeight) return;
+        el.style.scale = Math.min(1, (stage.clientHeight * room) / el.offsetHeight, (stage.clientWidth * room) / el.offsetWidth);
+      };
+      const ro = new ResizeObserver(run);
+      ro.observe(stage);
+      ro.observe(el, { box: 'border-box' });
+      offs.push(() => ro.disconnect());
+    },
     /** Run fn each time el scrolls into view. */
     inView(el, fn, threshold = 0.4) {
       const io = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && fn()), { threshold });

@@ -1,7 +1,7 @@
 /**
  * TAXONOMY — the six ways every specimen in the library is classified.
  *
- *   1. UI Element          what is being animated (one per specimen)
+ *   1. UI Element          what is being animated (one or more per specimen)
  *   2. Element Properties  which properties of it change
  *   3. Interaction/Trigger what sets it off
  *   4. Behavior            how it is placed or how it reacts over time
@@ -64,53 +64,143 @@ export const BEHAVIORS = list(`
   Keyboard-controlled
 `);
 
-export const EFFECTS = list(`
-  Morphing, Shape-shifting, Organic-morphing, Liquid-morphing, Blob-morphing, Metaball-morphing,
-  Path-morphing, Topology-morphing, Geometry-morphing, Mesh-morphing, Deformation, Elastic-deformation,
-  Fluid-deformation, Soft-body-deformation, Surface-deformation, Wave-deformation, Ripple-deformation,
-  Torsional-deformation, Bending, Twisting, Warping, Distortion, Displacement, Shearing, Folding,
-  Unfolding, Wrapping, Unwrapping, Crumpling, Uncrumpling, Inflation, Deflation, Compression, Expansion,
-  Elongation, Stretching, Squashing, Pinching, Bulging, Tapering, Flattening, Fragmentation, Shattering,
-  Disintegration, Disassembly, Reassembly, Exploding, Imploding, Splitting, Merging, Dissolving, Melting,
-  Freezing, Solidification, Liquefaction, Crystallization, Fracturing, Breaking, Reconstructing,
-  Levitation, Floating, Drifting, Gliding, Hovering, Bobbing, Swaying, Swinging, Pendulum-motion,
-  Wobbling, Wiggle, Jittering, Shaking, Vibrating, Oscillating, Pulsating, Breathing, Bouncing,
-  Rebounding, Ricocheting, Rolling, Tumbling, Somersaulting, Spinning, Rotating, Axial-rotation,
-  Precession, Nutation, Gyroscopic-motion, Barrel-roll, Corkscrew-motion, Screw-motion, Orbiting,
-  Revolving, Circling, Spiraling, Helical-motion, Looping-motion, Figure-eight-motion, Circular-motion,
-  Elliptical-motion, Parabolic-motion, Projectile-motion, Ballistic-motion, Free-fall, Accelerating,
-  Decelerating, Reciprocating, Sliding, Skidding, Scraping, Crawling, Walking, Running, Hopping, Jumping,
-  Leaping, Flying, Diving, Rising, Descending, Falling, Dropping, Launching, Propelling, Ejecting,
-  Catapulting, Springing, Recoiling, Snapping, Retracting, Extending, Contracting, Oscillatory-rotation,
-  Eccentric-rotation, Mechanical-rotation, Ratcheting, Piston-motion, Cam-motion, Turbine-motion,
-  Propeller-motion, Gear-motion, Kinetic-sculpture-motion, Path-following, Bezier-path-motion,
-  Spline-following, Trajectory-motion, Curved-path-motion, Wave-path-motion, Sinusoidal-motion,
-  Lissajous-motion, Motion-trail, Particle-trail, Echo-motion, Afterimage-motion, Ghosting, Motion-smear,
-  Motion-blur, Velocity-streak, Accumulation, Scattering, Dispersion, Convergence, Divergence,
-  Attraction-motion, Repulsion-motion, Swarming, Flocking, Flow-field-motion, Brownian-motion,
-  Random-walk, Perlin-noise-motion, Procedural-motion, Generative-motion, Fractal-motion,
-  Kinematic-motion, Inverse-kinematic-motion, Forward-kinematic-motion, Physics-based-motion,
-  Spring-motion, Inertial-motion, Momentum-motion, Gravity-motion, Collision-motion, Impact-motion,
-  Recoil-motion, Rebound-motion, Secondary-motion, Follow-through, Anticipation-motion, Overshoot-motion,
-  Aftershock-motion, Resonance-motion, Damped-oscillation, Underdamped-motion, Overdamped-motion,
-  Wave-propagation, Traveling-wave, Standing-wave, Surface-wave, Fluid-flow, Vortex-motion, Swirl-motion,
-  Turbulence-motion, Smoke-motion, Fire-motion, Water-motion, Cloth-motion, Rope-motion, Chain-motion,
-  Hair-motion, Soft-body-motion, Rigid-body-motion, Holographic-motion, Refraction-motion,
-  Reflection-distortion, Optical-warping, Chromatic-aberration-motion, Caustic-motion, Iridescent-motion,
-  Shimmering, Scanning, Sweeping, Glitching, Pixel-sorting, Pixel-dissolving, Pixel-explosion,
-  Datamoshing, RGB-splitting, Kaleidoscopic-motion, Morphing-transition, Shape-assembly, Shape-disassembly
-`);
+/**
+ * MOTION EFFECTS, arranged in families.
+ *
+ * Every group below is `Parent: list(\`children\`)`. Filtering by a parent
+ * also finds every design tagged with one of its children, so "Rotating"
+ * finds a design tagged "Spinning". Groups can nest: Morphing sits inside
+ * Deformation, and Soft-body-motion inside Physics-based-motion, so
+ * "Blob-morphing" counts toward Morphing *and* Deformation.
+ *
+ * To add a term, put it in the group it belongs to. To add a group, add a
+ * new `Parent: list(...)` entry. EFFECTS (the full term list) is built from
+ * these groups, so there is only one place to edit.
+ */
+export const EFFECT_FAMILIES = {
+  // ── Shape change ───────────────────────────────────────────
+  Deformation: list(`
+    Morphing, Elastic-deformation, Fluid-deformation, Soft-body-deformation, Surface-deformation,
+    Wave-deformation, Ripple-deformation, Torsional-deformation, Bending, Twisting, Warping, Distortion,
+    Displacement, Shearing, Crumpling, Uncrumpling, Inflation, Deflation, Compression, Elongation,
+    Stretching, Squashing, Pinching, Bulging, Tapering, Flattening
+  `),
+  Morphing: list(`
+    Shape-shifting, Organic-morphing, Liquid-morphing, Blob-morphing, Metaball-morphing, Path-morphing,
+    Topology-morphing, Geometry-morphing, Mesh-morphing, Morphing-transition
+  `),
+  Scaling: list(`Expansion, Contracting, Extending, Retracting`),
+  Folding: list(`Unfolding, Wrapping, Unwrapping`),
+
+  // ── Breaking apart & coming together ───────────────────────
+  Fragmentation: list(`
+    Shattering, Fracturing, Breaking, Splitting, Exploding, Imploding, Disintegration, Disassembly,
+    Shape-disassembly, Reassembly, Reconstructing, Shape-assembly, Merging
+  `),
+  'Phase-change': list(`Dissolving, Melting, Freezing, Solidification, Liquefaction, Crystallization`),
+
+  // ── Moving from place to place ─────────────────────────────
+  Sliding: list(`Skidding, Scraping, Sweeping`),
+  Rising: list(`Launching, Propelling, Ejecting, Catapulting`),
+  Falling: list(`Dropping, Descending, Free-fall, Diving`),
+  Locomotion: list(`Crawling, Walking, Running, Hopping, Jumping, Leaping, Flying`),
+  Floating: list(`Levitation, Drifting, Gliding, Hovering, Bobbing`),
+  'Path-following': list(`
+    Bezier-path-motion, Spline-following, Trajectory-motion, Curved-path-motion, Wave-path-motion,
+    Sinusoidal-motion, Lissajous-motion, Parabolic-motion, Projectile-motion, Ballistic-motion
+  `),
+
+  // ── Turning & circling ─────────────────────────────────────
+  Rotating: list(`
+    Spinning, Rolling, Tumbling, Somersaulting, Axial-rotation, Barrel-roll, Corkscrew-motion,
+    Screw-motion, Oscillatory-rotation, Eccentric-rotation, Precession, Nutation, Gyroscopic-motion
+  `),
+  Orbiting: list(`
+    Revolving, Circling, Spiraling, Helical-motion, Looping-motion, Figure-eight-motion, Circular-motion,
+    Elliptical-motion
+  `),
+  'Mechanical-motion': list(`
+    Mechanical-rotation, Gear-motion, Ratcheting, Piston-motion, Cam-motion, Turbine-motion,
+    Propeller-motion, Kinetic-sculpture-motion
+  `),
+
+  // ── Back & forth ───────────────────────────────────────────
+  Oscillating: list(`
+    Swaying, Swinging, Pendulum-motion, Wobbling, Wiggle, Jittering, Shaking, Vibrating, Pulsating,
+    Breathing, Reciprocating, Resonance-motion, Damped-oscillation, Underdamped-motion, Overdamped-motion
+  `),
+  Bouncing: list(`
+    Rebounding, Rebound-motion, Ricocheting, Springing, Snapping, Recoiling, Recoil-motion, Impact-motion,
+    Collision-motion, Aftershock-motion
+  `),
+
+  // ── Physics & animation principles ─────────────────────────
+  'Physics-based-motion': list(`
+    Spring-motion, Inertial-motion, Momentum-motion, Gravity-motion, Accelerating, Decelerating,
+    Rigid-body-motion, Soft-body-motion, Kinematic-motion, Inverse-kinematic-motion,
+    Forward-kinematic-motion
+  `),
+  'Soft-body-motion': list(`Cloth-motion, Rope-motion, Chain-motion, Hair-motion`),
+  'Secondary-motion': list(`Anticipation-motion, Follow-through, Overshoot-motion`),
+
+  // ── Many things at once ────────────────────────────────────
+  'Particle-motion': list(`
+    Scattering, Dispersion, Accumulation, Convergence, Divergence, Attraction-motion, Repulsion-motion,
+    Swarming, Flocking
+  `),
+  'Procedural-motion': list(`
+    Generative-motion, Flow-field-motion, Brownian-motion, Random-walk, Perlin-noise-motion, Fractal-motion
+  `),
+  'Motion-trail': list(`
+    Particle-trail, Echo-motion, Afterimage-motion, Ghosting, Motion-smear, Motion-blur, Velocity-streak
+  `),
+
+  // ── Waves & fluids ─────────────────────────────────────────
+  'Wave-propagation': list(`Traveling-wave, Standing-wave, Surface-wave`),
+  'Fluid-flow': list(`Water-motion, Vortex-motion, Swirl-motion, Turbulence-motion, Smoke-motion, Fire-motion`),
+
+  // ── Light & screen effects ─────────────────────────────────
+  'Light-effect': list(`
+    Shimmering, Scanning, Iridescent-motion, Holographic-motion, Refraction-motion, Reflection-distortion,
+    Optical-warping, Caustic-motion, Chromatic-aberration-motion, Kaleidoscopic-motion
+  `),
+  Glitching: list(`RGB-splitting, Pixel-sorting, Pixel-dissolving, Pixel-explosion, Datamoshing`),
+};
+
+/** Every effect term, in family order (parent first, then its children). */
+export const EFFECTS = [...new Set(Object.entries(EFFECT_FAMILIES).flatMap(([parent, kids]) => [parent, ...kids]))];
+
+/** The top-level families (not nested inside another) with all their terms, for the grouped term index. */
+const NESTED = new Set(Object.values(EFFECT_FAMILIES).flat());
+export const EFFECT_GROUPS = Object.keys(EFFECT_FAMILIES)
+  .filter((p) => !NESTED.has(p))
+  .map((parent) => {
+    const terms = [];
+    const walk = (t) => !terms.includes(t) && (terms.push(t), (EFFECT_FAMILIES[t] || []).forEach(walk));
+    walk(parent);
+    return { parent, terms };
+  });
+
+/** A term plus every family it belongs to, at any depth: 'Blob-morphing' → ['Blob-morphing', 'Morphing', 'Deformation']. */
+const PARENTS = {};
+Object.entries(EFFECT_FAMILIES).forEach(([parent, kids]) => kids.forEach((k) => (PARENTS[k] ||= []).push(parent)));
+export function withFamilies(terms) {
+  const out = new Set();
+  const walk = (t) => !out.has(t) && (out.add(t), (PARENTS[t] || []).forEach(walk));
+  terms.forEach(walk);
+  return [...out];
+}
 
 export const PURPOSES = list(`
   Navigation, Wayfinding, Orientation, Feedback, Affordance, Hierarchy, Focus, Progress, Continuity,
   Decoration, Delight, Storytelling, Branding
 `);
 
-/** The filter axes, in the order the user walks them: element → trigger → effect. */
+/** The filter axes, in the order the user walks them: effect → trigger → element (motion first: it's a motion library). */
 export const AXES = [
-  { key: 'element', label: 'UI Element', step: '01', hint: 'What are you animating?' },
+  { key: 'effect', label: 'Motion Effect', step: '01', hint: 'What does the movement look like?', all: EFFECTS },
   { key: 'trigger', label: 'Interaction', step: '02', hint: 'What sets it off?', all: TRIGGERS },
-  { key: 'effect', label: 'Motion Effect', step: '03', hint: 'What does the movement look like?', all: EFFECTS },
+  { key: 'element', label: 'UI Element', step: '03', hint: 'What will you put it on?' },
   { key: 'behavior', label: 'Behavior', step: '+', hint: 'Optional: how it sits or reacts', all: BEHAVIORS },
   { key: 'purpose', label: 'Purpose', step: '+', hint: 'Optional: why it moves', all: PURPOSES },
 ];

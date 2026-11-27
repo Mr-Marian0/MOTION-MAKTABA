@@ -1,0 +1,31 @@
+/* Blob Hop */
+.sp-blob { display: grid; place-content: center; }
+.sp-blob__wrap { display: grid; justify-items: center; gap: 0.8em; padding-top: 5em; }
+.sp-blob__card {
+  width: 13em;
+  height: 11em;
+  padding: 0;
+  overflow: hidden;
+  color: var(--color-ink);
+  background: color-mix(in srgb, var(--sp-accent) 16%, var(--color-bone));
+  border: 1.5px solid var(--color-ink);
+  box-shadow: 0.25em 0.25em 0 var(--color-ink);
+  cursor: pointer;
+}
+.sp-blob__card:focus-visible { outline: 2px dashed var(--color-ink); outline-offset: 0.4em; }
+.sp-blob__content { display: grid; justify-items: center; align-content: center; gap: 0.25em; height: 100%; }
+.sp-blob__avatar {
+  display: grid;
+  place-items: center;
+  width: 3.4em;
+  height: 3.4em;
+  margin-bottom: 0.3em;
+  font: italic 400 1.2em/1 var(--font-display);
+  color: var(--color-bone);
+  border-radius: 50%;
+}
+.sp-blob__name { font: 400 1.5em/1.1 var(--font-display); }
+.sp-blob__role { font-size: 0.8em; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; }
+.sp-blob__stats { display: flex; gap: 1em; margin-top: 0.4em; font-size: 0.8em; }
+.sp-blob__stats b { color: var(--sp-accent); }
+.sp-blob__shadow { width: 11em; height: 1.2em; background: radial-gradient(closest-side, rgb(17 17 17 / 0.45), transparent); border-radius: 50%; opacity: 0.5; }

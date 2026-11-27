@@ -1,3 +1,35 @@
-node_modules
-dist
+# Dependencies & build output (re-created by `npm install` / `npm run build`)
+node_modules/
+dist/
+.vite/
+*.local
+
+# Logs & caches
+*.log
+npm-debug.log*
+.cache/
+.eslintcache
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor junk
 .DS_Store
+Thumbs.db
+desktop.ini
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Claude Code personal settings
+.claude/settings.local.json
+
+# Raw design sources & recordings — export a compressed copy instead
+*.psd
+*.ai
+*.fig
+*.sketch
+*.mov
+*.zip

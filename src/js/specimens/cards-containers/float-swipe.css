@@ -1,0 +1,57 @@
+/* Float & Swipe */
+@import url('tilt-product.css');
+
+.sp-float { display: grid; place-content: center; }
+.sp-float__scene { position: relative; display: grid; justify-items: center; gap: 1.4em; padding-bottom: 1.4em; }
+.sp-float__hover { position: relative; z-index: 1; }
+.sp-float__card {
+  width: 12em;
+  background: color-mix(in srgb, var(--sp-accent) 16%, var(--color-bone));
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+}
+.sp-float__card:active { cursor: grabbing; }
+.sp-float__card:focus-visible { outline: 2px dashed var(--color-ink); outline-offset: 0.3em; }
+.sp-float__card .sp-prod__img { height: 7em; }
+.sp-float__card .sp-prod__book { width: 4em; height: 5.2em; }
+/* The floor: the shadow and the arrows lie on one plane under the card. */
+.sp-float__floor { position: relative; width: 12em; height: 1.8em; }
+.sp-float__shadow {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(closest-side, rgb(17 17 17 / 0.55), rgb(17 17 17 / 0.25) 70%, transparent);
+  border-radius: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.sp-float__arrow {
+  position: absolute;
+  width: 2.6em;
+  height: 2em;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+/* Each triangle is tipped back onto the floor, so it foreshortens like the shadow. */
+.sp-float__arrow::before {
+  content: '';
+  position: absolute;
+  inset: 0.2em 0.3em;
+  background: var(--color-ink);
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  transform: perspective(5em) rotateX(62deg);
+}
+.sp-float__arrow--prev { top: calc(50% - 1em); right: calc(100% - 0.2em); }
+.sp-float__arrow--next { top: calc(50% - 1em); left: calc(100% - 0.2em); }
+.sp-float__arrow--next::before { clip-path: polygon(100% 50%, 0 0, 0 100%); }
+.sp-float__arrow--add { top: calc(100% - 0.5em); left: calc(50% - 1.3em); }
+.sp-float__arrow--add::before { clip-path: polygon(50% 100%, 0 0, 100% 0); }
+.sp-float__arrow:hover, .sp-float__arrow.is-hot { transform: scale(1.3); }
+.sp-float__arrow--prev.is-hot { transform: translateX(-0.3em) scale(1.3); }
+.sp-float__arrow--next.is-hot { transform: translateX(0.3em) scale(1.3); }
+.sp-float__arrow--add.is-hot { transform: translateY(0.2em) scale(1.3); }
+.sp-float__arrow:focus-visible { outline: 2px dashed var(--color-ink); }

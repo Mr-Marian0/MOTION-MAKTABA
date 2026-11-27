@@ -20,7 +20,7 @@
  * Filters are mirrored in the URL (?element=Navbar&trigger=Hover), so the
  * catalog can link straight to a filtered view.
  */
-import { AXES, ELEMENTS, PROPERTIES } from '../../data/taxonomy.js';
+import { AXES, ELEMENTS, PROPERTIES, EFFECT_GROUPS, withFamilies } from '../../data/taxonomy.js';
 import { cards as drawers } from '../../data/cards.js';
 import { codePanel, codePanelHTML } from './lab-code.js';
 
@@ -30,7 +30,9 @@ const pad = (n) => String(n).padStart(2, '0');
 const UNIT_CSS = { px: 'px', '°': 'deg' };
 const SPECIMENS = new URL('../specimens/', import.meta.url);
 
-const valuesOf = (spec, key) => (key === 'element' ? [spec.element] : spec[key] || []);
+const valuesOf = (spec, key) => (key === 'element' ? spec.elements : spec[key] || []);
+/** What a design is filed under: its own tags, plus their parent families for effects ('Squashing' → also 'Deformation'). */
+const filedUnder = (spec, key) => (key === 'effect' ? withFamilies(valuesOf(spec, key)) : valuesOf(spec, key));
 const defaultsOf = (spec) => Object.fromEntries(spec.params.map((p) => [p.key, p.default]));
 
 /** Load a drawer: its index.js list, then every design module (a broken one doesn't stop the rest). */
@@ -58,6 +60,9 @@ async function loadDrawer(cat) {
     specimens.push({
       trigger: [], behavior: [], effect: [], purpose: [], properties: [], params: [], description: '',
       ...meta,
+      // One motion can suit several UI elements: `element` may be a name or a list of names.
+      elements: [meta.element].flat().filter(Boolean),
+      element: [meta.element].flat().filter(Boolean).join(' / '),
       id,
       no: `No. ${pad(i + 1)}`, // position in index.js = the N in >Element>N
       mod: r.value.default,
@@ -155,8 +160,8 @@ export default {
 
     // ---- Which terms each axis offers ----
     const termsFor = (axis) => {
-      if (axis.key === 'element') return ELEMENTS[cat] || [...new Set(specimens.map((s) => s.element))];
-      const used = new Set(specimens.flatMap((s) => valuesOf(s, axis.key)));
+      if (axis.key === 'element') return ELEMENTS[cat] || [...new Set(specimens.flatMap((s) => s.elements))];
+      const used = new Set(specimens.flatMap((s) => filedUnder(s, axis.key)));
       const ordered = (axis.all || []).filter((t) => used.has(t));
       return [...ordered, ...[...used].filter((t) => !ordered.includes(t))];
     };
@@ -167,7 +172,7 @@ export default {
       if (v && termsFor(a).includes(v)) filters[a.key] = v;
     });
     const matches = (spec, except) =>
-      AXES.every((a) => a.key === except || !filters[a.key] || valuesOf(spec, a.key).includes(filters[a.key]));
+      AXES.every((a) => a.key === except || !filters[a.key] || filedUnder(spec, a.key).includes(filters[a.key]));
 
     // ---- Markup ----
     const tagRow = (spec, key, label) => {
@@ -178,26 +183,32 @@ export default {
           : `<em>none</em>`
       }</dd></div>`;
     };
+    // Card header: the main motion effects lead; the UI elements it suits sit on the right.
+    const headLinks = (list, key) =>
+      list.map((t) => `<button type="button" class="spec__el spec__el--${key}" data-axis="${key}" data-term="${esc(t)}">${esc(t)}</button>`).join(' / ');
     const cardHTML = (s) => `
       <li class="spec" data-id="${s.id}">
         <article class="spec__card" aria-labelledby="spec-${s.id}">
           <header class="spec__head folio">
-            <span>${esc(s.no)} · <button type="button" class="spec__el" data-axis="element" data-term="${esc(s.element)}">${esc(s.element)}</button></span>
-            <span>${s.trigger.map(esc).join(' / ')}</span>
+            <span>${esc(s.no)} · ${headLinks(s.effect.slice(0, 2), 'effect') || 'no motion effect'}</span>
+            <span>${headLinks(s.elements, 'element')}</span>
           </header>
           <div class="spec__stage lab-stage" data-stage></div>
           <div class="spec__body">
             <h3 class="spec__title" id="spec-${s.id}">${esc(s.title)}</h3>
             <p class="spec__desc">${esc(s.description)}</p>
             <dl class="spec__tags">
+              ${tagRow(s, 'effect', 'Effect')}
               ${tagRow(s, 'trigger', 'Trigger')}
               ${tagRow(s, 'behavior', 'Behavior')}
-              ${tagRow(s, 'effect', 'Effect')}
             </dl>
             <button type="button" class="spec__open" data-open="${s.id}">Tweak on the workbench <i aria-hidden="true">→</i></button>
           </div>
         </article>
       </li>`;
+    const indexTerm = (a, t) => (termsFor(a).includes(t)
+      ? `<button type="button" class="lab-index__term is-filed" data-axis="${a.key}" data-term="${esc(t)}">${esc(t)}</button>`
+      : `<span class="lab-index__term" title="Nothing filed under this yet">${esc(t)}</span>`);
     const axisHTML = (a) => `
       <fieldset class="lab-axis lab-axis--${a.key}" data-axis-box="${a.key}">
         <legend>
@@ -210,10 +221,14 @@ export default {
           <details class="lab-index">
             <summary>Browse all ${a.all.length} ${a.label.toLowerCase()} terms</summary>
             <input type="search" class="lab-index__search" placeholder="Search ${a.label.toLowerCase()}…" data-search="${a.key}" aria-label="Search ${a.label} terms" />
-            <div class="lab-index__list" data-index="${a.key}">
-              ${a.all.map((t) => (termsFor(a).includes(t)
-                ? `<button type="button" class="lab-index__term is-filed" data-axis="${a.key}" data-term="${esc(t)}">${esc(t)}</button>`
-                : `<span class="lab-index__term" title="Nothing filed under this yet">${esc(t)}</span>`)).join('')}
+            <div class="lab-index__list ${a.key === 'effect' ? 'lab-index__list--grouped' : ''}" data-index="${a.key}">
+              ${a.key === 'effect'
+                ? EFFECT_GROUPS.map((g) => `
+                    <div class="lab-index__group" data-group>
+                      <h4 class="lab-index__group-name">${esc(g.parent)}</h4>
+                      <div class="lab-index__group-terms">${g.terms.map((t) => indexTerm(a, t)).join('')}</div>
+                    </div>`).join('')
+                : a.all.map((t) => indexTerm(a, t)).join('')}
             </div>
           </details>` : ''}
       </fieldset>`;
@@ -309,8 +324,8 @@ export default {
         const box = el.querySelector(`[data-chips="${a.key}"]`);
         box.innerHTML = termsFor(a)
           .map((t) => {
-            const total = specimens.filter((s) => valuesOf(s, a.key).includes(t)).length;
-            const n = specimens.filter((s) => matches(s, a.key) && valuesOf(s, a.key).includes(t)).length;
+            const total = specimens.filter((s) => filedUnder(s, a.key).includes(t)).length;
+            const n = specimens.filter((s) => matches(s, a.key) && filedUnder(s, a.key).includes(t)).length;
             const on = filters[a.key] === t;
             return `<button type="button" class="lab-chip" data-axis="${a.key}" data-term="${esc(t)}" aria-pressed="${on}"
                       ${!n && !on ? 'data-dim' : ''} ${!total ? 'disabled' : ''}>${esc(t)}<sup>${total ? n : 'soon'}</sup></button>`;
@@ -356,22 +371,36 @@ export default {
       renderPath(changed);
       syncURL();
       if (state) {
-        // Cards stay in normal flow (no `absolute`), so they only move inside the grid.
-        flipTween = Flip.from(state, {
-          duration: 0.7,
-          ease: 'expo.out',
-          onEnter: (els) =>
-            gsap.fromTo(
-              els,
-              { opacity: 0, y: 60, rotation: () => gsap.utils.random(-5, 5) },
-              { opacity: 1, y: 0, rotation: 0, duration: 0.7, ease: 'expo.out', stagger: 0.05 }
-            ),
-          onComplete: () => {
-            grid.style.minHeight = '';
-            flipTween = null;
-            ScrollTrigger.refresh();
-          },
+        // Position only: tweening width/height made cards visibly stretch
+        // (bottom edge growing, then snapping back) as they changed rows.
+        // Each card takes its final size at once and just slides into place.
+        const done = () => {
+          grid.style.minHeight = '';
+          flipTween = null;
+          ScrollTrigger.refresh();
+        };
+        const moved = [];
+        const entered = [];
+        items.forEach((li) => {
+          if (li.hidden) return;
+          const prev = state.getElementState(li);
+          if (!prev || !prev.isVisible) return entered.push(li);
+          const r = li.getBoundingClientRect();
+          const dx = prev.left - r.left;
+          const dy = prev.top - r.top;
+          if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) moved.push({ li, dx, dy });
         });
+        flipTween = gsap.timeline({ onComplete: done });
+        moved.forEach(({ li, dx, dy }) =>
+          flipTween.fromTo(li, { x: dx, y: dy }, { x: 0, y: 0, duration: 0.7, ease: 'expo.out', clearProps: 'transform' }, 0)
+        );
+        if (entered.length)
+          flipTween.fromTo(
+            entered,
+            { opacity: 0, y: 60, rotation: () => gsap.utils.random(-5, 5) },
+            { opacity: 1, y: 0, rotation: 0, duration: 0.7, ease: 'expo.out', stagger: 0.05, clearProps: 'transform,opacity' },
+            0
+          );
       } else {
         grid.style.minHeight = '';
         ScrollTrigger.refresh();
@@ -406,8 +435,13 @@ export default {
       const box = e.target.closest('[data-search]');
       if (!box) return;
       const q = box.value.trim().toLowerCase();
-      el.querySelectorAll(`[data-index="${box.dataset.search}"] .lab-index__term`).forEach((t) => {
+      const list = el.querySelector(`[data-index="${box.dataset.search}"]`);
+      list.querySelectorAll('.lab-index__term').forEach((t) => {
         t.hidden = q && !t.textContent.toLowerCase().includes(q);
+      });
+      // Hide a family heading once none of its terms match.
+      list.querySelectorAll('[data-group]').forEach((g) => {
+        g.hidden = !g.querySelector('.lab-index__term:not([hidden])');
       });
     });
 
@@ -547,11 +581,11 @@ export default {
     const openBench = async (id, from) => {
       current = byId[id];
       opener = from;
-      $('[data-bench-code]').textContent = `${current.no} · ${current.element} · Workbench`;
+      $('[data-bench-code]').textContent = `${current.no} · ${current.effect[0] || current.element} · Workbench`;
       $('.bench__title').textContent = current.title;
       $('[data-bench-path]').innerHTML = `
-        <span>${esc(current.element)}</span> → <span>${current.trigger.map(esc).join(' / ')}</span> →
-        <span>${current.effect.length ? current.effect.map(esc).join(' · ') : 'no motion effect'}</span>`;
+        <span>${current.effect.length ? current.effect.map(esc).join(' · ') : 'no motion effect'}</span> →
+        <span>${current.trigger.map(esc).join(' / ')}</span> → <span>${esc(current.element)}</span>`;
       renderControls();
       code.show(current, params);
       bench.hidden = false;

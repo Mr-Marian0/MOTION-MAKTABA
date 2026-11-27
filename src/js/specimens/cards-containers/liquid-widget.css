@@ -1,0 +1,28 @@
+/* Liquid Widget (drawing units: 1 = 0.1em, so the 190 × 150 svg is 19 × 15em) */
+.sp-liq { display: grid; place-content: center; }
+.sp-liq__wrap { position: relative; width: 19em; height: 15em; cursor: pointer; }
+.sp-liq__svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0.25em 0.25em 0 rgb(17 17 17 / 0.85)); }
+.sp-liq__body { stroke: var(--color-ink); stroke-width: 1.5px; vector-effect: non-scaling-stroke; }
+.sp-liq__stop1 { stop-color: color-mix(in srgb, var(--sp-accent) 65%, white); }
+.sp-liq__stop2 { stop-color: var(--sp-accent); }
+.sp-liq__ring { fill: none; stroke: rgb(255 255 255 / 0.7); stroke-width: 1.5px; vector-effect: non-scaling-stroke; }
+.sp-liq__drop { fill: color-mix(in srgb, var(--sp-accent) 70%, white); stroke: var(--color-ink); stroke-width: 1.2px; vector-effect: non-scaling-stroke; }
+.sp-liq__content {
+  position: absolute;
+  top: 2.5em;
+  left: 2.5em;
+  display: grid;
+  align-content: start;
+  gap: 0.2em;
+  width: 14em;
+  height: 10em;
+  padding: 1.2em 1.4em;
+  color: var(--color-bone);
+  pointer-events: none;
+}
+.sp-liq__content small { letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.8; }
+.sp-liq__content b { font: 400 2.6em/1 var(--font-display); }
+.sp-liq__ml { display: inline-block; }
+.sp-liq__goal { font-size: 0.85em; opacity: 0.8; }
+.sp-liq__bar { display: block; height: 0.45em; margin-top: 0.6em; overflow: hidden; background: rgb(250 250 247 / 0.25); border-radius: 1em; }
+.sp-liq__bar i { display: block; height: 100%; background: var(--color-bone); border-radius: inherit; transform-origin: left; }
