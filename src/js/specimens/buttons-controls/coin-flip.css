@@ -1,0 +1,48 @@
+/* Coin Flip */
+.sp-coin { display: grid; place-items: center; }
+.sp-coin__btn {
+  position: relative;
+  width: 6em;
+  height: 6em;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  perspective: 30em;
+  cursor: pointer;
+}
+.sp-coin__toss, .sp-coin__disc, .sp-coin__face { position: absolute; inset: 0; }
+.sp-coin__toss, .sp-coin__disc { transform-style: preserve-3d; }
+.sp-coin__face {
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+  color: var(--color-umber);
+  background: radial-gradient(circle at 35% 30%, var(--color-kraft-core), var(--sp-accent) 72%);
+  border: 0.22em solid var(--color-kraft-deep);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 0.3em rgb(255 255 255 / 0.18), inset 0 0 0 0.45em rgb(62 44 31 / 0.35);
+  backface-visibility: hidden;
+  text-align: center;
+}
+.sp-coin__face b { font: italic 400 2.6em/0.9 var(--font-display); }
+.sp-coin__face small { font-size: 0.62em; letter-spacing: 0.22em; text-transform: uppercase; }
+/* Hover: a glint sweeps across the face. */
+.sp-coin__face::after {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(115deg, transparent 40%, rgb(255 255 255 / 0.55) 50%, transparent 60%);
+  translate: -110% 0;
+  transition: translate 0.7s var(--ease-settle);
+}
+.sp-coin__btn:hover .sp-coin__face::after { translate: 110% 0; }
+.sp-coin__shadow {
+  position: absolute;
+  right: 15%;
+  bottom: -1.1em;
+  left: 15%;
+  height: 0.6em;
+  background: rgb(17 17 17 / 0.2);
+  border-radius: 50%;
+}

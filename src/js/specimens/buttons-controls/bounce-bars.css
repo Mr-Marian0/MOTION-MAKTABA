@@ -1,0 +1,35 @@
+/* Bounce Bars */
+.sp-bars { display: grid; place-items: center; }
+.sp-bars__rail {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.22em;
+  width: 70%;
+  height: 3.2em;
+  padding-bottom: 0.6em;
+  touch-action: none;
+  cursor: grab;
+}
+.sp-bars__rail:active { cursor: grabbing; }
+.sp-bars__bar { flex: 1; height: 1.6em; transform-origin: 50% 100%; }
+.sp-bars__ink { display: block; height: 100%; background: var(--sp-accent); transition: background-color 0.15s; }
+.sp-bars__bar.is-lit .sp-bars__ink { background: var(--sp-lit); }
+.sp-bars__thumb {
+  position: absolute;
+  bottom: 0.4em;
+  width: 0.85em;
+  height: 2.1em;
+  margin-left: -0.425em;
+  background: color-mix(in srgb, var(--color-ink) 55%, var(--color-bone));
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.15em;
+  box-shadow: 0.12em 0.12em 0 var(--color-ink);
+}
+.sp-bars__thumb::after { /* grip line */
+  content: '';
+  position: absolute;
+  inset: 25% 40%;
+  background: rgb(255 255 255 / 0.5);
+  border-radius: 1em;
+}

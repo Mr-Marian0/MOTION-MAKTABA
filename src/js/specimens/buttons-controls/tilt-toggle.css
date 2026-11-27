@@ -1,0 +1,4 @@
+/* Tilt Toggle: builds on Ink Toggle (track, knob, colors); adds room for the tilt. */
+@import url('ink-toggle.css');
+
+.sp-tilt .sp-toggle__btn { gap: 1.6em; }

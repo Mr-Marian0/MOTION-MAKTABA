@@ -1,0 +1,35 @@
+/* Quarter FAB */
+@import url('_fab-base.css');
+
+.sp-qfab { --fab-x: 2.6em; --fab-y: 2.6em; }
+
+.sp-qfab__tray {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10em;
+  height: 10em;
+  background: var(--color-paper-dark);
+  border-radius: 0 100% 0 0;
+  /* Revealed clockwise from straight up, following the hand. */
+  mask: conic-gradient(from 0deg at 0 100%, #000 var(--sweep, 0deg), transparent 0);
+  -webkit-mask: conic-gradient(from 0deg at 0 100%, #000 var(--sweep, 0deg), transparent 0);
+}
+.sp-qfab__act {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 2.8em;
+  height: 2.8em;
+  margin: 0 0 -1.4em -1.4em; /* the button keeps the base em, so left/bottom/margin stay in tray units */
+  padding: 0;
+  color: var(--color-bone);
+  background: var(--sp-accent);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: scale 0.2s var(--ease-settle);
+}
+.sp-qfab__act span { font: italic 400 1.3em/1 var(--font-display); }
+.sp-qfab__act:hover { scale: 1.12; }
+.sp-qfab__line { position: absolute; bottom: 0; left: -1.5px; width: 3px; height: 10em; background: var(--color-ink); border-radius: 2px; }

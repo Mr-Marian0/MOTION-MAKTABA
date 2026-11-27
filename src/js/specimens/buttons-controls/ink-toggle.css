@@ -32,5 +32,7 @@
   border-radius: 50%;
   transition: background-color 0.3s;
 }
+.sp-toggle--v .sp-toggle__track { width: 2.2em; height: 4.4em; }
+.sp-toggle--v .sp-toggle__knob { top: auto; bottom: 0.25em; }
 .sp-toggle__btn[aria-checked="true"] .sp-toggle__track { background: var(--sp-accent); }
 .sp-toggle__btn[aria-checked="true"] .sp-toggle__knob { background: var(--color-bone); }

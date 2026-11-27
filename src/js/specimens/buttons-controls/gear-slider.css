@@ -1,0 +1,34 @@
+/* Gear Slider */
+.sp-gear { display: grid; place-items: center; }
+.sp-gear__rail { position: relative; width: 70%; height: 3em; touch-action: none; cursor: grab; }
+.sp-gear__rail:active { cursor: grabbing; }
+.sp-gear__track, .sp-gear__fill {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 1.1em;
+  margin-top: -0.55em;
+  border-radius: 1em;
+}
+.sp-gear__track { right: 0; background: rgb(17 17 17 / 0.45); }
+.sp-gear__fill { min-width: 1.1em; background: rgb(17 17 17 / 0.22); }
+.sp-gear__thumb { position: absolute; top: 50%; width: 2.6em; height: 2.6em; margin: -1.3em 0 0 -1.3em; border-radius: 50%; }
+.sp-gear__thumb svg { display: block; width: 100%; height: 100%; overflow: visible; transition: scale 0.25s var(--ease-settle); }
+.sp-gear__thumb path { fill: var(--sp-accent); fill-rule: evenodd; }
+.sp-gear__rail:hover svg { scale: 1.08; }
+.sp-gear__tag {
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  min-width: 2.4em;
+  padding: 0.3em 0.4em;
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-bone);
+  background: var(--sp-accent);
+  border-radius: 0.3em;
+  opacity: 0;
+  translate: -50% 0.4em;
+  transition: opacity 0.2s, translate 0.3s var(--ease-settle);
+}
+.sp-gear__thumb.is-grab .sp-gear__tag, .sp-gear__thumb:focus-visible .sp-gear__tag { opacity: 1; translate: -50% 0; }

@@ -1,0 +1,33 @@
+/* Bubble FAB */
+@import url('_fab-base.css');
+
+.sp-bub .sp-fabx__main { color: var(--sp-accent); background: color-mix(in srgb, var(--sp-accent) 12%, var(--color-bone)); }
+.sp-bub__ring { position: absolute; inset: -0.35em; border: 2px dashed var(--sp-accent); border-radius: 50%; pointer-events: none; }
+.sp-bub__act, .sp-bub__dot { position: absolute; left: 0; bottom: 0; }
+.sp-bub__act {
+  display: grid;
+  place-items: center;
+  width: 3em;
+  height: 3em;
+  margin: 0 0 -1.5em -1.5em;
+  padding: 0;
+  background: color-mix(in srgb, var(--sp-accent) 28%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--sp-accent) 45%, transparent);
+  border-radius: 0.5em;
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+}
+.sp-bub__in {
+  display: grid;
+  place-items: center;
+  width: 1.8em;
+  height: 1.8em;
+  font: italic 400 1.1em/1 var(--font-display);
+  color: var(--color-bone);
+  background: color-mix(in srgb, var(--sp-accent) 75%, transparent);
+  border-radius: 50%;
+  transition: scale 0.2s var(--ease-settle);
+}
+.sp-bub__act:hover .sp-bub__in { scale: 1.15; }
+.sp-bub__dot { width: 0.45em; height: 0.45em; margin: 0 0 -0.22em -0.22em; background: color-mix(in srgb, var(--sp-accent) 60%, transparent); border-radius: 50%; }
+.sp-bub__dot:nth-child(3n) { width: 0.7em; height: 0.7em; background: none; border: 1.5px solid color-mix(in srgb, var(--sp-accent) 50%, transparent); }

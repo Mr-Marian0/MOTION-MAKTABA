@@ -1,0 +1,37 @@
+/* Hop Flip */
+.sp-hop { display: grid; place-items: center; }
+.sp-hop__btn {
+  position: relative;
+  width: 4.6em;
+  height: 4.6em;
+  margin-top: 2.4em;
+  padding: 0;
+  background: none;
+  border: 0;
+  perspective: 24em;
+  cursor: pointer;
+}
+.sp-hop__lean, .sp-hop__body, .sp-hop__cube { position: absolute; inset: 0; transform-style: preserve-3d; }
+.sp-hop__body { transform-origin: 50% 100%; }
+.sp-hop__face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: var(--sp-accent);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.6em;
+  backface-visibility: hidden;
+}
+.sp-hop__face--back { background: var(--color-bone); }
+.sp-hop__face svg { width: 2.2em; fill: none; stroke: var(--color-bone); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.sp-hop__face--back svg { stroke: var(--sp-accent); }
+.sp-hop__shadow {
+  position: absolute;
+  right: 10%;
+  bottom: -0.9em;
+  left: 10%;
+  height: 0.55em;
+  background: rgb(17 17 17 / 0.2);
+  border-radius: 50%;
+}

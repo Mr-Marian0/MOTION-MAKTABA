@@ -1,0 +1,28 @@
+/* Card FAB: the button sits over the card's bottom-left corner. */
+@import url('_fab-base.css');
+
+.sp-card .sp-fabx__main { color: var(--color-ink); background: color-mix(in srgb, var(--sp-accent) 22%, var(--color-bone)); border: 1.5px solid color-mix(in srgb, var(--sp-accent) 45%, var(--color-bone)); }
+.sp-card__panel {
+  position: absolute;
+  bottom: 0.6em;
+  left: 0.6em;
+  display: grid;
+  gap: 0.35em;
+  width: 9em;
+  padding: 0.6em;
+  background: color-mix(in srgb, var(--sp-accent) 8%, var(--color-bone));
+  border: 1.5px solid color-mix(in srgb, var(--sp-accent) 30%, var(--color-bone));
+  perspective: 30em;
+}
+.sp-card__row {
+  height: 1.9em;
+  padding: 0 0.8em;
+  overflow: hidden;
+  text-align: left;
+  color: var(--color-ink);
+  background: color-mix(in srgb, var(--sp-accent) 45%, var(--color-bone));
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.sp-card__row:hover { background: color-mix(in srgb, var(--sp-accent) 65%, var(--color-bone)); }

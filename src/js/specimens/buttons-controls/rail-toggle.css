@@ -1,0 +1,41 @@
+/* Rail Toggle */
+.sp-rail { display: grid; place-items: center; }
+.sp-rail__btn {
+  position: relative;
+  width: 10em;
+  height: 2.6em;
+  padding: 0;
+  font: 700 1.1em/1 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.sp-rail__rail { position: absolute; right: 0; bottom: 0; left: 0; height: 0.35em; background: var(--sp-accent); border-radius: 0.1em; }
+.sp-rail__block {
+  position: absolute;
+  bottom: 0.35em;
+  left: 0;
+  width: 3.2em;
+  height: 1.4em;
+  background: var(--sp-accent);
+  border-radius: 0.15em 0.15em 0 0;
+  transform-origin: 50% 100%;
+}
+.sp-rail__led {
+  position: absolute;
+  top: -0.5em;
+  left: 0;
+  width: 0.55em;
+  height: 0.55em;
+  background: #b3412e; /* stamp red, as in TONES */
+  transition: left 0.25s var(--ease-settle), background-color 0.2s, box-shadow 0.2s;
+}
+.sp-rail__lbl { position: absolute; bottom: 0.75em; transition: opacity 0.3s, translate 0.3s var(--ease-settle); }
+.sp-rail__lbl--off { right: 0.2em; }
+.sp-rail__lbl--on { left: 0.2em; opacity: 0; translate: -0.5em 0; }
+.sp-rail__btn[aria-checked="true"] .sp-rail__led { left: calc(100% - 0.55em); background: var(--sp-led); box-shadow: 0 0 0.5em var(--sp-led); }
+.sp-rail__btn[aria-checked="true"] .sp-rail__lbl--off { opacity: 0; translate: 0.5em 0; }
+.sp-rail__btn[aria-checked="true"] .sp-rail__lbl--on { opacity: 1; translate: 0 0; }

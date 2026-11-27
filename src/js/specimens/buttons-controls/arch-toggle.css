@@ -1,0 +1,12 @@
+/* Arch Toggle */
+.sp-arch { display: grid; place-items: center; }
+.sp-arch__btn { display: grid; padding: 0; color: var(--color-ink); background: none; border: 0; cursor: pointer; }
+.sp-arch__btn > * { grid-area: 1 / 1; }
+.sp-arch__btn svg { width: 10em; overflow: visible; }
+.sp-arch__track, .sp-arch__fill { fill: none; stroke-width: 22; }
+.sp-arch__track { stroke: var(--sp-accent); }
+.sp-arch__fill { stroke: var(--sp-on); }
+.sp-arch__knob { fill: var(--color-bone); stroke: var(--color-ink); stroke-width: 1.2; }
+/* The label sits in the hollow under the arch. */
+.sp-arch__lbl { display: grid; align-self: end; justify-self: center; font: italic 400 1.6em/1 var(--font-display); }
+.sp-arch__lbl span { grid-area: 1 / 1; text-align: center; }

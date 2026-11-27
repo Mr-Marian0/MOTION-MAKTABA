@@ -1,0 +1,22 @@
+/* Tag FAB */
+@import url('_fab-base.css');
+
+.sp-tag .sp-fabx__main { color: var(--color-ink); background: color-mix(in srgb, var(--sp-accent) 40%, var(--color-bone)); }
+.sp-tag__line { position: absolute; left: -1.5px; width: 3px; background: var(--color-ink); }
+.sp-tag__node { position: absolute; left: -0.3em; width: 0.6em; height: 0.6em; margin-bottom: -0.3em; background: var(--color-ink); }
+.sp-tag__act {
+  position: absolute;
+  left: 0.7em;
+  padding: 0.55em 1.3em;
+  margin-bottom: -1em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-ink);
+  background: color-mix(in srgb, var(--sp-accent) 40%, var(--color-bone));
+  border: 0;
+  cursor: pointer;
+  transform: skewX(-16deg);
+  transition: translate 0.2s var(--ease-settle), background-color 0.2s;
+}
+.sp-tag__act:hover { translate: 0.3em 0; background: color-mix(in srgb, var(--sp-accent) 60%, var(--color-bone)); }

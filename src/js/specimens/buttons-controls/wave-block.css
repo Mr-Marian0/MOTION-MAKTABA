@@ -1,0 +1,8 @@
+/* Wave Block */
+.sp-wave { display: grid; place-items: center; }
+.sp-wave__btn { display: block; padding: 0; background: none; border: 0; cursor: pointer; }
+.sp-wave__btn svg { display: block; width: 4.6em; height: 9.2em; overflow: visible; }
+.sp-wave__body { fill: var(--sp-accent); stroke: var(--color-ink); stroke-width: 1.5; stroke-linejoin: round; }
+.sp-wave__icon { fill: none; stroke: var(--color-bone); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.sp-wave__shadow { fill: rgb(17 17 17 / 0.2); }
+.sp-wave__ring { fill: none; stroke: var(--sp-accent); stroke-width: 1.5; opacity: 0; }

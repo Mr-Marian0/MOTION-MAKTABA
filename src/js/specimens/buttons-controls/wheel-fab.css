@@ -1,0 +1,33 @@
+/* Wheel FAB: disc and wedges are circles centered on the hub; each wedge is clipped to its slice. */
+@import url('_fab-base.css');
+
+/* Hub sits 6.2em from the corner so the whole disc (r 5.5em) stays inside the stage. */
+.sp-wheel { --fab-x: 4.5em; --fab-y: 4.5em; }
+.sp-wheel__disc, .sp-wheel__sec { position: absolute; border-radius: 50%; }
+.sp-wheel__disc { left: -5.5em; bottom: -5.5em; width: 11em; height: 11em; background: color-mix(in srgb, var(--sp-accent) 40%, var(--color-bone)); }
+.sp-wheel__sec {
+  left: -6em;
+  bottom: -6em;
+  width: 12em;
+  height: 12em;
+  padding: 0;
+  color: var(--color-ink);
+  background: var(--color-paper-dark);
+  border: 0;
+  cursor: pointer;
+  transition: translate 0.25s var(--ease-settle), filter 0.2s;
+}
+.sp-wheel__sec:nth-of-type(3n + 2) { background: var(--color-kraft-core); }
+.sp-wheel__sec:nth-of-type(3n) { background: var(--color-tape); }
+.sp-wheel__sec:hover { translate: var(--dx) var(--dy); filter: brightness(1.04); }
+.sp-wheel__sec span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding-left: 2.4em;
+  margin-top: -0.6em;
+  font-size: 0.78em;
+  line-height: 1.2;
+  white-space: nowrap;
+  transform-origin: 0 50%;
+}

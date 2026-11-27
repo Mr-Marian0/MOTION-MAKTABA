@@ -1,0 +1,35 @@
+/* Box Flip: a flat 3D box with a label on every side. */
+.sp-box { display: grid; place-items: center; }
+.sp-box__btn {
+  display: grid;
+  padding: 0;
+  font-size: 1.1em;
+  background: none;
+  border: 0;
+  perspective: 40em;
+  cursor: pointer;
+}
+.sp-box__sizer, .sp-box__cube { grid-area: 1 / 1; }
+.sp-box__sizer, .sp-box__face {
+  display: grid;
+  place-items: center;
+  height: 2.9em;
+  padding: 0 2em;
+  font: 500 1em/1 var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.sp-box__sizer { visibility: hidden; }
+.sp-box__cube { position: relative; transform-style: preserve-3d; }
+.sp-box__face {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  color: var(--color-bone);
+  background: var(--sp-accent, var(--color-ink));
+  border-radius: 0.36em;
+  transform: rotateX(var(--r)) translateZ(1.45em);
+  backface-visibility: hidden;
+}
+.sp-box__face:nth-child(even) { background-image: linear-gradient(rgb(255 255 255 / 0.1), rgb(255 255 255 / 0.1)); }

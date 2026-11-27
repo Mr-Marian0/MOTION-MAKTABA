@@ -1,0 +1,18 @@
+/* Grip Slider */
+.sp-grip { display: grid; place-items: center; }
+.sp-grip__rail { position: relative; width: 74%; height: 3.4em; touch-action: none; cursor: grab; }
+.sp-grip__rail:active { cursor: grabbing; }
+.sp-grip__bar { position: absolute; top: 50%; right: 0; left: 0; height: 1.4em; margin-top: -0.7em; background: var(--sp-accent); }
+.sp-grip__thumb {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 1.1em;
+  height: 2.1em;
+  background: var(--color-bone);
+  border: 1.5px solid color-mix(in srgb, var(--color-ink) 40%, var(--color-bone));
+  border-radius: 0.15em;
+  translate: -50% -50%;
+}
+.sp-grip__val { font-size: 0.9em; font-weight: 700; color: var(--color-ink); opacity: 0; }

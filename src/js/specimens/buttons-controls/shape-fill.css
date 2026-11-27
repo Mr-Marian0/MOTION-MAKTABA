@@ -1,0 +1,18 @@
+/* Shape Fill: builds on Press & Send (button look); adds the growing shape. */
+@import url('press-button.css');
+
+.sp-fill__btn { position: relative; }
+.sp-fill__blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--sp-fill);
+  pointer-events: none;
+}
+.sp-fill__blob[data-shape="Circle"] { border-radius: 50%; }
+.sp-fill__blob[data-shape="Square"] { border-radius: 14%; }
+.sp-fill__blob[data-shape="Diamond"] { clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+.sp-fill__blob[data-shape="Star"] {
+  clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.sp-fill__new { position: relative; z-index: 1; }

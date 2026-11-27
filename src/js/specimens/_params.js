@@ -33,5 +33,11 @@ export const tone = (def = '#111111', key = 'tone', css = '--sp-accent', label =
   key, label, group: 'Appearance', type: 'swatch', options: TONES, default: def, css,
 });
 
+/** A "click signal" choice; play it with clickSignal() from _kit.js. */
+export const SIGNAL_CHOICES = ['Bounce', 'Squash', 'Shake', 'Pulse', 'None'];
+export const signal = (def = 'Bounce') => ({
+  key: 'signal', label: 'Click signal', group: 'Behavior', type: 'choice', options: SIGNAL_CHOICES, default: def, live: true,
+});
+
 /** Names for the `ease` choice; map them to GSAP eases with EASES from _kit.js. */
 export const EASE_CHOICES = ['Expo', 'Smooth', 'Back', 'Elastic', 'Bounce', 'Linear'];

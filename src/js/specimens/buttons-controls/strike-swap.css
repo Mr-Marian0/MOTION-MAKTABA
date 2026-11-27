@@ -1,0 +1,16 @@
+/* Strike Swap: builds on Press & Send (button look); adds the eraser line. */
+@import url('press-button.css');
+
+.sp-strike__text { position: relative; display: grid; }
+.sp-strike__sizer { visibility: hidden; }
+.sp-strike__lbl { text-align: center; }
+.sp-strike__line {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: var(--sp-thick, 0.14em);
+  margin-top: calc(var(--sp-thick, 0.14em) / -2);
+  background: var(--sp-line, var(--color-bone));
+  border-radius: 1em;
+}

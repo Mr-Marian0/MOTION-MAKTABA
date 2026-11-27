@@ -1,0 +1,17 @@
+/* Taper Slider */
+.sp-taper { display: grid; place-items: center; }
+.sp-taper__rail { position: relative; width: 74%; height: 3em; touch-action: none; cursor: grab; }
+.sp-taper__rail:active { cursor: grabbing; }
+.sp-taper svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.sp-taper__line { fill: none; stroke: var(--sp-accent); stroke-width: 4; vector-effect: non-scaling-stroke; }
+.sp-taper__wedge { fill: var(--sp-accent); }
+.sp-taper__thumb {
+  position: absolute;
+  top: 50%;
+  width: 1.7em;
+  height: 1.7em;
+  margin: -0.85em 0 0 -0.85em;
+  background: var(--color-bone);
+  border: 1.5px solid color-mix(in srgb, var(--color-ink) 30%, var(--color-bone));
+  border-radius: 50%;
+}

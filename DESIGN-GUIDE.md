@@ -18,6 +18,15 @@ Images are rough sketches made in Krita (plain colors, simple shapes). Treat the
 - read layout, proportions, order and intent from them;
 - don't copy them exactly; restyle in the paper theme (tokens in `src/styles/tokens.css`) and improve freely;
 - never save the image into the project.
+- Numbered sketches (1, 2, 3…) map to the numbered lines of the request; one sketch = one new card unless the words say otherwise.
+
+## 2b. Add your own (standing instruction from the owner)
+
+Every request is a starting point, not the whole brief, with or without an image:
+- Add your own design and motion where it makes the result more visually effective: hover, press/click and idle touches (e.g. a peek on hover, a squash on press, a gentle idle loop), follow-through, secondary motion.
+- Keep what was asked exactly as asked; extras must support it, never replace or obscure it.
+- Expose useful extras as workbench settings (direction, color, speed, amount) so they can be tuned or turned off.
+- List the extras you added in the reply, so the owner can veto them.
 
 ## 3. Digest (do this before writing code)
 

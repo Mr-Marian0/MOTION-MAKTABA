@@ -1,0 +1,20 @@
+/* Shared by the bottom-left FABs (quarter, wheel, bubble, ink, tag, card).
+   .sp-fabx__hub is a zero-size anchor at the main button's center: actions are placed from it. */
+.sp-fabx__main {
+  position: absolute;
+  z-index: 5;
+  left: var(--fab-x, 2.2em);
+  bottom: var(--fab-y, 2.2em);
+  display: grid;
+  place-items: center;
+  width: 3.4em;
+  height: 3.4em;
+  color: var(--color-bone);
+  background: var(--sp-accent);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.sp-fabx__main > i { font: 300 2.2em/1 var(--font-display); font-style: normal; }
+.sp-fabx__hub { position: absolute; left: calc(var(--fab-x, 2.2em) + 1.7em); bottom: calc(var(--fab-y, 2.2em) + 1.7em); width: 0; height: 0; }
+.sp-fabx .sp-note { left: auto; right: 1.4em; text-align: right; }
