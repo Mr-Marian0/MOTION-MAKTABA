@@ -338,7 +338,7 @@ export const demo = (card = {}) => {
 export default {
   name: 'ui-specimen',
 
-  init(el, options, { gsap, ScrollTrigger, reducedMotion }) {
+  init(el, options, { gsap, ScrollTrigger, reducedMotion, lite }) {
     const build = BUILDERS[options.kind];
     if (!build || reducedMotion) return;
 
@@ -351,11 +351,12 @@ export default {
     });
     build(tl, q, gsap);
 
-    // Only run while visible.
+    // Only run while well in view (not the moment one edge peeks in), so at most one or two
+    // demos play at a time; on lite devices only the one near the middle of the screen.
     const st = ScrollTrigger.create({
       trigger: el,
-      start: 'top bottom',
-      end: 'bottom top',
+      start: lite ? 'top 70%' : 'top 85%',
+      end: lite ? 'bottom 30%' : 'bottom 15%',
       onToggle: (self) => (self.isActive ? tl.play() : tl.pause()),
     });
 

@@ -1,0 +1,20 @@
+/* Inflate Cheer: --puff (0 → 1) rounds the corners, softens the shadow and brings up the sheen. */
+@import url('_card.css');
+.sp-inf__card {
+  --puff: 0;
+  z-index: 1;
+  justify-items: center;
+  text-align: center;
+  background: color-mix(in srgb, var(--sp-accent) calc(8% + var(--puff) * 22%), var(--color-bone));
+  border-radius: calc(0.6em + var(--puff) * 3.4em);
+  box-shadow: calc(0.25em + var(--puff) * 0.3em) calc(0.25em + var(--puff) * 0.6em) calc(var(--puff) * 0.8em) var(--color-ink);
+}
+.sp-inf__sheen {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 40% 30% at 30% 22%, rgb(255 255 255 / 0.9), transparent), radial-gradient(ellipse 80% 60% at 70% 90%, rgb(17 17 17 / 0.14), transparent);
+  border-radius: inherit;
+  opacity: var(--puff);
+  pointer-events: none;
+}
+.sp-inf__string { position: absolute; top: 100%; left: 50%; width: 1.5px; height: 3em; background: var(--color-ink); transform-origin: 50% 0; }

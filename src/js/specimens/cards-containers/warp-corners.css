@@ -1,0 +1,10 @@
+/* Warp Corners: the card's transform (matrix3d) is set from JS around its top-left corner. */
+@import url('_card.css');
+.sp-wrp__card { transform-origin: 0 0; }
+.sp-wrp__img { background: linear-gradient(90deg, rgb(17 17 17 / 0.18) 1px, transparent 1px) 0 0 / 1.2em 1.2em, linear-gradient(rgb(17 17 17 / 0.18) 1px, transparent 1px) 0 0 / 1.2em 1.2em, color-mix(in srgb, var(--sp-accent) 35%, var(--color-kraft-core)); }
+.sp-wrp__handle { position: absolute; z-index: 2; width: 1.3em; height: 1.3em; margin: -0.65em; padding: 0; background: var(--sp-accent); border: 2px solid var(--color-bone); border-radius: 50%; box-shadow: 0 0 0 1.5px var(--color-ink); cursor: grab; touch-action: none; }
+.sp-wrp__handle:active { cursor: grabbing; }
+.sp-wrp__handle--0 { top: 0; left: 0; }
+.sp-wrp__handle--1 { top: 0; left: 100%; }
+.sp-wrp__handle--2 { top: 100%; left: 100%; }
+.sp-wrp__handle--3 { top: 100%; left: 0; }

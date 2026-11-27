@@ -1,0 +1,14 @@
+/* Break Bar */
+@import url('_card.css');
+.sp-brk__card { width: 17em; }
+.sp-brk__bar { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 0.25em; margin: 0.5em 0 0.3em; padding: 0.25em; background: color-mix(in srgb, var(--sp-accent) 80%, black); border-radius: 0.35em; }
+.sp-brk__piece {
+  display: grid;
+  place-items: center;
+  height: 4.6em;
+  background: var(--sp-accent);
+  border-radius: 0.2em;
+  box-shadow: inset 0.25em 0.25em 0 rgb(255 255 255 / 0.18), inset -0.25em -0.25em 0 rgb(0 0 0 / 0.3);
+}
+.sp-brk__piece b { font: italic 400 1.1em/1 var(--font-display); color: rgb(255 255 255 / 0.55); }
+.sp-brk__total { display: inline-block; }

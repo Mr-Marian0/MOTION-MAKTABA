@@ -1,8 +1,8 @@
 /* ==========================================================================
    MAIN STYLESHEET — plain CSS, no build step.
-   Tailwind utilities come from the Tailwind browser script in the HTML.
+   No runtime CSS compiler: the reset lives in preflight.css (see there why).
 
-   Layer order is declared up front, so Tailwind utilities always win over
+   Layer order is declared up front, so utilities (if ever added) win over
    our component styles, and component styles win over base.
 
    Adding a section: create sections/<name>.css and import it below.
@@ -13,7 +13,10 @@
 
 @import url("./tokens.css");
 
+/* After base.css on purpose: that is the order the old Tailwind script ended up in,
+   and the page's look (e.g. its default sans-serif body text) depends on it. */
 @import url("./base.css") layer(base);
+@import url("./preflight.css") layer(base);
 
 /* Paper system (reusable anywhere) */
 @import url("./paper/textures.css") layer(components);

@@ -1,0 +1,9 @@
+/* Liquefy Profile: the card body is a plain shape; only while liquid (.is-liquid) does the goo filter melt it and its drops together. */
+@import url('_card.css');
+.sp-lqf__defs { position: absolute; width: 0; height: 0; }
+.sp-lqf__wrap { position: relative; display: grid; place-items: center; width: 14em; height: 11em; margin-top: 3em; }
+.sp-lqf__goo { position: absolute; inset: 0; filter: drop-shadow(0.25em 0.25em 0 var(--color-ink)); }
+.sp-lqf__body { position: absolute; inset: 0; background: color-mix(in srgb, var(--sp-accent) 20%, var(--color-bone)); border: 1.5px solid var(--color-ink); border-radius: 0.6em; }
+.sp-lqf__goo.is-liquid .sp-lqf__body { border-color: transparent; }
+.sp-lqf__drop { position: absolute; bottom: 0.5em; left: 50%; width: 1.4em; height: 1.4em; margin-left: -0.7em; background: color-mix(in srgb, var(--sp-accent) 20%, var(--color-bone)); border-radius: 50%; }
+.sp-lqf__content { position: relative; display: grid; justify-items: center; text-align: center; pointer-events: none; }

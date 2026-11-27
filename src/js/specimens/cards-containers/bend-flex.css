@@ -1,0 +1,15 @@
+/* Bend Flex: an invisible copy sizes the wrap; two chains of strips grow out from its centre line. */
+@import url('_card.css');
+.sp-bnd__wrap { perspective: 40em; cursor: ew-resize; touch-action: none; user-select: none; }
+.sp-bnd__size { visibility: hidden; }
+.sp-bnd__card { width: 15em; box-shadow: none; }
+.sp-bnd__img { background: repeating-linear-gradient(0deg, transparent 0 0.9em, rgb(17 17 17 / 0.12) 0.9em calc(0.9em + 1px)), color-mix(in srgb, var(--sp-accent) 35%, var(--color-kraft-core)); }
+.sp-bnd__root { position: absolute; top: 0; bottom: 0; left: 50%; transform-style: preserve-3d; }
+.sp-bnd__strip { position: absolute; top: 0; height: 100%; transform-style: preserve-3d; }
+.sp-bnd__root--r > .sp-bnd__strip, .sp-bnd__strip--r .sp-bnd__strip { left: 0; transform-origin: 0 50%; }
+.sp-bnd__strip--r .sp-bnd__strip { left: 100%; }
+.sp-bnd__root--l > .sp-bnd__strip { right: 0; transform-origin: 100% 50%; }
+.sp-bnd__strip--l .sp-bnd__strip { right: 100%; transform-origin: 100% 50%; }
+/* The face clips its slice; it is a sibling of the next strip so the 3D chain isn't flattened. */
+.sp-bnd__face { position: absolute; inset: 0; overflow: hidden; backface-visibility: hidden; }
+.sp-bnd__shade { position: absolute; inset: 0; background: var(--color-ink); opacity: 0; pointer-events: none; }

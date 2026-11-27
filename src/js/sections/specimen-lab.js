@@ -23,6 +23,7 @@
 import { AXES, ELEMENTS, PROPERTIES, EFFECT_GROUPS, withFamilies } from '../../data/taxonomy.js';
 import { cards as drawers } from '../../data/cards.js';
 import { codePanel, codePanelHTML } from './lab-code.js';
+import { sandbox } from './lab-sandbox.js';
 
 const esc = (s = '') =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -129,7 +130,7 @@ export default {
   name: 'specimen-lab',
 
   async init(el, ctx) {
-    const { gsap, reducedMotion, lenis, ScrollTrigger } = ctx;
+    const { gsap, reducedMotion, lenis, ScrollTrigger, lite } = ctx;
     const cat = el.dataset.category;
     const drawer = drawers.find((c) => c.category === cat) || { title: cat };
 
@@ -141,16 +142,6 @@ export default {
     specimens.forEach((s) => checkTerms(s, cat));
     const styles = loadStyles(specimens);
     await styles.ready;
-
-    let Flip = null;
-    if (!reducedMotion) {
-      try {
-        ({ Flip } = await import('gsap/Flip'));
-        gsap.registerPlugin(Flip);
-      } catch {
-        /* filtering still works, just without the shuffle */
-      }
-    }
 
     const byId = Object.fromEntries(specimens.map((s) => [s.id, s]));
     const params = Object.fromEntries(specimens.map((s) => [s.id, defaultsOf(s)]));
@@ -291,45 +282,95 @@ export default {
     // ---- Mounting specimens ----
     const applyCss = (stage, spec) =>
       spec.params.forEach((p) => p.css && stage.style.setProperty(p.css, `${params[spec.id][p.key]}${UNIT_CSS[p.unit] || ''}`));
+    // Each mount gets its own tracked gsap (lab-sandbox.js), so tearing a design down
+    // stops every animation it started, even ones its own cleanup forgets.
     const mountInto = async (stage, spec) => {
       applyCss(stage, spec);
-      const out = spec.mod.mount(stage, params[spec.id], ctx);
-      return typeof out === 'function' ? { destroy: out } : out;
+      const box = sandbox(gsap);
+      let out;
+      try {
+        out = spec.mod.mount(stage, params[spec.id], { ...ctx, gsap: box.gsap });
+      } catch (err) {
+        box.kill();
+        throw err;
+      }
+      const inst = typeof out === 'function' ? { destroy: out } : out || {};
+      return { ...inst, destroy: () => (box.kill(), inst.destroy?.()) };
     };
     const mountCard = async (id) => {
       cards[id]?.destroy();
       const stage = grid.querySelector(`[data-id="${id}"] [data-stage]`);
       try {
         cards[id] = await mountInto(stage, byId[id]);
+        if (!bench.hidden) unmountCard(id); // the workbench opened while this one was mounting
       } catch (err) {
         console.warn(`[lab] specimen "${id}" failed to mount`, err);
         stage.innerHTML = `<p class="sp-note">This specimen is still in the press.</p>`;
       }
     };
-    // Mount each card's specimen the first time it nears the viewport.
+    // Only the cards near the screen are live. A card mounts as it approaches and is torn down
+    // (its loops, tickers and listeners stopped) a moment after it leaves, so a long drawer costs
+    // no more CPU than the few cards in view. Filtered-out cards leave the view too, so they stop.
+    // The short delays skip cards you only fly past while scrolling. Lite devices keep a tighter window.
+    const timers = {};
+    const unmountCard = (id) => {
+      cards[id]?.destroy();
+      cards[id] = null;
+    };
     const io = new IntersectionObserver(
       (entries) =>
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          io.unobserve(e.target);
-          mountCard(e.target.dataset.id);
+        entries.forEach(({ target, isIntersecting }) => {
+          const { id } = target.dataset;
+          clearTimeout(timers[id]);
+          if (isIntersecting) {
+            if (!cards[id]) timers[id] = setTimeout(() => mountCard(id), lite ? 150 : 80);
+          } else if (cards[id]) {
+            timers[id] = setTimeout(() => unmountCard(id), 500);
+          }
         }),
-      { rootMargin: '300px 0px' }
+      { rootMargin: lite ? '60px 0px' : '250px 0px' }
     );
-    grid.querySelectorAll('.spec').forEach((li) => io.observe(li));
+    const watchGrid = () => grid.querySelectorAll('.spec').forEach((li) => io.observe(li));
+    // While the workbench covers the grid, nothing under it needs to run.
+    const pauseGrid = () => {
+      io.disconnect();
+      Object.values(timers).forEach(clearTimeout);
+      Object.keys(cards).forEach(unmountCard);
+    };
+    watchGrid();
 
     // ---- Classifier ----
     const renderChips = () => {
       AXES.forEach((a) => {
         const box = el.querySelector(`[data-chips="${a.key}"]`);
-        box.innerHTML = termsFor(a)
-          .map((t) => {
-            const total = specimens.filter((s) => filedUnder(s, a.key).includes(t)).length;
-            const n = specimens.filter((s) => matches(s, a.key) && filedUnder(s, a.key).includes(t)).length;
-            const on = filters[a.key] === t;
-            return `<button type="button" class="lab-chip" data-axis="${a.key}" data-term="${esc(t)}" aria-pressed="${on}"
-                      ${!n && !on ? 'data-dim' : ''} ${!total ? 'disabled' : ''}>${esc(t)}<sup>${total ? n : 'soon'}</sup></button>`;
-          })
+        const chip = (t) => {
+          const total = specimens.filter((s) => filedUnder(s, a.key).includes(t)).length;
+          const n = specimens.filter((s) => matches(s, a.key) && filedUnder(s, a.key).includes(t)).length;
+          const on = filters[a.key] === t;
+          return `<button type="button" class="lab-chip" data-axis="${a.key}" data-term="${esc(t)}" aria-pressed="${on}"
+                    ${!n && !on ? 'data-dim' : ''} ${!total ? 'disabled' : ''}>${esc(t)}<sup>${total ? n : 'soon'}</sup></button>`;
+        };
+        const terms = termsFor(a);
+        if (a.key !== 'effect') {
+          box.innerHTML = terms.map(chip).join('');
+          return;
+        }
+        // Motion Effect: chips grouped under their family (only families this drawer uses).
+        const grouped = new Set();
+        const groups = EFFECT_GROUPS.map((g) => {
+          const used = g.terms.filter((t) => terms.includes(t));
+          used.forEach((t) => grouped.add(t));
+          return { name: g.parent, used };
+        }).filter((g) => g.used.length);
+        const other = terms.filter((t) => !grouped.has(t));
+        if (other.length) groups.push({ name: 'Other', used: other });
+        box.classList.add('lab-chips--grouped');
+        box.innerHTML = groups
+          .map((g) => `
+            <div class="lab-chip-group" role="group" aria-label="${esc(g.name)}">
+              <span class="lab-chip-group__name">${esc(g.name)}</span>
+              <div class="lab-chip-group__chips">${g.used.map(chip).join('')}</div>
+            </div>`)
           .join('');
       });
     };
@@ -355,7 +396,11 @@ export default {
     const apply = (changed) => {
       const items = [...grid.children];
       flipTween?.progress(1); // finish any running shuffle before measuring again
-      const state = Flip && changed !== undefined && !reducedMotion ? Flip.getState(items) : null;
+      // Where each visible card sits before the change (viewport coordinates).
+      const state =
+        changed !== undefined && !reducedMotion
+          ? new Map(items.filter((li) => !li.hidden).map((li) => [li, li.getBoundingClientRect()]))
+          : null;
       // Hold the grid's height while the cards shuffle, so the page doesn't
       // shrink, jump up and let moving cards slide over the header.
       if (state) grid.style.minHeight = `${grid.offsetHeight}px`;
@@ -379,17 +424,26 @@ export default {
           flipTween = null;
           ScrollTrigger.refresh();
         };
+        // On-screen only: a card is animated if it was or will be in view (plus a small margin).
+        // Cards that stay off-screen the whole time just take their new spot, unseen.
+        const margin = 100;
+        const inView = (r) => r.bottom > -margin && r.top < innerHeight + margin;
         const moved = [];
         const entered = [];
         items.forEach((li) => {
           if (li.hidden) return;
-          const prev = state.getElementState(li);
-          if (!prev || !prev.isVisible) return entered.push(li);
+          const prev = state.get(li);
           const r = li.getBoundingClientRect();
+          if (!prev) {
+            if (inView(r)) entered.push(li);
+            return;
+          }
+          if (!inView(prev) && !inView(r)) return;
           const dx = prev.left - r.left;
           const dy = prev.top - r.top;
           if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) moved.push({ li, dx, dy });
         });
+        if (!moved.length && !entered.length) return done(); // nothing in view moved
         flipTween = gsap.timeline({ onComplete: done });
         moved.forEach(({ li, dx, dy }) =>
           flipTween.fromTo(li, { x: dx, y: dy }, { x: 0, y: 0, duration: 0.7, ease: 'expo.out', clearProps: 'transform' }, 0)
@@ -591,6 +645,7 @@ export default {
       bench.hidden = false;
       document.documentElement.classList.add('is-bench-open');
       lenis?.stop();
+      pauseGrid();
       await remountBench();
       el.querySelector('.bench__close').focus();
       if (!reducedMotion) {
@@ -606,7 +661,7 @@ export default {
         bench.hidden = true;
         document.documentElement.classList.remove('is-bench-open');
         lenis?.start();
-        mountCard(current.id); // carry the tweaks back onto the card
+        watchGrid(); // wake the cards in view again; the opened one remounts with its tweaks
         opener?.focus();
       };
       if (reducedMotion) return finish();
@@ -644,6 +699,7 @@ export default {
 
     return () => {
       io.disconnect();
+      Object.values(timers).forEach(clearTimeout);
       offs.forEach((off) => off());
       Object.values(cards).forEach((c) => c?.destroy());
       benchInst?.destroy();

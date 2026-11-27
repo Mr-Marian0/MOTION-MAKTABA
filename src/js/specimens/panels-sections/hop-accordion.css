@@ -1,0 +1,13 @@
+/* Hop Accordion: the frog sits in a gutter left of the list. */
+@import url('_panel.css');
+.sp-hop { display: grid; place-items: center; }
+.sp-hop__wrap { position: relative; padding-left: 3em; }
+.sp-hop__frog { position: absolute; top: 0; left: 0.3em; width: 2em; height: 1.6em; background: var(--sp-accent); border: 1.5px solid var(--color-ink); border-radius: 50% 50% 40% 40% / 70% 70% 30% 30%; transform-origin: 50% 100%; }
+.sp-hop__frog i, .sp-hop__frog::before { content: ''; position: absolute; top: -0.35em; width: 0.6em; height: 0.6em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 50%; }
+.sp-hop__frog::before { left: 0.15em; }
+.sp-hop__frog i { right: 0.15em; }
+.sp-hop__list { display: grid; gap: 0.4em; width: 22em; }
+.sp-hop__item { overflow: hidden; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.4em; }
+.sp-hop__q { width: 100%; padding: 0.65em 1em; font: 400 1.1em/1.1 var(--font-display); text-align: left; background: none; border: 0; cursor: pointer; }
+.sp-hop__a { overflow: hidden; }
+.sp-hop__a p { margin: 0; padding: 0 1em 0.8em; font-size: 0.85em; line-height: 1.45; }

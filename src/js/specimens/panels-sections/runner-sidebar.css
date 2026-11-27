@@ -1,0 +1,12 @@
+/* Runner Sidebar: the runner rides a track in the sidebar's left gutter; its y is the middle of the current lesson. */
+@import url('_panel.css');
+.sp-run__side { position: absolute; inset: 0 auto 0 0; display: grid; align-content: start; gap: 0.15em; width: 14em; padding: 1.2em 0.8em 1em 2.8em; background: var(--color-bone); border-right: 1.5px solid var(--color-ink); }
+.sp-run__track { position: absolute; top: 1em; bottom: 1em; left: 1.2em; width: 0.5em; background: repeating-linear-gradient(var(--color-kraft-core) 0 0.8em, var(--color-bone) 0.8em 1em); border: 1px solid rgb(17 17 17 / 0.3); border-radius: 1em; }
+.sp-run__runner { position: absolute; top: 0; left: 1.45em; z-index: 2; }
+.sp-run__dot { position: absolute; width: 1.1em; height: 1.4em; margin: -0.7em 0 0 -0.55em; background: var(--sp-accent); border: 1.5px solid var(--color-ink); border-radius: 50% 50% 45% 45%; }
+.sp-run__streaks { position: absolute; width: 1em; height: 2.6em; margin: -3.2em 0 0 -0.5em; background: repeating-linear-gradient(90deg, transparent 0 0.15em, rgb(17 17 17 / 0.45) 0.15em 0.25em); -webkit-mask: linear-gradient(transparent, #000); mask: linear-gradient(transparent, #000); transform-origin: 50% 100%; }
+.sp-run__lesson { display: flex; align-items: center; gap: 0.5em; padding: 0.55em 0.4em; font-size: 0.85em; text-align: left; background: none; border: 0; border-radius: 0.3em; cursor: pointer; }
+.sp-run__lesson[aria-current='step'] { font-weight: 700; background: color-mix(in srgb, var(--sp-accent) 14%, transparent); }
+.sp-run__tick { width: 0.9em; height: 0.9em; border: 1.5px solid var(--color-ink); border-radius: 50%; }
+.sp-run__lesson.is-done .sp-run__tick { background: var(--color-ink); box-shadow: inset 0 0 0 2px var(--color-bone); }
+.sp-run__page { left: 14em; }

@@ -1,0 +1,11 @@
+/* Elongate Recipe */
+@import url('_card.css');
+.sp-elg__wrap { display: grid; align-content: start; justify-items: center; }
+.sp-elg__card { transform-origin: 50% 0%; }
+.sp-elg__body { overflow: hidden; -webkit-mask: linear-gradient(#000 70%, transparent); mask: linear-gradient(#000 70%, transparent); }
+.sp-elg__card:has(+ [aria-expanded='true']) .sp-elg__body { -webkit-mask: none; mask: none; }
+.sp-elg__list { display: grid; gap: 0.45em; padding-top: 0.4em !important; }
+.sp-elg__list li { padding-bottom: 0.35em; font-size: 0.85em; border-bottom: 1px dashed rgb(17 17 17 / 0.2); }
+.sp-elg__list li::before { content: '○ '; color: var(--sp-accent); }
+.sp-elg__tab { display: grid; place-items: center; width: 4em; height: 1.6em; margin-top: -0.1em; padding: 0; background: var(--sp-accent); border: 1.5px solid var(--color-ink); border-top: 0; border-radius: 0 0 0.6em 0.6em; cursor: ns-resize; touch-action: none; }
+.sp-elg__tab i { width: 1.6em; height: 0.25em; border-block: 1.5px solid var(--color-ink); }

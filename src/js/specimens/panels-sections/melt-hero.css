@@ -1,0 +1,11 @@
+/* Melt Hero: slab + drips share one goo filter, so the drips run out of the slab like liquid. */
+@import url('_panel.css');
+.sp-mlh__defs { position: absolute; width: 0; height: 0; }
+.sp-mlh__article { padding-top: 2em; }
+.sp-mlh__hero { position: absolute; inset: 0 0 auto 0; height: 100%; pointer-events: none; }
+.sp-mlh__goo { position: absolute; inset: 0; }
+.sp-mlh__goo i { position: absolute; display: block; background: var(--sp-accent); }
+.sp-mlh__slab { top: -2em; right: -1em; left: -1em; height: calc(58% + 2em); }
+.sp-mlh__drip { top: 50%; height: 50%; border-radius: 0 0 2em 2em; transform-origin: 50% 0; }
+.sp-mlh__copy { position: absolute; top: 0; right: 0; left: 0; display: grid; align-content: center; justify-items: center; height: 58%; color: var(--color-bone); text-align: center; }
+.sp-mlh__title { font: 400 3.6em/1 var(--font-display); }

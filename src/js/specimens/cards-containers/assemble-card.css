@@ -1,0 +1,13 @@
+/* Assemble Card */
+@import url('_card.css');
+.sp-asm__box { position: relative; width: 15em; height: 16em; }
+.sp-asm__part, .sp-asm__word { position: absolute; }
+.sp-asm__base { background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.6em; box-shadow: 0.25em 0.25em 0 var(--color-ink); }
+.sp-asm__photo { background: var(--color-kraft-core); border-radius: 0.35em; }
+.sp-asm__sun { background: var(--sp-accent); border-radius: 50%; }
+.sp-asm__peak { background: var(--color-kraft); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.sp-asm__peak-b { background: var(--color-umber); }
+.sp-asm__bar { background: rgb(17 17 17 / 0.15); border-radius: 1em; }
+.sp-asm__bar-title { background: var(--color-ink); border-radius: 0.2em; }
+.sp-asm__pill { background: var(--color-ink); border-radius: 2em; }
+.sp-asm__go { display: grid; place-items: center; height: 1.9em; font-size: 1em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-bone); }

@@ -1,0 +1,11 @@
+/* Pinch Timer */
+@import url('_card.css');
+@import url('_shape.css');
+.sp-pin { gap: 0.8em; }
+.sp-pin__card { width: 10em; height: 14em; }
+.sp-pin__card .sp-shape__face { background: color-mix(in srgb, var(--sp-accent) 10%, var(--color-bone)); }
+.sp-pin__top, .sp-pin__bottom, .sp-pin__stream { position: absolute; background: var(--sp-accent); }
+.sp-pin__top { right: 0; bottom: 50%; left: 0; border-radius: 0 0 50% 50% / 0 0 30% 30%; }
+.sp-pin__bottom { right: 0; bottom: 0; left: 0; border-radius: 50% 50% 0 0 / 30% 30% 0 0; }
+.sp-pin__stream { top: 49%; bottom: 0; left: 50%; width: 0.2em; margin-left: -0.1em; }
+.sp-pin__time { font-variant-numeric: tabular-nums; }

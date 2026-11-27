@@ -24,7 +24,7 @@ export const demo = () => `
 export default {
   name: 'tear-wipe',
 
-  init(el, options, { gsap, ScrollTrigger, reducedMotion }) {
+  init(el, options, { gsap, ScrollTrigger, reducedMotion, lite }) {
     const pages = [...el.querySelectorAll('[data-wipe-page]')];
     const sheet = el.querySelector('[data-wipe-sheet]');
     if (!sheet || pages.length < 2) return;
@@ -46,11 +46,11 @@ export default {
       .call(swap)
       .to(sheet, { xPercent: -100, rotation: -3, duration: 0.85, ease: 'power3.out' });
 
-    // Only run while visible.
+    // Only run while well in view (see ui-specimen.js).
     const st = ScrollTrigger.create({
       trigger: el,
-      start: 'top bottom',
-      end: 'bottom top',
+      start: lite ? 'top 70%' : 'top 85%',
+      end: lite ? 'bottom 30%' : 'bottom 15%',
       onToggle: (self) => (self.isActive ? tl.play() : tl.pause()),
     });
 

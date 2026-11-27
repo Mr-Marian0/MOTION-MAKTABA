@@ -1,0 +1,7 @@
+/* Glide Drawer: lands in the bottom-right corner; its shadow waits on the page below. */
+@import url('_panel.css');
+.sp-gld__drawer { position: absolute; right: 1.6em; bottom: 1.6em; z-index: 2; display: grid; gap: 0.35em; width: 14em; padding: 1.1em 1.2em; color: var(--color-bone); background: var(--sp-accent); border: 1.5px solid var(--color-ink); border-radius: 0.6em; }
+.sp-gld__title { font: 400 1.6em/1 var(--font-display); }
+.sp-gld__text { font-size: 0.8em; opacity: 0.85; }
+.sp-gld__drawer .sp-pn__btn { justify-self: start; margin-top: 0.3em; color: var(--color-ink); background: var(--color-bone); }
+.sp-gld__shadow { position: absolute; right: 1.6em; bottom: 0.9em; width: 14em; height: 1.4em; background: radial-gradient(closest-side, rgb(17 17 17 / 0.35), transparent); }

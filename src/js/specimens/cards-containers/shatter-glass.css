@@ -1,0 +1,17 @@
+/* Shatter Glass */
+@import url('_card.css');
+.sp-shat__offer { justify-items: start; }
+.sp-shat__offer .sp-cc__big { color: var(--sp-accent); }
+.sp-shat__code { padding: 0.3em 0.6em; letter-spacing: 0.14em; border: 1.5px dashed var(--color-ink); border-radius: 0.3em; }
+.sp-shat__glass { position: absolute; inset: 0; display: grid; place-items: center; padding: 0; background: none; border: 0; cursor: crosshair; }
+.sp-shat__glass span { position: relative; font-size: 0.8em; letter-spacing: 0.14em; text-transform: uppercase; }
+.sp-shat__pane {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, transparent 30%, rgb(255 255 255 / 0.75) 38%, transparent 44%, transparent 52%, rgb(255 255 255 / 0.5) 56%, transparent 60%),
+    color-mix(in srgb, #9fc4d6 55%, transparent);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.6em;
+}
+.sp-shat__glass:focus-visible { outline-offset: 0.3em; }

@@ -1,0 +1,11 @@
+/* Catapult Hero */
+@import url('_panel.css');
+.sp-cat { display: grid; place-content: center; justify-items: center; background: linear-gradient(transparent 78%, rgb(110 79 51 / 0.15) 78%); }
+.sp-cat__kick { margin-bottom: 0.4em; }
+.sp-cat__word { margin: 0; font: italic 400 5.2em/1 var(--font-display); color: var(--sp-accent); }
+.sp-cat__ch { display: inline-block; }
+.sp-cat__machine { position: absolute; bottom: 22%; left: 1.6em; width: 4em; height: 3em; }
+.sp-cat__base { position: absolute; bottom: 0; left: 0.4em; width: 3em; height: 1.2em; background: var(--color-umber); border-radius: 0.3em 0.3em 0 0; }
+.sp-cat__base::after { content: ''; position: absolute; bottom: 100%; left: 1.1em; width: 0.8em; height: 1em; background: var(--color-umber); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.sp-cat__arm { position: absolute; bottom: 1.9em; left: 1.9em; width: 0.35em; height: 3.4em; background: var(--color-kraft-deep); border-radius: 0.2em; transform-origin: 50% 100%; rotate: 0deg; }
+.sp-cat__arm i { position: absolute; top: -0.5em; left: -0.45em; width: 1.25em; height: 0.7em; border: 2px solid var(--color-kraft-deep); border-top: 0; border-radius: 0 0 0.6em 0.6em; }

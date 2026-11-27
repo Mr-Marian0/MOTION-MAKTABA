@@ -1,0 +1,20 @@
+/* Tape Features: the strip hangs from a slot under the card; JS sets the slot's height. */
+@import url('_card.css');
+.sp-tape__wrap { display: grid; justify-items: center; align-content: start; }
+.sp-tape__card { z-index: 2; }
+.sp-tape__card .sp-cc__big { color: var(--color-ink); }
+.sp-tape__housing { position: absolute; bottom: -0.6em; left: 50%; width: 9em; height: 1.2em; margin-left: -4.5em; background: var(--color-ink); border-radius: 0.4em; }
+.sp-tape__slot { position: absolute; left: 50%; width: 8em; height: 0; margin-left: -4em; overflow: hidden; }
+.sp-tape__strip { display: grid; padding: 0.5em 0 0.3em !important; background: var(--sp-accent); border-inline: 1.5px solid var(--color-ink); }
+.sp-tape__strip li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  height: 2em;
+  padding-left: 0.4em;
+  font-size: 0.78em;
+  white-space: nowrap;
+  background: repeating-linear-gradient(transparent 0 0.4em, var(--color-ink) 0.4em calc(0.4em + 1px)) 0 0 / 0.5em 100% no-repeat;
+}
+.sp-tape__strip small { width: 1.2em; padding-left: 0.6em; font-weight: 700; }
+.sp-tape__tab { position: absolute; left: 50%; z-index: 3; width: 8em; margin: 0.4em 0 0 -4em; padding: 0.4em 0; font-size: 0.75em; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-bone); background: var(--color-ink); border: 0; border-radius: 0 0 0.5em 0.5em; cursor: ns-resize; touch-action: none; transform-origin: 50% 0; }

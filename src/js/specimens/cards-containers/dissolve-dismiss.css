@@ -1,0 +1,4 @@
+/* Dissolve Dismiss */
+@import url('_card.css');
+.sp-dis__defs { position: absolute; width: 0; height: 0; }
+.sp-dis__gone { position: absolute; inset: 0; display: grid; place-items: center; font-size: 0.85em; letter-spacing: 0.14em; text-transform: uppercase; border: 1.5px dashed rgb(17 17 17 / 0.35); border-radius: 0.6em; }

@@ -1,0 +1,21 @@
+/* Deflate Plan: --sag (0 → 1) droops the top corners, fades the colour and brings up the wrinkles. */
+@import url('_card.css');
+.sp-dfl__card {
+  --sag: 0;
+  background: color-mix(in srgb, var(--sp-accent) calc(18% - var(--sag) * 14%), var(--color-bone));
+  border-radius: calc(0.6em + var(--sag) * 4em) calc(0.6em + var(--sag) * 4em) 0.6em 0.6em / calc(0.6em + var(--sag) * 2.5em) calc(0.6em + var(--sag) * 2.5em) 0.6em 0.6em;
+  filter: saturate(calc(1 - var(--sag) * 0.8));
+}
+.sp-dfl__card .sp-cc__big { color: var(--sp-accent); }
+.sp-dfl__wrinkles {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(70deg, transparent 0 1.4em, rgb(17 17 17 / 0.12) 1.4em 1.5em, transparent 1.5em 2.6em),
+    repeating-linear-gradient(-60deg, transparent 0 2em, rgb(255 255 255 / 0.5) 2em 2.12em, transparent 2.12em 3.4em);
+  border-radius: inherit;
+  opacity: var(--sag);
+  pointer-events: none;
+}
+.sp-dfl__hiss { position: absolute; top: 0.4em; right: -0.4em; display: grid; gap: 0.35em; pointer-events: none; }
+.sp-dfl__hiss i { display: block; width: 1.4em; height: 2px; background: var(--color-ink); border-radius: 2px; transform-origin: 0 50%; rotate: -30deg; }

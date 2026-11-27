@@ -1,0 +1,7 @@
+/* Cushion Surface */
+@import url('_card.css');
+.sp-csh__face { position: relative; display: block; height: 8em; overflow: hidden; background: radial-gradient(ellipse at 50% 40%, color-mix(in srgb, var(--sp-accent) 70%, white), var(--sp-accent)); cursor: pointer; touch-action: none; }
+.sp-csh__svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sp-csh__stitch { fill: none; stroke: rgb(255 255 255 / 0.7); stroke-width: 1.5; stroke-dasharray: 3 3; vector-effect: non-scaling-stroke; }
+.sp-csh__knots circle { fill: color-mix(in srgb, var(--sp-accent) 60%, black); }
+.sp-csh__shade { position: absolute; inset: 0; pointer-events: none; }

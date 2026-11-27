@@ -1,0 +1,9 @@
+/* Pinch Accordion */
+@import url('_panel.css');
+.sp-pch { display: grid; place-items: center; }
+.sp-pch__list { display: grid; gap: 0.5em; width: 24em; }
+.sp-pch__item { background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.4em; box-shadow: 0.2em 0.2em 0 var(--color-ink); overflow: hidden; }
+.sp-pch__q { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0.8em 1em; font: 400 1.1em/1.1 var(--font-display); text-align: left; background: none; border: 0; cursor: pointer; }
+.sp-pch__q i { font-style: normal; font-size: 1.2em; color: var(--sp-accent); }
+.sp-pch__a { overflow: hidden; background: color-mix(in srgb, var(--sp-accent) 16%, var(--color-bone)); }
+.sp-pch__a p { margin: 0; padding: 0.9em 1em 1.1em; font-size: 0.85em; line-height: 1.5; }

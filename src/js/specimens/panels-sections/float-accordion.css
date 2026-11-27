@@ -1,0 +1,9 @@
+/* Float Accordion: boats sit on the waterline (bottom), their hulls dipped just under it. */
+@import url('_panel.css');
+.sp-flt2 { background: linear-gradient(#f6ead8, #f3ebdd); }
+.sp-flt2__row { position: absolute; right: 1.5em; bottom: 22%; left: 1.5em; display: flex; align-items: flex-end; justify-content: space-around; gap: 0.8em; }
+.sp-flt2__boat { flex: 1; max-width: 12em; overflow: hidden; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.4em 0.4em 1.6em 1.6em; margin-bottom: 0; transform-origin: 50% 100%; }
+.sp-flt2__q { width: 100%; padding: 0.7em 0.6em 1em; font: 400 1.2em/1 var(--font-display); background: none; border: 0; cursor: pointer; }
+.sp-flt2__a { overflow: hidden; }
+.sp-flt2__a p { margin: 0; padding: 0 0.8em 1em; font-size: 0.8em; line-height: 1.4; text-align: center; }
+.sp-flt2__water { position: absolute; right: 0; bottom: 0; left: 0; z-index: 2; height: 24%; background: repeating-linear-gradient(transparent 0 0.8em, rgb(255 255 255 / 0.18) 0.8em 0.9em), color-mix(in srgb, var(--sp-accent) 85%, transparent); border-top: 1.5px solid var(--color-ink); pointer-events: none; }

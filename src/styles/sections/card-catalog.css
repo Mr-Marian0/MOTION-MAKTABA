@@ -133,6 +133,7 @@
   position: absolute;
   inset: 0 var(--band-inset) 0 0;
   background-color: var(--color-paper-core);
+  will-change: transform; /* scrubbed every scroll frame: on its own layer it doesn't repaint the textured paper around it */
 }
 .catalog-row--right .catalog-row__band { inset: 0 0 0 var(--band-inset); }
 
@@ -148,6 +149,7 @@
   -webkit-text-stroke: 1px rgb(110 79 51 / 0.28);
   pointer-events: none;
   user-select: none;
+  will-change: transform; /* parallax every scroll frame: own layer, no repaint of the band behind */
 }
 .catalog-row--right .catalog-row__num {
   right: auto;
@@ -158,6 +160,7 @@
 .catalog-row__plate {
   grid-area: plate;
   z-index: 2;
+  will-change: transform, opacity; /* scrubbed in on scroll: own layer */
 }
 .mm-plate {
   position: relative;
@@ -166,17 +169,20 @@
   margin-inline: auto;
   border-radius: 3px;
   transform: rotate(var(--tilt));
-  filter: drop-shadow(0 1px 0 rgb(62 44 31 / 0.3)) drop-shadow(0 14px 22px rgb(17 17 17 / 0.2));
+  /* box-shadow, not filter: drop-shadow. A filter re-renders the whole plate, live demo included,
+     on every frame the demo animates; a box-shadow is painted once. */
+  box-shadow: 0 1px 0 rgb(62 44 31 / 0.3), 0 14px 22px rgb(17 17 17 / 0.2);
   transition:
     transform var(--dur-base) var(--ease-settle),
-    filter var(--dur-base) var(--ease-settle);
+    box-shadow var(--dur-base) var(--ease-settle);
 }
 .catalog-row:hover .mm-plate,
 .catalog-row:focus-within .mm-plate {
   transform: translateY(-10px) rotate(0deg);
-  filter: drop-shadow(0 1px 0 rgb(62 44 31 / 0.3)) drop-shadow(0 30px 34px rgb(17 17 17 / 0.28));
+  box-shadow: 0 1px 0 rgb(62 44 31 / 0.3), 0 30px 34px rgb(17 17 17 / 0.28);
 }
 .mm-plate__demo {
+  will-change: transform; /* own layer: the looping demo never repaints the textured plate under it */
   position: absolute;
   inset: clamp(0.9rem, 2.2vw, 1.8rem) clamp(0.9rem, 2.2vw, 1.8rem) clamp(2.2rem, 4vw, 3.2rem);
 }

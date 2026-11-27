@@ -1,0 +1,12 @@
+/* Launch Accordion */
+@import url('_panel.css');
+.sp-lch { display: grid; place-items: center; }
+.sp-lch__list { display: grid; gap: 0.5em; width: 24em; }
+.sp-lch__item { overflow: hidden; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.4em; box-shadow: 0.2em 0.2em 0 var(--color-ink); }
+.sp-lch__q { display: flex; align-items: center; gap: 0.8em; width: 100%; padding: 0.7em 1em; font: 400 1.1em/1.1 var(--font-display); text-align: left; background: none; border: 0; cursor: pointer; }
+.sp-lch__mark { display: grid; place-items: center; width: 1.7em; height: 1.7em; font: 500 0.7em/1 var(--font-mono); font-style: normal; color: var(--color-bone); background: var(--sp-accent); border-radius: 50%; }
+.sp-lch__a { position: relative; overflow: hidden; }
+.sp-lch__body { display: flex; align-items: center; justify-content: space-between; gap: 1em; padding: 0.2em 1em 1em; }
+.sp-lch__body p { margin: 0; font-size: 0.85em; line-height: 1.45; }
+.sp-lch__smoke { position: absolute; bottom: 0.4em; left: 50%; pointer-events: none; }
+.sp-lch__smoke i { position: absolute; width: 1.2em; height: 1.2em; margin: -0.6em; background: rgb(200 196 188 / 0.9); border-radius: 50%; }

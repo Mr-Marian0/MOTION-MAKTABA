@@ -1,0 +1,18 @@
+/* Pond Cover: a painted pond scene in gradients; the filter only goes on while it flows. */
+@import url('_card.css');
+.sp-pond__defs { position: absolute; width: 0; height: 0; }
+.sp-pond__card { display: grid; }
+.sp-pond__cover { position: relative; display: block; height: 7.5em; overflow: hidden; }
+.sp-pond__scene {
+  position: absolute;
+  inset: -0.6em;
+  background:
+    radial-gradient(circle at 68% 30%, #f2c46b 0 1.2em, transparent 1.25em),
+    radial-gradient(ellipse 1.4em 0.3em at 68% 78%, rgb(242 196 107 / 0.8), transparent),
+    radial-gradient(ellipse 2em 0.25em at 66% 88%, rgb(242 196 107 / 0.5), transparent),
+    repeating-linear-gradient(transparent 0 0.5em, rgb(255 255 255 / 0.18) 0.5em 0.6em) 0 62% / 100% 38% no-repeat,
+    linear-gradient(transparent 52%, var(--sp-accent) 52% 100%),
+    radial-gradient(ellipse 60% 30% at 20% 55%, var(--color-umber) 98%, transparent),
+    radial-gradient(ellipse 50% 25% at 85% 56%, var(--color-kraft-deep) 98%, transparent),
+    linear-gradient(#f7d9b0, #e9b88a);
+}

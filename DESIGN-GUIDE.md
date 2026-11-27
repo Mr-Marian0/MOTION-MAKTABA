@@ -75,6 +75,8 @@ Start from `src/js/specimens/_template.js` / `_template.css`. Helpers: `_kit.js`
 - Size in `em`, theme via tokens, respect `reducedMotion`, keyboard accessible.
 - Select by class (`.sp-x__item`), never by bare tags like `li button`: every card is itself an `<li>`, so tag selectors leak onto other parts of the design. Give each element you query its own class; `k.$()` returns the first match.
 - Element ids must be unique per mount (`uid()` from `_kit.js`): the card and the workbench can show the same design at once.
+- Expect to be mounted and destroyed often: a card only runs while it is near the screen (and not while the workbench is open), so `mount` must start from scratch every time, and nothing should depend on surviving a scroll away. Every animation made with the `gsap` passed to `mount` is killed on teardown automatically (`src/js/sections/lab-sandbox.js`), even ones your cleanup misses; native `setTimeout`/`requestAnimationFrame` loops you must still clear yourself.
+- Read `lite` from the third `mount` argument (`{ gsap, reducedMotion, lite }`) if a design has an optional heavy extra worth skipping on phones and low-power devices.
 
 ## 6. Finish
 

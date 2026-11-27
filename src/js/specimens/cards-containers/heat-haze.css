@@ -1,0 +1,13 @@
+/* Heat Haze */
+@import url('_card.css');
+.sp-hz__defs { position: absolute; width: 0; height: 0; }
+.sp-hz__card { width: 15.5em; gap: 0.6em; }
+.sp-hz__switch { display: flex; padding: 0.2em; background: rgb(17 17 17 / 0.08); border-radius: 2em; }
+.sp-hz__switch button { flex: 1; padding: 0.45em 0; font-size: 0.8em; letter-spacing: 0.1em; text-transform: uppercase; color: inherit; background: none; border: 0; border-radius: 2em; cursor: pointer; }
+.sp-hz__switch [aria-checked='true'] { color: var(--color-bone); background: var(--color-ink); }
+.sp-hz__body { display: grid; gap: 0.3em; }
+.sp-hz__price { color: var(--sp-accent); }
+.sp-hz__note { font-size: 0.75em; letter-spacing: 0.1em; text-transform: uppercase; }
+.sp-hz__perks { display: grid; gap: 0.3em; margin-top: 0.3em !important; font-size: 0.85em; }
+.sp-hz__perks li::before { content: '✓ '; color: var(--sp-accent); }
+.sp-hz__go { text-align: center; }

@@ -1,0 +1,16 @@
+/* Assemble Footer: each word sits over the bar shape it replaces. */
+@import url('_panel.css');
+.sp-asf__foot { position: absolute; right: 0; bottom: 0; left: 0; z-index: 0; display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 1em; height: 55%; padding: 1.4em 2em; color: var(--color-bone); }
+.sp-asf__band { position: absolute; inset: 0; z-index: -1; background: var(--sp-accent); border-top: 1.5px solid var(--color-ink); }
+.sp-asf__brand { position: relative; display: grid; align-content: start; justify-items: start; gap: 0.5em; }
+.sp-asf__logo { width: 2.4em; height: 2.4em; background: var(--color-bone); border-radius: 50%; }
+.sp-asf__brand .sp-asf__word { font: italic 400 1.4em/1 var(--font-display); }
+.sp-asf__col { display: grid; align-content: start; gap: 0.55em; }
+.sp-asf__col li { position: relative; height: 1.1em; }
+.sp-asf__bar, .sp-asf__col .sp-asf__word { position: absolute; top: 0; left: 0; }
+.sp-asf__bar { width: 4.5em; height: 0.55em; margin-top: 0.3em; background: rgb(250 250 247 / 0.45); border-radius: 1em; }
+.sp-asf__bar--head { width: 3em; background: var(--color-bone); }
+.sp-asf__col .sp-asf__word { font-size: 0.8em; white-space: nowrap; }
+.sp-asf__col li:first-child .sp-asf__word { letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.7; }
+.sp-asf__dots { position: absolute; right: 2em; bottom: 1em; display: flex; gap: 0.5em; }
+.sp-asf__dot { width: 1.2em; height: 1.2em; border: 1.5px solid var(--color-bone); border-radius: 50%; }

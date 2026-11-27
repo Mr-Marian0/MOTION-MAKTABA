@@ -1,0 +1,35 @@
+/* Ring Footer: the hole is a mask on the band, radius --r. */
+@import url('_panel.css');
+.sp-rng__foot { position: absolute; right: 0; bottom: 0; left: 0; height: 38%; }
+.sp-rng__band {
+  --r: 0em;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.4em 2em;
+  color: var(--color-bone);
+  background: var(--sp-accent);
+  border-top: 1.5px solid var(--color-ink);
+  -webkit-mask: radial-gradient(circle at 50% 50%, transparent var(--r), #000 calc(var(--r) + 0.5px));
+  mask: radial-gradient(circle at 50% 50%, transparent var(--r), #000 calc(var(--r) + 0.5px));
+}
+.sp-rng__col { display: grid; align-content: start; gap: 0.3em; font-size: 0.85em; }
+.sp-rng__col b { font: 400 1.6em/1 var(--font-display); }
+.sp-rng__col--r { justify-items: end; opacity: 0.8; }
+.sp-rng__rim { position: absolute; top: 50%; left: 50%; width: 5.2em; height: 5.2em; translate: -50% -50%; border: 2px solid var(--color-ink); border-radius: 50%; pointer-events: none; }
+.sp-rng__top {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 2.6em;
+  height: 2.6em;
+  margin: -1.3em 0 0 -1.3em;
+  font-size: 1.1em;
+  color: var(--color-ink);
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 50%;
+  cursor: pointer;
+}

@@ -1,0 +1,13 @@
+/* Twist Flip: each band holds both faces; .is-back swaps which one shows (clip-path flattens 3D, so no backface trick). */
+@import url('_card.css');
+.sp-tw__wrap { display: block; padding: 0; font: inherit; text-align: left; background: none; border: 0; cursor: pointer; }
+.sp-tw__size { display: block; visibility: hidden; }
+.sp-tw__faces { position: relative; display: block; }
+.sp-tw__front { justify-items: start; min-height: 11em; }
+.sp-tw__back { position: absolute; inset: 0; align-content: center; scale: -1 1; background: color-mix(in srgb, var(--sp-accent) 18%, var(--color-bone)); visibility: hidden; }
+.sp-cc__piece.is-back .sp-tw__back { visibility: visible; }
+.sp-cc__piece.is-back .sp-tw__front { visibility: hidden; }
+.sp-tw__stats { display: grid; grid-template-columns: auto 1fr; gap: 0.2em 0.7em; align-items: baseline; margin: 0.4em 0; }
+.sp-tw__stats b { font: 400 1.5em/1 var(--font-display); color: var(--sp-accent); }
+.sp-tw__stats span { font-size: 0.8em; opacity: 0.65; }
+.sp-tw .sp-cc__piece > .sp-tw__faces .sp-cc__card { box-shadow: none; }

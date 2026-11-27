@@ -1,0 +1,17 @@
+/* Unwrap Hero */
+@import url('_panel.css');
+.sp-unw { background: color-mix(in srgb, var(--sp-accent) 10%, var(--color-bone)); }
+.sp-unw__reveal .sp-pn__h { margin: 0; font-size: 3em; }
+.sp-unw__wrap { position: absolute; inset: 0; pointer-events: none; }
+.sp-unw__flap {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, rgb(62 44 31 / 0.08) 0 1px, transparent 1px 6px),
+    linear-gradient(135deg, var(--color-kraft), var(--color-kraft-deep));
+}
+.sp-unw__flap--r, .sp-unw__flap--l { filter: brightness(0.92); }
+.sp-unw__string { position: absolute; background: var(--sp-accent); }
+.sp-unw__string--h { top: 50%; right: 0; left: 0; height: 0.45em; margin-top: -0.22em; }
+.sp-unw__string--v { top: 0; bottom: 0; left: 50%; width: 0.45em; margin-left: -0.22em; }
+.sp-unw__bow { position: absolute; top: 50%; left: 50%; width: 3em; height: 1.6em; margin: -0.8em 0 0 -1.5em; background: radial-gradient(circle at 50% 50%, var(--sp-accent) 0 0.4em, transparent 0.42em), radial-gradient(ellipse at 20% 50%, var(--sp-accent) 0 45%, transparent 47%), radial-gradient(ellipse at 80% 50%, var(--sp-accent) 0 45%, transparent 47%); }

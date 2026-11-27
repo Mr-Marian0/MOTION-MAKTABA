@@ -1,0 +1,8 @@
+/* Twist Close */
+@import url('_panel.css');
+.sp-tws__page { left: 11em; }
+.sp-tws__side { position: absolute; inset: 0 auto 0 0; z-index: 2; width: 11em; }
+.sp-tws__menu { position: absolute; inset: 0; display: grid; align-content: start; gap: 0.35em; padding: 1.4em 1em; background: var(--sp-accent); border-right: 1.5px solid var(--color-ink); color: var(--color-bone); }
+.sp-tws__menu .sp-pn__kick { margin-bottom: 0.6em; }
+.sp-tws__item { padding: 0.5em 0.7em; border-radius: 0.3em; }
+.sp-tws__item.is-on { color: var(--color-ink); background: var(--color-bone); }

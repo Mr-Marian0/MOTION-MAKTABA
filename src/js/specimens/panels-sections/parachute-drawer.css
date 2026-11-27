@@ -1,0 +1,9 @@
+/* Parachute Drawer: the rig (canopy + lines + box) hangs from the canopy; it lands with the box in the middle of the page. */
+@import url('_panel.css');
+.sp-pch2__rig { position: absolute; bottom: 2em; left: 50%; display: grid; justify-items: center; width: 17em; margin-left: -8.5em; transform-origin: 50% 0%; }
+.sp-pch2__chute { position: relative; width: 12em; height: 6em; }
+.sp-pch2__canopy { position: absolute; top: 0; right: 0; left: 0; height: 3.6em; background: repeating-linear-gradient(90deg, var(--sp-accent) 0 2em, var(--color-bone) 2em 4em); border: 1.5px solid var(--color-ink); border-bottom: 0; border-radius: 50% 50% 0.4em 0.4em / 100% 100% 0.4em 0.4em; }
+.sp-pch2__lines { position: absolute; top: 3.5em; right: 0.4em; bottom: 0; left: 0.4em; background: linear-gradient(to bottom right, transparent calc(50% - 1px), var(--color-ink) 50%, transparent calc(50% + 1px)) left / 50% 100% no-repeat, linear-gradient(to bottom left, transparent calc(50% - 1px), var(--color-ink) 50%, transparent calc(50% + 1px)) right / 50% 100% no-repeat; }
+.sp-pch2__box { display: grid; justify-items: center; gap: 0.25em; width: 100%; padding: 1em; text-align: center; border-radius: 0.4em; box-shadow: 0.2em 0.2em 0 var(--color-ink); }
+.sp-pch2__box b { font: 400 1.5em/1.1 var(--font-display); }
+.sp-pch2__text { font-size: 0.8em; opacity: 0.7; }

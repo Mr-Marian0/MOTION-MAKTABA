@@ -1,0 +1,12 @@
+/* Scratch Panel: the canvas coating covers the prize area only; the details below open after. */
+@import url('_panel.css');
+.sp-scr { display: grid; place-content: center; justify-items: center; gap: 1em; }
+.sp-scr__panel { position: relative; width: 22em; overflow: hidden; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.6em; box-shadow: 0.25em 0.25em 0 var(--color-ink); }
+.sp-scr__prize { display: grid; justify-items: center; gap: 0.3em; padding: 1.4em 1em; color: var(--color-bone); background: var(--sp-accent); text-align: center; }
+.sp-scr__big { font: 400 2.2em/1 var(--font-display); }
+.sp-scr__code { padding: 0.2em 0.6em; font-size: 0.8em; letter-spacing: 0.12em; border: 1.5px dashed currentColor; border-radius: 0.3em; }
+.sp-scr__more { overflow: hidden; }
+.sp-scr__more p { margin: 0; padding: 0.9em 1.1em; font-size: 0.85em; line-height: 1.5; }
+.sp-scr__coat { position: absolute; top: 0; left: 0; width: 100%; cursor: crosshair; touch-action: none; }
+.sp-scr__flecks { position: absolute; inset: 0; pointer-events: none; }
+.sp-scr__flecks i { position: absolute; width: 0.35em; height: 0.25em; background: #b9bdc0; border-radius: 0.05em; }

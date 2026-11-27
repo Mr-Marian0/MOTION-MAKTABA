@@ -29,7 +29,10 @@ img {
   max-width: 100%;
 }
 
-/* Global paper grain: sits above everything, never catches clicks. */
+/* Global paper grain: sits above everything, never catches clicks.
+   No blend mode: a blended full-screen overlay makes the browser re-blend the whole
+   screen on every animated frame. The texture is pre-tinted instead (see --tex-grain).
+   Its own compositor layer, so it is painted once and never again. */
 body::after {
   content: "";
   position: fixed;
@@ -37,8 +40,8 @@ body::after {
   z-index: var(--z-grain);
   pointer-events: none;
   background-image: var(--tex-grain);
-  opacity: 0.05;
-  mix-blend-mode: multiply;
+  opacity: 0.06;
+  will-change: transform;
 }
 
 .sr-only {

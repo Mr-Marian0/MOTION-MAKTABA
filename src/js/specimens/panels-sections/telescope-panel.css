@@ -1,0 +1,25 @@
+/* Telescope Panel */
+@import url('_panel.css');
+.sp-tlp { display: grid; place-items: center; }
+.sp-tlp__panel { display: grid; justify-items: center; gap: 1em; width: 22em; }
+.sp-tlp__tube { position: relative; width: 100%; }
+.sp-tlp__seg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.6em;
+  padding: 0 1em;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.4em;
+  box-shadow: 0 0.2em 0 var(--color-ink);
+}
+.sp-tlp__seg:last-child { color: var(--color-bone); background: var(--sp-accent); }
+.sp-tlp__seg span { display: grid; gap: 0.1em; }
+.sp-tlp__seg b { font: 400 1.2em/1 var(--font-display); }
+.sp-tlp__seg small { font-size: 0.72em; opacity: 0.7; }
+.sp-tlp__seg em { font: 400 1.3em/1 var(--font-display); font-style: normal; }

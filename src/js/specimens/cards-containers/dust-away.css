@@ -1,0 +1,4 @@
+/* Dust Away */
+@import url('_card.css');
+.sp-dust__card { justify-items: center; text-align: center; }
+.sp-dust__gone { position: absolute; inset: 0; display: grid; place-items: center; font-size: 0.85em; letter-spacing: 0.14em; text-transform: uppercase; border: 1.5px dashed rgb(17 17 17 / 0.35); border-radius: 0.6em; }

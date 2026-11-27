@@ -1,0 +1,10 @@
+/* Dive Hero: the headline stands on a board above a strip of water; it dives in front of the water's back edge. */
+@import url('_panel.css');
+.sp-div { background: linear-gradient(#f6e7cf, #f3ebdd 60%); }
+.sp-div__kick { position: absolute; top: 2.2em; left: 2em; }
+.sp-div__word { position: absolute; bottom: calc(30% + 1em); left: 2em; z-index: 2; font: italic 400 4.2em/1 var(--font-display); color: var(--color-ink); }
+.sp-div__board { position: absolute; bottom: calc(30% + 0.4em); left: 1.4em; width: 15em; height: 0.6em; background: var(--color-kraft); border: 1.5px solid var(--color-ink); border-radius: 0.2em; }
+.sp-div__water { position: absolute; right: 0; bottom: 0; left: 0; z-index: 3; height: 30%; overflow: hidden; background: repeating-linear-gradient(transparent 0 0.9em, rgb(255 255 255 / 0.15) 0.9em 1em), var(--sp-accent); border-top: 1.5px solid var(--color-ink); }
+.sp-div__ring { position: absolute; top: 0.4em; left: 13em; width: 4em; height: 1.2em; margin-left: -2em; border: 2px solid rgb(255 255 255 / 0.8); border-radius: 50%; }
+.sp-div__splash { position: absolute; bottom: 30%; left: 13em; z-index: 4; }
+.sp-div__splash i { position: absolute; width: 0.5em; height: 0.8em; background: color-mix(in srgb, var(--sp-accent) 50%, white); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; }

@@ -1,0 +1,5 @@
+/* Shear Deck */
+@import url('_card.css');
+.sp-shr__deck { position: relative; display: grid; cursor: ew-resize; touch-action: none; user-select: none; }
+.sp-shr__card { grid-area: 1 / 1; width: 14em; height: 8em; transform-origin: 50% 100%; }
+.sp-shr__band { position: absolute; right: 1.1em; bottom: 1em; left: 1.1em; height: 0.5em; background: var(--sp-accent); border-radius: 1em; }

@@ -1,0 +1,10 @@
+/* Dust Sidebar */
+@import url('_panel.css');
+.sp-dst__page { right: 12em; }
+.sp-dst__side { position: absolute; inset: 0 0 0 auto; width: 12em; }
+.sp-dst__panel { position: absolute; inset: 0; display: grid; align-content: start; gap: 0.5em; padding: 1.4em 1em; color: var(--color-bone); background: var(--sp-accent); border-left: 1.5px solid var(--color-ink); }
+.sp-dst__panel .sp-pn__kick { margin-bottom: 0.5em; }
+.sp-dst__row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.5em; padding: 0.5em 0.6em; font-size: 0.8em; background: rgb(250 250 247 / 0.12); border-radius: 0.3em; }
+.sp-dst__row i { width: 0.6em; height: 0.6em; background: var(--color-bone); border-radius: 50%; }
+.sp-dst__row small { opacity: 0.6; }
+.sp-dst__btn { position: absolute; bottom: 1.2em; left: 2em; z-index: 2; }

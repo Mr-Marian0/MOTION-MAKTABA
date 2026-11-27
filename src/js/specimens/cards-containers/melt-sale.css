@@ -1,0 +1,14 @@
+/* Melt Sale: the glaze, drips and drops share one goo filter so they run together like liquid. */
+@import url('_card.css');
+.sp-mlt__defs { position: absolute; width: 0; height: 0; }
+.sp-mlt__wrap { display: block; padding: 0 0 7em; /* room for the drips, counted when fitting to the stage */ font: inherit; text-align: left; background: none; border: 0; cursor: pointer; }
+.sp-mlt__card { padding-top: 2.6em; }
+.sp-mlt__img { position: relative; display: block; overflow: hidden; }
+/* An ice pop on its stick. */
+.sp-mlt__img i { position: absolute; top: 0.7em; left: 50%; width: 2.6em; height: 4em; margin-left: -1.3em; background: var(--sp-accent); border-radius: 1.3em 1.3em 0.3em 0.3em; box-shadow: 0 1.6em 0 -0.95em var(--color-kraft); }
+.sp-mlt__card s { font-size: 0.6em; opacity: 0.5; }
+.sp-mlt__goo { position: absolute; inset: 0; pointer-events: none; }
+.sp-mlt__goo i { position: absolute; display: block; background: var(--sp-accent); }
+.sp-mlt__glaze { top: 0; right: 0; left: 0; height: 2.2em; border-radius: 0.6em 0.6em 0 0; }
+.sp-mlt__drip { top: 1em; border-radius: 0 0 2em 2em; }
+.sp-mlt__drop { top: 1em; width: 0.8em; height: 0.8em; border-radius: 50%; opacity: 0; }

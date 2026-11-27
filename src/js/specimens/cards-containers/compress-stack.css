@@ -1,0 +1,10 @@
+/* Compress Stack: notes sit bottom-up from the stack's foot; JS sets each one's height above it. */
+@import url('_card.css');
+.sp-cmp__stack { position: relative; width: 15em; height: 15em; padding: 0; font: inherit; background: none; border: 0; cursor: pointer; touch-action: none; }
+.sp-cmp__note { position: absolute; bottom: 0; left: 0; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.6em; height: 3.2em; padding: 0 1em; text-align: left; transform-origin: 50% 100%; }
+.sp-cmp__note i { width: 0.8em; height: 0.8em; background: var(--sp-accent); border-radius: 50%; }
+.sp-cmp__note b { font: 400 1.2em/1 var(--font-display); }
+.sp-cmp__note small { font-size: 0.75em; opacity: 0.55; }
+.sp-cmp__plate { position: absolute; bottom: 3.2em; left: 1em; right: 1em; height: 0.8em; background: var(--color-umber); border-radius: 0.3em 0.3em 0 0; }
+.sp-cmp__plate::after { content: ''; position: absolute; bottom: 100%; left: 50%; width: 0.6em; height: 1.2em; margin-left: -0.3em; background: var(--color-umber); }
+.sp-cmp__strap { position: absolute; bottom: 1.3em; left: 50%; z-index: 9; width: 5em; margin-left: -2.5em; padding: 0.35em 0; font-size: 0.8em; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-bone); background: var(--color-kraft); border: 1.5px solid var(--color-ink); }

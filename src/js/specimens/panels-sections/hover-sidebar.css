@@ -1,0 +1,7 @@
+/* Hover Sidebar: the palette floats over its shadow at the left edge. */
+@import url('_panel.css');
+.sp-hvr__page { left: 7em; }
+.sp-hvr__palette { position: absolute; top: 50%; left: 1.6em; z-index: 2; display: grid; gap: 0.35em; margin-top: -9em; padding: 0.5em; background: var(--sp-accent); border: 1.5px solid var(--color-ink); border-radius: 0.8em; }
+.sp-hvr__tool { width: 2.6em; height: 2.6em; font-size: 1em; color: var(--color-bone); background: transparent; border: 0; border-radius: 0.5em; cursor: pointer; }
+.sp-hvr__tool[aria-pressed='true'] { color: var(--color-ink); background: var(--color-bone); }
+.sp-hvr__shadow { position: absolute; top: calc(50% + 7em); left: 1.6em; width: 3.7em; height: 1em; background: radial-gradient(closest-side, rgb(17 17 17 / 0.4), transparent); }

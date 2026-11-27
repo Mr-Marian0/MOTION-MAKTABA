@@ -1,0 +1,12 @@
+/* Jelly Widget: the SVG outline is the body (10 SVG units per em); the text rides on its centre. */
+@import url('_card.css');
+.sp-jly__wrap { position: relative; display: grid; place-items: center; width: 20em; height: 16em; cursor: grab; touch-action: none; user-select: none; }
+.sp-jly__wrap:active { cursor: grabbing; }
+.sp-jly__svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.sp-jly__skin { fill: color-mix(in srgb, var(--sp-accent) 22%, var(--color-bone)); stroke: var(--color-ink); stroke-width: 1.5; }
+.sp-jly__shadow { fill: var(--color-ink); translate: 2.5px 2.5px; }
+.sp-jly__body { position: relative; display: grid; justify-items: center; gap: 0.3em; pointer-events: none; }
+.sp-jly__body .sp-cc__big small { font-size: 0.35em; letter-spacing: 0.08em; text-transform: uppercase; }
+.sp-jly__dots { display: flex; gap: 0.35em; }
+.sp-jly__dots i { width: 0.8em; height: 0.8em; border: 1.5px solid var(--color-ink); border-radius: 50%; }
+.sp-jly__dots .is-on { background: var(--sp-accent); }

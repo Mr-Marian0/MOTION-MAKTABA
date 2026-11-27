@@ -10,10 +10,11 @@ Any static server works, at any base path (all asset paths are relative, so it a
 The empty `.nojekyll` file stops GitHub Pages from running Jekyll, which would otherwise drop every `_`-prefixed file (`_params.js`, `_kit.js`, `_shared.css`).
 A file opened by double-click (`file://`) won't work, because ES modules need a server.
 
-Stack: HTML · Tailwind CSS v4 (browser build) · custom CSS · GSAP + ScrollTrigger · Lenis, all from the jsDelivr CDN through the import map in `index.html`.
+Stack: HTML · plain CSS (tokens + layers, no build step) · GSAP + ScrollTrigger · Lenis, from the jsDelivr CDN through the import map in `index.html`.
 
-> Tailwind's browser build is ideal for building. Before launch, switch to the Tailwind CLI for a smaller, precompiled stylesheet.
-> In Tailwind classes, use tokens with the var shorthand: `bg-(--color-kraft)`, `text-(--color-ink)`, `font-(family-name:--font-display)`.
+> The Tailwind browser script was removed: no markup used its utilities, and it compiled CSS in the browser on every DOM change. Its reset lives on as `src/styles/preflight.css`.
+
+**Performance / device-friendly mode.** Phones, tablets and low-power machines get *lite mode* automatically (`src/js/core/device.js`): native scrolling instead of Lenis, fewer live designs at once, and lighter shadows. Force it with `?lite=1` or turn it off with `?lite=0` (remembered on that device). In every mode, library designs only run while their card is near the screen, and the workbench pauses the grid behind it.
 
 ## Built so far
 

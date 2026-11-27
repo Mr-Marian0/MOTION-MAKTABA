@@ -1,0 +1,15 @@
+/* Torsion Tag: bands carry both faces; .is-back shows the kraft back (clip-path flattens 3D, so no backface trick). */
+@import url('_card.css');
+.sp-tor__wrap { margin-top: 3em; cursor: ew-resize; touch-action: none; user-select: none; }
+.sp-tor__size { display: block; visibility: hidden; }
+.sp-tor__faces { position: relative; display: block; }
+.sp-tor__front, .sp-tor__back { width: 11em; min-height: 13em; padding-top: 2.6em; justify-items: center; text-align: center; border-radius: 0.6em 0.6em 0.6em 0.6em / 2.4em 2.4em 0.6em 0.6em; box-shadow: none; }
+.sp-tor__front .sp-cc__big { color: var(--sp-accent); }
+.sp-tor__front s { font-size: 0.6em; opacity: 0.5; }
+.sp-tor__back { position: absolute; inset: 0; align-content: end; padding-bottom: 1.4em; scale: -1 1; background: var(--color-kraft-core); visibility: hidden; }
+.sp-cc__piece.is-back .sp-tor__back { visibility: visible; }
+.sp-cc__piece.is-back .sp-tor__front { visibility: hidden; }
+.sp-tor__hole { position: absolute; top: 0.9em; left: 50%; width: 0.9em; height: 0.9em; margin-left: -0.45em; background: var(--color-paper, #f3ebdd); border: 1.5px solid var(--color-ink); border-radius: 50%; }
+.sp-tor__code { width: 7em; height: 3em; background: repeating-linear-gradient(90deg, var(--color-ink) 0 2px, transparent 2px 4px, var(--color-ink) 4px 7px, transparent 7px 9px); }
+.sp-tor__string { position: absolute; bottom: calc(100% - 1.35em); left: 50%; width: 1.5px; height: 4em; background: var(--color-ink); }
+.sp-tor__pin { position: absolute; top: -3em; left: 50%; width: 0.9em; height: 0.9em; margin-left: -0.45em; background: var(--sp-accent); border: 1.5px solid var(--color-ink); border-radius: 50%; }

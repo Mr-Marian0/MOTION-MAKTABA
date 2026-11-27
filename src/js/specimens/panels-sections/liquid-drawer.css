@@ -1,0 +1,8 @@
+/* Liquid Drawer: the body is a plain shape; the goo filter only goes on while it is liquid. */
+@import url('_panel.css');
+.sp-lqd__defs { position: absolute; width: 0; height: 0; }
+.sp-lqd__goo { position: absolute; top: 0; right: 0; bottom: 0; width: 13em; }
+.sp-lqd__body { position: absolute; inset: 0; background: color-mix(in srgb, var(--sp-accent) 85%, white); border-radius: 0.6em 0 0 0.6em; }
+.sp-lqd__content { position: absolute; top: 0; right: 0; bottom: 0; display: grid; align-content: center; gap: 0.7em; width: 13em; padding: 0 1.4em; color: var(--color-bone); }
+.sp-lqd__content label { display: flex; align-items: center; gap: 0.6em; font-size: 0.9em; }
+.sp-lqd__content input { accent-color: var(--color-bone); }

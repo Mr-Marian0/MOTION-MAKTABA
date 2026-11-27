@@ -1,0 +1,6 @@
+/* Tangram Widget */
+@import url('_card.css');
+.sp-tan__card { width: 14em; justify-items: center; gap: 0.8em; }
+.sp-tan__card > .sp-cc__row { width: 100%; margin: 0; }
+.sp-tan__board { position: relative; width: 9.5em; aspect-ratio: 1; margin: 0.3em 0; }
+.sp-tan__piece { position: absolute; inset: 0; }

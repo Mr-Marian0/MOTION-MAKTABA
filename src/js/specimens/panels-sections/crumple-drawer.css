@@ -1,0 +1,9 @@
+/* Crumple Drawer */
+@import url('_panel.css');
+.sp-crd__dim { position: absolute; inset: 0; background: rgb(17 17 17 / 0.35); }
+.sp-crd__wrap { position: absolute; right: 2em; bottom: 0; left: 2em; height: 62%; perspective: 40em; }
+.sp-crd__sheet { position: absolute; inset: 0; display: grid; align-content: start; justify-items: start; gap: 0.4em; padding: 1.2em 1.6em; background: color-mix(in srgb, var(--sp-accent) 20%, var(--color-bone)); border-bottom: 0; border-radius: 1em 1em 0 0; }
+.sp-crd__grip { justify-self: center; width: 3em; height: 0.3em; margin-bottom: 0.4em; background: rgb(17 17 17 / 0.3); border-radius: 1em; }
+.sp-crd__title { font: 400 1.7em/1.1 var(--font-display); }
+.sp-crd__text { font-size: 0.85em; opacity: 0.7; }
+.sp-crd__row { display: flex; gap: 0.6em; margin-top: 0.6em; }

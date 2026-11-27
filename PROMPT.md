@@ -19,7 +19,7 @@ It's three things in one:
 
 ## Tech stack (zero-build: runs directly in VS Code Live Server)
 - **HTML5**: semantic markup.
-- **Tailwind CSS v4** browser build (CDN): layout utilities. Tokens are plain CSS variables, used as `bg-(--color-kraft)`.
+- **No Tailwind runtime**: the browser build was removed for CPU cost (it recompiled CSS on every DOM change); its reset is `src/styles/preflight.css`. Tokens are plain CSS variables.
 - **Custom CSS**: tear masks, blend modes, paper textures, plain `@import url() layer()`.
 - **GSAP + ScrollTrigger**: scroll choreography (CDN via import map).
 - **Lenis**: smooth scroll, synced to ScrollTrigger (CDN via import map).

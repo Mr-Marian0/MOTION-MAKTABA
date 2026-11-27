@@ -1,0 +1,20 @@
+/* Frost Sidebar: --f (0 → 1) grows frost in from the sidebar's edges. */
+@import url('_panel.css');
+.sp-frs__page { right: 13em; }
+.sp-frs__side { --f: 0; position: absolute; inset: 0 0 0 auto; display: grid; align-content: start; gap: 0.6em; width: 13em; padding: 1.4em 1em; overflow: hidden; color: var(--color-bone); background: var(--sp-accent); border-left: 1.5px solid color-mix(in srgb, #9fd0e6 calc(var(--f) * 100%), var(--color-ink)); }
+.sp-frs__feed { display: grid; gap: 0.4em; }
+.sp-frs__note { display: flex; align-items: center; gap: 0.5em; padding: 0.55em 0.6em; overflow: hidden; font-size: 0.78em; background: rgb(250 250 247 / 0.14); border-radius: 0.3em; }
+.sp-frs__note i { flex: none; width: 0.55em; height: 0.55em; background: var(--color-bone); border-radius: 50%; }
+.sp-frs__frost {
+  --r: calc(var(--f) * 110%);
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgb(255 255 255 / 0.6), transparent 45%), linear-gradient(160deg, rgb(220 238 246 / 0.9), rgb(170 210 230 / 0.8));
+  -webkit-mask: radial-gradient(ellipse at 0 0, #000 var(--r), transparent calc(var(--r) + 15%)), radial-gradient(ellipse at 100% 100%, #000 var(--r), transparent calc(var(--r) + 15%)), linear-gradient(90deg, #000 calc(var(--f) * 30%), transparent calc(var(--f) * 30% + 25%));
+  mask: radial-gradient(ellipse at 0 0, #000 var(--r), transparent calc(var(--r) + 15%)), radial-gradient(ellipse at 100% 100%, #000 var(--r), transparent calc(var(--r) + 15%)), linear-gradient(90deg, #000 calc(var(--f) * 30%), transparent calc(var(--f) * 30% + 25%));
+  opacity: min(1, calc(var(--f) * 2.5));
+  pointer-events: none;
+}
+.sp-frs__ice { position: absolute; inset: 0; width: 100%; height: 100%; opacity: min(1, calc(var(--f) * 4)); pointer-events: none; }
+.sp-frs__ice path { fill: none; stroke: var(--color-bone); stroke-width: 1.3; stroke-linecap: butt; vector-effect: non-scaling-stroke; }
+.sp-frs__btn { position: absolute; bottom: 1.2em; left: 2em; }

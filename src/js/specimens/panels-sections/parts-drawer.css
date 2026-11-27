@@ -1,0 +1,27 @@
+/* Parts Drawer: the drawer's own outline fades as --guides (0 → 1) brings up the dashed assembly guide. */
+@import url('_panel.css');
+.sp-pts__drawer {
+  --guides: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  align-content: center;
+  width: 15em;
+  padding: 0 1em;
+  background: color-mix(in srgb, var(--sp-accent) calc((1 - var(--guides)) * 18%), transparent);
+  border-left: 1.5px solid rgb(17 17 17 / calc(1 - var(--guides)));
+}
+.sp-pts__drawer::before { content: ''; position: absolute; top: 8%; bottom: 8%; left: 50%; border-left: 1.5px dashed rgb(17 17 17 / calc(var(--guides) * 0.4)); }
+.sp-pts__part { position: relative; display: flex; align-items: center; gap: 0.6em; padding: 0.6em 0.8em; font-size: 0.85em; background: var(--color-bone); border: 1.5px solid var(--color-ink); }
+.sp-pts__part + .sp-pts__part { border-top-width: 0; }
+.sp-pts__part span { flex: 1; }
+.sp-pts__part em { font-style: normal; font-weight: 700; }
+.sp-pts__part i { width: 1.6em; height: 1.6em; background: var(--sp-accent); border-radius: 0.2em; }
+.sp-pts__part--0 b { flex: 1; font: 400 1.4em/1 var(--font-display); }
+.sp-pts__part--3 { background: color-mix(in srgb, var(--sp-accent) 15%, var(--color-bone)); }
+.sp-pts__go { padding: 0.5em; text-align: center; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-bone); background: var(--color-ink); border-radius: 2em; }
+.sp-pts__tag { position: absolute; top: 50%; right: calc(100% + 1.6em); translate: 0 -50%; padding: 0.15em 0.5em; font-size: 0.75em; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; background: var(--color-bone); border: 1px solid var(--color-ink); }
+.sp-pts__tag::after { content: ''; position: absolute; top: 50%; left: 100%; width: 1.6em; border-top: 1px dashed var(--color-ink); }
+.sp-pts__btn { position: absolute; bottom: 1.2em; left: 2em; }

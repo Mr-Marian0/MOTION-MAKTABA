@@ -1,0 +1,15 @@
+/* Zoom Hero: a full-size scene, scaled down at the start. */
+@import url('_panel.css');
+.sp-zom__frame { position: absolute; inset: 0; overflow: hidden; border: 1.5px solid var(--color-ink); }
+.sp-zom__scene {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 70% 32%, var(--sp-accent) 0 2.6em, transparent 2.65em),
+    radial-gradient(ellipse 60% 30% at 25% 85%, var(--color-umber) 98%, transparent),
+    radial-gradient(ellipse 70% 35% at 80% 95%, var(--color-kraft-deep) 98%, transparent),
+    radial-gradient(ellipse 90% 30% at 50% 100%, var(--color-kraft) 98%, transparent),
+    linear-gradient(#f7d9b0, #e9a87a);
+}
+.sp-zom__copy { pointer-events: none; color: var(--color-ink); }
+.sp-zom__copy .sp-pn__h { margin: 0; font-size: 3.4em; }

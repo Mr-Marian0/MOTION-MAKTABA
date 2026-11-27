@@ -1,0 +1,62 @@
+/* Shared paper card for the deformation, scaling, phase-change and fragmentation designs.
+   Each of those designs does @import url('_card.css') and only adds what is its own.
+   Every rule is wrapped in :where() (zero specificity): the file is imported by many designs, so a
+   later copy of it lands after earlier designs' CSS, and must never override their own rules. */
+:where(.sp-cc) { display: grid; place-content: center; justify-items: center; gap: 1.2em; }
+:where(.sp-cc__wrap) { position: relative; }
+:where(.sp-cc [hidden]) { display: none !important; }
+:where(.sp-cc__card) {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.3em;
+  width: 15em;
+  padding: 1em 1.1em 1.1em;
+  color: var(--color-ink);
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.6em;
+  box-shadow: 0.25em 0.25em 0 var(--color-ink);
+}
+:where(.sp-cc__img) {
+  height: 6.5em;
+  margin-bottom: 0.4em;
+  background: color-mix(in srgb, var(--sp-accent, var(--color-kraft)) 35%, var(--color-kraft-core));
+  border-radius: 0.35em;
+}
+:where(.sp-cc__avatar) {
+  display: grid;
+  place-items: center;
+  width: 3.2em;
+  height: 3.2em;
+  margin-bottom: 0.3em;
+  font: italic 400 1.2em/1 var(--font-display);
+  color: var(--color-bone);
+  background: var(--sp-accent, var(--color-ink));
+  border-radius: 50%;
+}
+:where(.sp-cc__kick) { font-size: 0.72em; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55; }
+:where(.sp-cc__title) { font: 400 1.55em/1.1 var(--font-display); }
+:where(.sp-cc__text) { font-size: 0.8em; opacity: 0.7; }
+:where(.sp-cc__row) { display: flex; align-items: center; justify-content: space-between; gap: 0.6em; margin-top: 0.5em; }
+:where(.sp-cc__big) { font: 400 2.4em/1 var(--font-display); }
+:where(.sp-cc__price) { font: 400 1.5em/1 var(--font-display); }
+:where(.sp-cc__btns) { display: flex; gap: 0.6em; }
+:where(.sp-cc__btn) {
+  min-width: 6em;
+  padding: 0.55em 1.1em;
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-bone);
+  background: var(--color-ink);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 2em;
+  cursor: pointer;
+}
+:where(.sp-cc__btn--ghost) { color: var(--color-ink); background: var(--color-bone); }
+:where(.sp-cc__btn:disabled) { opacity: 0.4; cursor: default; }
+/* Fragments from _pieces.js: whole copies of the card, each clipped to one polygon. */
+:where(.sp-cc__pieces) { position: absolute; inset: 0; pointer-events: none; }
+:where(.sp-cc__piece) { position: absolute; inset: 0; }
+:where(.sp-cc__piece > .sp-cc__card) { box-shadow: none; }

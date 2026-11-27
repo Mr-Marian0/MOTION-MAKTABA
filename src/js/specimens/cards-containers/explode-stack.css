@@ -1,0 +1,5 @@
+/* Explode Stack */
+@import url('_card.css');
+.sp-exp__deck { display: grid; padding: 0; font: inherit; text-align: left; background: none; border: 0; cursor: pointer; }
+.sp-exp__card { grid-area: 1 / 1; transform-origin: 50% 0%; }
+.sp-exp__deck > .sp-cc__pieces { z-index: 99; }

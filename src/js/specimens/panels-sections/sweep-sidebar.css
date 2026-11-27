@@ -1,0 +1,10 @@
+/* Sweep Sidebar */
+@import url('_panel.css');
+.sp-swp__side { position: absolute; inset: 0 auto 0 0; display: grid; align-content: start; gap: 0.3em; width: 12em; padding: 1.4em 1em; background: var(--color-bone); border-right: 1.5px solid var(--color-ink); }
+.sp-swp__side .sp-pn__kick { margin-bottom: 0.6em; }
+.sp-swp__item { position: relative; padding: 0.6em 0.8em; overflow: hidden; text-align: left; background: none; border: 0; border-radius: 0.3em; cursor: pointer; }
+.sp-swp__item span { position: relative; }
+.sp-swp__item[aria-current='page'] span { color: var(--color-bone); transition: color 0.2s 0.15s; }
+.sp-swp__fill { position: absolute; inset: 0; background: var(--sp-accent); }
+.sp-swp__brush { position: absolute; inset: 35% 0; background: repeating-linear-gradient(transparent 0 2px, var(--sp-accent) 2px 3px); transform-origin: 0 50%; opacity: 0; }
+.sp-swp__page { left: 12em; }

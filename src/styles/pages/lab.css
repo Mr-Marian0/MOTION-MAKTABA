@@ -110,6 +110,28 @@
 .lab-axis--purpose { --ax: var(--ax-purpose); }
 
 .lab-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+/* Motion Effect chips, grouped by family */
+.lab-chips--grouped {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+  max-height: 22rem;
+  overflow-y: auto;
+  padding-right: 0.3rem;
+  scrollbar-width: thin;
+}
+.lab-chip-group__name {
+  display: block;
+  margin-bottom: 0.35rem;
+  padding-bottom: 0.2rem;
+  font: 500 0.56rem/1 var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ax);
+  border-bottom: 1px dashed rgb(17 17 17 / 0.2);
+}
+.lab-chip-group__chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .lab-chip {
   display: inline-flex;
   align-items: baseline;
@@ -373,6 +395,7 @@
   overflow: hidden;
   isolation: isolate;
   container-type: size;
+  contain: paint; /* with the size/layout containment above: a design's animation never repaints the page around it */
   color: var(--color-ink);
   background:
     radial-gradient(rgb(110 79 51 / 0.2) 1px, transparent 1.3px) 0 0 / 16px 16px,
@@ -407,8 +430,7 @@ html.is-bench-open { overflow: hidden; }
 .bench__backdrop {
   position: absolute;
   inset: 0;
-  background: rgb(17 17 17 / 0.55);
-  backdrop-filter: blur(2px);
+  background: rgb(17 17 17 / 0.62); /* no backdrop blur: costly on phones for a barely visible effect */
 }
 .bench__sheet {
   --tear-depth: 18px;

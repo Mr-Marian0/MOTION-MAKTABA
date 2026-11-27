@@ -1,0 +1,11 @@
+/* Crystal Badge */
+@import url('_card.css');
+.sp-cry__card { min-height: 10em; }
+.sp-cry__seed { position: absolute; top: 58%; left: 50%; width: 0.7em; height: 0.7em; margin: -0.35em; background: var(--sp-accent); rotate: 45deg; opacity: 0; }
+.sp-cry__crystal { overflow: hidden; border-radius: 0.6em; }
+.sp-cry__facet { position: absolute; inset: 0; }
+.sp-cry__clip { position: absolute; inset: 0; overflow: hidden; border-radius: 0.6em; pointer-events: none; }
+.sp-cry__glint { position: absolute; inset: 0; width: 25%; background: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.75), transparent); mix-blend-mode: overlay; pointer-events: none; }
+.sp-cry__tier { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; color: var(--color-bone); text-shadow: 0 1px 0 rgb(0 0 0 / 0.4); pointer-events: none; }
+.sp-cry__tier b { font: italic 400 2.4em/1 var(--font-display); }
+.sp-cry__tier .sp-cc__kick { opacity: 0.85; }

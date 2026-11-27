@@ -1,0 +1,19 @@
+/* Genie Save: the dock sits GAP em below the card and DOCK_X em right of its centre (see the JS). */
+@import url('_card.css');
+.sp-gen__wrap { margin-bottom: 4em; }
+.sp-gen__dock {
+  position: absolute;
+  top: calc(100% + 2.6em);
+  left: calc(50% + 4.5em);
+  z-index: 2;
+  padding: 0.5em 0.9em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 2em;
+  box-shadow: 0.2em 0.2em 0 var(--color-ink);
+  translate: -50% -50%;
+}
+.sp-gen__dock b { margin-left: 0.3em; color: var(--sp-accent); }

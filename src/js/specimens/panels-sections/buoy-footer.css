@@ -1,0 +1,9 @@
+/* Buoy Footer: the sea fills the footer; its waterline sits 8/20 of the way down the SVG, where the buoys float. */
+@import url('_panel.css');
+.sp-buo__foot { position: absolute; right: 0; bottom: 0; left: 0; height: 50%; }
+.sp-buo__sea { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sp-buo__sea path { fill: var(--sp-accent); stroke: var(--color-ink); stroke-width: 1.5px; vector-effect: non-scaling-stroke; }
+.sp-buo__buoys { position: absolute; top: 40%; right: 0; left: 0; display: flex; }
+.sp-buo__buoy { flex: 1; display: grid; justify-items: center; margin-top: -1.7em; }
+.sp-buo__buoy span { display: grid; place-items: center; width: 2.4em; height: 2.4em; font-size: 0.8em; font-weight: 700; color: var(--color-ink); background: radial-gradient(circle at 35% 30%, #fff 0 15%, transparent 16%), repeating-linear-gradient(180deg, #e8604c 0 0.6em, var(--color-bone) 0.6em 1.2em); border: 1.5px solid var(--color-ink); border-radius: 50%; }
+.sp-buo__fine { position: absolute; right: 0; bottom: 1em; left: 0; margin: 0; font-size: 0.75em; text-align: center; color: var(--color-bone); opacity: 0.75; }

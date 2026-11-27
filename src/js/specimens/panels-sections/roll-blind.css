@@ -1,0 +1,20 @@
+/* Roll Blind: roller and cord are placed at the top and moved down to the sheet's lower edge by JS. */
+@import url('_panel.css');
+.sp-rbl__page { top: 1.6em; }
+.sp-rbl__blind { position: absolute; top: 0.6em; right: 2.5em; left: 2.5em; z-index: 2; height: 60%; }
+.sp-rbl__blind::before { content: ''; position: absolute; top: -0.6em; right: -1em; left: -1em; height: 0.9em; background: var(--color-ink); border-radius: 0.3em; }
+.sp-rbl__sheet {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  color: var(--color-bone);
+  background: repeating-linear-gradient(transparent 0 1.6em, rgb(0 0 0 / 0.12) 1.6em calc(1.6em + 1px)), var(--sp-accent);
+  border-inline: 1.5px solid var(--color-ink);
+}
+.sp-rbl__content { display: grid; align-content: center; justify-items: center; gap: 0.35em; height: 100%; padding: 0 1.4em; text-align: center; }
+.sp-rbl__title { font: 400 1.7em/1.1 var(--font-display); }
+.sp-rbl__text { font-size: 0.85em; opacity: 0.85; }
+.sp-rbl__roller { position: absolute; top: 100%; right: -0.5em; left: -0.5em; height: 1.3em; margin-top: -0.65em; background: linear-gradient(color-mix(in srgb, var(--sp-accent) 60%, white), var(--sp-accent) 45%, color-mix(in srgb, var(--sp-accent) 55%, black)); border: 1.5px solid var(--color-ink); border-radius: 0.65em; }
+.sp-rbl__cord { position: absolute; top: 100%; left: 50%; width: 1.6em; height: 4.2em; margin: 0.4em 0 0 -0.8em; padding: 0; background: none; border: 0; cursor: ns-resize; touch-action: none; }
+.sp-rbl__cord::before { content: ''; position: absolute; top: 0; bottom: 1.2em; left: 50%; width: 1.5px; background: var(--color-ink); }
+.sp-rbl__cord i { position: absolute; bottom: 0; left: 50%; width: 1em; height: 1.3em; margin-left: -0.5em; background: var(--color-kraft); border: 1.5px solid var(--color-ink); border-radius: 40% 40% 50% 50%; }

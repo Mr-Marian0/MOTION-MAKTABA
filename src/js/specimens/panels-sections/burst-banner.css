@@ -1,0 +1,8 @@
+/* Burst Banner: the ✕ is drawn on the banner (so its shards carry it); a clear button sits over it. */
+@import url('_panel.css');
+.sp-brs__hold { position: absolute; top: 0; right: 0; left: 0; z-index: 2; height: 52%; }
+.sp-brs__banner { position: absolute; inset: 0; display: grid; align-content: center; gap: 0.3em; padding: 0 2em; color: var(--color-bone); background: radial-gradient(circle at 85% 20%, rgb(255 255 255 / 0.18), transparent 50%), var(--sp-accent); border-bottom: 1.5px solid var(--color-ink); }
+.sp-brs__big { font: 400 3em/1 var(--font-display); }
+.sp-brs__x { position: absolute; top: 30%; left: 90%; display: grid; place-items: center; width: 2.4em; height: 2.4em; margin: -1.2em 0 0 -1.2em; color: var(--sp-accent); background: var(--color-bone); border-radius: 50%; }
+.sp-brs__close { position: absolute; top: calc(52% * 0.3); left: 90%; z-index: 3; width: 2.4em; height: 2.4em; margin: -1.2em 0 0 -1.2em; padding: 0; background: none; border: 0; border-radius: 50%; cursor: pointer; }
+.sp-brs__close:focus-visible { outline: 2px solid var(--color-bone); }

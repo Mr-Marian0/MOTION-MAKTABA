@@ -1,0 +1,28 @@
+/* Shared mini-page for the Panels & Sections designs: page mock, sheets, buttons.
+   Each design does @import url('_panel.css'). Every rule is in :where() (zero specificity), because the
+   file is imported by many designs and a later copy must never override a design's own rules. */
+:where(.sp-pn) { overflow: hidden; }
+:where(.sp-pn [hidden]) { display: none !important; }
+:where(.sp-pn__page) { position: absolute; inset: 0; padding: 1.4em 2em; }
+:where(.sp-pn__h) { display: block; margin: 0.5em 0 0.5em; font: 400 2.2em/1 var(--font-display); letter-spacing: -0.02em; }
+:where(.sp-pn__kick) { display: block; font-size: 0.75em; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.6; }
+:where(.sp-pn__center) { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 0.9em; text-align: center; }
+:where(.sp-pn__sheet) { background: var(--color-bone); border: 1.5px solid var(--color-ink); }
+:where(.sp-pn__accent) { background: var(--sp-accent, var(--color-kraft)); }
+:where(.sp-pn__btn) {
+  padding: 0.6em 1.1em;
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-bone);
+  background: var(--color-ink);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 2em;
+  cursor: pointer;
+}
+:where(.sp-pn__btn--ghost) { color: var(--color-ink); background: var(--color-bone); }
+:where(.sp-pn__btn:disabled) { opacity: 0.4; cursor: default; }
+:where(.sp-pn__corner) { position: absolute; top: 1em; right: 1em; z-index: 5; }
+/* Fragments from ../cards-containers/_pieces.js (same as .sp-cc__piece there). */
+:where(.sp-cc__pieces) { position: absolute; inset: 0; pointer-events: none; }
+:where(.sp-cc__piece) { position: absolute; inset: 0; }

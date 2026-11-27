@@ -1,0 +1,8 @@
+/* Crumple Note */
+@import url('_card.css');
+.sp-crm__card { min-height: 10em; background: color-mix(in srgb, var(--sp-accent) 22%, var(--color-bone)); }
+.sp-crm__lines { padding-top: 0.3em; background: repeating-linear-gradient(transparent 0 1.25em, rgb(17 17 17 / 0.15) 1.25em calc(1.25em + 1px)); }
+.sp-crm .sp-cc__pieces { perspective: 40em; }
+/* A small wastepaper bin to the right of the note. */
+.sp-crm__bin { position: absolute; top: 62%; left: calc(100% + 1.5em); width: 4em; height: 4.4em; background: repeating-linear-gradient(90deg, var(--color-bone) 0 0.55em, var(--color-ink) 0.55em 0.7em); border: 1.5px solid var(--color-ink); border-radius: 0 0 0.8em 0.8em; transform-origin: 50% 100%; }
+.sp-crm__lid { position: absolute; top: -0.4em; left: -0.35em; right: -0.35em; height: 0.4em; background: var(--color-ink); border-radius: 0.2em; transform-origin: 0 100%; }

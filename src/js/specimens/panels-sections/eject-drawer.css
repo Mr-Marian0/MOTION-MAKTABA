@@ -1,0 +1,12 @@
+/* Eject Drawer: the tray hides behind the unit's face and is pushed down out of the slot. */
+@import url('_panel.css');
+.sp-ejc__unit { position: absolute; top: 5.5em; right: 3em; left: 3em; }
+.sp-ejc__face { position: relative; z-index: 2; display: flex; align-items: center; gap: 1em; height: 3em; padding: 0 1em; background: var(--color-umber); border: 1.5px solid var(--color-ink); border-radius: 0.5em; box-shadow: 0 0.25em 0 var(--color-ink); }
+.sp-ejc__slot { flex: 1; height: 0.4em; background: var(--color-ink); border-radius: 1em; }
+.sp-ejc__led { width: 0.6em; height: 0.6em; background: #6fcf7a; border-radius: 50%; }
+.sp-ejc__btn { padding: 0.4em 0.8em; font-size: 0.8em; letter-spacing: 0.08em; color: var(--color-bone); background: var(--color-ink); border: 1px solid var(--color-bone); border-radius: 0.3em; cursor: pointer; }
+/* The well under the face clips the tray, so the tucked-in tray is invisible and slides out downward. */
+.sp-ejc__well { position: absolute; top: 3em; right: 1.2em; left: 1.2em; height: 16em; overflow: hidden; }
+.sp-ejc__tray { position: absolute; top: 0; right: 0; left: 0; display: grid; place-items: end center; padding-bottom: 1.2em; background: color-mix(in srgb, var(--sp-accent) 30%, var(--color-bone)); border: 1.5px solid var(--color-ink); border-radius: 0 0 0.6em 0.6em; box-shadow: 0 0.3em 0 rgb(17 17 17 / 0.3); }
+.sp-ejc__file { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 0.6em; padding: 0.6em 0.9em; font-style: normal; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.3em; }
+.sp-ejc__file b { padding: 0.2em 0.4em; font-size: 0.75em; color: var(--color-bone); background: var(--sp-accent); border-radius: 0.2em; }

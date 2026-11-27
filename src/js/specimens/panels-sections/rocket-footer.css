@@ -1,0 +1,12 @@
+/* Rocket Footer: the rocket stands on the pad in the middle of the footer. */
+@import url('_panel.css');
+.sp-rkt__foot { position: absolute; right: 0; bottom: 0; left: 0; display: flex; align-items: center; justify-content: space-between; height: 3.4em; padding: 0 2em; font-size: 0.85em; color: var(--color-bone); background: var(--color-ink); }
+.sp-rkt__pad { width: 5em; height: 0.5em; background: var(--color-kraft); border-radius: 0.3em; }
+.sp-rkt__rocket { position: absolute; bottom: 3.3em; left: 50%; z-index: 3; width: 2.2em; height: 4.6em; margin-left: -1.1em; padding: 0; background: none; border: 0; cursor: pointer; }
+.sp-rkt__body { position: absolute; inset: 0 0 0.8em; background: radial-gradient(circle at 50% 42%, var(--color-bone) 0 0.32em, var(--color-ink) 0.33em 0.42em, transparent 0.43em), var(--sp-accent); border: 1.5px solid var(--color-ink); border-radius: 50% 50% 0.3em 0.3em / 70% 70% 0.3em 0.3em; }
+.sp-rkt__body::before, .sp-rkt__body::after { content: ''; position: absolute; bottom: -0.1em; width: 0.7em; height: 1.2em; background: var(--color-ink); }
+.sp-rkt__body::before { left: -0.7em; clip-path: polygon(100% 0, 100% 100%, 0 100%); }
+.sp-rkt__body::after { right: -0.7em; clip-path: polygon(0 0, 100% 100%, 0 100%); }
+.sp-rkt__flame { position: absolute; top: calc(100% - 0.8em); left: 50%; width: 1.1em; height: 1.8em; margin-left: -0.55em; background: radial-gradient(ellipse at 50% 20%, #fff2c2, #f2a541 45%, #d9622b 75%, transparent 76%); }
+.sp-rkt__puffs { position: absolute; bottom: 2.8em; left: 50%; pointer-events: none; }
+.sp-rkt__puffs i { position: absolute; width: 1.6em; height: 1.6em; margin-left: -0.8em; background: rgb(220 214 204 / 0.9); border-radius: 50%; }

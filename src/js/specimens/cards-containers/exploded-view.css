@@ -1,0 +1,31 @@
+/* Exploded View */
+@import url('_card.css');
+.sp-xv__scene { perspective: 60em; }
+.sp-xv__card, .sp-xv__layer { transform-style: preserve-3d; }
+/* The card face is its own plane at depth 0: a 3D parent's own background sorts unreliably against its children. */
+.sp-xv__card { background: none; border-color: transparent; box-shadow: none; }
+.sp-xv__base { position: absolute; inset: -1.5px; translate: 0 0 -4px; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.6em; box-shadow: 0.25em 0.25em 0 var(--color-ink); }
+.sp-xv__layer { position: relative; display: grid; gap: 0.2em; }
+.sp-xv__layer.sp-cc__row { display: flex; }
+.sp-xv__img { position: relative; display: block; overflow: hidden; }
+/* A desk lamp: shade, then stem and foot drawn by ::after. */
+.sp-xv__img i { position: absolute; top: 0.9em; left: 50%; width: 4.4em; height: 2.2em; margin-left: -2.2em; background: var(--color-ink); clip-path: polygon(28% 0, 72% 0, 100% 100%, 0 100%); }
+.sp-xv__img::after { content: ''; position: absolute; top: 3.1em; bottom: 0.7em; left: 50%; width: 3em; margin-left: -1.5em; background: linear-gradient(var(--color-ink), var(--color-ink)) center top / 0.3em 100% no-repeat; border-bottom: 0.35em solid var(--color-ink); }
+.sp-xv__stars { font-size: 0.85em; color: var(--sp-accent); }
+.sp-xv__buy { display: block; text-align: center; }
+.sp-xv__tag {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1.4em);
+  padding: 0.15em 0.5em;
+  font-size: 0.7em;
+  font-style: normal;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  background: var(--color-bone);
+  border: 1px solid var(--color-ink);
+  translate: 0 -50%;
+}
+.sp-xv__tag::before { content: ''; position: absolute; top: 50%; right: 100%; width: 1.6em; border-top: 1px dashed var(--color-ink); }
+.sp-xv__tag--base { top: auto; bottom: 0.4em; }

@@ -1,0 +1,10 @@
+/* Season Footer: --fill is the band colour of the current state; --glint sweeps a shine across the ice. */
+@import url('_panel.css');
+.sp-ssn__foot { --fill: #cfe6f0; --glint: -20; position: absolute; right: 0; bottom: 0; left: 0; height: 58%; color: #1d3b4a; }
+.sp-ssn__svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.sp-ssn__svg path { fill: var(--fill); stroke: var(--color-ink); stroke-width: 1.5px; vector-effect: non-scaling-stroke; }
+.sp-ssn__foot::after { content: ''; position: absolute; inset: 0; background: linear-gradient(100deg, transparent calc(var(--glint) * 1%), rgb(255 255 255 / 0.55) calc(var(--glint) * 1% + 6%), transparent calc(var(--glint) * 1% + 12%)); pointer-events: none; }
+.sp-ssn__puffs { position: absolute; right: 0; bottom: 45%; left: 0; display: flex; justify-content: space-around; pointer-events: none; }
+.sp-ssn__puffs i { width: 2.4em; height: 1.6em; background: rgb(255 255 255 / 0.9); border-radius: 50%; filter: blur(2px); opacity: 0; }
+.sp-ssn__row { position: absolute; right: 2em; bottom: 1.2em; left: 2em; display: flex; align-items: center; justify-content: space-between; gap: 1em; font-size: 0.85em; }
+.sp-ssn__state { font: italic 400 2.2em/1 var(--font-display); }

@@ -1,0 +1,20 @@
+/* Mini Player: every part is placed absolutely so JS can tween it between the full and pill layouts. */
+@import url('_card.css');
+.sp-mp__box { display: grid; place-items: center; width: 16.4em; height: 10em; }
+.sp-mp__player { position: relative; width: 16em; height: 9.6em; overflow: hidden; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.6em; box-shadow: 0.25em 0.25em 0 var(--color-ink); cursor: default; }
+.sp-mp__player > * { position: absolute; }
+.sp-mp__art { background: radial-gradient(circle at 35% 35%, var(--color-bone) 0 8%, transparent 9%), conic-gradient(from 40deg, var(--sp-accent), var(--color-umber), var(--sp-accent)); }
+/* Positions are tweened in the player's em, so the bigger type lives on an inner span. */
+.sp-mp__title, .sp-mp__artist { white-space: nowrap; transform-origin: 0 0; }
+.sp-mp__title span { font: 400 1.3em/1.1 var(--font-display); }
+.sp-mp__artist span { font-size: 0.85em; opacity: 0.6; }
+.sp-mp__extra { top: 4.85em; left: 7.3em; display: flex; gap: 3.6em; font-style: normal; opacity: 0.7; }
+.sp-mp__extra i { font-style: normal; }
+.sp-mp__play { z-index: 2; display: grid; place-items: center; width: 2.4em; height: 2.4em; padding: 0; font-size: 1em; color: var(--color-bone); background: var(--color-ink); border: 0; border-radius: 50%; cursor: pointer; }
+.sp-mp__bar { overflow: hidden; background: rgb(17 17 17 / 0.12); border-radius: 1em; }
+.sp-mp__bar i { display: block; height: 100%; background: var(--sp-accent); }
+.sp-mp__times { top: 12em; left: 1.43em; font-size: 0.7em; opacity: 0.55; } /* = 8.4em / 1em in the player's em */
+.sp-mp__toggle { top: 0.6em; right: 0.6em; width: 1.6em; height: 1.6em; padding: 0; background: none; border: 0; border-radius: 50%; cursor: pointer; }
+.sp-mp__toggle::before { content: ''; position: absolute; inset: 0.7em 0.35em; border-top: 2px solid currentColor; }
+.sp-mp__toggle[aria-expanded='false'] { inset: 0; width: auto; height: auto; border-radius: 0; }
+.sp-mp__toggle[aria-expanded='false']::before { content: none; }

@@ -1,0 +1,12 @@
+/* Walker Footer: the figure's feet stand on the footer's top edge; its x is the centre of the link it is under. */
+@import url('_panel.css');
+.sp-wlk__foot { position: absolute; right: 0; bottom: 0; left: 0; height: 40%; padding: 1.6em 2em 0; background: var(--color-ink); }
+.sp-wlk__links { display: flex; justify-content: space-between; }
+.sp-wlk__link { padding: 0.4em 0.2em; font-size: 0.85em; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-bone) !important; }
+.sp-wlk__walker { position: absolute; bottom: 100%; left: 0; width: 1.6em; height: 3.6em; margin-left: -0.8em; }
+.sp-wlk__walker i { position: absolute; background: var(--sp-accent); border: 1px solid var(--color-ink); }
+.sp-wlk__head { top: 0; left: 0.4em; width: 0.8em; height: 0.8em; border-radius: 50%; }
+.sp-wlk__body { top: 0.8em; left: 0.55em; width: 0.5em; height: 1.4em; border-radius: 0.25em; }
+.sp-wlk__arm { top: 0.95em; left: 0.7em; width: 0.22em; height: 1.1em; border-radius: 0.2em; transform-origin: 50% 0; }
+.sp-wlk__leg { top: 2.1em; left: 0.68em; width: 0.26em; height: 1.5em; border-radius: 0.2em; transform-origin: 50% 0; }
+.sp-wlk__arm--b, .sp-wlk__leg--b { filter: brightness(0.75); z-index: -1; }

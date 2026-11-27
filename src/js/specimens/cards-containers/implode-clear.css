@@ -1,0 +1,12 @@
+/* Implode Clear */
+@import url('_card.css');
+.sp-imp__card { width: 16em; }
+.sp-imp__badge { display: grid; place-items: center; width: 1.6em; height: 1.6em; font-size: 0.8em; color: var(--color-bone); background: var(--sp-accent); border-radius: 50%; }
+.sp-imp__list { display: grid; gap: 0.5em; margin-top: 0.5em !important; }
+.sp-imp__list li { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.6em; padding: 0.55em 0.6em; font-size: 0.8em; background: color-mix(in srgb, var(--sp-accent) 10%, var(--color-bone)); border-radius: 0.4em; }
+.sp-imp__list i { width: 0.6em; height: 0.6em; background: var(--sp-accent); border-radius: 50%; }
+.sp-imp__list small { opacity: 0.5; }
+.sp-imp__pop, .sp-imp__ring { position: absolute; top: 50%; left: 50%; width: 1.6em; height: 1.6em; margin: -0.8em; border-radius: 50%; pointer-events: none; }
+.sp-imp__pop { background: var(--sp-accent); }
+.sp-imp__ring { border: 2px solid var(--sp-accent); }
+.sp-imp__empty { position: absolute; top: 50%; left: 50%; margin: -1em 0 0 -4.5em; width: 9em; padding: 0.5em 0; font-size: 0.85em; letter-spacing: 0.1em; text-align: center; text-transform: uppercase; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 2em; }

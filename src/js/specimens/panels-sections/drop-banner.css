@@ -1,0 +1,8 @@
+/* Drop Banner: the panel hangs from the top edge; tab and page ride below its bottom. */
+@import url('_panel.css');
+.sp-drp__panel { position: absolute; top: 0; right: 0; left: 0; z-index: 2; overflow: hidden; color: var(--color-bone); background: var(--sp-accent); border-bottom: 1.5px solid var(--color-ink); }
+.sp-drp__inner { display: grid; justify-items: center; gap: 0.3em; padding: 1.2em 2em 1.4em; text-align: center; }
+.sp-drp__title { font: 400 1.8em/1.1 var(--font-display); }
+.sp-drp__text { font-size: 0.85em; opacity: 0.85; }
+.sp-drp__tab { position: absolute; top: 0; left: 50%; z-index: 3; translate: -50% 0; padding: 0.4em 1em 0.5em; font-size: 0.8em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-bone); background: var(--sp-accent); border: 1.5px solid var(--color-ink); border-top: 0; border-radius: 0 0 0.6em 0.6em; cursor: pointer; }
+.sp-drp__page { top: 2.6em; }
