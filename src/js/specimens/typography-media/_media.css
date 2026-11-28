@@ -1,0 +1,49 @@
+/* Shared looks for the Type & Media designs (see _tm.js). Every rule is in :where() (zero specificity):
+   many designs import this file, and a later copy of it must never override a design's own rules. */
+:where(.sp-tm) { display: grid; place-content: center; overflow: hidden; }
+:where(.sp-tm [hidden]) { display: none !important; }
+:where(.sp-tm__kick) { display: block; font-size: 0.72em; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.6; }
+:where(.sp-tm__h) { margin: 0; font: 400 2.8em/1 var(--font-display); letter-spacing: -0.02em; }
+:where(.sp-tm__p) { margin: 0; max-width: 24em; font-size: 0.95em; line-height: 1.6; }
+:where(.sp-tm__c, .sp-tm__w) { display: inline-block; }
+:where(.sp-tm__btn) { padding: 0.55em 1.05em; font: inherit; font-size: 0.8em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-bone); background: var(--color-ink); border: 1.5px solid var(--color-ink); border-radius: 2em; cursor: pointer; }
+:where(.sp-tm__btn--ghost) { color: var(--color-ink); background: var(--color-bone); }
+/* Painted photo: sky gradient, sun, two hills */
+:where(.sp-tm__photo) {
+  display: block;
+  background:
+    radial-gradient(circle at 70% 32%, var(--sun) 0 11%, transparent 11.5%),
+    radial-gradient(ellipse 75% 42% at 28% 100%, var(--hill) 98%, transparent),
+    radial-gradient(ellipse 60% 34% at 88% 100%, var(--far) 98%, transparent),
+    linear-gradient(var(--sky1), var(--sky2));
+}
+:where(.sp-tm__frame) { position: relative; overflow: hidden; border: 0.35em solid var(--color-bone); border-radius: 0.3em; box-shadow: 0 0.6em 1.4em rgb(0 0 0 / 0.22); }
+/* Avatar: head, hair and shoulders in a circle */
+:where(.sp-tm__ava) {
+  display: block;
+  width: 3em;
+  height: 3em;
+  font-style: normal;
+  border: 2px solid var(--color-bone);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 36%, var(--skin) 0 19%, transparent 19.5%),
+    radial-gradient(ellipse 30% 26% at 50% 26%, var(--hair) 98%, transparent),
+    radial-gradient(ellipse 48% 34% at 50% 100%, var(--shirt) 98%, transparent),
+    color-mix(in srgb, var(--shirt) 22%, var(--color-bone));
+  box-shadow: 0 0.15em 0.4em rgb(0 0 0 / 0.2);
+}
+/* Video frame: dark screen with a control bar */
+:where(.sp-tm__video) { position: relative; width: 20em; aspect-ratio: 16 / 9; overflow: hidden; color: var(--color-bone); background: #120d1c; border-radius: 0.5em; box-shadow: 0 0.6em 1.4em rgb(0 0 0 / 0.25); }
+:where(.sp-tm__bar) { position: absolute; right: 0; bottom: 0; left: 0; display: flex; align-items: center; gap: 0.6em; padding: 0.5em 0.7em; background: linear-gradient(transparent, rgb(0 0 0 / 0.6)); }
+:where(.sp-tm__play) { flex: none; width: 2em; height: 2em; padding: 0; font: inherit; color: var(--color-ink); background: var(--color-bone); border: 0; border-radius: 50%; cursor: pointer; }
+:where(.sp-tm__track) { position: relative; flex: 1; height: 0.3em; background: rgb(255 255 255 / 0.3); border-radius: 0.2em; }
+:where(.sp-tm__fill) { position: absolute; inset: 0; background: var(--sp-accent, var(--color-bone)); border-radius: 0.2em; transform-origin: 0% 50%; }
+/* Icon buttons */
+:where(.sp-tm__icons) { display: flex; gap: 1em; }
+:where(.sp-tm__icon) { position: relative; display: grid; place-items: center; width: 3.6em; height: 3.6em; padding: 0; font: inherit; color: var(--color-ink); background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.8em; box-shadow: 0.2em 0.2em 0 var(--color-ink); cursor: pointer; }
+:where(.sp-tm__icon svg) { width: 60%; height: 60%; overflow: visible; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+:where(.sp-tm__icon:focus-visible, .sp-tm__btn:focus-visible, .sp-tm__play:focus-visible) { outline: 2px solid var(--sp-accent, var(--color-ink)); outline-offset: 3px; }
+/* Fragments from ../cards-containers/_pieces.js */
+:where(.sp-cc__pieces) { position: absolute; inset: 0; pointer-events: none; }
+:where(.sp-cc__piece) { position: absolute; inset: 0; }

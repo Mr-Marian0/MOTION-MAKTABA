@@ -1,0 +1,9 @@
+/* Mosh Video */
+@import url('_media.css');
+.sp-msv { gap: 0.5em; }
+.sp-msv__video { width: 19em; }
+.sp-msv__now, .sp-msv__img { position: absolute; inset: 0; }
+.sp-msv__title { position: absolute; top: 0.6em; left: 0.7em; z-index: 2; padding: 0.15em 0.5em; font: 500 0.8em/1.2 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink); background: var(--sp-accent); }
+.sp-msv__chapters { display: flex; gap: 0.3em; }
+.sp-msv__chapters button { flex: 1; padding: 0.4em 0.3em; font: inherit; font-size: 0.72em; color: var(--color-ink); background: var(--color-bone); border: 1px solid rgb(17 17 17 / 0.3); border-radius: 0.25em; cursor: pointer; }
+.sp-msv__chapters button[aria-pressed='true'] { color: var(--color-bone); background: var(--color-ink); }

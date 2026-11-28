@@ -1,0 +1,10 @@
+/* Launch Icon: the tile clips the rocket as it leaves; smoke puffs at the pad. */
+@import url('_media.css');
+.sp-lci { gap: 0.6em; justify-items: center; }
+.sp-lci__tile { width: 5em; height: 5em; overflow: hidden; }
+.sp-lci__rocket { position: relative; display: grid; place-items: center; width: 60%; height: 60%; }
+.sp-lci__rocket svg { width: 100%; height: 100%; }
+.sp-lci__flame { position: absolute; top: 88%; left: 50%; width: 0.5em; height: 0.9em; margin-left: -0.25em; background: var(--sp-accent); border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%; }
+.sp-lci__smoke { position: absolute; bottom: 0.3em; left: 50%; pointer-events: none; }
+.sp-lci__smoke i { position: absolute; top: -0.5em; left: -0.5em; width: 1em; height: 1em; background: rgb(17 17 17 / 0.18); border-radius: 50%; }
+.sp-lci__msg { font-size: 0.8em; letter-spacing: 0.1em; text-transform: uppercase; }

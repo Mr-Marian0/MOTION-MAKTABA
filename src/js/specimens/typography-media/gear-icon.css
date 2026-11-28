@@ -1,0 +1,9 @@
+/* Gear Icon */
+@import url('_media.css');
+.sp-gri { gap: 0.6em; justify-items: center; }
+.sp-gri__tile { width: 5em; height: 5em; }
+.sp-gri__tile svg { width: 82%; height: 82%; }
+.sp-gri__big path { fill: var(--color-ink); stroke: none; }
+.sp-gri__small path { fill: var(--sp-accent); stroke: none; }
+.sp-gri__tile circle { fill: var(--color-bone); stroke: none; }
+.sp-gri small { font-size: 0.8em; letter-spacing: 0.1em; text-transform: uppercase; }

@@ -1,0 +1,5 @@
+/* Snap Heading */
+@import url('_media.css');
+.sp-snp__h { max-width: 7em; font-size: 2.9em; }
+.sp-snp__w { cursor: grab; transition: color 0.2s; }
+.sp-snp__w.is-pulled { color: var(--sp-accent); }

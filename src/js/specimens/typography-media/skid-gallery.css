@@ -1,0 +1,9 @@
+/* Skid Gallery: prints stack in one spot on the table. */
+@import url('_media.css');
+.sp-skg { gap: 0.6em; }
+.sp-skg__table { position: relative; width: 18em; height: 11em; touch-action: pan-y; outline-offset: 4px; }
+.sp-skg__table:focus-visible { outline: 2px solid var(--sp-accent); }
+.sp-skg__card { position: absolute; inset: 0; }
+.sp-skg__img { position: absolute; inset: 0; }
+.sp-skg__bar { display: flex; align-items: center; justify-content: space-between; }
+.sp-skg__bar .sp-tm__btn { width: 2.4em; padding: 0.4em 0; font-size: 1em; }

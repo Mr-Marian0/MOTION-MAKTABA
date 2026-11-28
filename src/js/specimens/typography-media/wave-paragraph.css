@@ -1,0 +1,5 @@
+/* Wave Paragraph */
+@import url('_media.css');
+.sp-wvp__p { font-size: 1.05em; line-height: 1.8; }
+.sp-wvp__w { cursor: pointer; border-radius: 0.2em; }
+.sp-wvp__w:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 2px; }

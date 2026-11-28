@@ -1,0 +1,10 @@
+/* Fold Gallery: the next print lies underneath; the old print's halves (pieces) fold over it. */
+@import url('_media.css');
+.sp-fgl__stage { display: grid; gap: 0.6em; outline-offset: 4px; }
+.sp-fgl__stage:focus-visible { outline: 2px solid var(--sp-accent); }
+.sp-fgl__frame { width: 19em; height: 11em; overflow: visible; }
+.sp-fgl__now, .sp-fgl__img { position: absolute; inset: 0; }
+.sp-fgl__frame .sp-cc__piece { backface-visibility: visible; }
+.sp-fgl__bar { display: flex; align-items: center; justify-content: space-between; gap: 0.6em; }
+.sp-fgl__bar b { font: 400 1.1em/1 var(--font-display); }
+.sp-fgl__bar .sp-tm__btn { width: 2.4em; padding: 0.4em 0; font-size: 1em; }

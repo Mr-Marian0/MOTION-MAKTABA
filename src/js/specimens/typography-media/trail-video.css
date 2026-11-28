@@ -1,0 +1,11 @@
+/* Trail Video: previews hang above the track, centred on where they were dropped. */
+@import url('_media.css');
+.sp-trv__video { width: 19em; overflow: visible; }
+.sp-trv__pic { position: absolute; inset: 0; overflow: hidden; border-radius: 0.5em; }
+.sp-trv__img { position: absolute; inset: 0; }
+.sp-trv__track { height: 0.4em; cursor: pointer; touch-action: none; }
+.sp-trv__track:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 4px; }
+.sp-trv__head { position: absolute; top: 50%; left: 0; width: 0.9em; height: 0.9em; margin: -0.45em 0 0 -0.45em; background: var(--sp-accent); border-radius: 50%; box-shadow: 0 0 0 3px rgb(0 0 0 / 0.3); }
+.sp-trv__trail { position: absolute; bottom: 1.2em; left: 0; pointer-events: none; }
+.sp-trv__prev { position: absolute; bottom: 0; left: -2.2em; width: 4.4em; height: 2.6em; border-width: 0.15em; }
+.sp-trv__time { font-variant-numeric: tabular-nums; }

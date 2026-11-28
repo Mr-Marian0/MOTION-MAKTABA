@@ -1,0 +1,11 @@
+/* Curve Gallery: the flying copy lives in a layer over the whole gallery. */
+@import url('_media.css');
+.sp-cgl__wrap { position: relative; display: grid; gap: 0.6em; }
+.sp-cgl__main { width: 18em; height: 9.5em; }
+.sp-cgl__img { position: absolute; inset: 0; }
+.sp-cgl__strip { display: flex; gap: 0.5em; }
+.sp-cgl__thumb { position: relative; width: 4em; height: 2.6em; padding: 0; overflow: hidden; border: 2px solid transparent; border-radius: 0.25em; cursor: pointer; }
+.sp-cgl__thumb[aria-current='true'] { border-color: var(--sp-accent); }
+.sp-cgl__thumb:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 2px; }
+.sp-cgl__air { position: absolute; inset: 0; pointer-events: none; }
+.sp-cgl__fly { position: absolute; top: 0; left: 0; border-width: 0.2em; }

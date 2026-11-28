@@ -1,0 +1,7 @@
+/* Flag Image: a pole on the left; the cloth is vertical strips of one photo + caption. */
+@import url('_media.css');
+.sp-flg__rig { display: flex; align-items: flex-start; }
+.sp-flg__pole { width: 0.5em; height: 14em; background: linear-gradient(90deg, color-mix(in srgb, var(--sp-accent) 60%, white), var(--sp-accent)); border-radius: 0.25em; }
+.sp-flg__cloth { position: relative; width: 17em; height: 10em; margin-top: 0.4em; }
+.sp-flg__img { position: absolute; inset: 0; }
+.sp-flg__text { position: absolute; bottom: 0.6em; left: 0.8em; font: 400 1.3em/1 var(--font-display); color: var(--color-bone); text-shadow: 0 1px 3px rgb(0 0 0 / 0.5); }

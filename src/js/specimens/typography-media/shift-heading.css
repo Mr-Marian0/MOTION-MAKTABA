@@ -1,0 +1,7 @@
+/* Shift Heading: the shape sits behind the headline, centred, and morphs via border-radius. */
+@import url('_media.css');
+.sp-shf__btn { position: relative; display: grid; place-items: center; width: 13em; height: 9em; padding: 0; font: inherit; background: none; border: 0; cursor: pointer; }
+.sp-shf__btn:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 4px; }
+.sp-shf__shape { position: absolute; inset: 0.3em 1em; }
+/* small enough, and narrow enough to wrap, that the words always sit inside the shape */
+.sp-shf__h { position: relative; max-width: 4.2em; font-size: 1.9em; line-height: 1.05; text-align: center; color: var(--sp-accent); }

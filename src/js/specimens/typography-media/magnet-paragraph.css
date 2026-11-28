@@ -1,0 +1,5 @@
+/* Magnet Paragraph */
+@import url('_media.css');
+.sp-mag__p { position: relative; font-size: 1.05em; line-height: 1.75; }
+.sp-mag__p b { display: inline-block; font-weight: 600; color: var(--sp-accent); transition: background-color 0.2s; border-radius: 0.2em; }
+.sp-mag__p b.is-near { background: color-mix(in srgb, var(--sp-accent) 14%, transparent); }

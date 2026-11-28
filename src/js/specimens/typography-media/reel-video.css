@@ -1,0 +1,12 @@
+/* Reel Video: two reels above the screen; each has a film roll (scaled with how much film is on it) and spokes. */
+@import url('_media.css');
+.sp-rel { gap: 0; justify-items: center; }
+.sp-rel__reels { display: flex; gap: 6em; margin-bottom: -0.8em; }
+.sp-rel__reel { position: relative; display: grid; place-items: center; width: 4.4em; height: 4.4em; background: #2a2622; border-radius: 50%; }
+.sp-rel__roll { position: absolute; inset: 0.25em; background: repeating-radial-gradient(circle, var(--sp-accent) 0 0.08em, color-mix(in srgb, var(--sp-accent) 70%, black) 0.08em 0.16em); border-radius: 50%; }
+.sp-rel__spokes { position: absolute; inset: 0.9em; background: conic-gradient(#2a2622 0 30deg, transparent 30deg 120deg, #2a2622 120deg 150deg, transparent 150deg 240deg, #2a2622 240deg 270deg, transparent 270deg); border-radius: 50%; box-shadow: inset 0 0 0 0.6em transparent; }
+.sp-rel__spokes::after { content: ''; position: absolute; inset: 35%; background: #d9d4cb; border-radius: 50%; }
+.sp-rel__video { width: 17em; }
+.sp-rel__img { position: absolute; inset: 0; }
+.sp-rel__track { cursor: pointer; }
+.sp-rel__track:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 3px; }

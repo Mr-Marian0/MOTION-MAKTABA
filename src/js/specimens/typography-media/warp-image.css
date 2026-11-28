@@ -1,0 +1,5 @@
+/* Warp Image: strips of the same photo side by side; the frame clips their bulge. */
+@import url('_media.css');
+.sp-wrp2__frame { width: 20em; height: 12em; cursor: crosshair; }
+.sp-wrp2__frame:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 3px; }
+.sp-wrp2__img { position: absolute; inset: -1em 0 0; }

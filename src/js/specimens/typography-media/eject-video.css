@@ -1,0 +1,16 @@
+/* Eject Video: a screen above a deck with a cassette slot; the tape sits half in the slot's mouth. */
+@import url('_media.css');
+.sp-ejv { gap: 0.6em; justify-items: center; }
+.sp-ejv__deck { display: grid; gap: 0.3em; }
+.sp-ejv__screen { width: 17em; }
+.sp-ejv__pic, .sp-ejv__img { position: absolute; inset: 0; }
+.sp-ejv__static { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgb(255 255 255 / 0.25) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, #444 0 2px, #777 2px 3px, #333 3px 5px); }
+.sp-ejv__osd { position: absolute; top: 0.5em; left: 0.6em; font: 500 0.75em/1 var(--font-mono); letter-spacing: 0.08em; color: #8cff8c; text-shadow: 0 0 4px #8cff8c; }
+.sp-ejv__slot { position: relative; display: flex; align-items: center; justify-content: space-between; height: 2.2em; padding: 0 0.6em; background: #2a2622; border-radius: 0.3em; }
+.sp-ejv__mouth { position: absolute; top: 0.5em; left: 4.5em; z-index: 2; width: 7em; height: 0.5em; background: #0c0907; border-radius: 0.2em; }
+.sp-ejv__tape { position: absolute; bottom: 1.5em; left: 4.8em; z-index: 1; display: grid; place-items: center; width: 6.4em; height: 2.6em; font-style: normal; background: #1f1712; border-radius: 0.25em; }
+.sp-ejv__tape b { padding: 0.1em 0.4em; font-size: 0.6em; color: var(--color-ink); background: var(--color-bone); border-left: 0.5em solid var(--sp-accent); white-space: nowrap; }
+.sp-ejv__eject { margin-left: auto; padding: 0.2em 0.5em; font: inherit; color: var(--color-bone); background: #4a4440; border: 0; border-radius: 0.2em; cursor: pointer; }
+.sp-ejv__shelf { display: flex; gap: 0.35em; }
+.sp-ejv__pick { padding: 0.35em 0.6em; font: inherit; font-size: 0.72em; color: var(--color-bone); background: #1f1712; border: 0; border-left: 0.4em solid var(--sp-accent); border-radius: 0.2em; cursor: pointer; }
+.sp-ejv__pick:disabled { opacity: 0.35; cursor: default; }

@@ -1,0 +1,6 @@
+/* Extend Paragraph: the clip's height steps a line at a time (set from JS); the paragraph nudges within it. */
+@import url('_media.css');
+.sp-xtp__card { display: grid; gap: 0.5em; width: 24em; }
+.sp-xtp__clip { overflow: hidden; }
+.sp-xtp__more { justify-self: start; padding: 0; font: inherit; font-size: 0.85em; letter-spacing: 0.06em; color: var(--sp-accent); background: none; border: 0; border-bottom: 1.5px solid currentColor; cursor: pointer; }
+.sp-xtp__more:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 3px; }

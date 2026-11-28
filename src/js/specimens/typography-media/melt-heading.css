@@ -1,0 +1,6 @@
+/* Melt Heading: each letter carries a drip hanging from its foot. */
+@import url('_media.css');
+.sp-mlt__h { font-size: 3.4em; font-weight: 700; outline-offset: 6px; }
+.sp-mlt__h:focus-visible { outline: 2px solid var(--sp-accent); }
+.sp-mlt__c { position: relative; }
+.sp-mlt__drip { position: absolute; top: 88%; left: 45%; width: 0.09em; height: 0.5em; background: var(--sp-accent); border-radius: 0 0 0.1em 0.1em; }

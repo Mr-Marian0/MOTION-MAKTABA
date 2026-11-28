@@ -1,0 +1,6 @@
+/* Unfold Reveal: one block per line; every other line in the accent colour. */
+@import url('_media.css');
+.sp-unf { gap: 1em; justify-items: start; }
+.sp-unf__h { display: grid; font-size: 2.4em; }
+.sp-unf__line { display: block; }
+.sp-unf__line:nth-child(2) { font-style: italic; color: var(--sp-accent); }

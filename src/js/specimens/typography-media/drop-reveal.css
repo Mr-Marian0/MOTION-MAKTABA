@@ -1,0 +1,5 @@
+/* Drop Reveal */
+@import url('_media.css');
+.sp-drp { gap: 1em; justify-items: start; }
+.sp-drp__q { max-width: 10em; margin: 0; font: 400 2.4em/1.15 var(--font-display); }
+.sp-drp__w.is-key { font-style: italic; color: var(--sp-accent); }

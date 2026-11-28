@@ -1,0 +1,8 @@
+/* Run Icon: a bigger tile so the stride reads; the runner in the accent colour. */
+@import url('_media.css');
+.sp-run { gap: 0.6em; justify-items: center; }
+.sp-run__tile { width: 5em; height: 5em; color: var(--sp-accent); }
+.sp-run__tile svg { width: 75%; height: 75%; }
+.sp-run__tile circle { fill: currentColor; stroke: none; }
+.sp-run__ground { stroke: var(--color-ink); stroke-width: 1.5; }
+.sp-run__msg { font-size: 0.8em; letter-spacing: 0.1em; text-transform: uppercase; }

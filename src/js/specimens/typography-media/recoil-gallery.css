@@ -1,0 +1,11 @@
+/* Recoil Gallery */
+@import url('_media.css');
+.sp-rcg { gap: 0.6em; justify-items: center; }
+.sp-rcg__view { width: 20em; padding: 0.6em 0; overflow: hidden; touch-action: pan-y; cursor: grab; outline-offset: 2px; }
+.sp-rcg__view:focus-visible { outline: 2px solid var(--sp-accent); }
+.sp-rcg__strip { display: flex; gap: 1em; padding: 0 1.5em; will-change: transform; }
+.sp-rcg__card { flex: none; width: 17em; height: 9.5em; }
+.sp-rcg__img { position: absolute; inset: 0; }
+.sp-rcg__dots { display: flex; gap: 0.4em; }
+.sp-rcg__dots i { width: 0.5em; height: 0.5em; background: rgb(17 17 17 / 0.2); border-radius: 50%; }
+.sp-rcg__dots i.is-on { background: var(--sp-accent); }

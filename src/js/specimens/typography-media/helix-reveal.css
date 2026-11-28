@@ -1,0 +1,5 @@
+/* Helix Reveal: letters keep their places in the line; the helix is only transforms on top. */
+@import url('_media.css');
+.sp-hlr__h { position: relative; font-size: 3.4em; font-weight: 700; color: var(--sp-accent); cursor: pointer; outline-offset: 8px; }
+.sp-hlr__h:focus-visible { outline: 2px solid var(--sp-accent); }
+.sp-hlr__c { position: relative; }

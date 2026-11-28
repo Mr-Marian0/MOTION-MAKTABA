@@ -1,0 +1,14 @@
+/* Blur Gallery: a strip of full-width slides; each slide's after-images sit over it, offset while moving. */
+@import url('_media.css');
+.sp-blg { gap: 0.6em; }
+.sp-blg__view { width: 19em; height: 11em; touch-action: pan-y; outline-offset: 3px; }
+.sp-blg__view:focus-visible { outline: 2px solid var(--sp-accent); }
+.sp-blg__strip { display: flex; height: 100%; will-change: transform; }
+.sp-blg__slide { position: relative; flex: none; width: 100%; height: 100%; }
+.sp-blg__img { position: absolute; inset: 0; }
+.sp-blg__ghost { position: absolute; inset: 0; }
+.sp-blg__bar { display: flex; align-items: center; justify-content: space-between; }
+.sp-blg__bar .sp-tm__btn { width: 2.4em; padding: 0.4em 0; font-size: 1em; }
+.sp-blg__dots { display: flex; gap: 0.4em; }
+.sp-blg__dots button { width: 0.6em; height: 0.6em; padding: 0; background: rgb(17 17 17 / 0.2); border: 0; border-radius: 50%; cursor: pointer; }
+.sp-blg__dots button[aria-current='true'] { background: var(--sp-accent); }

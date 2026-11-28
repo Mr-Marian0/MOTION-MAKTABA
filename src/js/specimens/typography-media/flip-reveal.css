@@ -1,0 +1,4 @@
+/* Flip Reveal */
+@import url('_media.css');
+.sp-flp__h { font-size: 3.4em; font-weight: 700; color: var(--sp-accent); cursor: pointer; outline-offset: 8px; }
+.sp-flp__h:focus-visible { outline: 2px solid var(--sp-accent); }

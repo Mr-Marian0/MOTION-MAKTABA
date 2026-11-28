@@ -1,0 +1,9 @@
+/* Lissajous Icon: the trail fades towards its tail with a gradient-free trick: a thin stroke at reduced opacity. */
+@import url('_media.css');
+.sp-lsj { gap: 0.6em; justify-items: center; }
+.sp-lsj__tile { width: 5em; height: 5em; color: var(--sp-accent); }
+.sp-lsj__tile svg { width: 80%; height: 80%; }
+.sp-lsj__trail { stroke-width: 1.4; opacity: 0.55; }
+.sp-lsj__dot { fill: currentColor; stroke: none; }
+.sp-lsj__tick { stroke: #3e7d5a; stroke-width: 2.4; }
+.sp-lsj__msg { min-height: 1.3em; font-size: 0.8em; letter-spacing: 0.08em; }

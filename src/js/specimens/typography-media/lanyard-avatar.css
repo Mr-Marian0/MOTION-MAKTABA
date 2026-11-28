@@ -1,0 +1,11 @@
+/* Lanyard Avatar: the rope is an SVG over the whole stage; the badge's top-centre follows the rope's end. */
+@import url('_media.css');
+.sp-lan { display: block; }
+.sp-lan__rope { position: absolute; top: 0; left: 0; overflow: visible; pointer-events: none; }
+.sp-lan__rope polyline { fill: none; stroke: var(--sp-accent); stroke-width: 4px; stroke-linecap: round; stroke-linejoin: round; }
+.sp-lan__clip { position: absolute; top: calc(8% - 0.6em); left: 50%; width: 1.2em; height: 0.8em; margin-left: -0.6em; background: #9aa0a6; border: 1.5px solid var(--color-ink); border-radius: 0.2em; }
+.sp-lan__badge { position: absolute; top: calc(8% + 34%); left: 50%; display: grid; justify-items: center; gap: 0.2em; width: 7.5em; margin-left: -3.75em; padding: 0.6em 0.4em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-top: 0.6em solid var(--sp-accent); border-radius: 0.5em; box-shadow: 0.2em 0.3em 0 rgb(17 17 17 / 0.2); transform-origin: 50% 0%; cursor: grab; touch-action: none; }
+.sp-lan__badge:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 3px; }
+.sp-lan__face { width: 3.2em; height: 3.2em; }
+.sp-lan__badge b { font: 400 1em/1.1 var(--font-display); }
+.sp-lan__badge small { font-size: 0.65em; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sp-accent); }

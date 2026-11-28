@@ -1,0 +1,14 @@
+/* Split Icon: three copies of each icon in red, green and blue, added together (screen) on a dark bar:
+   aligned they make white, offset they show coloured fringes. */
+@import url('_media.css');
+.sp-spi__bar { display: flex; gap: 0.4em; padding: 0.6em; background: #120d1c; border-radius: 0.8em; box-shadow: 0 0.5em 1.2em rgb(0 0 0 / 0.3); }
+.sp-spi__btn { display: grid; justify-items: center; gap: 0.3em; width: 4.4em; padding: 0.6em 0.2em 0.4em; font: inherit; color: var(--color-bone); background: none; border: 0; border-radius: 0.5em; cursor: pointer; }
+.sp-spi__btn:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 1px; }
+.sp-spi__btn[aria-current='true'] { background: rgb(255 255 255 / 0.06); }
+.sp-spi__btn svg { width: 2em; height: 2em; overflow: visible; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.sp-spi__btn g { mix-blend-mode: screen; }
+.sp-spi__r { stroke: #ff0000; }
+.sp-spi__g { stroke: #00ff00; }
+.sp-spi__b { stroke: #0000ff; }
+.sp-spi__btn small { font-size: 0.65em; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; }
+.sp-spi__btn[aria-current='true'] small { color: var(--sp-accent); opacity: 1; }

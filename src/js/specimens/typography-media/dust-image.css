@@ -1,0 +1,7 @@
+/* Dust Image */
+@import url('_media.css');
+.sp-dst__fig { display: grid; gap: 0.5em; margin: 0; }
+.sp-dst__frame { width: 18em; height: 11em; overflow: visible; background: rgb(17 17 17 / 0.05); }
+.sp-dst__img { position: absolute; inset: 0; }
+.sp-dst__fig figcaption { display: flex; align-items: center; justify-content: space-between; font-size: 0.8em; }
+.sp-dst__go[aria-pressed='false'] { background: var(--sp-accent); border-color: var(--sp-accent); }

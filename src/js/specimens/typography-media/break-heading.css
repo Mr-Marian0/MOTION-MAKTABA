@@ -1,0 +1,6 @@
+/* Break Heading: the chunks are clipped copies of the word laid exactly over it. */
+@import url('_media.css');
+.sp-brk__btn { position: relative; padding: 0.1em 0.2em; font: inherit; background: none; border: 0; cursor: pointer; }
+.sp-brk__btn:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 4px; }
+.sp-brk__word { font-size: 4.4em; font-weight: 700; letter-spacing: 0.02em; color: var(--sp-accent); white-space: nowrap; }
+.sp-brk .sp-cc__piece { display: grid; place-items: center; }

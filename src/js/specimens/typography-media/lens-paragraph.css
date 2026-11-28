@@ -1,0 +1,7 @@
+/* Lens Paragraph: small print with a glassy disc drawn over it, centred on its x/y. */
+@import url('_media.css');
+.sp-lnp__page { position: relative; width: 22em; padding: 0.4em; cursor: none; outline-offset: 3px; }
+.sp-lnp__page:focus-visible { outline: 2px solid var(--sp-accent); }
+.sp-lnp__p { font-size: 0.8em; line-height: 1.7; }
+.sp-lnp__w { transform-origin: 50% 50%; }
+.sp-lnp__lens { position: absolute; top: 0; left: 0; width: var(--d); height: var(--d); margin: calc(var(--d) / -2) 0 0 calc(var(--d) / -2); background: radial-gradient(circle at 35% 30%, rgb(255 255 255 / 0.35), transparent 45%); border: 0.25em solid var(--sp-accent); border-radius: 50%; box-shadow: 0 0.3em 0.8em rgb(0 0 0 / 0.2), inset 0 0 0.8em rgb(47 74 107 / 0.25); pointer-events: none; }

@@ -1,0 +1,8 @@
+/* Contract Avatars: all faces start at the left edge; x positions come from JS (later faces sit on top). */
+@import url('_media.css');
+.sp-cav { gap: 0.8em; }
+.sp-cav__stack { position: relative; width: 19em; height: 5em; border-radius: 0.6em; outline-offset: 4px; }
+.sp-cav__stack:focus-visible { outline: 2px solid var(--sp-accent); }
+.sp-cav__p { position: absolute; top: 0; left: 0; display: grid; justify-items: center; gap: 0.3em; }
+.sp-cav__p small { font-size: 0.72em; opacity: 0; visibility: hidden; }
+.sp-cav__count { position: absolute; top: 0.55em; left: 0; display: grid; place-items: center; width: 2em; height: 2em; font-size: 0.9em; color: var(--color-bone); background: var(--sp-accent); border-radius: 50%; }

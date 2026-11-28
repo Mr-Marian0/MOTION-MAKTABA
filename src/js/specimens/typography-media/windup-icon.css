@@ -1,0 +1,8 @@
+/* Windup Icon */
+@import url('_media.css');
+.sp-wnd { gap: 0.6em; justify-items: center; }
+.sp-wnd__tile { width: 5em; height: 5em; overflow: visible; }
+.sp-wnd__heart { fill: transparent; transition: fill 0.12s; }
+.sp-wnd__heart.is-on { fill: var(--sp-accent); stroke: var(--sp-accent); }
+.sp-wnd__ring { position: absolute; inset: 0.4em; border: 2px solid var(--sp-accent); border-radius: 50%; pointer-events: none; }
+.sp-wnd__count { font-size: 0.8em; }

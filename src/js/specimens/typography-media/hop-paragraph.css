@@ -1,0 +1,9 @@
+/* Hop Paragraph: the ball sits on top of the current word; lit words get the accent underline. */
+@import url('_media.css');
+.sp-hpp { gap: 0.8em; justify-items: start; }
+.sp-hpp__page { position: relative; padding-top: 1.2em; }
+.sp-hpp__p { font: 400 1.15em/1.9 var(--font-display); max-width: 18em; }
+.sp-hpp__w { position: relative; cursor: pointer; border-radius: 0.2em; transition: color 0.2s; }
+.sp-hpp__w.is-on { color: var(--sp-accent); }
+.sp-hpp__w:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 2px; }
+.sp-hpp__ball { position: absolute; top: 0; left: 0; width: 0.55em; height: 0.55em; margin: -0.5em 0 0 -0.275em; background: var(--sp-accent); border-radius: 50%; pointer-events: none; }

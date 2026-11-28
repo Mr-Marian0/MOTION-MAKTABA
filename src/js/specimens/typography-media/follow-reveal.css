@@ -1,0 +1,6 @@
+/* Follow Reveal */
+@import url('_media.css');
+.sp-fol2__h { display: grid; font-size: 2.6em; cursor: pointer; outline-offset: 6px; }
+.sp-fol2__h:focus-visible { outline: 2px solid var(--sp-accent); }
+.sp-fol2__line { display: block; white-space: nowrap; }
+.sp-fol2__line + .sp-fol2__line { font-style: italic; color: var(--sp-accent); }

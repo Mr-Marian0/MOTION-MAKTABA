@@ -1,0 +1,9 @@
+/* Burn Reveal: the message under a paper sheet; the burn edge is drawn as two strokes (char, then flame). */
+@import url('_media.css');
+.sp-brv__box { position: relative; display: grid; place-items: center; width: 20em; height: 9em; padding: 1em; cursor: pointer; }
+.sp-brv__box:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 3px; }
+.sp-brv__h { font-size: 2.4em; text-align: center; color: var(--sp-accent); }
+.sp-brv__paper { position: absolute; inset: 0; background: linear-gradient(135deg, #f6edda, #ead9b6); box-shadow: inset 0 0 1.4em rgb(120 80 30 / 0.25); }
+.sp-brv__edge { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.sp-brv__char { fill: none; stroke: #3e2c1f; stroke-width: 7px; stroke-linejoin: round; opacity: 0.85; }
+.sp-brv__flame { fill: none; stroke: #f2a541; stroke-width: 3px; stroke-linejoin: round; }

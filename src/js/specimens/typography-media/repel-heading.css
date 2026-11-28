@@ -1,0 +1,3 @@
+/* Repel Heading */
+@import url('_media.css');
+.sp-rep__h { position: relative; padding: 0.4em 0.3em; font-size: 3em; color: var(--sp-accent); text-align: center; touch-action: none; }

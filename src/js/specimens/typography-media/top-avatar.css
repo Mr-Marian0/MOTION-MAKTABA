@@ -1,0 +1,10 @@
+/* Top Avatar: the avatar stands on a point (its ring's bottom); a shadow ellipse sits under the point. */
+@import url('_media.css');
+.sp-top { gap: 0.8em; justify-items: center; }
+.sp-top small b { font-weight: 500; color: var(--sp-accent); }
+.sp-top__btn { position: relative; display: grid; justify-items: center; padding: 0.6em 0 0; font: inherit; background: none; border: 0; cursor: pointer; }
+.sp-top__btn:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 4px; border-radius: 0.5em; }
+.sp-top__axis { position: relative; display: grid; width: 5.5em; height: 5.5em; }
+.sp-top__face { width: 5.5em; height: 5.5em; }
+.sp-top__ring { position: absolute; inset: -0.3em; border: 0.25em solid var(--sp-accent); border-radius: 50%; }
+.sp-top__shadow { width: 4em; height: 0.6em; margin-top: 0.4em; background: radial-gradient(ellipse, rgb(17 17 17 / 0.35), transparent 70%); border-radius: 50%; }

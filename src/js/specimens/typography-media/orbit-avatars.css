@@ -1,0 +1,7 @@
+/* Orbit Avatars: everyone starts at the centre and is placed on the ring with transforms. */
+@import url('_media.css');
+.sp-orv { gap: 0.6em; justify-items: center; }
+.sp-orv__sys { position: relative; width: 12em; height: 10em; }
+.sp-orv__ring { position: absolute; top: 50%; left: 50%; width: 8.5em; height: 7em; margin: -3.5em 0 0 -4.25em; border: 1.5px dashed var(--sp-accent); border-radius: 50%; }
+.sp-orv__m { position: absolute; top: 50%; left: 50%; margin: -1.5em 0 0 -1.5em; padding: 0; background: none; border: 0; border-radius: 50%; cursor: pointer; }
+.sp-orv__m:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 2px; }

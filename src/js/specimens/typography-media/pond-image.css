@@ -1,0 +1,10 @@
+/* Pond Image: the picture on top; below, the same picture flipped upside-down, cut into bands, tinted blue. */
+@import url('_media.css');
+.sp-pnd__frame { display: grid; width: 18em; }
+.sp-pnd__sky { position: relative; height: 7em; }
+.sp-pnd__img { position: absolute; inset: 0; }
+.sp-pnd__water { position: relative; height: 5em; overflow: hidden; cursor: pointer; touch-action: none; }
+/* flipped about its own centre: the bottom of the sky picture lands at the top of the water */
+.sp-pnd__flip { inset: 0 -1em auto; height: 7em; transform: scaleY(-1); transform-origin: 50% 50%; }
+.sp-pnd .sp-cc__piece { overflow: hidden; }
+.sp-pnd__tint { position: absolute; inset: 0; background: linear-gradient(color-mix(in srgb, var(--sp-accent) 30%, transparent), color-mix(in srgb, var(--sp-accent) 65%, transparent)); pointer-events: none; }

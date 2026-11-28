@@ -1,0 +1,9 @@
+/* Carriage Paragraph: the type always lands at the guide mark; the carriage (page) moves under it. */
+@import url('_media.css');
+.sp-car__machine { position: relative; width: 22em; height: 9em; overflow: hidden; background: linear-gradient(#2a2622 0 1.6em, transparent 1.6em), #e9e2d4; border-radius: 0.5em; cursor: pointer; }
+.sp-car__machine:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 3px; }
+.sp-car__carriage { position: absolute; top: 4em; left: 9em; }
+.sp-car__page { width: 22em; padding: 0.3em 0.6em; background: var(--color-bone); box-shadow: 0 0.2em 0.5em rgb(0 0 0 / 0.15); }
+.sp-car__line { height: 1.5em; font: 400 0.9em/1.65 var(--font-mono); white-space: pre; }
+.sp-car__guide { position: absolute; top: 3.6em; left: 9.6em; width: 2px; height: 0.5em; background: var(--sp-accent); }
+.sp-car__ding { position: absolute; top: 2em; right: 1em; font-size: 0.8em; font-style: italic; color: var(--sp-accent); }
