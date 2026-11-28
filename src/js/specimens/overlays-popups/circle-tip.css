@@ -1,0 +1,6 @@
+/* Circle Tip: each tag is centred on its avatar and moved round it by JS. */
+@import url('_overlay.css');
+.sp-cir__row { position: absolute; top: 62%; left: 50%; display: flex; gap: 5em; translate: -50% 0; }
+.sp-cir__who { position: relative; display: grid; place-items: center; }
+.sp-cir__av { width: 3em; height: 3em; padding: 0; font: italic 400 1.1em/1 var(--font-display); color: var(--color-bone); background: var(--sp-accent); border: 2px solid var(--color-bone); border-radius: 50%; box-shadow: 0 0 0 1.5px var(--color-ink); cursor: pointer; }
+.sp-cir__tip { top: 50%; left: 50%; translate: -50% -50%; pointer-events: none; }

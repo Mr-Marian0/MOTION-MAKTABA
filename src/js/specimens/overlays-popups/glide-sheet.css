@@ -1,0 +1,5 @@
+/* Glide Sheet */
+@import url('_overlay.css');
+.sp-gls__sheet { background: color-mix(in srgb, var(--sp-accent) 14%, var(--color-bone)); }
+.sp-gls__chips { display: flex; flex-wrap: wrap; gap: 0.4em; margin-top: 0.3em; }
+.sp-gls__chips span { padding: 0.35em 0.8em; font-size: 0.8em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 2em; }

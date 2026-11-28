@@ -1,0 +1,8 @@
+/* Datamosh Lightbox: the current photo underneath, the old frame's blocks over it, caption and arrows on top. */
+@import url('_overlay.css');
+.sp-dmo__light { overflow: hidden; touch-action: pan-y; }
+.sp-dmo__now, .sp-dmo__img { position: absolute; inset: 0; }
+.sp-dmo__cap { position: absolute; left: 0.8em; bottom: 0.6em; padding: 0.2em 0.6em; font-size: 0.8em; font-weight: 400; letter-spacing: 0.08em; color: var(--color-bone); background: rgb(17 17 17 / 0.55); border-radius: 0.3em; }
+.sp-dmo__nav { position: absolute; top: 50%; width: 2.2em; height: 2.2em; padding: 0; font-size: 1em; line-height: 1; translate: 0 -50%; }
+.sp-dmo__nav--prev { left: 0.6em; }
+.sp-dmo__nav--next { right: 0.6em; }

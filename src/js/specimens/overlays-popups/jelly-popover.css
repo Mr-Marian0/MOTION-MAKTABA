@@ -1,0 +1,5 @@
+/* Jelly Popover */
+@import url('_overlay.css');
+.sp-jly2__pop { bottom: 4.4em; left: 2em; width: 13em; background: color-mix(in srgb, var(--sp-accent) 22%, var(--color-bone)); border-radius: 1em; }
+.sp-jly2__emo { display: flex; justify-content: space-between; font-size: 1.6em; color: var(--sp-accent); }
+.sp-jly2__emo i { font-style: normal; }

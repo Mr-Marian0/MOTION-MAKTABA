@@ -1,0 +1,10 @@
+/* Piston Dialog: the dialog's locked position is the middle; the pistons stand from the bottom edge up to it.
+   Rods scale from their foot; the dialog is moved down into the floor (and clipped by the rig) when lowered. */
+@import url('_overlay.css');
+.sp-pst__rig { position: absolute; top: 50%; right: 0; bottom: 0; left: 0; z-index: 10; margin-top: -4.5em; overflow: hidden; }
+.sp-pst__dialog { position: relative; z-index: 2; width: 19em; margin: 0 auto; }
+.sp-pst__piston { position: absolute; top: 4em; bottom: 0; width: 1.6em; }
+.sp-pst__piston--l { left: calc(50% - 6.5em); }
+.sp-pst__piston--r { left: calc(50% + 4.9em); }
+.sp-pst__rod { position: absolute; top: 0; bottom: 2.4em; left: 0.45em; width: 0.7em; background: linear-gradient(90deg, #8a8f93, #e6e8e9 45%, #8a8f93); border: 1px solid var(--color-ink); transform-origin: 50% 100%; }
+.sp-pst__body { position: absolute; bottom: 0; left: 0; width: 1.6em; height: 2.6em; background: var(--sp-accent); border: 1.5px solid var(--color-ink); border-radius: 0.2em; }

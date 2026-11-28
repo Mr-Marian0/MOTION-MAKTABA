@@ -1,0 +1,3 @@
+/* Blob Toast */
+@import url('_overlay.css');
+.sp-blt__toast { white-space: nowrap; }

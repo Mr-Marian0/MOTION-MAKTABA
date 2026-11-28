@@ -1,0 +1,4 @@
+/* Scale Lightbox */
+@import url('_overlay.css');
+.sp-scl__light { border: 0; }
+.sp-scl__close { position: absolute; top: 0.6em; right: 0.6em; }

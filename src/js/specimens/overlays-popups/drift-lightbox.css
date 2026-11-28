@@ -1,0 +1,4 @@
+/* Drift Lightbox: photos overscan the frame so the drift never shows an edge. */
+@import url('_overlay.css');
+.sp-dft__light { padding: 0; overflow: hidden; cursor: pointer; }
+.sp-dft__img { position: absolute; inset: 0; }

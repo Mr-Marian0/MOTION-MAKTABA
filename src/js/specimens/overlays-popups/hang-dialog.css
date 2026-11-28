@@ -1,0 +1,7 @@
+/* Hang Dialog: the rig (strings + sign) hangs from the top edge; pivot is at the top. */
+@import url('_overlay.css');
+.sp-hng__rig { position: absolute; top: 0; left: 50%; z-index: 10; display: grid; width: 18em; margin-left: -9em; padding-top: 4.5em; }
+.sp-hng__string { position: absolute; top: 0; height: 5em; width: 1.5px; background: var(--color-ink); }
+.sp-hng__string--l { left: 3em; rotate: 8deg; transform-origin: 0 0; }
+.sp-hng__string--r { right: 3em; rotate: -8deg; transform-origin: 0 0; }
+.sp-hng__sign { justify-items: center; text-align: center; border-top: 0.5em solid var(--sp-accent); }

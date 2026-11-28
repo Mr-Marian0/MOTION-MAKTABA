@@ -1,0 +1,9 @@
+/* Melt Modal: body + drips share one goo filter (only on while liquid); the text sits on top. */
+@import url('_overlay.css');
+.sp-mlm__defs { position: absolute; width: 0; height: 0; }
+.sp-mlm__modal { position: absolute; top: 50%; left: 50%; z-index: 10; width: 20em; height: 9em; margin: -4.5em 0 0 -10em; }
+.sp-mlm__goo { position: absolute; inset: 0; }
+.sp-mlm__goo i { position: absolute; display: block; background: color-mix(in srgb, var(--sp-accent) 85%, white); }
+.sp-mlm__body { inset: 0; border-radius: 0.6em; }
+.sp-mlm__drip { top: 70%; height: 100%; border-radius: 0 0 2em 2em; transform-origin: 50% 0; }
+.sp-mlm__copy { position: absolute; inset: 0; display: grid; align-content: center; gap: 0.4em; padding: 0 1.4em; color: var(--color-bone); }

@@ -1,0 +1,7 @@
+/* Lens Lightbox: the frame is clipped to a growing circle (--r); the loupe holds a scaled copy of the photo. */
+@import url('_overlay.css');
+.sp-lns__light { --r: 0%; overflow: hidden; clip-path: circle(var(--r) at 50% 50%); cursor: zoom-in; }
+.sp-lns__light:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 0.3em; }
+.sp-lns__img { position: absolute; inset: 0; }
+.sp-lns__loupe { position: absolute; top: 0; left: 0; width: var(--d, 6em); height: var(--d, 6em); overflow: hidden; pointer-events: none; border: 3px solid var(--color-bone); border-radius: 50%; box-shadow: 0 0.4em 1em rgb(0 0 0 / 0.4), inset 0 0 1.2em rgb(0 0 0 / 0.35); }
+.sp-lns__zoom { position: absolute; top: 0; left: 0; }

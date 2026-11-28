@@ -1,0 +1,5 @@
+/* Skid Toast: two streaks on the floor trailing back from where the toast stops. */
+@import url('_overlay.css');
+.sp-skt__toast { white-space: nowrap; }
+.sp-skt__marks { position: absolute; right: 1.6em; bottom: 0.7em; z-index: 9; width: 18em; height: 0.8em; transform-origin: 0% 50%; }
+.sp-skt__marks i { display: block; height: 0.2em; margin-bottom: 0.25em; background: linear-gradient(90deg, rgb(17 17 17 / 0.55), transparent); border-radius: 1em; }

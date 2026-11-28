@@ -1,0 +1,13 @@
+/* Glitch Dialog: a fixed box holding the real dialog, two tinted channel copies behind it, and the slices over it.
+   All copies fill the box, so they line up exactly with the real one. */
+@import url('_overlay.css');
+.sp-gli__hold { position: absolute; top: 50%; left: 50%; z-index: 10; width: 19em; height: 10.5em; margin: -5.25em 0 0 -9.5em; }
+.sp-gli__real, .sp-gli__ch { position: absolute; inset: 0; }
+.sp-gli__body { position: absolute; inset: 0; align-content: center; }
+.sp-gli__body .sp-ov__title { color: var(--sp-accent); }
+/* The channels: the same dialog flattened to one colour each, so where they drift apart you see red and cyan fringes */
+.sp-gli__ch .sp-gli__body { color: transparent; background: transparent; border-color: currentColor; box-shadow: none; }
+.sp-gli__ch--r .sp-gli__body { border-color: #ff2a4d; box-shadow: inset 0 0 0 999px rgb(255 42 77 / 0.55); }
+.sp-gli__ch--c .sp-gli__body { border-color: #18e0ff; box-shadow: inset 0 0 0 999px rgb(24 224 255 / 0.55); }
+.sp-gli__ch .sp-ov__btn { opacity: 0; }
+.sp-gli .sp-cc__pieces { z-index: 1; }

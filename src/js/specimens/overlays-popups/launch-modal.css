@@ -1,0 +1,3 @@
+/* Launch Modal: a smoke column from the bottom edge up to the modal's centre. */
+@import url('_overlay.css');
+.sp-lcm__smoke { position: absolute; bottom: 0; left: 50%; z-index: 9; width: 6em; height: 50%; margin-left: -3em; background: radial-gradient(ellipse at 50% 100%, rgb(225 220 210 / 0.95), rgb(225 220 210 / 0.5) 60%, transparent 75%); border-radius: 50% 50% 0 0; }

@@ -1,0 +1,9 @@
+/* Burn Dialog: the paper is clipped below the burn line; the glow traces that line; embers rise from it. */
+@import url('_overlay.css');
+.sp-brn__hold { position: absolute; top: 50%; left: 50%; z-index: 10; width: 20em; height: 10em; margin: -5em 0 0 -10em; }
+.sp-brn__paper { position: absolute; inset: 0; align-content: center; background: #f6edda; box-shadow: none; }
+.sp-brn__glow { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.sp-brn__glow polyline { fill: none; stroke: #f2a541; stroke-width: 4px; stroke-linejoin: round; vector-effect: non-scaling-stroke; filter: drop-shadow(0 0 4px #f2a541) drop-shadow(0 -2px 2px #3e2c1f); }
+.sp-brn__embers { position: absolute; inset: 0; pointer-events: none; }
+.sp-brn__embers i { position: absolute; width: 0.3em; height: 0.3em; background: #f2a541; border-radius: 50%; box-shadow: 0 0 0.4em #f2a541; }
+.sp-brn__burn { background: var(--sp-accent); border-color: var(--sp-accent); }

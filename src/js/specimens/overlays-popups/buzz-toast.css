@@ -1,0 +1,4 @@
+/* Buzz Toast */
+@import url('_overlay.css');
+.sp-bzz__toast { white-space: nowrap; }
+.sp-bzz__answer { margin-left: 0.4em; padding: 0.3em 0.7em; font-size: 0.85em; letter-spacing: 0.08em; text-transform: uppercase; background: var(--sp-accent); border-radius: 2em; }

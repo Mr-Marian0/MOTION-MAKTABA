@@ -1,0 +1,8 @@
+/* Extend Popover: the arm runs right from the Share button; each segment is a slightly narrower tube. */
+@import url('_overlay.css');
+.sp-ext__arm { position: absolute; bottom: 1.2em; left: 9.6em; z-index: 10; display: flex; align-items: center; }
+.sp-ext__seg { display: grid; place-items: center; height: 2.6em; padding: 0 0.3em; margin-left: -0.3em; background: var(--sp-accent); border: 1.5px solid var(--color-ink); border-radius: 0.4em; }
+.sp-ext__seg:nth-child(2) { height: 2.4em; }
+.sp-ext__seg:nth-child(3) { height: 2.2em; }
+.sp-ext__seg:nth-child(4) { height: 2em; }
+.sp-ext__opt { padding: 0.3em 0.7em; font-size: 0.75em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink); background: var(--color-bone); border: 0; border-radius: 1em; cursor: pointer; }

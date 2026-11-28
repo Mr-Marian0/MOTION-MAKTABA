@@ -1,0 +1,5 @@
+/* Top Popover */
+@import url('_overlay.css');
+.sp-top__pop { bottom: 4.4em; left: 2em; width: 14em; }
+.sp-top__sw { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.4em; }
+.sp-top__sw i { aspect-ratio: 1; border: 1.5px solid var(--color-ink); border-radius: 50%; }

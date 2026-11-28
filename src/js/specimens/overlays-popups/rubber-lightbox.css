@@ -1,0 +1,9 @@
+/* Rubber Lightbox: the strip holds the photos side by side; xPercent moves it a photo at a time. */
+@import url('_overlay.css');
+.sp-rub__light { overflow: hidden; }
+.sp-rub__strip { display: flex; width: 300%; height: 100%; }
+.sp-rub__img { flex: 1; height: 100%; }
+.sp-rub__nav { position: absolute; top: 50%; width: 2em; height: 2em; margin-top: -1em; font-size: 1.2em; color: var(--color-ink); background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 50%; cursor: pointer; }
+.sp-rub__prev { left: 0.5em; }
+.sp-rub__next { right: 0.5em; }
+.sp-rub__count { position: absolute; bottom: 0.5em; left: 50%; padding: 0.2em 0.6em; font-size: 0.75em; translate: -50% 0; background: var(--color-bone); border-radius: 1em; }

@@ -1,0 +1,10 @@
+/* Turbine Modal: eight blades round a hub, each a slanted paddle. */
+@import url('_overlay.css');
+.sp-tbn__row { display: flex; align-items: center; gap: 1em; }
+.sp-tbn__fan { position: relative; flex: none; width: 4em; height: 4em; border: 1.5px solid var(--color-ink); border-radius: 50%; }
+.sp-tbn__fan i { --a: 0deg; position: absolute; top: 50%; left: 50%; width: 1.7em; height: 0.6em; margin-top: -0.3em; background: var(--sp-accent); border-radius: 0 50% 50% 0; transform-origin: 0 50%; transform: rotate(var(--a)) skewX(-25deg); }
+.sp-tbn__fan i:nth-child(2) { --a: 45deg; } .sp-tbn__fan i:nth-child(3) { --a: 90deg; } .sp-tbn__fan i:nth-child(4) { --a: 135deg; }
+.sp-tbn__fan i:nth-child(5) { --a: 180deg; } .sp-tbn__fan i:nth-child(6) { --a: 225deg; } .sp-tbn__fan i:nth-child(7) { --a: 270deg; } .sp-tbn__fan i:nth-child(8) { --a: 315deg; }
+.sp-tbn__fan b { position: absolute; top: 50%; left: 50%; width: 1em; height: 1em; margin: -0.5em; background: var(--color-ink); border-radius: 50%; }
+.sp-tbn__bar { display: block; height: 0.6em; margin-top: 0.4em; overflow: hidden; background: rgb(17 17 17 / 0.1); border-radius: 1em; }
+.sp-tbn__bar i { display: block; height: 100%; background: var(--sp-accent); transform-origin: 0 50%; }

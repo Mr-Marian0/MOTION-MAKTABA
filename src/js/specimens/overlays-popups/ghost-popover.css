@@ -1,0 +1,7 @@
+/* Ghost Popover: the popover (and its ghosts) sit above the icon row, centred on x (set by JS from the row's left). */
+@import url('_overlay.css');
+.sp-gst__row { position: absolute; bottom: 2em; left: 50%; display: flex; gap: 1.6em; padding: 0.6em 1em; translate: -50% 0; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 1em; }
+.sp-gst__icon { width: 2.8em; height: 2.8em; font-size: 1.1em; color: var(--color-bone); background: var(--sp-accent); border: 0; border-radius: 0.7em; cursor: pointer; }
+.sp-gst__pop, .sp-gst__ghost { position: absolute; bottom: calc(100% + 0.8em); left: 0; z-index: 10; width: 11em; padding: 0.7em 0.9em; translate: -50% 0; pointer-events: none; }
+.sp-gst__ghosts { position: absolute; inset: 0; pointer-events: none; }
+.sp-gst__name { font: 400 1.2em/1 var(--font-display); }

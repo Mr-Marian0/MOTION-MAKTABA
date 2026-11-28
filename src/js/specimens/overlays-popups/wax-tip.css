@@ -1,0 +1,4 @@
+/* Wax Tip */
+@import url('_overlay.css');
+.sp-wax__tip { bottom: calc(45% + 0.5em); left: 50%; translate: -50% 0; padding: 0.7em 1em; }
+.sp-wax__words { display: inline-block; text-shadow: 0 -1px 0 rgb(0 0 0 / 0.5); }

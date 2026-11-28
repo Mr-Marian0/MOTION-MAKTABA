@@ -1,0 +1,4 @@
+/* Ripple Modal: each ring is centred on its (left, top), set by JS to the button's centre. */
+@import url('_overlay.css');
+.sp-rpl__rings { position: absolute; inset: 0; z-index: 8; pointer-events: none; }
+.sp-rpl__rings i { position: absolute; translate: -50% -50%; border: 2px solid var(--sp-accent); border-radius: 50%; }

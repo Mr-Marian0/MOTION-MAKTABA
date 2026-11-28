@@ -1,0 +1,4 @@
+/* Retract Sheet */
+@import url('_overlay.css');
+.sp-rts__sheet { background: color-mix(in srgb, var(--sp-accent) 18%, var(--color-bone)); }
+.sp-rts__row { padding: 0.7em 0.2em; font-size: 0.9em; border-bottom: 1px dashed rgb(17 17 17 / 0.2); }

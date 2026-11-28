@@ -1,0 +1,7 @@
+/* String Tip: six strings across a fretboard; each row is a button whose tooltip sits over its middle. */
+@import url('_overlay.css');
+.sp-str__neck { position: absolute; top: 36%; right: 2em; bottom: 1.4em; left: 2em; display: grid; align-content: space-around; padding: 0 0.6em; background: linear-gradient(90deg, var(--color-kraft-deep) 0 1.4%, transparent 1.4% 98.6%, var(--color-kraft-deep) 98.6%), repeating-linear-gradient(90deg, transparent 0 16%, rgb(250 250 247 / 0.25) 16% 16.6%), var(--color-umber); border-radius: 0.4em; }
+.sp-str__row { position: relative; height: 1.6em; padding: 0; background: none; border: 0; cursor: pointer; }
+.sp-str__row svg { width: 100%; height: 100%; overflow: visible; }
+.sp-str__row path { fill: none; stroke: color-mix(in srgb, var(--sp-accent) 70%, white); vector-effect: non-scaling-stroke; }
+.sp-str__tip { bottom: 90%; left: 50%; z-index: 2; translate: -50% 0; pointer-events: none; }

@@ -1,0 +1,5 @@
+/* Lissajous Tip: icon, firefly and tooltip all centre on the same point. */
+@import url('_overlay.css');
+.sp-lsj__icon { position: absolute; top: 60%; left: 50%; z-index: 2; width: 2.2em; height: 2.2em; margin: -1.1em; padding: 0; font: 400 1.2em/1 var(--font-display); color: var(--color-bone); background: var(--color-ink); border: 0; border-radius: 50%; cursor: help; }
+.sp-lsj__fly { position: absolute; top: 60%; left: 50%; z-index: 3; width: 0.6em; height: 0.6em; margin: -0.3em; background: var(--sp-accent); border-radius: 50%; box-shadow: 0 0 0.6em 0.2em color-mix(in srgb, var(--sp-accent) 60%, transparent); pointer-events: none; }
+.sp-lsj__tip { bottom: calc(40% + 1.8em); left: 50%; translate: -50% 0; }

@@ -1,0 +1,7 @@
+/* Snow Modal: flakes sit at the box's top-left and are moved by transform, falling from well above it. */
+@import url('_overlay.css');
+.sp-snw__box { position: absolute; top: 50%; left: 50%; z-index: 10; width: 20em; height: 8.5em; margin: -4.25em 0 0 -10em; }
+.sp-snw__flakes { position: absolute; inset: 0; }
+.sp-snw__flakes i { position: absolute; top: 0; left: 0; width: 1.1em; height: 1.1em; margin: -0.55em; background: radial-gradient(circle, #fff 0 45%, rgb(255 255 255 / 0) 70%); border-radius: 50%; }
+.sp-snw__modal { position: absolute; inset: 0; align-content: center; color: var(--color-bone); background: var(--sp-accent); }
+.sp-snw__modal .sp-ov__text { opacity: 0.85; }

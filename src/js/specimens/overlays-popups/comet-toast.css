@@ -1,0 +1,5 @@
+/* Comet Toast: the tail is a dashed stroke along the flight path, drawn in page pixels. */
+@import url('_overlay.css');
+.sp-cmt__svg { position: absolute; inset: 0; z-index: 9; width: 100%; height: 100%; pointer-events: none; }
+.sp-cmt__tail { fill: none; stroke: var(--sp-accent); stroke-width: 0.55em; stroke-linecap: round; filter: drop-shadow(0 0 0.35em var(--sp-accent)); }
+.sp-cmt__toast { white-space: nowrap; }

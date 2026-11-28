@@ -1,0 +1,4 @@
+/* Arc Popover: the dot is placed by JS from the page's top-left (its own centre on the point). */
+@import url('_overlay.css');
+.sp-arc__pop { top: 18%; right: 3em; }
+.sp-arc__dot { position: absolute; top: 0; left: 0; z-index: 11; width: 1em; height: 1em; margin: -0.5em; background: var(--sp-accent); border: 1.5px solid var(--color-ink); border-radius: 50%; }

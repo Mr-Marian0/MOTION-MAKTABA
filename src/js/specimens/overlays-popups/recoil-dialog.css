@@ -1,0 +1,3 @@
+/* Recoil Dialog */
+@import url('_overlay.css');
+.sp-rcl__del { background: var(--sp-accent); border-color: var(--sp-accent); }

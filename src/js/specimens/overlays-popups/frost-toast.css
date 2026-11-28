@@ -1,0 +1,15 @@
+/* Frost Toast: --f (0 → 1) grows the frost in from the toast's ends. */
+@import url('_overlay.css');
+.sp-fzt__toast { --f: 0; overflow: hidden; padding-bottom: 1em; }
+.sp-fzt__undo { margin-left: 0.6em; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #9fd0e6; }
+.sp-fzt__bar { position: absolute; right: 0; bottom: 0; left: 0; height: 0.25em; background: #9fd0e6; transform-origin: 0 50%; }
+.sp-fzt__frost {
+  --r: calc(var(--f) * 75%);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgb(225 241 248 / 0.75), rgb(160 205 228 / 0.55)), radial-gradient(circle at 20% 30%, #fff 0 1px, transparent 1.5px) 0 0 / 0.7em 0.7em;
+  -webkit-mask: linear-gradient(90deg, #000 var(--r), transparent calc(var(--r) + 20%)), linear-gradient(-90deg, #000 var(--r), transparent calc(var(--r) + 20%));
+  mask: linear-gradient(90deg, #000 var(--r), transparent calc(var(--r) + 20%)), linear-gradient(-90deg, #000 var(--r), transparent calc(var(--r) + 20%));
+  opacity: min(1, calc(var(--f) * 2));
+  pointer-events: none;
+}

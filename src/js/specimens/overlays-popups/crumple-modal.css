@@ -1,0 +1,6 @@
+/* Crumple Modal: the note and its crumple pieces share one box in the middle of the page. */
+@import url('_overlay.css');
+.sp-crm2__hold { position: absolute; top: 50%; left: 50%; z-index: 10; width: 19em; height: 10em; margin: -5em 0 0 -9.5em; perspective: 40em; }
+.sp-crm2__note { position: absolute; inset: 0; align-content: center; background: color-mix(in srgb, var(--sp-accent) 20%, var(--color-bone)); box-shadow: none; }
+.sp-crm2__creases { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.sp-crm2__creases polygon { fill: none; stroke: var(--color-ink); stroke-opacity: 0.14; stroke-width: 1; vector-effect: non-scaling-stroke; }

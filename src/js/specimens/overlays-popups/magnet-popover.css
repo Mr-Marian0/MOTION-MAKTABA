@@ -1,0 +1,5 @@
+/* Magnet Popover: specks live in a full-page field; they and the popover share the page's coordinates. */
+@import url('_overlay.css');
+.sp-mag__field { position: absolute; inset: 0; z-index: 9; pointer-events: none; }
+.sp-mag__field i { position: absolute; top: 0; left: 0; width: 0.45em; height: 0.45em; margin: -0.22em; background: var(--sp-accent); border-radius: 50%; }
+.sp-mag__pop { bottom: 4.4em; left: 2em; }

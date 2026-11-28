@@ -1,0 +1,18 @@
+/* Flip Dialog: --open (0 → 1) grows the card from button size and position to dialog size in the middle.
+   Faces are swapped by .is-open at the half-way point; the back face is pre-mirrored so it reads correctly. */
+@import url('_overlay.css');
+.sp-flp__card {
+  --open: 0;
+  position: absolute;
+  top: calc(1em + (50% - 7.5em) * var(--open)); /* open: 50% − half its 13em height */
+  right: calc(1em + (50% - 11em) * var(--open));
+  z-index: 10;
+  width: calc(7em + 13em * var(--open));
+  height: calc(2.4em + 10.6em * var(--open));
+}
+.sp-flp__front, .sp-flp__back { position: absolute; inset: 0; }
+.sp-flp__front { font-size: 0.85em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-bone); background: var(--sp-accent); border: 1.5px solid var(--color-ink); border-radius: 2em; cursor: pointer; }
+.sp-flp__back { align-content: center; scale: -1 1; visibility: hidden; }
+.sp-flp__card.is-open .sp-flp__back { visibility: visible; }
+.sp-flp__card.is-open .sp-flp__front { visibility: hidden; }
+.sp-flp__field { padding: 0.5em 0.7em; font-size: 0.9em; border: 1.5px solid var(--color-ink); border-radius: 0.3em; }

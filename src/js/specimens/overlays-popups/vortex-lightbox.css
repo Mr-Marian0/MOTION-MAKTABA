@@ -1,0 +1,4 @@
+/* Vortex Lightbox: the frame is just the rings (no border), so the whole picture can swirl away. */
+@import url('_overlay.css');
+.sp-vtx__light { border: 0; box-shadow: none; }
+.sp-vtx__img { position: absolute; inset: 0; background-color: var(--sp-accent); }

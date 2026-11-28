@@ -1,0 +1,7 @@
+/* Boil Dialog: the ink outline is an SVG drawn by JS; the dialog box itself has no border. */
+@import url('_overlay.css');
+.sp-boil__dialog { position: absolute; top: 50%; left: 50%; z-index: 10; display: grid; align-content: center; gap: 0.45em; width: 20em; height: 11em; margin: -5.5em 0 0 -10em; padding: 0 1.6em; background: var(--color-bone); }
+.sp-boil__ink { position: absolute; inset: -0.3em; width: calc(100% + 0.6em); height: calc(100% + 0.6em); overflow: visible; pointer-events: none; }
+.sp-boil__ink path { fill: none; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.sp-boil__edge { stroke: var(--color-ink); stroke-width: 2.5px; }
+.sp-boil__under { stroke: var(--sp-accent); stroke-width: 3px; }

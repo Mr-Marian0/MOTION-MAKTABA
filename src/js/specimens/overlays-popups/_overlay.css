@@ -1,0 +1,51 @@
+/* Shared mini page + overlay looks for the Overlays & Popups designs (see _ov.js).
+   Every rule is in :where() (zero specificity): many designs import this file, and a later copy of it
+   must never override a design's own rules. */
+:where(.sp-ov) { overflow: hidden; }
+:where(.sp-ov [hidden]) { display: none !important; }
+:where(.sp-ov__page) { position: absolute; inset: 0; padding: 1.4em 2em; }
+:where(.sp-ov__kick) { display: block; font-size: 0.72em; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.6; }
+:where(.sp-ov__h) { display: block; margin: 0.4em 0 0.6em; font: 400 2.1em/1 var(--font-display); letter-spacing: -0.02em; }
+:where(.sp-ov__scrim) { position: absolute; inset: 0; z-index: 5; background: rgb(17 17 17 / 0.45); }
+:where(.sp-ov__btn) {
+  padding: 0.6em 1.1em;
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-bone);
+  background: var(--color-ink);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 2em;
+  cursor: pointer;
+}
+:where(.sp-ov__btn--ghost) { color: var(--color-ink); background: var(--color-bone); }
+:where(.sp-ov__open) { position: absolute; z-index: 20; }
+:where(.sp-ov__open--corner) { top: 1em; right: 1em; }
+:where(.sp-ov__open--bottom) { bottom: 1.2em; left: 2em; }
+:where(.sp-ov__open--center) { top: 50%; left: 50%; translate: -50% -50%; }
+/* Overlay bodies */
+:where(.sp-ov__card) { display: grid; gap: 0.45em; padding: 1.2em 1.4em; color: var(--color-ink); background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.6em; box-shadow: 0.3em 0.3em 0 var(--color-ink); }
+:where(.sp-ov__modal) { position: absolute; top: 50%; left: 50%; z-index: 10; width: 20em; translate: -50% -50%; }
+:where(.sp-ov__title) { font: 400 1.6em/1.1 var(--font-display); }
+:where(.sp-ov__text) { font-size: 0.85em; line-height: 1.45; opacity: 0.75; }
+:where(.sp-ov__actions) { display: flex; justify-content: flex-end; gap: 0.5em; margin-top: 0.4em; }
+:where(.sp-ov__toast) { position: absolute; right: 1.4em; bottom: 1.4em; z-index: 10; display: flex; align-items: center; gap: 0.7em; padding: 0.75em 1.1em; font-size: 0.85em; color: var(--color-bone); background: var(--color-ink); border-radius: 0.5em; box-shadow: 0.2em 0.2em 0 rgb(17 17 17 / 0.25); }
+:where(.sp-ov__toast i) { flex: none; width: 0.7em; height: 0.7em; background: var(--sp-accent, var(--color-kraft)); border-radius: 50%; }
+:where(.sp-ov__tip) { position: absolute; z-index: 10; padding: 0.5em 0.8em; font-size: 0.8em; white-space: nowrap; color: var(--color-bone); background: var(--color-ink); border-radius: 0.35em; }
+:where(.sp-ov__anchor) { position: absolute; top: 55%; left: 50%; translate: -50% 0; padding: 0.3em 0.1em; font: 400 1.6em/1 var(--font-display); border-bottom: 2px dotted var(--sp-accent, var(--color-kraft)); cursor: help; }
+:where(.sp-ov__pop) { position: absolute; z-index: 10; width: 15em; }
+:where(.sp-ov__sheet) { position: absolute; right: 2em; bottom: 0; left: 2em; z-index: 10; display: grid; gap: 0.4em; padding: 0.9em 1.4em 1.4em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-bottom: 0; border-radius: 1em 1em 0 0; }
+:where(.sp-ov__grip) { justify-self: center; width: 3em; height: 0.3em; margin-bottom: 0.4em; background: rgb(17 17 17 / 0.3); border-radius: 1em; }
+:where(.sp-ov__thumbs) { position: absolute; bottom: 1.4em; left: 2em; display: flex; gap: 0.6em; }
+:where(.sp-ov__thumb) { width: 5em; height: 3.6em; padding: 0; border: 1.5px solid var(--color-ink); border-radius: 0.3em; cursor: zoom-in; }
+:where(.sp-ov__photo) {
+  background:
+    radial-gradient(circle at 70% 30%, var(--sp-accent, #b3412e) 0 12%, transparent 12.5%),
+    radial-gradient(ellipse 70% 40% at 30% 95%, var(--color-umber) 98%, transparent),
+    radial-gradient(ellipse 60% 35% at 85% 100%, var(--color-kraft-deep) 98%, transparent),
+    linear-gradient(#f4dcb5, #e6b083);
+}
+:where(.sp-ov__light) { position: absolute; inset: 8% 14%; z-index: 10; border: 0.4em solid var(--color-bone); border-radius: 0.3em; box-shadow: 0 1em 2em rgb(0 0 0 / 0.4); }
+/* Fragments from ../cards-containers/_pieces.js */
+:where(.sp-cc__pieces) { position: absolute; inset: 0; pointer-events: none; }
+:where(.sp-cc__piece) { position: absolute; inset: 0; }

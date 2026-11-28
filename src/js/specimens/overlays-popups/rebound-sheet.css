@@ -1,0 +1,5 @@
+/* Rebound Sheet */
+@import url('_overlay.css');
+.sp-rbd__sheet { background: color-mix(in srgb, var(--sp-accent) 14%, var(--color-bone)); }
+.sp-rbd__grip { width: 4em; height: 0.5em; cursor: ns-resize; touch-action: none; }
+.sp-rbd__row { padding: 0.6em 0.2em; font-size: 0.9em; border-bottom: 1px dashed rgb(17 17 17 / 0.2); }

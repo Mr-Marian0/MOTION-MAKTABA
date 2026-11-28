@@ -1,0 +1,5 @@
+/* Rocket Popover: the popover sits above its button; the exhaust puffs come out of the button's top. */
+@import url('_overlay.css');
+.sp-rkp__pop { bottom: 4.4em; left: 2em; }
+.sp-rkp__puffs { position: absolute; bottom: 3.4em; left: 6em; z-index: 9; }
+.sp-rkp__puffs i { position: absolute; width: 1.4em; height: 1.4em; margin: -0.7em; background: rgb(210 204 194 / 0.9); border-radius: 50%; }

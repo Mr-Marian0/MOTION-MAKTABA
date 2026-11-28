@@ -1,0 +1,4 @@
+/* Pixel Toast: toast and its pixel cells share a fixed box in the corner. */
+@import url('_overlay.css');
+.sp-pxt__hold { position: absolute; right: 1.4em; bottom: 1.4em; z-index: 10; width: 16em; height: 3em; }
+.sp-pxt__toast { inset: 0; white-space: nowrap; border-radius: 0; }

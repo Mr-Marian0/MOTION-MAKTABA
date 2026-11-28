@@ -1,0 +1,4 @@
+/* Float Modal: no hard shadow; a soft one on the page beneath it instead. */
+@import url('_overlay.css');
+.sp-flm__modal { box-shadow: none; }
+.sp-flm__shadow { position: absolute; top: calc(50% + 4em); left: 50%; z-index: 9; width: 18em; height: 1.6em; margin-left: -9em; background: radial-gradient(closest-side, rgb(17 17 17 / 0.5), transparent); }

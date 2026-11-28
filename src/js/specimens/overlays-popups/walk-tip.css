@@ -1,0 +1,9 @@
+/* Walk Tip: the walker is a zero-width point on the toolbar's top edge (x = a tool's centre);
+   its legs stand on the bar and the tip rides centred on top of them. */
+@import url('_overlay.css');
+.sp-wkt__bar { position: absolute; bottom: 2em; left: 50%; display: flex; gap: 0.4em; padding: 0.5em; translate: -50% 0; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.8em; box-shadow: 0.2em 0.2em 0 var(--color-ink); }
+.sp-wkt__tool { width: 2.6em; height: 2.6em; font-size: 1em; background: transparent; border: 0; border-radius: 0.5em; cursor: pointer; }
+.sp-wkt__tool:hover, .sp-wkt__tool:focus-visible { background: color-mix(in srgb, var(--sp-accent) 15%, transparent); }
+.sp-wkt__walker { position: absolute; bottom: 100%; left: 0; width: 0; height: 0.9em; }
+.sp-wkt__tip { bottom: 100%; left: 0; translate: -50% 0; }
+.sp-wkt__leg { position: absolute; top: 0; left: -0.11em; width: 0.22em; height: 0.9em; background: var(--sp-accent); border-radius: 0.1em; transform-origin: 50% 0; }

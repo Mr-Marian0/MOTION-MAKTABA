@@ -1,0 +1,7 @@
+/* Water Popover: a glass (rounded box) with the water drawn as an SVG fill from its bottom. */
+@import url('_overlay.css');
+.sp-wtr__pop { bottom: 4.4em; left: 2em; width: 12em; justify-items: center; }
+.sp-wtr__glass { position: relative; display: grid; place-items: center; width: 6em; height: 7.5em; overflow: hidden; background: rgb(17 17 17 / 0.04); border: 2px solid var(--color-ink); border-top-width: 0; border-radius: 0.3em 0.3em 1.2em 1.2em; }
+.sp-wtr__glass svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sp-wtr__glass path { fill: color-mix(in srgb, var(--sp-accent) 70%, white); }
+.sp-wtr__val { position: relative; font: 400 1.4em/1 var(--font-display); }

@@ -1,0 +1,4 @@
+/* Puzzle Lightbox: no frame border, so the tiles meet edge to edge. */
+@import url('_overlay.css');
+.sp-pzl__light { border: 0; box-shadow: none; }
+.sp-pzl__img { position: absolute; inset: 0; }

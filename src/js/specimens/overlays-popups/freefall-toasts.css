@@ -1,0 +1,4 @@
+/* Free-fall Toasts: a column of toasts in the bottom-right corner. */
+@import url('_overlay.css');
+.sp-fft__stack { position: absolute; right: 1.4em; bottom: 1.4em; z-index: 10; display: grid; justify-items: end; gap: 0.5em; }
+.sp-fft__toast { position: relative; right: auto; bottom: auto; white-space: nowrap; }

@@ -1,0 +1,17 @@
+/* Build Dialog: words sit over the shapes they replace. */
+@import url('_overlay.css');
+.sp-bld__box { position: absolute; top: 50%; left: 50%; z-index: 10; width: 20em; height: 11em; margin: -5.5em 0 0 -10em; }
+.sp-bld__part, .sp-bld__word { position: absolute; }
+.sp-bld__sheet { background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.6em; box-shadow: 0.3em 0.3em 0 var(--color-ink); }
+.sp-bld__disc { background: var(--sp-accent); border-radius: 50%; }
+.sp-bld__bar { background: rgb(17 17 17 / 0.15); border-radius: 1em; }
+.sp-bld__bar-title { background: var(--color-ink); border-radius: 0.2em; }
+.sp-bld__pill { background: var(--color-ink); border-radius: 2em; }
+.sp-bld__pill-ghost { background: var(--color-bone); border: 1.5px solid var(--color-ink); }
+.sp-bld__w1 { top: 1.3em; left: 1.3em; display: grid; place-items: center; width: 2.4em; height: 2.4em; color: var(--color-bone); }
+.sp-bld__w1 b { font: 400 1.6em/1 var(--font-display); }
+.sp-bld__w2 { top: 1.3em; left: 4.6em; }
+.sp-bld__w3 { top: 3.6em; left: 4.6em; width: 14em; }
+.sp-bld__w4, .sp-bld__w5 { top: 8em; width: 5.6em; height: 1.9em; line-height: 1.9em; font-size: 1em; letter-spacing: 0.1em; text-align: center; text-transform: uppercase; }
+.sp-bld__w4 { left: 6.6em; }
+.sp-bld__w5 { left: 12.8em; color: var(--color-bone); }

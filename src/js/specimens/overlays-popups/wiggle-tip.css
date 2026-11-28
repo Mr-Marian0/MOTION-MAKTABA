@@ -1,0 +1,6 @@
+/* Wiggle Tip: the tip sits above the button, wiggling about its tail (bottom-left). */
+@import url('_overlay.css');
+.sp-wgl__btn { position: absolute; top: 62%; left: 50%; translate: -50% 0; }
+.sp-wgl__tip { bottom: calc(38% + 0.8em); left: calc(50% - 3.2em); max-width: calc(50% + 2.2em); display: flex; align-items: center; overflow: hidden; transform-origin: 0% 100%; }
+.sp-wgl__new { padding: 0.1em 0.4em; color: var(--color-ink); background: var(--sp-accent); border-radius: 0.2em; }
+.sp-wgl__more { display: inline-block; white-space: nowrap; }

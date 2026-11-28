@@ -1,0 +1,4 @@
+/* Follow Dialog: a bookmark ribbon hangs from the dialog's top edge, pivoting at the top. */
+@import url('_overlay.css');
+.sp-fol__dialog { overflow: visible; }
+.sp-fol__ribbon { position: absolute; top: -0.2em; right: 2em; width: 1.2em; height: 3.4em; background: var(--sp-accent); clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%); }
