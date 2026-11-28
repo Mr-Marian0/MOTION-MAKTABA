@@ -1,0 +1,9 @@
+/* Ratchet Progress: teeth are a repeating gradient, one per photo; the pawl sits on the fill's front edge. */
+@import url('_feedback.css');
+.sp-rtp .sp-df__card { width: 18em; }
+.sp-rtp__bar { position: relative; height: 1.1em; margin-top: 0.6em; background: rgb(17 17 17 / 0.08); border: 1.5px solid var(--color-ink); border-radius: 0.2em; }
+.sp-rtp__fill { position: absolute; inset: 0; background: var(--sp-accent); transform-origin: 0% 50%; }
+.sp-rtp__teeth { position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0 calc(100% / var(--n) - 1.5px), rgb(17 17 17 / 0.35) calc(100% / var(--n) - 1.5px) calc(100% / var(--n))); pointer-events: none; }
+.sp-rtp__pawl { position: absolute; top: -0.55em; left: -0.35em; width: 0.7em; height: 0.55em; background: var(--color-ink); clip-path: polygon(0 0, 100% 0, 50% 100%); }
+.sp-rtp .sp-df__btn { justify-self: start; }
+.sp-rtp .sp-df__btn:disabled { opacity: 0.5; cursor: progress; }

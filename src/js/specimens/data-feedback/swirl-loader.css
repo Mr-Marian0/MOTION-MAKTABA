@@ -1,0 +1,5 @@
+/* Swirl Loader: a cup seen from above; specks start at its centre and are placed by transforms. */
+@import url('_feedback.css');
+.sp-swl { gap: 0.8em; justify-items: center; }
+.sp-swl__cup { position: relative; width: 8em; height: 8em; background: radial-gradient(circle, #e9c98f, #c99a5b 70%, #a4733d); border: 0.5em solid var(--color-bone); border-radius: 50%; box-shadow: 0 0 0 1.5px var(--color-ink), 0 0.4em 1em rgb(0 0 0 / 0.2); }
+.sp-swl__cup i { position: absolute; top: 50%; left: 50%; width: 0.45em; height: 0.3em; margin: -0.15em 0 0 -0.225em; background: var(--sp-accent); border-radius: 50%; }

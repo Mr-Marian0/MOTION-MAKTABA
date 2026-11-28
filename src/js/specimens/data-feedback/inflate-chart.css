@@ -1,0 +1,9 @@
+/* Inflate Chart: each bar is sized by --h of its column; inflation is scale from the baseline. */
+@import url('_feedback.css');
+.sp-inf .sp-df__card { width: 20em; }
+.sp-inf__plot { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.6em; height: 9em; padding-top: 1.2em; border-bottom: 1.5px solid var(--color-ink); }
+.sp-inf__col { position: relative; display: grid; align-items: end; justify-items: center; }
+.sp-inf__col small { position: absolute; top: 100%; margin-top: 0.3em; font-size: 0.7em; opacity: 0.7; }
+.sp-inf__bar { position: relative; display: block; width: 100%; height: var(--h, 0%); background: linear-gradient(90deg, var(--sp-accent), color-mix(in srgb, var(--sp-accent) 60%, white) 40%, var(--sp-accent)); border-radius: 0.5em 0.5em 0.2em 0.2em; }
+.sp-inf__bar b { position: absolute; bottom: 100%; left: 0; right: 0; margin-bottom: 0.2em; font-size: 0.7em; font-weight: 600; text-align: center; }
+.sp-inf .sp-df__card { padding-bottom: 1.8em; }

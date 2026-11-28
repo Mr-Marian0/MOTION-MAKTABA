@@ -1,0 +1,6 @@
+/* Descend Loader: stairs step down to the right; blocks start on the top stair. */
+@import url('_feedback.css');
+.sp-dsl { gap: 0.8em; justify-items: center; }
+.sp-dsl__stairs { position: relative; width: 12.5em; height: 8em; }
+.sp-dsl__stair { position: absolute; top: calc(var(--i) * 1.6em + 1em); left: calc(var(--i) * 2.5em); width: 2.5em; height: 1.6em; border-top: 2px solid var(--color-ink); background: linear-gradient(rgb(17 17 17 / 0.06), transparent); }
+.sp-dsl__blk { position: absolute; top: 0.25em; left: 0.85em; width: 0.75em; height: 0.75em; background: var(--sp-accent); border-radius: 0.15em; }

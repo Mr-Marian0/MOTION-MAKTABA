@@ -1,0 +1,15 @@
+/* Hang Notifications: the banner hangs from two cords that rise 2.5em above it; the tag hangs off its corner. */
+@import url('_feedback.css');
+.sp-hng { place-content: start center; padding-top: 0.6em; gap: 0.6em; justify-items: center; }
+.sp-hng__rig { padding-top: 2.5em; border-top: 2px solid var(--color-ink); width: 19em; display: grid; justify-items: center; }
+.sp-hng__banner { position: relative; display: grid; gap: 0.25em; width: 15em; padding: 0.8em 2.2em 0.8em 1em; background: var(--sp-accent); border: 1.5px solid var(--color-ink); border-radius: 0.3em; box-shadow: 0.2em 0.25em 0 rgb(17 17 17 / 0.25); }
+.sp-hng__banner b { font: 400 1.1em/1.2 var(--font-display); }
+.sp-hng__banner span { font-size: 0.78em; }
+.sp-hng__cord { position: absolute; bottom: 100%; width: 1.5px; height: 2.5em; background: var(--color-ink); }
+.sp-hng__cord:first-child { left: 18%; rotate: 8deg; transform-origin: 50% 100%; }
+.sp-hng__cord:nth-child(2) { right: 18%; rotate: -8deg; transform-origin: 50% 100%; }
+.sp-hng__x { position: absolute; top: 0.5em; right: 0.5em; width: 1.5em; height: 1.5em; padding: 0; font: inherit; font-size: 0.85em; color: var(--color-ink); background: rgb(255 255 255 / 0.5); border: 1px solid var(--color-ink); border-radius: 50%; cursor: pointer; }
+.sp-hng__x:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 2px; }
+.sp-hng__tag { position: absolute; top: 100%; right: 1.2em; display: grid; justify-items: center; }
+.sp-hng__tag i { width: 1px; height: 1em; background: var(--color-ink); }
+.sp-hng__tag small { padding: 0.15em 0.5em; font-size: 0.7em; color: var(--color-bone); background: var(--color-ink); border-radius: 0.2em; }

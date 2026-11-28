@@ -1,0 +1,6 @@
+/* Precess Loader: a still gimbal circle; inside it, the tilted axis plane carries the spinning, gapped ring. */
+@import url('_feedback.css');
+.sp-prc { gap: 0.8em; justify-items: center; }
+.sp-prc__gimbal { display: grid; place-items: center; width: 7em; height: 7em; border: 1px dashed rgb(17 17 17 / 0.3); border-radius: 50%; }
+.sp-prc__axis { width: 5em; height: 5em; transform-style: preserve-3d; }
+.sp-prc__ring { display: block; width: 100%; height: 100%; border: 0.45em solid var(--sp-accent); border-right-color: transparent; border-radius: 50%; }

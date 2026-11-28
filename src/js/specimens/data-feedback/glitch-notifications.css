@@ -1,0 +1,10 @@
+/* Glitch Notifications */
+@import url('_feedback.css');
+.sp-gln { gap: 0.8em; justify-items: center; }
+.sp-gln__slot { width: 19em; min-height: 3.6em; }
+.sp-gln__card { border-color: var(--sp-accent); font-size: 0.85em; }
+.sp-gln__card div { display: grid; flex: 1; }
+.sp-gln__card small { font-size: 0.85em; opacity: 0.7; }
+.sp-gln__card .sp-df__dot { background: var(--sp-accent); }
+.sp-gln__card.is-ok { border-color: #3e7d5a; }
+.sp-gln__card.is-ok .sp-df__dot { background: #3e7d5a; }

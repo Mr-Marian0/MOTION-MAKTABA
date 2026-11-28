@@ -1,0 +1,8 @@
+/* Wave Skeleton: skeleton rows lie over the real table rows. */
+@import url('_feedback.css');
+.sp-wvs { gap: 0.6em; justify-items: center; }
+.sp-wvs__card { position: relative; width: 17em; }
+.sp-wvs__real { width: 100%; }
+.sp-wvs__skel { position: absolute; top: 3.1em; right: 1.2em; left: 1.2em; display: grid; gap: 1.15em; }
+.sp-wvs__row { display: grid; grid-template-columns: 1.2fr 1fr 0.8fr; gap: 0.8em; }
+.sp-wvs__row .sp-df__bone { height: 0.6em; transform-origin: 50% 50%; }

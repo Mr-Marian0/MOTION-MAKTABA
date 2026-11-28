@@ -1,0 +1,13 @@
+/* Fold Notifications: the bottom layer is a copy of the note clipped to its lower half, hinged on the crease. */
+@import url('_feedback.css');
+.sp-fdn__panel { display: grid; gap: 0.6em; width: 19em; }
+.sp-fdn .sp-fdn__list { display: grid; gap: 0.4em; margin: 0; padding: 0; list-style: none; }
+.sp-fdn__item { position: relative; }
+.sp-fdn__top { font-size: 0.82em; }
+.sp-fdn__top span { flex: 1; }
+.sp-fdn__top small { opacity: 0.55; }
+/* a full-size copy, clipped to its lower half and hinged on the crease (the middle) */
+.sp-fdn__bot { position: absolute; inset: 0; visibility: hidden; clip-path: inset(50% 0 0 0); }
+.sp-fdn__x { flex: none; width: 1.6em; height: 1.6em; padding: 0; font: inherit; color: var(--color-ink); background: none; border: 1px solid rgb(17 17 17 / 0.25); border-radius: 50%; cursor: pointer; }
+.sp-fdn__x:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 2px; }
+.sp-fdn__empty { margin: 0; font-size: 0.85em; opacity: 0.6; }

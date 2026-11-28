@@ -1,0 +1,12 @@
+/* Hop Progress: a rail with five stops; the ball starts at the left end and is placed by x. */
+@import url('_feedback.css');
+.sp-hpg .sp-df__card { width: 20em; gap: 2.2em; padding-top: 2.6em; }
+.sp-hpg__rail { position: relative; height: 0.4em; margin: 0 1em; }
+.sp-hpg__track, .sp-hpg__fill { position: absolute; inset: 0; background: rgb(17 17 17 / 0.12); border-radius: 0.2em; }
+.sp-hpg__fill { background: var(--sp-accent); transform-origin: 0% 50%; transform: scaleX(0); }
+.sp-hpg__stop { position: absolute; top: 50%; width: 1.1em; height: 1.1em; margin: -0.55em 0 0 -0.55em; padding: 0; background: var(--color-bone); border: 2px solid rgb(17 17 17 / 0.3); border-radius: 50%; }
+.sp-hpg__stop:not(:disabled) { cursor: pointer; }
+.sp-hpg__stop.is-done { border-color: var(--sp-accent); background: var(--sp-accent); }
+.sp-hpg__stop:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 2px; }
+.sp-hpg__stop small { position: absolute; top: 1.4em; left: 50%; font-size: 0.65em; white-space: nowrap; translate: -50% 0; color: var(--color-ink); }
+.sp-hpg__ball { position: absolute; bottom: 0.7em; left: 0; width: 0.9em; height: 0.9em; margin-left: -0.45em; background: var(--color-ink); border-radius: 50%; transform-origin: 50% 100%; }

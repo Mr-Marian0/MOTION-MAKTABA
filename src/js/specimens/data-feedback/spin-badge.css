@@ -1,0 +1,9 @@
+/* Spin Badge: each reel is a window one digit tall over a long strip of 0–9 repeated. */
+@import url('_feedback.css');
+.sp-spb { gap: 0.8em; justify-items: center; }
+.sp-spb__badge { display: flex; align-items: baseline; gap: 0.4em; padding: 0.5em 0.9em; color: var(--color-bone); background: var(--sp-accent); border-radius: 2em; box-shadow: 0.2em 0.2em 0 var(--color-ink); }
+.sp-spb__reels { display: flex; font: 600 2.2em/1 var(--font-mono); }
+.sp-spb__reel { display: block; height: 1em; overflow: hidden; }
+.sp-spb__strip { display: flex; flex-direction: column; }
+.sp-spb__strip span { display: block; height: 1em; line-height: 1; text-align: center; }
+.sp-spb__badge small { font-size: 0.8em; opacity: 0.85; }

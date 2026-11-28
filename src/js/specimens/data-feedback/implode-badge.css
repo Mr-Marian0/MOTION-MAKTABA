@@ -1,0 +1,9 @@
+/* Implode Badge: shards are clipped copies of the badge laid over it; the flash is a small ring. */
+@import url('_feedback.css');
+.sp-imp .sp-df__card { width: 15em; }
+.sp-imp__tab { display: flex; align-items: center; gap: 0.6em; font: 400 1.4em/1 var(--font-display); }
+.sp-imp__slot { position: relative; display: inline-grid; font-family: var(--font-mono); font-size: 0.75em; }
+.sp-imp .sp-cc__piece { display: grid; }
+.sp-imp__b { font-size: 1em; }
+.sp-imp__flash { position: absolute; inset: -0.2em; border: 2px solid var(--sp-accent); border-radius: 50%; pointer-events: none; }
+.sp-imp__msg { margin: 0; font-size: 0.8em; opacity: 0.7; }

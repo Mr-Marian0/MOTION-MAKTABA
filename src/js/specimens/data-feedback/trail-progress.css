@@ -1,0 +1,9 @@
+/* Trail Progress: the tip glow and sparks ride above the track at the fill's front edge. */
+@import url('_feedback.css');
+.sp-trp .sp-df__card { width: 18em; }
+.sp-trp__wrap { position: relative; }
+.sp-trp__track { height: 0.55em; }
+.sp-trp__tip { position: absolute; top: 50%; left: 0; width: 0.9em; height: 0.9em; margin: -0.45em 0 0 -0.45em; background: radial-gradient(circle, #fff4d6, var(--sp-accent) 45%, transparent 70%); border-radius: 50%; pointer-events: none; }
+.sp-trp__sparks { position: absolute; top: 50%; left: 0; pointer-events: none; }
+.sp-trp__sparks i { position: absolute; top: -0.12em; left: -0.12em; width: 0.24em; height: 0.24em; background: var(--sp-accent); border-radius: 50%; box-shadow: 0 0 0.3em var(--sp-accent); }
+.sp-trp .sp-df__btn { justify-self: start; }

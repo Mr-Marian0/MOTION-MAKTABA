@@ -1,0 +1,16 @@
+/* Spring Table: rows are stacked absolutely and placed by y, so the order can spring. */
+@import url('_feedback.css');
+.sp-spt .sp-df__card { width: 17em; }
+.sp-spt__table { font-size: 0.85em; }
+.sp-spt__head, .sp-spt__row { display: grid; grid-template-columns: 1.3fr 1fr 1fr; align-items: center; padding: 0.45em 0.4em; }
+.sp-spt__head { border-bottom: 1.5px solid var(--color-ink); }
+.sp-spt__head > * { padding: 0; font: inherit; font-size: 0.8em; letter-spacing: 0.08em; text-align: left; text-transform: uppercase; color: var(--color-ink); background: none; border: 0; opacity: 0.7; }
+.sp-spt__head button { cursor: pointer; }
+.sp-spt__head button::after { content: ' ↕'; opacity: 0.4; }
+.sp-spt__head [aria-sort='descending'] { color: var(--sp-accent); opacity: 1; }
+.sp-spt__head [aria-sort='descending']::after { content: ' ↓'; opacity: 1; }
+.sp-spt__head [aria-sort='ascending'] { color: var(--sp-accent); opacity: 1; }
+.sp-spt__head [aria-sort='ascending']::after { content: ' ↑'; opacity: 1; }
+.sp-spt__head button:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 2px; }
+.sp-spt__body { position: relative; }
+.sp-spt__row { position: absolute; top: 0; right: 0; left: 0; background: var(--color-bone); border-bottom: 1px solid rgb(17 17 17 / 0.12); }

@@ -1,0 +1,15 @@
+/* Scrape Skeleton: the skeleton lies exactly over the real content and is clipped away from the top. */
+@import url('_feedback.css');
+.sp-scs { gap: 0.6em; justify-items: center; }
+.sp-scs__card { position: relative; width: 17em; }
+.sp-scs__real, .sp-scs__skel { display: grid; grid-template-columns: 3em 1fr; gap: 0.5em 0.8em; align-items: center; }
+.sp-scs__skel { position: absolute; inset: 1em 1.2em; background: var(--color-bone); }
+.sp-scs__real p, .sp-scs__skel p { grid-column: 1 / -1; margin: 0; font-size: 0.8em; line-height: 1.5; }
+.sp-scs__skel p, .sp-scs__skel div { display: grid; gap: 0.45em; }
+.sp-scs__real b { display: block; font: 400 1.15em/1.2 var(--font-display); }
+.sp-scs__real small { font-size: 0.75em; opacity: 0.65; }
+.sp-scs__ava { display: block; width: 3em; height: 3em; background: radial-gradient(circle at 50% 38%, #e6b083 0 20%, transparent 21%), radial-gradient(ellipse 50% 35% at 50% 100%, #3e7d5a 98%, transparent), #dfe6cf; border-radius: 50%; }
+.sp-scs__ava.sp-scs__g { background: rgb(17 17 17 / 0.1); }
+.sp-scs__blade { position: absolute; top: 0; left: -0.4em; right: -0.4em; height: 0.35em; margin-top: -0.17em; background: linear-gradient(#e4e7ea, #9aa0a6); border: 1px solid var(--color-ink); border-radius: 0.1em; box-shadow: 0 0 0 0.12em var(--sp-accent); }
+.sp-scs__curls { position: absolute; inset: 0; pointer-events: none; }
+.sp-scs__curls i { position: absolute; top: 0; left: 0; width: 0.45em; height: 0.45em; border: 2px solid rgb(17 17 17 / 0.3); border-color: rgb(17 17 17 / 0.3) transparent transparent rgb(17 17 17 / 0.3); border-radius: 50%; }

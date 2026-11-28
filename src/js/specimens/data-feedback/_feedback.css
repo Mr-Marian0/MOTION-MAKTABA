@@ -1,0 +1,22 @@
+/* Shared looks for the Data & Feedback designs. Every rule is in :where() (zero specificity), so a later
+   copy of this file never overrides a design's own rules. */
+:where(.sp-df) { display: grid; place-content: center; overflow: hidden; }
+:where(.sp-df [hidden]) { display: none !important; }
+:where(.sp-df__card) { display: grid; gap: 0.6em; padding: 1em 1.2em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.6em; box-shadow: 0.25em 0.25em 0 var(--color-ink); }
+:where(.sp-df__kick) { font-size: 0.72em; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.6; }
+:where(.sp-df__big) { font: 400 1.6em/1 var(--font-display); }
+:where(.sp-df__btn) { padding: 0.5em 1em; font: inherit; font-size: 0.78em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-bone); background: var(--color-ink); border: 1.5px solid var(--color-ink); border-radius: 2em; cursor: pointer; }
+:where(.sp-df__btn--ghost) { color: var(--color-ink); background: var(--color-bone); }
+:where(.sp-df__btn:focus-visible) { outline: 2px solid var(--sp-accent, var(--color-ink)); outline-offset: 3px; }
+:where(.sp-df__row) { display: flex; align-items: center; justify-content: space-between; gap: 0.6em; }
+:where(.sp-df__track) { position: relative; height: 0.7em; overflow: hidden; background: rgb(17 17 17 / 0.1); border-radius: 0.35em; }
+:where(.sp-df__fill) { position: absolute; inset: 0; background: var(--sp-accent, var(--color-ink)); border-radius: inherit; transform-origin: 0% 50%; }
+:where(.sp-df__note) { display: flex; align-items: center; gap: 0.7em; padding: 0.7em 0.9em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.5em; }
+:where(.sp-df__dot) { flex: none; width: 0.7em; height: 0.7em; background: var(--sp-accent, var(--color-ink)); border-radius: 50%; }
+:where(.sp-df__bone) { display: block; height: 0.7em; background: rgb(17 17 17 / 0.1); border-radius: 0.35em; }
+:where(.sp-df__badge) { display: inline-grid; place-items: center; min-width: 1.6em; height: 1.6em; padding: 0 0.35em; font-size: 0.8em; font-weight: 600; color: var(--color-bone); background: var(--sp-accent, var(--color-ink)); border-radius: 1em; }
+:where(.sp-df table) { border-collapse: collapse; font-size: 0.85em; }
+:where(.sp-df th, .sp-df td) { padding: 0.45em 0.7em; text-align: left; border-bottom: 1px solid rgb(17 17 17 / 0.15); }
+:where(.sp-df th) { font-size: 0.85em; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; }
+:where(.sp-cc__pieces) { position: absolute; inset: 0; pointer-events: none; }
+:where(.sp-cc__piece) { position: absolute; inset: 0; }

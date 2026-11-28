@@ -1,0 +1,7 @@
+/* Orbit Badges: the avatar sits at the centre (z 2); badges move on the ellipse in front of (z 3) or behind (z 1) it. */
+@import url('_feedback.css');
+.sp-orb { gap: 0.8em; justify-items: center; }
+.sp-orb__sys { position: relative; width: 16em; height: 9em; }
+.sp-orb__track { position: absolute; top: 50%; left: 50%; width: 84%; height: 40%; translate: -50% -50%; border: 1.5px dashed rgb(17 17 17 / 0.25); border-radius: 50%; }
+.sp-orb__me { position: absolute; top: 50%; left: 50%; z-index: 2; width: 3.6em; height: 3.6em; margin: -1.8em 0 0 -1.8em; background: radial-gradient(circle at 50% 36%, #e6b083 0 19%, transparent 19.5%), radial-gradient(ellipse 48% 34% at 50% 100%, #2f4a6b 98%, transparent), #dfe6cf; border: 2px solid var(--color-bone); border-radius: 50%; box-shadow: 0 0.2em 0.5em rgb(0 0 0 / 0.2); }
+.sp-orb__b { position: absolute; top: 50%; left: 50%; display: grid; place-items: center; width: 1.9em; height: 1.9em; margin: -0.95em 0 0 -0.95em; font-size: 0.95em; color: var(--color-ink); background: var(--sp-accent); border: 2px solid var(--color-bone); border-radius: 50%; box-shadow: 0 0.15em 0.3em rgb(0 0 0 / 0.25); }

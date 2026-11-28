@@ -1,0 +1,21 @@
+/* Freeze Progress: the ice layer grows in from both ends as --f goes 0 → 1. */
+@import url('_feedback.css');
+.sp-frp .sp-df__card { width: 18em; }
+.sp-frp__track { height: 1em; }
+.sp-frp__fill { transition: background-color 0.6s; }
+.sp-frp__track.is-frozen .sp-frp__fill { background: #8fb3c9; }
+.sp-frp__ice {
+  --f: 0;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(60deg, rgb(255 255 255 / 0.7) 0 1px, transparent 1px 0.6em),
+    repeating-linear-gradient(-55deg, rgb(255 255 255 / 0.5) 0 1px, transparent 1px 0.8em),
+    linear-gradient(90deg, rgb(220 236 246 / 0.85), rgb(220 236 246 / 0.25) 50%, rgb(220 236 246 / 0.85));
+  /* frost reaches in from both ends: solid up to f·50% from each end, with a soft growing front */
+  opacity: min(1, calc(var(--f) * 4));
+  mask: linear-gradient(90deg, #000 calc(var(--f) * 50%), transparent calc(var(--f) * 50% + 12%), transparent calc(100% - var(--f) * 50% - 12%), #000 calc(100% - var(--f) * 50%));
+}
+.sp-frp small { font-size: 0.75em; }

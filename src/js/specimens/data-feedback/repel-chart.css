@@ -1,0 +1,9 @@
+/* Repel Chart: points are positioned by left/top % once; all motion is transforms. */
+@import url('_feedback.css');
+.sp-rpc .sp-df__card { width: 19em; }
+.sp-rpc__plot { position: relative; height: 9em; margin: 0.3em 0.4em; border-left: 1.5px solid var(--color-ink); border-bottom: 1.5px solid var(--color-ink); cursor: crosshair; outline-offset: 4px; }
+.sp-rpc__plot:focus-visible { outline: 2px solid var(--sp-accent); }
+.sp-rpc__pt { position: absolute; width: 0.5em; height: 0.5em; margin: -0.25em 0 0 -0.25em; background: rgb(17 17 17 / 0.45); border-radius: 50%; }
+.sp-rpc__pt.is-on { z-index: 2; background: var(--sp-accent); }
+.sp-rpc__tip { position: absolute; top: 0; left: 0; z-index: 3; padding: 0.15em 0.45em; font-size: 0.7em; font-weight: 500; white-space: nowrap; color: var(--color-bone); background: var(--color-ink); border-radius: 0.3em; pointer-events: none; }
+.sp-rpc small { font-size: 0.68em; opacity: 0.6; }

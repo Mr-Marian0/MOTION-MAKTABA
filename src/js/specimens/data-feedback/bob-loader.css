@@ -1,0 +1,8 @@
+/* Bob Loader: buoys stand on the mid waterline and are moved by y/rotation. */
+@import url('_feedback.css');
+.sp-bob { gap: 0.8em; justify-items: center; }
+.sp-bob__sea { position: relative; width: 16em; height: 6em; }
+.sp-bob__sea svg { position: absolute; right: 0; bottom: 0; left: 0; width: 100%; height: 3em; }
+.sp-bob__sea path { fill: color-mix(in srgb, #2f4a6b 55%, white); }
+.sp-bob__buoy { position: absolute; top: 2.3em; width: 1.5em; height: 2.2em; margin-left: -0.75em; padding: 0; background: none; border: 0; transform-origin: 50% 85%; cursor: pointer; }
+.sp-bob__buoy i { display: block; width: 100%; height: 100%; background: repeating-linear-gradient(var(--sp-accent) 0 0.45em, var(--color-bone) 0.45em 0.75em); border: 1.5px solid var(--color-ink); border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%; }

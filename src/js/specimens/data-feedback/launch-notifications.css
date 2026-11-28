@@ -1,0 +1,10 @@
+/* Launch Notifications: the feed above, an empty launch pad below it. */
+@import url('_feedback.css');
+.sp-lnn__panel { display: grid; gap: 0.5em; width: 18em; }
+.sp-lnn .sp-lnn__feed { display: grid; gap: 0.35em; margin: 0; padding: 0; list-style: none; min-height: 10em; align-content: start; }
+.sp-lnn .sp-df__note { position: relative; font-size: 0.82em; }
+.sp-lnn .sp-df__note span { flex: 1; }
+.sp-lnn__new { border-color: var(--sp-accent); box-shadow: 0.15em 0.15em 0 var(--sp-accent); }
+.sp-lnn__pad { position: relative; height: 2.6em; border: 1.5px dashed rgb(17 17 17 / 0.3); border-radius: 0.5em; }
+.sp-lnn__puff { position: absolute; top: 0; left: 0; width: 0.9em; height: 0.9em; background: rgb(17 17 17 / 0.18); border-radius: 50%; pointer-events: none; }
+.sp-lnn .sp-df__btn { justify-self: start; }

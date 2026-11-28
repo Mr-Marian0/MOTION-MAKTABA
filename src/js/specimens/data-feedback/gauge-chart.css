@@ -1,0 +1,10 @@
+/* Gauge Chart */
+@import url('_feedback.css');
+.sp-gau .sp-df__card { width: 15em; }
+.sp-gau__dial { width: 100%; overflow: visible; }
+.sp-gau__dial > path { fill: none; stroke-width: 14; }
+.sp-gau__ok { stroke: #3e7d5a; }
+.sp-gau__mid { stroke: #c9a227; }
+.sp-gau__hot { stroke: #b3412e; }
+.sp-gau__needle path { stroke: var(--sp-accent); stroke-width: 4; stroke-linecap: round; }
+.sp-gau__needle circle { fill: var(--sp-accent); }

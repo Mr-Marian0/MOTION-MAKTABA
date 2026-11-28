@@ -1,0 +1,12 @@
+/* Walk Skeleton: the glow sits on top of the skeleton blocks and lightens them (screen blend). */
+@import url('_feedback.css');
+.sp-wks { gap: 0.6em; justify-items: center; }
+.sp-wks__card { position: relative; width: 17em; }
+.sp-wks__real, .sp-wks__skel { display: grid; gap: 0.9em; }
+.sp-wks__skel { position: absolute; inset: 1em 1.2em; overflow: hidden; background: var(--color-bone); }
+.sp-wks article { display: grid; grid-template-columns: 2.6em 1fr; gap: 0.7em; align-items: center; }
+.sp-wks article div { display: grid; gap: 0.35em; }
+.sp-wks__ava { display: block; width: 2.6em; height: 2.6em; background: rgb(17 17 17 / 0.1); border-radius: 0.5em; }
+.sp-wks__real b { font: 400 1em/1.2 var(--font-display); }
+.sp-wks__real small { font-size: 0.72em; opacity: 0.65; }
+.sp-wks__glow { position: absolute; top: 0; left: 0; z-index: 2; width: 6em; height: 6em; margin: -3em 0 0 -3em; background: radial-gradient(circle, color-mix(in srgb, var(--sp-accent) 55%, white), transparent 65%); mix-blend-mode: screen; pointer-events: none; }
