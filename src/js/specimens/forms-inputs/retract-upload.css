@@ -1,0 +1,8 @@
+/* Retract Upload: chips live in a well that clips at its top edge (the zone's lip), so reeling up hides them. */
+@import url('_form.css');
+.sp-rtu__zone { z-index: 2; padding: 1em; background: var(--color-bone); }
+.sp-rtu__zone.is-over { border-color: var(--sp-accent); }
+.sp-rtu__well { position: relative; height: 9.6em; margin: -0.5em 0.8em 0; padding-top: 0.5em; overflow: hidden; background: linear-gradient(90deg, transparent 0.5em, var(--sp-accent) 0.5em 0.75em, transparent 0.75em); }
+.sp-rtu__tape { display: grid; gap: 0.35em; }
+.sp-rtu__chip { margin-left: 1.2em; }
+.sp-rtu__clear { justify-self: end; margin-top: -0.4em; }

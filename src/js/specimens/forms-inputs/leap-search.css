@@ -1,0 +1,8 @@
+/* Leap Search: active filters sit inside the bar before the input; suggestions wrap below. */
+@import url('_form.css');
+.sp-lep__bar { flex-wrap: wrap; row-gap: 0.3em; }
+.sp-lep__on { display: contents; }
+.sp-lep__off { display: flex; flex-wrap: wrap; align-content: flex-start; align-items: flex-start; gap: 0.35em; min-height: 4.2em; margin-top: 0.6em; }
+.sp-lep__f { border: 0; cursor: pointer; font-family: inherit; }
+.sp-lep__off .sp-lep__f { color: var(--color-ink); background: rgb(17 17 17 / 0.07); }
+.sp-lep__f:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 2px; }

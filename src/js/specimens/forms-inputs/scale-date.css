@@ -1,0 +1,9 @@
+/* Scale Date: day view and month view share one box; each scales about the current month's cell. */
+@import url('_form.css');
+.sp-scd__title { padding: 0.2em 0.4em; font: inherit; color: var(--color-ink); background: none; border: 1px solid transparent; border-radius: 0.3em; cursor: pointer; }
+.sp-scd__title:hover, .sp-scd__title[aria-expanded='true'] { border-color: rgb(17 17 17 / 0.3); }
+.sp-scd__view { position: relative; display: grid; overflow: hidden; }
+.sp-scd__days, .sp-scd__months { grid-area: 1 / 1; }
+.sp-scd__months { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.3em; align-content: stretch; }
+.sp-scd__m { font: 400 1em/1 var(--font-display); color: var(--color-ink); background: rgb(17 17 17 / 0.04); border: 1px solid rgb(17 17 17 / 0.15); border-radius: 0.35em; cursor: pointer; }
+.sp-scd__m[aria-current='true'] { color: var(--color-bone); background: var(--sp-accent); }

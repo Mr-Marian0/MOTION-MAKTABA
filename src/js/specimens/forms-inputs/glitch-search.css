@@ -1,0 +1,10 @@
+/* Glitch Search: two flat colour layers the size of the bar sit behind it and show as fringes when the bar jumps. */
+@import url('_form.css');
+.sp-gli__stack { position: relative; }
+.sp-gli__layer { position: absolute; inset: 0; border-radius: 0.4em; mix-blend-mode: multiply; }
+.sp-gli__layer--r { background: rgb(255 42 77 / 0.6); }
+.sp-gli__layer--c { background: rgb(24 224 255 / 0.6); }
+.sp-gli__bar { position: relative; }
+.sp-gli .sp-gli__results { display: grid; gap: 0.25em; min-height: 6em; margin-top: 0.5em; font-size: 0.85em; }
+.sp-gli__results li { padding: 0.35em 0.8em; background: rgb(17 17 17 / 0.05); border-radius: 0.3em; }
+.sp-gli__results .sp-gli__none { color: var(--sp-accent); background: none; letter-spacing: 0.06em; text-transform: uppercase; }

@@ -1,0 +1,6 @@
+/* Jet Search: the pill and its puffs fly in a layer over the bar, starting at the text's left edge. */
+@import url('_form.css');
+.sp-jet__go { flex: none; width: 2em; height: 2em; padding: 0; color: var(--color-bone); background: var(--color-ink); border: 0; border-radius: 50%; cursor: pointer; }
+.sp-jet__sky { position: absolute; top: 50%; left: 1em; pointer-events: none; }
+.sp-jet__pill { position: absolute; top: -0.85em; left: 0; padding: 0.25em 0.7em; font: 400 1em/1.2 var(--font-display); white-space: nowrap; color: var(--color-bone); background: var(--color-ink); border-radius: 1em; }
+.sp-jet__puff { position: absolute; top: -0.4em; left: 0; width: 0.8em; height: 0.8em; background: var(--sp-accent); border-radius: 50%; }

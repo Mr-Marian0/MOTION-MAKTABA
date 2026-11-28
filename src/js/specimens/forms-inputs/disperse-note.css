@@ -1,0 +1,6 @@
+/* Disperse Note: the copy matches the textarea's text box (same padding, font, wrapping) so the grains start in place. */
+@import url('_form.css');
+.sp-dsn__box { position: relative; }
+.sp-dsn__area { min-height: 7em; }
+.sp-dsn__copy { position: absolute; inset: 0; padding: 0.8em 1em; font-size: 0.95em; line-height: 1.5; color: var(--sp-accent); white-space: pre-wrap; overflow-wrap: break-word; border: 1.5px solid transparent; }
+.sp-dsn__go { justify-self: end; }

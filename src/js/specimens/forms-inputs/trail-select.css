@@ -1,0 +1,10 @@
+/* Trail Select: the highlight and its after-images sit behind transparent options. */
+@import url('_form.css');
+.sp-trl__box { position: relative; padding: 0.3em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.5em; box-shadow: 0.2em 0.2em 0 var(--color-ink); }
+.sp-trl__ghost { position: absolute; top: 0; right: 0.3em; left: 0.3em; height: 2em; background: var(--sp-accent); border-radius: 0.3em; pointer-events: none; }
+.sp-trl .sp-fi__opt { position: relative; background: transparent; border-color: transparent; transition: color 0.2s; }
+/* "lit" follows the highlight (set from JS), not :hover, so keyboard and pointer never disagree */
+.sp-trl .sp-fi__opt.is-lit, .sp-trl .sp-fi__opt.is-lit[aria-selected='true'] { color: var(--color-bone); }
+.sp-trl .sp-fi__opt[aria-selected='true'] { color: inherit; background: transparent; border-color: transparent; }
+.sp-trl .sp-fi__opt[aria-selected='true']::after { content: ' ●'; color: var(--sp-accent); }
+.sp-trl .sp-fi__opt[aria-selected='true'].is-lit::after { color: var(--color-bone); }

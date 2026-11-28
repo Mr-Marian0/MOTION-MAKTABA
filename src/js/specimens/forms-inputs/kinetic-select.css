@@ -1,0 +1,14 @@
+/* Kinetic Select: a beam hung from a wire at its centre; options hang below it on threads. */
+@import url('_form.css');
+.sp-kin { gap: 0.6em; justify-items: center; }
+.sp-kin__mobile { position: relative; width: 20em; height: 9em; }
+.sp-kin__wire { position: absolute; top: 0; left: 50%; width: 1px; height: 1.6em; background: var(--color-ink); }
+.sp-kin__beam { position: absolute; top: 1.6em; left: 0; width: 100%; height: 0.3em; background: var(--color-ink); border-radius: 0.2em; transform-origin: 50% 0%; }
+.sp-kin__beam::before { content: ''; position: absolute; top: -0.25em; left: 50%; width: 0.5em; height: 0.5em; margin-left: -0.25em; background: var(--color-bone); border: 2px solid var(--color-ink); border-radius: 50%; }
+.sp-kin__list { position: absolute; inset: 0; }
+.sp-kin__hang { position: absolute; top: 0.3em; display: grid; justify-items: center; width: 4.4em; margin-left: -2.2em; }
+.sp-kin__hang > i { width: 1px; height: 2.2em; background: var(--color-ink); }
+.sp-kin__hang.is-heavy > i { height: 3.2em; }
+.sp-kin__opt { padding: 0.45em 0.2em; width: 100%; text-align: center; border-radius: 50% 50% 0.4em 0.4em; }
+.sp-kin__opt[aria-selected='true'] { background: var(--sp-accent); }
+.sp-kin__msg { text-align: center; }

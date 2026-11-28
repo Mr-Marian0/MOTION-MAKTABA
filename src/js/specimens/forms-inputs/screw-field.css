@@ -1,0 +1,8 @@
+/* Screw Field: a metal plate with two slotted screws in its top corners; the code is spaced wide. */
+@import url('_form.css');
+.sp-scw__plate { padding: 1em 2.4em; background: linear-gradient(160deg, #eef0f1, #cfd4d8); transition: border-color 0.3s; }
+.sp-scw__plate.is-locked { border-color: var(--sp-accent); }
+.sp-scw__input { font-family: var(--font-mono); font-size: 1.5em; letter-spacing: 0.5em; text-align: center; }
+.sp-scw__screw { position: absolute; top: 0.45em; width: 1.1em; height: 1.1em; background: linear-gradient(transparent 44%, #4b4f53 44% 56%, transparent 56%), radial-gradient(circle at 35% 35%, #fbfcfc, #9ba2a8); border: 1px solid #6d7378; border-radius: 50%; box-shadow: 0.12em 0.2em 0.15em 0 rgb(0 0 0 / 0.35); }
+.sp-scw__screw:first-child { left: 0.5em; }
+.sp-scw__screw:nth-child(2) { right: 0.5em; }

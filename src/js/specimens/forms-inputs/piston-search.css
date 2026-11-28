@@ -1,0 +1,7 @@
+/* Piston Search: the go button is an engine block with three cylinders; each head slides in its bore. */
+@import url('_form.css');
+.sp-pis__go { flex: none; display: grid; place-items: end center; width: 3.2em; height: 2.4em; padding: 0 0 0.25em; background: var(--color-ink); border: 0; border-radius: 0.35em; cursor: pointer; }
+.sp-pis__go:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 2px; }
+.sp-pis__block { display: flex; gap: 0.2em; }
+.sp-pis__cyl { position: relative; width: 0.62em; height: 1.4em; overflow: hidden; background: #3a3633; border-radius: 0.12em; }
+.sp-pis__cyl b { position: absolute; right: 0.06em; bottom: 0.06em; left: 0.06em; height: 0.75em; background: linear-gradient(var(--sp-accent) 0 30%, #c9ced2 30%); border-radius: 0.08em; }

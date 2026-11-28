@@ -1,0 +1,6 @@
+/* Drop Tags: a shallow tray under the field; tags wrap inside it. */
+@import url('_form.css');
+/* two classes: the shared `.sp ul { margin: 0; padding: 0 }` would otherwise win */
+.sp-tag .sp-tag__tray { display: flex; flex-wrap: wrap; align-content: flex-end; gap: 0.35em; min-height: 5.2em; margin-top: 0.4em; padding: 0.5em; background: rgb(17 17 17 / 0.04); border: 1.5px solid rgb(17 17 17 / 0.25); border-top: 0; border-radius: 0 0 0.6em 0.6em; }
+.sp-tag__t { border: 0; cursor: pointer; font-family: inherit; }
+.sp-tag__t:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 2px; }

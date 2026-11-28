@@ -1,0 +1,10 @@
+/* Follow Note: avatar beside a card with the textarea and a tool/send row. */
+@import url('_form.css');
+.sp-fol { gap: 0.4em; }
+.sp-fol__row { display: flex; align-items: flex-start; gap: 0.7em; }
+.sp-fol__ava { display: grid; place-items: center; flex: none; width: 2.4em; height: 2.4em; margin-top: 1.4em; font-size: 0.85em; font-style: normal; color: var(--color-bone); background: var(--sp-accent); border-radius: 50%; }
+.sp-fol__card { display: grid; gap: 0.4em; width: 19em; }
+.sp-fol__area { min-height: 4.8em; }
+.sp-fol__bar { display: flex; align-items: center; justify-content: space-between; }
+.sp-fol__tools { display: flex; gap: 0.8em; padding: 0.3em 0.7em; font-size: 0.85em; border: 1px solid rgb(17 17 17 / 0.25); border-radius: 0.3em; transform-origin: 0% 50%; }
+.sp-fol .sp-fi__msg { text-align: center; }

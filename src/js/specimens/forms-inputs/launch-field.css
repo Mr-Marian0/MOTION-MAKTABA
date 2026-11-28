@@ -1,0 +1,9 @@
+/* Launch Field: the rocket pill starts over the input text and climbs out of the card. */
+@import url('_form.css');
+.sp-lch { place-content: end center; padding-bottom: 2.6em; }
+.sp-lch__box { overflow: visible; }
+.sp-lch__box .sp-fi__input { font-size: 1.05em; }
+.sp-lch__sky { position: absolute; top: 0.6em; left: 0.8em; pointer-events: none; }
+.sp-lch__rocket { position: absolute; top: 0; left: 0; display: block; padding: 0.2em 0.7em; font-weight: 400; white-space: nowrap; color: var(--color-bone); background: var(--color-ink); border-radius: 1em 1em 0.4em 0.4em; }
+.sp-lch__rocket i { position: absolute; top: 100%; left: 50%; width: 0.7em; height: 0.9em; margin-left: -0.35em; background: var(--sp-accent); border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%; }
+.sp-lch__puff { position: absolute; top: 1.2em; left: 40%; width: 0.9em; height: 0.9em; background: rgb(17 17 17 / 0.25); border-radius: 50%; }

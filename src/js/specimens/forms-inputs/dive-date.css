@@ -1,0 +1,8 @@
+/* Dive Date: the date field (the "pool") above a compact calendar; the diving number flies in a layer over both. */
+@import url('_form.css');
+.sp-div__card { position: relative; display: grid; gap: 0.4em; width: 17.5em; }
+.sp-div__pool { overflow: hidden; }
+.sp-div__ring { position: absolute; top: 50%; left: 1.5em; width: 5em; height: 2em; margin: -1em 0 0 -2.5em; border: 2px solid var(--sp-accent); border-radius: 50%; pointer-events: none; }
+.sp-div__cal { gap: 0.25em; padding: 0.7em; }
+.sp-div__air { position: absolute; inset: 0; pointer-events: none; }
+.sp-div__num { position: absolute; top: 0; left: 0; display: grid; place-items: center; width: 1.8em; height: 1.6em; font-size: 0.85em; color: var(--color-bone); background: var(--sp-accent); border-radius: 0.3em; }

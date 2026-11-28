@@ -1,0 +1,7 @@
+/* Cloth Upload: the cloth is an SVG over the zone (pointer-events off, so the zone stays usable beneath). */
+@import url('_form.css');
+.sp-clo__table { position: relative; }
+.sp-clo__zone { padding: 1.8em 1em; }
+.sp-clo__cloth { position: absolute; inset: -0.3em -0.3em 0; width: calc(100% + 0.6em); height: calc(100% + 0.3em); overflow: visible; pointer-events: none; }
+.sp-clo__cloth path { fill: var(--sp-accent); stroke: var(--color-ink); stroke-width: 1.5px; vector-effect: non-scaling-stroke; }
+.sp-clo__list { display: grid; gap: 0.35em; min-height: 5.6em; margin-top: 0.4em; }

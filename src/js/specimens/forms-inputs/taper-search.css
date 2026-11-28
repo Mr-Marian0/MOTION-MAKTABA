@@ -1,0 +1,21 @@
+/* Taper Search: the bar is full width but clipped to its current length, with a pointed right end
+   (--tip % of the width). The tab is the first 3em, always visible. */
+@import url('_form.css');
+.sp-tpr__bar {
+  --len: 0;
+  --tip: 18;
+  --reach: calc(3em + (100% - 3em) * var(--len));
+  --cut: max(2.2em, calc(var(--reach) - var(--tip) * 1%));
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  height: 3.2em;
+  padding-right: 1em;
+  background: var(--sp-accent);
+  clip-path: polygon(0 0, var(--cut) 0, var(--reach) 50%, var(--cut) 100%, 0 100%);
+}
+.sp-tpr__go { flex: none; width: 3em; height: 100%; padding: 0; font-size: 1.15em; color: var(--color-bone); background: none; border: 0; cursor: pointer; }
+.sp-tpr__go:focus-visible { outline: 2px solid var(--color-bone); outline-offset: -4px; }
+.sp-tpr__input { color: var(--color-bone); }
+.sp-tpr__input::placeholder { color: rgb(244 239 230 / 0.6); }

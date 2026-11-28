@@ -1,0 +1,11 @@
+/* Eject Upload: cartridges stand in a row on a dark slot; the slot's lip covers their lower half. */
+@import url('_form.css');
+.sp-ejc__bay { position: relative; height: 6em; }
+.sp-ejc__carts { position: absolute; right: 0; bottom: 1em; left: 0; display: flex; justify-content: center; gap: 0.5em; height: 5em; }
+.sp-ejc__cart { position: relative; display: grid; align-content: start; justify-items: center; gap: 0.3em; width: 4.4em; height: 5em; padding: 0.45em 0.3em; color: var(--color-bone); background: var(--sp-accent); border: 1.5px solid var(--color-ink); border-radius: 0.35em 0.35em 0 0; }
+.sp-ejc__cart.is-out { position: absolute; top: 0; z-index: 3; }
+.sp-ejc__cart b { width: 100%; overflow: hidden; font-size: 0.62em; font-weight: 500; text-align: center; text-overflow: ellipsis; white-space: nowrap; background: var(--color-bone); color: var(--color-ink); border-radius: 0.2em; padding: 0.15em 0.2em; }
+.sp-ejc__eject { width: 1.7em; height: 1.4em; padding: 0; font-size: 0.85em; color: var(--color-ink); background: var(--color-bone); border: 1px solid var(--color-ink); border-radius: 0.25em; cursor: pointer; }
+.sp-ejc__slot { position: absolute; right: 0; bottom: 0; left: 0; z-index: 2; height: 2.6em; background: linear-gradient(#3e2c1f, #1f1712); border-radius: 0.4em; box-shadow: inset 0 0.25em 0 #0c0907; }
+.sp-ejc__zone { padding: 0.7em; }
+.sp-ejc__zone.is-over { border-color: var(--sp-accent); }

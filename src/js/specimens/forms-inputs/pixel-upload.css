@@ -1,0 +1,10 @@
+/* Pixel Upload: the picture sits under a grid of blank cells; cells switch off to reveal it. */
+@import url('_form.css');
+.sp-pxu__wrap { width: 18em; }
+.sp-pxu__drop { height: 9em; padding: 0; overflow: hidden; border-style: solid; }
+.sp-pxu__drop.is-over { border-color: var(--sp-accent); }
+.sp-pxu__pic { position: absolute; inset: 0; }
+.sp-pxu__cells { position: absolute; inset: 0; display: grid; }
+.sp-pxu__cells i { background: var(--color-bone); box-shadow: inset 0 0 0 0.5px rgb(17 17 17 / 0.06); }
+.sp-pxu__hint { position: relative; font: 400 1.2em/1 var(--font-display); }
+.sp-pxu__rm { justify-self: end; }

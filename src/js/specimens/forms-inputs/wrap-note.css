@@ -1,0 +1,11 @@
+/* Wrap Note: side flaps cover half the card each; top and bottom flaps cover 55% each, over the sides. */
+@import url('_form.css');
+.sp-wrp__card { position: relative; }
+.sp-wrp__area { min-height: 7em; }
+.sp-wrp__flap { position: absolute; z-index: 1; background: radial-gradient(circle at 30% 30%, var(--sp-accent) 0 0.22em, transparent 0.25em) 0 0 / 1.2em 1.2em, #f1d9b8; border: 1.5px solid var(--color-ink); border-radius: 0.4em; backface-visibility: hidden; }
+.sp-wrp__flap--l { inset: 0 50% 0 0; }
+.sp-wrp__flap--r { inset: 0 0 0 50%; }
+.sp-wrp__flap--t { inset: 0 0 45% 0; z-index: 2; }
+.sp-wrp__flap--b { inset: 45% 0 0 0; z-index: 2; }
+.sp-wrp__seal { position: absolute; top: 50%; left: 50%; z-index: 3; display: grid; place-items: center; width: 2.4em; height: 2.4em; margin: -1.2em 0 0 -1.2em; font: 400 1.3em/1 var(--font-display); color: var(--color-bone); background: var(--sp-accent); border-radius: 46% 54% 50% 50%; box-shadow: inset 0 0 0 0.2em rgb(0 0 0 / 0.15); }
+.sp-wrp__go { justify-self: end; }

@@ -1,0 +1,9 @@
+/* Hum Note: the ruled lines are SVG strings behind a transparent textarea. */
+@import url('_form.css');
+.sp-hum__page { position: relative; }
+.sp-hum__page svg { position: absolute; top: 0.6em; right: 0.8em; bottom: 0.6em; left: 0.8em; width: calc(100% - 1.6em); height: calc(100% - 1.2em); overflow: visible; pointer-events: none; }
+.sp-hum__page path { fill: none; stroke: color-mix(in srgb, var(--sp-accent) 60%, transparent); stroke-width: 1.5px; vector-effect: non-scaling-stroke; }
+.sp-hum__area { position: relative; min-height: 7em; background: transparent; }
+.sp-hum__page { background: var(--color-bone); border-radius: 0.4em; }
+.sp-hum__go { justify-self: end; }
+.sp-hum__go[aria-pressed='true'] { background: var(--sp-accent); border-color: var(--sp-accent); }

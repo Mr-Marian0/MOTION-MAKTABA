@@ -1,0 +1,11 @@
+/* Pour Select: the liquid is an SVG behind the field's text; the stream drops in at the top right; options show their level as a bar. */
+@import url('_form.css');
+.sp-pou { place-content: start center; padding-top: 1.6em; }
+.sp-pou__field { width: 100%; overflow: hidden; }
+.sp-pou__liquid { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sp-pou__liquid path { fill: color-mix(in srgb, var(--sp-accent) 45%, var(--color-bone)); }
+.sp-pou__stream { position: absolute; top: 0; left: 0.6em; width: 0.25em; height: 100%; background: var(--sp-accent); border-radius: 0.2em; }
+.sp-pou__value, .sp-pou .sp-fi__caret { position: relative; }
+.sp-pou__list { position: absolute; top: calc(100% + 0.4em); right: 0; left: 0; z-index: 2; }
+.sp-pou .sp-fi__opt { background: linear-gradient(90deg, color-mix(in srgb, var(--sp-accent) 25%, var(--color-bone)) calc(var(--lvl) * 100%), var(--color-bone) 0); }
+.sp-pou .sp-fi__opt[aria-selected='true'] { background: var(--sp-accent); }

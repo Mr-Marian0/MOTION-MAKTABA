@@ -1,0 +1,12 @@
+/* Overshoot Search: the shell (background + border) scales on X; the controls sit on top unscaled. */
+@import url('_form.css');
+.sp-ovs { place-content: start center; padding-top: 2em; }
+.sp-ovs__bar { position: relative; display: flex; align-items: center; gap: 0.5em; height: 3em; padding-right: 0.6em; }
+.sp-ovs__shell { --v: 3em; position: absolute; inset: 0 -15% 0 0; background: var(--sp-accent); clip-path: inset(0 calc(100% - var(--v)) 0 0 round 1.5em); }
+.sp-ovs__go { position: relative; flex: none; width: 3em; height: 3em; padding: 0; font-size: 1.05em; color: var(--color-bone); background: none; border: 0; border-radius: 50%; cursor: pointer; }
+.sp-ovs__go:focus-visible, .sp-ovs__x:focus-visible { outline: 2px solid var(--color-bone); outline-offset: -4px; }
+.sp-ovs__input { position: relative; color: var(--color-bone); }
+.sp-ovs__input::placeholder { color: rgb(244 239 230 / 0.6); }
+.sp-ovs__x { position: relative; flex: none; width: 1.8em; height: 1.8em; padding: 0; color: var(--color-bone); background: none; border: 0; cursor: pointer; }
+.sp-ovs .sp-ovs__list { display: grid; gap: 0.3em; margin-top: 0.5em; }
+.sp-ovs__s { width: 100%; padding: 0.5em 1em; font: inherit; text-align: left; color: var(--color-ink); background: var(--color-bone); border: 1px solid rgb(17 17 17 / 0.25); border-radius: 0.4em; cursor: pointer; }

@@ -1,0 +1,6 @@
+/* Breathe Note: the halo is a box-shadow whose spread follows --g (0..1). */
+@import url('_form.css');
+.sp-brt__halo { --g: 0; border-radius: 0.5em; box-shadow: 0 0 calc(0.4em + 1.4em * var(--g)) calc(0.6em * var(--g)) color-mix(in srgb, var(--sp-accent) calc(10% + 45% * var(--g)), transparent); }
+.sp-brt__area { min-height: 6.5em; box-shadow: none; }
+.sp-brt__area:focus-visible { outline: 0; border-color: var(--sp-accent); }
+.sp-brt__cue { min-height: 1.3em; text-align: center; }

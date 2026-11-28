@@ -1,0 +1,7 @@
+/* Tumble Select: two faces of a block share one slot; they turn about a line 0.8em behind the face (the block's centre). */
+@import url('_form.css');
+.sp-tmb { place-content: start center; padding-top: 1.6em; }
+.sp-tmb__field { width: 100%; }
+.sp-tmb__stage { position: relative; display: grid; flex: 1; height: 1.6em; }
+.sp-tmb__face { grid-area: 1 / 1; align-self: center; padding: 0.1em 0.5em; font: 400 1.2em/1.2 var(--font-display); justify-self: start; color: var(--color-bone); background: var(--sp-accent); border-radius: 0.25em; backface-visibility: hidden; }
+.sp-tmb__list { position: absolute; top: calc(100% + 0.4em); right: 0; left: 0; z-index: 2; grid-template-columns: repeat(3, 1fr); }

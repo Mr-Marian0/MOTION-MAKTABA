@@ -1,0 +1,69 @@
+/* Shared looks for the Forms & Inputs designs (see _fi.js).
+   Every rule is in :where() (zero specificity): many designs import this file, and a later copy of it
+   must never override a design's own rules. */
+:where(.sp-fi) { display: grid; place-content: center; overflow: hidden; }
+:where(.sp-fi [hidden]) { display: none !important; }
+:where(.sp-fi__wrap) { position: relative; display: grid; gap: 0.45em; width: 22em; }
+/* A hint inside the field group flows under it (the shared .sp-note would pin to the group's bottom edge) */
+:where(.sp-fi__wrap) > .sp-note { position: static; margin: 0.5em 0 0; }
+:where(.sp-fi__label) { font-size: 0.72em; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.6; }
+:where(.sp-fi__box) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.7em 1em;
+  font: inherit;
+  color: var(--color-ink);
+  text-align: left;
+  background: var(--color-bone);
+  border: 1.5px solid var(--color-ink);
+  border-radius: 0.4em;
+  box-shadow: 0.2em 0.2em 0 var(--color-ink);
+}
+:where(.sp-fi__box:focus-within, button.sp-fi__box:focus-visible) { outline: 2px solid var(--sp-accent, var(--color-ink)); outline-offset: 3px; }
+:where(button.sp-fi__box) { justify-content: space-between; cursor: pointer; }
+:where(.sp-fi__input) { flex: 1; min-width: 0; padding: 0; font: 400 1.2em/1.2 var(--font-display); color: var(--color-ink); background: none; border: 0; outline: none; }
+:where(.sp-fi__input::placeholder) { color: rgb(17 17 17 / 0.4); }
+:where(.sp-fi__value) { font: 400 1.2em/1.2 var(--font-display); }
+:where(.sp-fi__caret) { font-style: normal; color: var(--sp-accent, var(--color-ink)); }
+:where(.sp-fi__icon) { flex: none; font-style: normal; opacity: 0.7; }
+:where(.sp-fi__btn) { padding: 0.55em 1.05em; font-size: 0.8em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-bone); background: var(--color-ink); border: 1.5px solid var(--color-ink); border-radius: 2em; cursor: pointer; }
+:where(.sp-fi__btn--ghost) { color: var(--color-ink); background: var(--color-bone); }
+:where(.sp-fi__hint) { font-size: 0.8em; opacity: 0.6; }
+:where(.sp-fi__msg) { min-height: 1.3em; font-size: 0.8em; color: var(--sp-accent, var(--color-ink)); }
+/* Select lists */
+:where(.sp-fi__list) { display: grid; gap: 0.25em; margin: 0; padding: 0; list-style: none; }
+:where(.sp-fi__opt) { padding: 0.5em 1em; background: var(--color-bone); border: 1px solid rgb(17 17 17 / 0.25); border-radius: 0.3em; cursor: pointer; outline: none; }
+:where(.sp-fi__opt:focus-visible) { border-color: var(--color-ink); box-shadow: inset 0 0 0 1px var(--color-ink); }
+:where(.sp-fi__opt[aria-selected='true']) { color: var(--color-bone); background: var(--sp-accent, var(--color-ink)); border-color: var(--sp-accent, var(--color-ink)); }
+/* Calendars */
+:where(.sp-fi__cal) { display: grid; gap: 0.35em; padding: 0.9em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.5em; box-shadow: 0.25em 0.25em 0 var(--color-ink); }
+:where(.sp-fi__bar) { display: flex; align-items: center; justify-content: space-between; }
+:where(.sp-fi__month) { font: 400 1.15em/1 var(--font-display); }
+:where(.sp-fi__nav) { width: 1.8em; height: 1.8em; padding: 0; font-size: 1em; color: var(--color-ink); background: none; border: 1px solid rgb(17 17 17 / 0.3); border-radius: 50%; cursor: pointer; }
+:where(.sp-fi__dow, .sp-fi__days) { display: grid; grid-template-columns: repeat(7, 2.1em); gap: 0.15em; }
+:where(.sp-fi__dow i) { font-size: 0.7em; font-style: normal; text-align: center; opacity: 0.5; }
+:where(.sp-fi__day) { position: relative; width: 2.1em; height: 1.9em; padding: 0; font: inherit; font-size: 0.85em; color: var(--color-ink); background: none; border: 0; border-radius: 0.3em; cursor: pointer; }
+:where(.sp-fi__day:hover) { background: rgb(17 17 17 / 0.07); }
+:where(.sp-fi__day:focus-visible) { outline: 2px solid var(--color-ink); }
+:where(.sp-fi__day[aria-pressed='true']) { color: var(--color-bone); background: var(--sp-accent, var(--color-ink)); }
+:where(.sp-fi__day:disabled) { opacity: 0.3; cursor: not-allowed; }
+/* Textareas */
+:where(.sp-fi__area) { display: block; width: 100%; min-height: 6.5em; padding: 0.8em 1em; font-family: inherit; font-size: 0.95em; line-height: 1.5; color: var(--color-ink); resize: none; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.4em; box-shadow: 0.2em 0.2em 0 var(--color-ink); outline: none; }
+:where(.sp-fi__area:focus-visible) { outline: 2px solid var(--sp-accent, var(--color-ink)); outline-offset: 3px; }
+/* Uploads */
+:where(.sp-fi__drop) { position: relative; display: grid; place-items: center; gap: 0.3em; padding: 1.4em; text-align: center; background: rgb(17 17 17 / 0.03); border: 2px dashed rgb(17 17 17 / 0.35); border-radius: 0.6em; cursor: pointer; }
+:where(.sp-fi__drop:focus-visible) { outline: 2px solid var(--sp-accent, var(--color-ink)); outline-offset: 3px; }
+:where(.sp-fi__drop b) { font: 400 1.25em/1 var(--font-display); }
+:where(.sp-fi__drop small) { font-size: 0.8em; opacity: 0.6; }
+:where(.sp-fi__file) { display: flex; align-items: center; gap: 0.7em; padding: 0.5em 0.8em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.4em; }
+:where(.sp-fi__ficon) { display: grid; place-items: end center; flex: none; width: 1.7em; height: 2.1em; padding-bottom: 0.2em; font-size: 0.75em; font-style: normal; text-transform: uppercase; color: var(--color-bone); background: var(--sp-accent, var(--color-ink)); border-radius: 0.2em; clip-path: polygon(0 0, 68% 0, 100% 25%, 100% 100%, 0 100%); }
+:where(.sp-fi__fname) { display: grid; flex: 1; min-width: 0; overflow: hidden; font-size: 0.9em; white-space: nowrap; text-overflow: ellipsis; }
+:where(.sp-fi__fname small) { font-size: 0.8em; opacity: 0.55; }
+:where(.sp-fi__x) { flex: none; width: 1.7em; height: 1.7em; padding: 0; font-size: 0.8em; color: var(--color-ink); background: none; border: 1px solid rgb(17 17 17 / 0.3); border-radius: 50%; cursor: pointer; }
+/* Tags / chips */
+:where(.sp-fi__chip) { display: inline-flex; align-items: center; gap: 0.3em; padding: 0.25em 0.75em; font-size: 0.8em; color: var(--color-bone); background: var(--sp-accent, var(--color-ink)); border-radius: 1em; }
+/* Fragments from ../cards-containers/_pieces.js */
+:where(.sp-cc__pieces) { position: absolute; inset: 0; pointer-events: none; }
+:where(.sp-cc__piece) { position: absolute; inset: 0; }

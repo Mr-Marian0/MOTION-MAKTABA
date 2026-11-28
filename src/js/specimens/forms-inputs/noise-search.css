@@ -1,0 +1,6 @@
+/* Noise Search: the outline is an SVG behind the field; no CSS border at all. */
+@import url('_form.css');
+.sp-nos__bar { position: relative; display: flex; align-items: center; gap: 0.6em; padding: 0.8em 1.1em; }
+.sp-nos__bar svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.sp-nos__bar path { fill: var(--color-bone); stroke: var(--sp-accent); stroke-width: 2px; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.sp-nos__bar .sp-fi__icon, .sp-nos__bar .sp-fi__input { position: relative; }

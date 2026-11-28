@@ -1,0 +1,9 @@
+/* Tag Date: the calendar hangs from a nail; a ribbon hangs out of its bottom and a tag on a thread off its right edge. */
+@import url('_form.css');
+.sp-tgd__hang { position: relative; padding-top: 1.2em; padding-right: 3em; }
+.sp-tgd__nail { position: absolute; top: 0; left: calc(50% - 1.5em); width: 0.6em; height: 0.6em; margin-left: -0.3em; background: var(--color-ink); border-radius: 50%; }
+.sp-tgd__cal { position: relative; width: 17.5em; }
+.sp-tgd__ribbon { position: absolute; top: 100%; left: 2.2em; width: 0.9em; height: 2.4em; background: var(--sp-accent); clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%); }
+.sp-tgd__tag { position: absolute; top: 2.2em; left: 100%; display: grid; justify-items: start; font-size: 0.75em; }
+.sp-tgd__tag i { width: 1px; height: 1.6em; margin-left: 0.6em; background: var(--color-ink); }
+.sp-tgd__tag b { padding: 0.3em 0.6em 0.3em 0.9em; font-weight: 500; white-space: nowrap; color: var(--color-bone); background: var(--sp-accent); clip-path: polygon(0.6em 0, 100% 0, 100% 100%, 0.6em 100%, 0 50%); }

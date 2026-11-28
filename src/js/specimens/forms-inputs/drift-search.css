@@ -1,0 +1,6 @@
+/* Drift Search: leaves are scattered in a loose pond under the bar. */
+@import url('_form.css');
+.sp-dft__pond { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7em 0.9em; padding: 1em 0.4em 0; min-height: 6em; }
+.sp-dft__leaf { padding: 0.35em 0.8em; font: inherit; font-size: 0.8em; color: var(--color-ink); background: color-mix(in srgb, var(--sp-accent) 18%, var(--color-bone)); border: 1px solid color-mix(in srgb, var(--sp-accent) 50%, transparent); border-radius: 1.2em 0.2em 1.2em 0.2em; cursor: pointer; }
+.sp-dft__leaf.is-hit { color: var(--color-bone); background: var(--sp-accent); }
+.sp-dft__leaf:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 2px; }

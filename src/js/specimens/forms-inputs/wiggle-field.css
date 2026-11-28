@@ -1,0 +1,5 @@
+/* Wiggle Field */
+@import url('_form.css');
+.sp-wgf__label { justify-self: start; }
+.sp-wgf__box.is-bad { border-color: var(--sp-accent); box-shadow: 0.2em 0.2em 0 var(--sp-accent); }
+.sp-wgf__go { justify-self: end; }

@@ -1,0 +1,14 @@
+/* Streak Date: the grid slides inside a clipped view; streaks are thin bars spread over the view's height. */
+@import url('_form.css');
+.sp-stk__cal { width: 17.5em; }
+.sp-stk__view { position: relative; overflow: hidden; touch-action: pan-y; }
+.sp-stk__grid { display: grid; gap: 0.35em; }
+.sp-stk__lines { position: absolute; inset: 0; pointer-events: none; }
+.sp-stk__lines i { position: absolute; left: 5%; width: 90%; height: 2px; background: linear-gradient(90deg, transparent, var(--sp-accent), transparent); }
+.sp-stk__lines i:nth-child(1) { top: 12%; }
+.sp-stk__lines i:nth-child(2) { top: 26%; }
+.sp-stk__lines i:nth-child(3) { top: 38%; }
+.sp-stk__lines i:nth-child(4) { top: 52%; }
+.sp-stk__lines i:nth-child(5) { top: 64%; }
+.sp-stk__lines i:nth-child(6) { top: 77%; }
+.sp-stk__lines i:nth-child(7) { top: 89%; }

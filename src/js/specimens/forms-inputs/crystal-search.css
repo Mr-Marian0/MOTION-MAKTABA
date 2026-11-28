@@ -1,0 +1,7 @@
+/* Crystal Search: each result row is gem-coloured and clipped into a shard while it grows. */
+@import url('_form.css');
+.sp-cry { place-content: start center; padding-top: 1.4em; }
+.sp-cry .sp-cry__list { display: grid; gap: 0.3em; min-height: 9em; margin: 0.4em 0 0; padding: 0; list-style: none; }
+.sp-cry__row { position: relative; overflow: hidden; padding: 0.5em 1em; color: var(--color-bone); background: linear-gradient(100deg, var(--sp-accent), color-mix(in srgb, var(--sp-accent) 60%, white) 55%, var(--sp-accent)); }
+.sp-cry__glint { position: absolute; top: 0; bottom: 0; left: 0; width: 30%; background: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.7), transparent); pointer-events: none; visibility: hidden; }
+.sp-cry__none { padding: 0.5em 0; font-size: 0.85em; opacity: 0.6; }

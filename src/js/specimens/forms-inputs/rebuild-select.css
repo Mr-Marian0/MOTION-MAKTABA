@@ -1,0 +1,8 @@
+/* Rebuild Select: letters are inline-blocks so they can move; the old word is overlaid at the same spot. */
+@import url('_form.css');
+.sp-rbs { place-content: start center; padding-top: 1.6em; }
+.sp-rbs__field { width: 100%; overflow: visible; }
+.sp-rbs__value { position: relative; display: flex; }
+.sp-rbs__value span, .sp-rbs__old span { display: inline-block; white-space: pre; }
+.sp-rbs__old { position: absolute; left: 1em; display: flex; font: 400 1.2em/1.2 var(--font-display); pointer-events: none; }
+.sp-rbs__list { position: absolute; top: calc(100% + 0.4em); right: 0; left: 0; z-index: 2; }

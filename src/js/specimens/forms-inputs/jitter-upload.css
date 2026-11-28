@@ -1,0 +1,8 @@
+/* Jitter Upload: rejected chips flash the accent colour. */
+@import url('_form.css');
+.sp-jit__zone { padding: 1em; }
+.sp-jit__zone.is-over { border-color: var(--sp-accent); }
+.sp-jit__list { display: grid; gap: 0.35em; min-height: 7.4em; align-content: start; overflow: hidden; }
+.sp-jit__chip.is-bad { border-color: var(--sp-accent); background: color-mix(in srgb, var(--sp-accent) 12%, var(--color-bone)); animation: sp-jit-flash 0.2s steps(1) infinite; }
+@keyframes sp-jit-flash { 50% { border-color: var(--color-ink); } }
+@media (prefers-reduced-motion: reduce) { .sp-jit__chip.is-bad { animation: none; } }

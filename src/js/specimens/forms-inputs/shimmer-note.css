@@ -1,0 +1,8 @@
+/* Shimmer Note: skeleton bars over the textarea; the light band is a gradient whose position follows --x. */
+@import url('_form.css');
+.sp-shm__box { position: relative; }
+.sp-shm__area { min-height: 6.6em; }
+.sp-shm__skeleton { --x: -60%; position: absolute; inset: 0.9em 1em; display: grid; align-content: start; gap: 0.7em; pointer-events: none; }
+.sp-shm__skeleton i { height: 0.65em; border-radius: 0.3em; background: linear-gradient(100deg, color-mix(in srgb, var(--sp-accent) 18%, var(--color-bone)) 30%, color-mix(in srgb, var(--sp-accent) 45%, white) 50%, color-mix(in srgb, var(--sp-accent) 18%, var(--color-bone)) 70%) var(--x) 0 / 250% 100% no-repeat, color-mix(in srgb, var(--sp-accent) 18%, var(--color-bone)); }
+.sp-shm__go { justify-self: end; }
+.sp-shm__go:disabled { opacity: 0.5; cursor: progress; }

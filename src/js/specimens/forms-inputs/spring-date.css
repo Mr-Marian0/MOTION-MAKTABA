@@ -1,0 +1,5 @@
+/* Spring Date: the picked day stays raised (scale, lift and shadow come from JS). */
+@import url('_form.css');
+.sp-spr__cal { width: 17.5em; }
+.sp-spr .sp-fi__day { background: rgb(17 17 17 / 0.04); }
+.sp-spr .sp-fi__day[aria-pressed='true'] { position: relative; z-index: 1; background: var(--sp-accent); }

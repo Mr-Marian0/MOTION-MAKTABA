@@ -1,0 +1,5 @@
+/* Rebound Select */
+@import url('_form.css');
+.sp-rbd { place-content: start center; padding-top: 1.6em; }
+.sp-rbd__field { width: 100%; }
+.sp-rbd__list { position: absolute; top: calc(100% + 0.4em); right: 0; left: 0; z-index: 2; }

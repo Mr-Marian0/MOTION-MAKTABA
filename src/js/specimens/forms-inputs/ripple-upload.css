@@ -1,0 +1,7 @@
+/* Ripple Upload: rings are big circles centred on the splash point (margin −half), clipped by the pond. */
+@import url('_form.css');
+.sp-rpl__pond { overflow: hidden; padding: 1.6em 1em; background: color-mix(in srgb, var(--sp-accent) 8%, var(--color-bone)); }
+.sp-rpl__pond.is-over { border-color: var(--sp-accent); }
+.sp-rpl__rings { position: absolute; inset: 0; pointer-events: none; }
+.sp-rpl__rings i { position: absolute; top: 0; left: 0; width: 16em; height: 16em; margin: -8em 0 0 -8em; border: 2px solid var(--sp-accent); border-radius: 50%; }
+.sp-rpl__list { display: grid; gap: 0.35em; min-height: 7.4em; align-content: start; }

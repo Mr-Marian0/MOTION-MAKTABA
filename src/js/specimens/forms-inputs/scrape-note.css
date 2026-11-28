@@ -1,0 +1,10 @@
+/* Scrape Note: the blade stands on the pad's left edge and is moved with a transform; the textarea is clipped left of it. */
+@import url('_form.css');
+.sp-scr__pad { position: relative; }
+.sp-scr__area { min-height: 6.5em; }
+.sp-scr__blade { position: absolute; top: -0.5em; bottom: -0.5em; left: -0.6em; width: 1.2em; cursor: grab; touch-action: none; }
+.sp-scr__blade i { position: absolute; inset: 0 0.35em; background: linear-gradient(90deg, #9aa0a6, #e4e7ea 45%, #8b9096); border: 1px solid var(--color-ink); border-radius: 0.15em; }
+.sp-scr__blade::after { content: ''; position: absolute; top: 40%; left: 0.05em; width: 1.1em; height: 20%; background: var(--sp-accent); border-radius: 0.2em; }
+.sp-scr__blade:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 2px; }
+.sp-scr__curl { position: absolute; top: 0; left: 0; width: 0.7em; height: 0.7em; border: 2px solid var(--color-ink); border-color: var(--color-ink) transparent transparent var(--color-ink); border-radius: 50%; pointer-events: none; }
+.sp-scr__go { justify-self: end; }

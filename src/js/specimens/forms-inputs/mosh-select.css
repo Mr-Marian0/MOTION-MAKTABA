@@ -1,0 +1,11 @@
+/* Mosh Select: a little UI preview painted in the theme's three colours; the old one's blocks sit on top. */
+@import url('_form.css');
+.sp-msh__preview { position: relative; height: 6em; overflow: hidden; border: 1.5px solid var(--color-ink); border-radius: 0.4em; }
+.sp-msh__now, .sp-msh__look { position: absolute; inset: 0; }
+.sp-msh__look { background: var(--a); }
+.sp-msh__look i:nth-child(1) { position: absolute; inset: 0 0 72% 0; background: var(--c); }
+.sp-msh__look i:nth-child(2) { position: absolute; top: 38%; left: 8%; width: 40%; height: 40%; background: var(--b); border-radius: 0.3em; }
+.sp-msh__look i:nth-child(3) { position: absolute; top: 40%; right: 8%; width: 36%; height: 0.6em; background: var(--c); border-radius: 0.3em; box-shadow: 0 1.1em 0 var(--b), 0 2.2em 0 var(--b); }
+.sp-msh__look b { position: absolute; top: 0.35em; left: 0.6em; font: 400 1em/1 var(--font-display); color: var(--a); }
+.sp-msh__list { grid-template-columns: repeat(4, 1fr); }
+.sp-msh .sp-fi__opt { text-align: center; }

@@ -1,0 +1,7 @@
+/* Ghost Field: the measure span copies the input's font to find the caret's x; ghosts rise from the text line. */
+@import url('_form.css');
+.sp-gho__box { overflow: visible; }
+.sp-gho__input { letter-spacing: 0.02em; }
+.sp-gho__measure { position: absolute; top: 0; left: 1em; font: 400 1.2em/1.2 var(--font-display); letter-spacing: 0.02em; white-space: pre; visibility: hidden; pointer-events: none; }
+.sp-gho__air { position: absolute; top: 0.7em; left: 1em; pointer-events: none; }
+.sp-gho__g { position: absolute; top: 0; left: 0; font: 400 1.2em/1.2 var(--font-display); color: var(--sp-accent); white-space: pre; }

@@ -1,0 +1,11 @@
+/* Shard Field: the ghost matches the input's text box (same font, same left edge) so the halves start in place. */
+@import url('_form.css');
+.sp-shd__box { overflow: visible; }
+.sp-shd__input { letter-spacing: 0.04em; }
+/* Clipped left/right to the input's text box (halves may still fall out below); shifted by the input's scroll. */
+.sp-shd__ghost { position: absolute; top: 0.7em; right: 3.4em; left: 1em; display: flex; clip-path: inset(-3em 0 -12em 0); font: 400 1.2em/1.2 var(--font-display); letter-spacing: 0.04em; white-space: pre; pointer-events: none; }
+.sp-shd__ghost span { position: relative; display: inline-block; flex: none; }
+.sp-shd__ghost span:first-child { margin-left: var(--sl, 0px); }
+.sp-shd__ghost i { display: inline-block; font-style: normal; }
+.sp-shd__ghost i + i { position: absolute; top: 0; left: 0; }
+.sp-shd__x { flex: none; width: 1.8em; height: 1.8em; padding: 0; color: var(--color-bone); background: var(--sp-accent); border: 0; border-radius: 50%; cursor: pointer; }

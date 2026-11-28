@@ -1,0 +1,10 @@
+/* Burst Upload: sparks start at the icon's centre; the progress bar runs along the bottom of the row. */
+@import url('_form.css');
+.sp-bst__zone { padding: 1em; }
+.sp-bst__zone.is-over { border-color: var(--sp-accent); }
+.sp-bst__list { display: grid; gap: 0.35em; min-height: 7.6em; align-content: start; }
+.sp-bst__row { position: relative; }
+.sp-bst__sparks { position: absolute; top: 50%; left: 1.45em; width: 0; height: 0; }
+.sp-bst__sparks i { position: absolute; top: -0.08em; left: 0; width: 0.7em; height: 0.16em; background: var(--sp-accent); border-radius: 0.1em; }
+.sp-bst__bar { position: absolute; right: 0.4em; bottom: 0.2em; left: 0.4em; height: 2px; background: var(--sp-accent); transform-origin: 0% 50%; }
+.sp-fi__ficon.is-done { place-items: center; padding: 0; font-size: 0.9em; background: var(--sp-accent); clip-path: none; border-radius: 50%; }

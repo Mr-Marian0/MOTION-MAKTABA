@@ -1,0 +1,10 @@
+/* Drain Upload: a round basin with a drain and swirl lines at its centre; the file rows float in it. */
+@import url('_form.css');
+.sp-drn__basin { position: relative; display: grid; align-content: space-between; gap: 0.4em; width: 20em; height: 13em; padding: 0.8em; background: color-mix(in srgb, var(--sp-accent) 10%, var(--color-bone)); border: 1.5px solid var(--color-ink); border-radius: 1.2em; overflow: hidden; }
+.sp-drn__swirl { position: absolute; top: 50%; left: 50%; width: 8em; height: 8em; margin: -4em 0 0 -4em; background: repeating-conic-gradient(from 0deg, color-mix(in srgb, var(--sp-accent) 30%, transparent) 0 8deg, transparent 8deg 45deg); border-radius: 50%; mask: radial-gradient(circle, transparent 0.6em, black 0.7em, transparent 70%); pointer-events: none; }
+.sp-drn__hole { position: absolute; top: 50%; left: 50%; width: 1.4em; height: 1.4em; margin: -0.7em 0 0 -0.7em; background: radial-gradient(circle, #1f1712 40%, #6d6f73 45% 60%, transparent 62%); border-radius: 50%; }
+.sp-drn__files { position: relative; display: grid; gap: 0.35em; }
+.sp-drn__chip { position: relative; }
+.sp-drn__bar { position: absolute; right: 0.4em; bottom: 0.2em; left: 0.4em; height: 2px; background: var(--sp-accent); transform-origin: 0% 50%; }
+.sp-drn__zone { position: relative; padding: 0.5em; }
+.sp-drn__zone.is-over { border-color: var(--sp-accent); }

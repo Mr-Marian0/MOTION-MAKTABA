@@ -1,0 +1,5 @@
+/* Roll Search: the bar is one solid strip in the scope's colour (--c), rotated as a whole. */
+@import url('_form.css');
+.sp-rol__bar { --c: var(--sp-accent); display: flex; align-items: center; gap: 0.7em; padding: 0.5em 0.6em; background: var(--color-bone); border: 2px solid var(--c); border-radius: 0.5em; box-shadow: 0.2em 0.2em 0 var(--c); }
+.sp-rol__scope { flex: none; padding: 0.4em 0.8em; font: inherit; font-size: 0.8em; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-bone); background: var(--c); border: 0; border-radius: 0.3em; cursor: pointer; }
+.sp-rol__scope:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 2px; }

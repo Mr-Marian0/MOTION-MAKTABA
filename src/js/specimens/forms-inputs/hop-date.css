@@ -1,0 +1,6 @@
+/* Hop Date: the ring replaces the usual filled selection; it sits centred on its cell via transforms. */
+@import url('_form.css');
+.sp-hop__cal { width: 17.5em; }
+.sp-hop__grid { position: relative; }
+.sp-hop .sp-fi__day[aria-pressed='true'] { color: var(--color-ink); background: none; font-weight: 700; }
+.sp-hop__ring { position: absolute; top: 0; left: 0; width: 1.9em; height: 1.9em; margin: -0.95em 0 0 -0.95em; border: 2.5px solid var(--sp-accent); border-radius: 50%; pointer-events: none; }

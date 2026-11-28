@@ -1,0 +1,11 @@
+/* Ratchet Date: brass wheel and steel pawl on the left, the date and buttons on the right. */
+@import url('_form.css');
+.sp-rat__body { display: flex; align-items: center; gap: 1.4em; padding: 1em 1.2em; background: var(--color-bone); border: 1.5px solid var(--color-ink); border-radius: 0.6em; box-shadow: 0.25em 0.25em 0 var(--color-ink); }
+.sp-rat__mech { width: 7em; height: 7em; overflow: visible; }
+.sp-rat__wheel path { fill: var(--sp-accent); stroke: var(--color-ink); stroke-width: 1.5px; stroke-linejoin: round; }
+.sp-rat__wheel circle { fill: var(--color-bone); stroke: var(--color-ink); stroke-width: 1.5px; }
+.sp-rat__pawl { fill: #9aa0a6; stroke: var(--color-ink); stroke-width: 1.5px; stroke-linejoin: round; }
+.sp-rat__pin { fill: var(--color-ink); }
+.sp-rat__side { display: grid; gap: 0.45em; }
+.sp-rat__date { font: 400 1.7em/1.1 var(--font-display); }
+.sp-rat__btns { display: flex; gap: 0.4em; }

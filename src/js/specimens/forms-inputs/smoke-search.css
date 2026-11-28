@@ -1,0 +1,10 @@
+/* Smoke Search: puffs are soft radial-gradient circles (no filter), rising from the text line. */
+@import url('_form.css');
+.sp-smk { place-content: end center; padding-bottom: 3em; }
+.sp-smk__bar { overflow: visible; }
+.sp-smk__x { flex: none; width: 1.8em; height: 1.8em; padding: 0; color: var(--color-ink); background: none; border: 1px solid rgb(17 17 17 / 0.3); border-radius: 50%; cursor: pointer; }
+/* clipped left/right to the text area (smoke may still rise out of the top) */
+.sp-smk__air { position: absolute; top: 0.7em; right: 3.4em; bottom: 0; left: 2.8em; clip-path: inset(-12em 0 -1em 0); pointer-events: none; }
+.sp-smk__air i { position: absolute; top: 0; left: 0; width: 1.4em; height: 1.4em; margin: -0.2em 0 0 -0.7em; background: radial-gradient(circle, color-mix(in srgb, var(--sp-accent) 70%, transparent), transparent 70%); border-radius: 50%; }
+.sp-smk__ghost { position: absolute; top: 0; left: 0; font: 400 1.2em/1.2 var(--font-display); white-space: pre; color: var(--color-ink); }
+.sp-smk__measure { position: absolute; top: 0; left: 0; font: 400 1.2em/1.2 var(--font-display); white-space: pre; visibility: hidden; pointer-events: none; }

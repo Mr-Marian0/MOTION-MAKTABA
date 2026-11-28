@@ -1,0 +1,8 @@
+/* Ellipse Date: month labels all start at the ring's centre and are placed on the ellipse with transforms. */
+@import url('_form.css');
+.sp-elp__cal { width: 17.5em; }
+.sp-elp__ring { position: relative; display: flex; align-items: center; justify-content: space-between; height: 4em; overflow: hidden; touch-action: pan-y; cursor: grab; }
+.sp-elp__ring:focus-visible { outline: 2px solid var(--sp-accent); outline-offset: 2px; border-radius: 0.4em; }
+.sp-elp__nav { position: relative; z-index: 30; }
+.sp-elp__m { position: absolute; top: 50%; left: 50%; width: 3.2em; margin: -0.7em 0 0 -1.6em; font: 400 1.15em/1.2 var(--font-display); text-align: center; pointer-events: none; }
+.sp-elp__days { display: grid; gap: 0.3em; }

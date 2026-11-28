@@ -1,0 +1,8 @@
+/* Skid Select: values overlap in a clipped track; skid marks are two dashed streaks behind the value. */
+@import url('_form.css');
+.sp-skd { place-content: start center; padding-top: 1.6em; }
+.sp-skd__field { width: 100%; }
+.sp-skd__track { position: relative; display: grid; flex: 1; min-width: 0; height: 1.5em; overflow: hidden; }
+.sp-skd__value { grid-area: 1 / 1; align-self: center; white-space: nowrap; }
+.sp-skd__marks { grid-area: 1 / 1; align-self: end; height: 0.5em; margin-bottom: 0.05em; background: repeating-linear-gradient(90deg, var(--sp-accent) 0 0.6em, transparent 0.6em 0.9em) 0 0 / 100% 2px no-repeat, repeating-linear-gradient(90deg, var(--sp-accent) 0 0.4em, transparent 0.4em 0.8em) 0 100% / 100% 2px no-repeat; opacity: 0.8; pointer-events: none; }
+.sp-skd__list { position: absolute; top: calc(100% + 0.4em); right: 0; left: 0; z-index: 2; }

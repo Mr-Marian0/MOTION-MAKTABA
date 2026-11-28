@@ -1,0 +1,9 @@
+/* Prism Field: two coloured copies of the text sit exactly under the input's text and are nudged apart. */
+@import url('_form.css');
+.sp-psm__box { overflow: hidden; }
+/* centred with flex, not `translate`: GSAP moves these on x and would fold a CSS translate into its own */
+.sp-psm__ch { position: absolute; top: 0; bottom: 0; left: 0.833em; right: 2.5em; display: flex; align-items: center; overflow: visible; font: 400 1.2em/1.2 var(--font-display); white-space: pre; pointer-events: none; mix-blend-mode: multiply; }
+.sp-psm__ch--r { color: #ff2a4d; }
+.sp-psm__ch--b { color: #1f6bff; }
+.sp-psm__input { position: relative; background: transparent; }
+.sp-psm__tick { display: grid; place-items: center; flex: none; width: 1.5em; height: 1.5em; font-size: 0.85em; color: var(--color-bone); background: var(--sp-accent); border-radius: 50%; }

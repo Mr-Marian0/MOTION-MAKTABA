@@ -1,0 +1,4 @@
+/* Levitate Select: two-column tiles; the lifted tile's shadow is a box-shadow animated from JS. */
+@import url('_form.css');
+.sp-lev .sp-lev__list { grid-template-columns: 1fr 1fr; gap: 0.6em; margin-top: 0.4em; }
+.sp-lev .sp-fi__opt { position: relative; text-align: center; }

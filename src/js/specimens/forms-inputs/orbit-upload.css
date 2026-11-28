@@ -1,0 +1,14 @@
+/* Orbit Upload: the picture with its progress ring; the satellite sits at the end of an arm from the centre that turns. */
+@import url('_form.css');
+.sp-orb__row { display: flex; align-items: center; gap: 1.6em; }
+.sp-orb__pic { position: relative; width: 7em; height: 7em; }
+.sp-orb__pic svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.sp-orb__track { fill: none; stroke: rgb(17 17 17 / 0.12); stroke-width: 4px; }
+.sp-orb__ring { fill: none; stroke: var(--sp-accent); stroke-width: 4px; stroke-linecap: round; }
+.sp-orb__face { position: absolute; inset: 16%; background: radial-gradient(circle at 50% 38%, var(--color-umber) 0 20%, transparent 21%), radial-gradient(ellipse 60% 40% at 50% 100%, var(--color-umber) 98%, transparent), linear-gradient(#e6b083, #f4dcb5); border-radius: 50%; }
+.sp-orb__arm { position: absolute; top: 50%; left: 50%; width: 0; height: 0; }
+.sp-orb__sat { position: absolute; top: -0.4em; left: 2.68em; width: 0.8em; height: 0.8em; background: var(--color-ink); border: 2px solid var(--color-bone); border-radius: 50%; }
+.sp-orb__tick { position: absolute; right: 0.1em; bottom: 0.1em; display: grid; place-items: center; width: 1.8em; height: 1.8em; color: var(--color-bone); background: var(--sp-accent); border: 2px solid var(--color-bone); border-radius: 50%; }
+.sp-orb__side { display: grid; gap: 0.4em; width: 9em; }
+.sp-orb__zone { padding: 0.9em 0.5em; }
+.sp-orb__zone.is-over { border-color: var(--sp-accent); }

@@ -1,0 +1,7 @@
+/* Grow Date: the sprig grows upward out of the top of the picked cell, over the cells above. */
+@import url('_form.css');
+.sp-grw__cal { width: 17.5em; }
+.sp-grw .sp-fi__day[aria-pressed='true'] { z-index: 2; overflow: visible; }
+.sp-grw__sprig { position: absolute; bottom: 70%; left: 50%; width: 4.2em; height: 3em; margin-left: -2.1em; overflow: visible; pointer-events: none; }
+.sp-grw__sprig path { fill: none; stroke: var(--sp-accent); stroke-linecap: round; }
+.sp-grw__sprig circle { fill: color-mix(in srgb, var(--sp-accent) 70%, white); }

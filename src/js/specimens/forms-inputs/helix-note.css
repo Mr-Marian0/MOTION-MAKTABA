@@ -1,0 +1,7 @@
+/* Helix Note: the dots of the helix sit in a short strip in the badge, placed by transforms. */
+@import url('_form.css');
+.sp-hlx__badge { display: flex; align-items: center; justify-self: end; gap: 0.6em; padding: 0.35em 0.8em; font-size: 0.8em; border: 1px solid rgb(17 17 17 / 0.25); border-radius: 1em; }
+.sp-hlx__dna { position: relative; width: 4.6em; height: 1.2em; }
+.sp-hlx__dna i { position: absolute; top: 50%; left: 0; width: 0.42em; height: 0.42em; margin-top: -0.21em; background: var(--sp-accent); border-radius: 50%; }
+.sp-hlx__dna i:nth-child(even) { background: var(--color-ink); }
+.sp-hlx__badge b { font-weight: 500; }

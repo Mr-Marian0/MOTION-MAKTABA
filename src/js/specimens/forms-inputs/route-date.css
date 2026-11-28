@@ -1,0 +1,11 @@
+/* Route Date: the route is an SVG laid over the day grid (same box); days in range get a soft fill. */
+@import url('_form.css');
+.sp-rte__cal { width: 17.5em; }
+.sp-rte__grid { position: relative; }
+/* The route runs under the day numbers (the days sit above it), so it never hides a date */
+.sp-rte__map { position: absolute; top: 0; left: 0; z-index: 0; overflow: visible; pointer-events: none; opacity: 0.55; }
+.sp-rte .sp-fi__dow, .sp-rte .sp-fi__days { position: relative; z-index: 1; }
+.sp-rte__route { fill: none; stroke: var(--sp-accent); stroke-width: 2px; stroke-linecap: round; }
+.sp-rte__mark { position: absolute; top: 0; left: 0; width: 0.7em; height: 0.7em; margin: -0.35em 0 0 -0.35em; background: var(--sp-accent); border: 2px solid var(--color-bone); border-radius: 50%; pointer-events: none; }
+.sp-rte .sp-fi__day.is-in { background: color-mix(in srgb, var(--sp-accent) 22%, transparent); }
+.sp-rte .sp-fi__day.is-end { color: var(--color-bone); background: var(--sp-accent); }

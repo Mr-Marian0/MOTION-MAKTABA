@@ -1,0 +1,7 @@
+/* Converge Field: specks live in a full-card layer behind the field; the target is an empty slot at the field's end. */
+@import url('_form.css');
+.sp-cnv__field { position: absolute; inset: 0; pointer-events: none; }
+.sp-cnv__field i { position: absolute; top: 0; left: 0; width: 0.4em; height: 0.4em; margin: -0.2em 0 0 -0.2em; background: var(--sp-accent); border-radius: 50%; opacity: 0; }
+.sp-cnv .sp-fi__wrap { z-index: 1; }
+.sp-cnv__box { background: rgb(244 239 230 / 0.85); }
+.sp-cnv__target { flex: none; width: 2em; height: 1.6em; }

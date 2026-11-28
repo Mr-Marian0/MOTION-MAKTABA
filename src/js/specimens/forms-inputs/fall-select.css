@@ -1,0 +1,6 @@
+/* Fall Select: the list hangs below the field in a well that clips what falls through its floor. */
+@import url('_form.css');
+.sp-fal { place-content: start center; padding-top: 1.4em; }
+.sp-fal__field { width: 100%; }
+.sp-fal__well { position: absolute; top: 100%; right: -0.5em; left: -0.5em; z-index: 2; height: 11em; padding: 0.4em 0.5em 0; clip-path: inset(-20em -1em 0 -1em); pointer-events: none; }
+.sp-fal__list { pointer-events: auto; }
